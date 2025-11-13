@@ -1,14 +1,18 @@
 Package: nycOpenData
 Type: Package
-Title: Easy Access to NYC Open Data APIs
-Version: 0.1.1
+Title: Convenient Access to NYC Open Data API Endpoints
+Version: 0.1.2
 Authors@R: 
     person("Christian", "Martinez", 
            email = "c.martinez0@outlook.com", 
            role = c("aut", "cre"))
-Description: Contains functions that allow for pulling of different NYC Open Data 
-    datasets from <https://opendata.cityofnewyork.us/>. The initial release includes 
-    the 'nyc_311()' function for retrieving 311 Service Request data in a tidy format.
+Description: Provides a unified set of helper functions to access datasets 
+    from the NYC Open Data platform <https://opendata.cityofnewyork.us/>. 
+    Functions return results as tidy tibbles and support optional filtering, 
+    sorting, and row limits via the Socrata API. The package includes endpoints 
+    for 311 service requests, DOB job applications, juvenile justice metrics, 
+    school safety, environmental data, event permitting, and additional 
+    citywide datasets.
 License: MIT + file LICENSE
 Encoding: UTF-8
 RoxygenNote: 7.3.3

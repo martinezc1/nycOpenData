@@ -4,55 +4,78 @@ output: github_document
 
 # nycOpenData <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f7/NYC_logo.svg/64px-NYC_logo.svg.png" align="right" width="60"/>
 
-An R package providing easy access to datasets from the [NYC Open Data](https://opendata.cityofnewyork.us/) platform.  
-The first release (`v0.1.0`) includes the `nyc_311()` function for retrieving NYC 311 Service Request data in a tidy format.
+`nycOpenData` provides simple, reproducible access to datasets from the  
+[NYC Open Data](https://opendata.cityofnewyork.us/) platform — directly from R,  
+with **no API keys** or manual downloads required.
+
+Version **0.1.2** now includes wrappers for **15+ NYC Open Data APIs**, covering:
+
+- 311 Service Requests  
+- For-Hire Vehicles (FHV)  
+- Juvenile Justice (rearrest rates + caseloads)  
+- School Discharge Reporting  
+- Violent & Disruptive School Incidents  
+- Detention Admissions  
+- Borough/Community District Reports  
+- Street Tree Census  
+- Urban Park Ranger Animal Condition Responses  
+- Permitted Events (Historical)  
+- and more  
+
+All functions return clean **tibble** outputs and support filtering via  
+`filters = list(field = "value")`.
 
 ---
 
 ## Installation
 
-From **CRAN** (once published)
+### From **CRAN** (once published)
 
-- install.packages("nycOpenData")
+```r
+install.packages("nycOpenData")
+```
 
-Or the development version from **GitHub**
+### Development version (GitHub)
 
-- devtools::install_github("martinezc1/nycOpenData")
+```r
+devtools::install_github("martinezc1/nycOpenData")
+```
+
+---
 
 ## Example
 
 ```{r}
-# # Get 5,000 most recent 311 requests
-# library(nycOpenData)
-# data <- nyc_311(limit = 5000)
-# # Filter by agency and city
-# filtered <- nyc_311(
-#   limit = 2000,
-#   filters = list(agency = "NYPD", city = "BROOKLYN")
-# )
-# 
-# head(filtered)
+library(nycOpenData)
+
+# Get 5,000 most recent 311 requests
+data <- nyc_311(limit = 5000)
+
+# Filter by agency and city
+filtered <- nyc_311(
+  limit = 2000,
+  filters = list(agency = "NYPD", city = "BROOKLYN")
+)
+
+head(filtered)
 ```
+
+---
 
 ## About
 
-`nycOpenData` is designed to make New York City’s open datasets accessible directly from R — no API keys or manual downloads required. This package is ideal for students, educators, and researchers who want to work with real-world data quickly and reproducibly.
-The first release (v0.1.0) introduces:
+`nycOpenData` makes New York City's civic datasets accessible to students,  
+educators, analysts, and researchers through a unified and user-friendly R interface.  
+Developed to support reproducible research, open-data literacy, and real-world analysis.
 
-- nyc_311() — for pulling 311 Service Request data
-
-Future releases will include additional functions for:
-
-- For-Hire Vehicles (FHV) – Active
-- Parking Violations
-- Motor Vehicle Collisions (NYPD)
-- and other high-demand NYC Open Data APIs.
+---
 
 ## Author
-**Christian A. Martinez**
 
-c.martinez0@outlook.com
+**Christian A. Martinez**  
+c.martinez0@outlook.com  
+GitHub: https://github.com/martinezc1  
 
-GitHub: martinezc1
-
-Developed as part of PSYC 7750G – Reproducible Psychological Research at Brooklyn College.
+Developed as part of  
+**PSYC 7750G – Reproducible Psychological Research**  
+Brooklyn College, City University of New York
