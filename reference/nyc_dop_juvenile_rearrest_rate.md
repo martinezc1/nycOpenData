@@ -43,43 +43,43 @@ head(small_sample)
 #> # A tibble: 6 × 4
 #>   borough  month     year  rate 
 #>   <chr>    <chr>     <chr> <chr>
-#> 1 Citywide September 2025  4.9  
-#> 2 Citywide August    2025  4.1  
-#> 3 Citywide July      2025  4.7  
-#> 4 Citywide June      2025  4.7  
-#> 5 Citywide May       2025  4.4  
-#> 6 Citywide April     2025  4.4  
+#> 1 Citywide October   2025  4.7  
+#> 2 Citywide September 2025  4.9  
+#> 3 Citywide August    2025  4.1  
+#> 4 Citywide July      2025  4.7  
+#> 5 Citywide June      2025  4.7  
+#> 6 Citywide May       2025  4.4  
 
 # \donttest{
 nyc_dop_juvenile_rearrest_rate(limit = 5000)
-#> # A tibble: 115 × 4
+#> # A tibble: 116 × 4
 #>    borough  month     year  rate 
 #>    <chr>    <chr>     <chr> <chr>
-#>  1 Citywide September 2025  4.9  
-#>  2 Citywide August    2025  4.1  
-#>  3 Citywide July      2025  4.7  
-#>  4 Citywide June      2025  4.7  
-#>  5 Citywide May       2025  4.4  
-#>  6 Citywide April     2025  4.4  
-#>  7 Citywide March     2025  4.3  
-#>  8 Citywide February  2025  4.1  
-#>  9 Citywide January   2025  4    
-#> 10 Citywide December  2024  4    
-#> # ℹ 105 more rows
+#>  1 Citywide October   2025  4.7  
+#>  2 Citywide September 2025  4.9  
+#>  3 Citywide August    2025  4.1  
+#>  4 Citywide July      2025  4.7  
+#>  5 Citywide June      2025  4.7  
+#>  6 Citywide May       2025  4.4  
+#>  7 Citywide April     2025  4.4  
+#>  8 Citywide March     2025  4.3  
+#>  9 Citywide February  2025  4.1  
+#> 10 Citywide January   2025  4    
+#> # ℹ 106 more rows
 nyc_dop_juvenile_rearrest_rate(filters = list(borough = "Citywide"))
-#> # A tibble: 115 × 4
+#> # A tibble: 116 × 4
 #>    borough  month     year  rate 
 #>    <chr>    <chr>     <chr> <chr>
-#>  1 Citywide September 2025  4.9  
-#>  2 Citywide August    2025  4.1  
-#>  3 Citywide July      2025  4.7  
-#>  4 Citywide June      2025  4.7  
-#>  5 Citywide May       2025  4.4  
-#>  6 Citywide April     2025  4.4  
-#>  7 Citywide March     2025  4.3  
-#>  8 Citywide February  2025  4.1  
-#>  9 Citywide January   2025  4    
-#> 10 Citywide December  2024  4    
-#> # ℹ 105 more rows
+#>  1 Citywide October   2025  4.7  
+#>  2 Citywide September 2025  4.9  
+#>  3 Citywide August    2025  4.1  
+#>  4 Citywide July      2025  4.7  
+#>  5 Citywide June      2025  4.7  
+#>  6 Citywide May       2025  4.4  
+#>  7 Citywide April     2025  4.4  
+#>  8 Citywide March     2025  4.3  
+#>  9 Citywide February  2025  4.1  
+#> 10 Citywide January   2025  4    
+#> # ℹ 106 more rows
 # }
 ```

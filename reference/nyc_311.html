@@ -74,59 +74,59 @@ Data is updated daily and includes agency, complaint type, location, and resolut
 <span class="r-in"><span><span class="co"># Quick example (fetch 10 rows)</span></span></span>
 <span class="r-in"><span><span class="va">small_sample</span> <span class="op">&lt;-</span> <span class="fu">nyc_311</span><span class="op">(</span>limit <span class="op">=</span> <span class="fl">10</span><span class="op">)</span></span></span>
 <span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="va">small_sample</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 6 × 31</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 6 × 35</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   unique_key created_date           agency agency_name complaint_type descriptor</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                  <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>       <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>          <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>     </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">1</span> 66925104   2025-11-23T02:20:26.0… NYPD   New York C… Noise - Stree… Loud Talk…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">2</span> 66922869   2025-11-23T02:19:42.0… NYPD   New York C… Noise - Resid… Banging/P…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">3</span> 66918371   2025-11-23T02:19:33.0… NYPD   New York C… Noise - Comme… Loud Musi…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">4</span> 66920775   2025-11-23T02:19:32.0… DSNY   Department… Vendor Enforc… Food Vend…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">5</span> 66925096   2025-11-23T02:19:17.0… NYPD   New York C… Noise - Resid… Loud Musi…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">6</span> 66918347   2025-11-23T02:19:16.0… NYPD   New York C… Illegal Parki… Blocked H…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 25 more variables: location_type &lt;chr&gt;, incident_zip &lt;chr&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   incident_address &lt;chr&gt;, street_name &lt;chr&gt;, cross_street_1 &lt;chr&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   cross_street_2 &lt;chr&gt;, intersection_street_1 &lt;chr&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   intersection_street_2 &lt;chr&gt;, address_type &lt;chr&gt;, city &lt;chr&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   landmark &lt;chr&gt;, status &lt;chr&gt;, community_board &lt;chr&gt;, bbl &lt;chr&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   borough &lt;chr&gt;, x_coordinate_state_plane &lt;chr&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   y_coordinate_state_plane &lt;chr&gt;, open_data_channel_type &lt;chr&gt;, …</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">1</span> 67170118   2025-12-14T02:46:11.0… DSNY   Department… Graffiti       Graffiti  </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">2</span> 67170119   2025-12-14T02:45:22.0… DSNY   Department… Graffiti       Graffiti  </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">3</span> 67164190   2025-12-14T02:21:06.0… NYPD   New York C… Noise - Resid… Loud Musi…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">4</span> 67166872   2025-12-14T02:20:47.0… NYPD   New York C… Illegal Parki… Posted Pa…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">5</span> 67168351   2025-12-14T02:20:32.0… NYPD   New York C… Noise - Resid… Loud Musi…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">6</span> 67168322   2025-12-14T02:20:15.0… NYPD   New York C… Noise - Resid… Loud Musi…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 29 more variables: location_type &lt;chr&gt;, incident_zip &lt;chr&gt;,</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   incident_address &lt;chr&gt;, street_name &lt;chr&gt;, address_type &lt;chr&gt;, city &lt;chr&gt;,</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   facility_type &lt;chr&gt;, status &lt;chr&gt;, due_date &lt;chr&gt;,</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   resolution_description &lt;chr&gt;, resolution_action_updated_date &lt;chr&gt;,</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   community_board &lt;chr&gt;, bbl &lt;chr&gt;, borough &lt;chr&gt;,</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   x_coordinate_state_plane &lt;chr&gt;, y_coordinate_state_plane &lt;chr&gt;,</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   open_data_channel_type &lt;chr&gt;, park_facility_name &lt;chr&gt;, …</span></span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="co"># \donttest{</span></span></span>
 <span class="r-in"><span><span class="fu">nyc_311</span><span class="op">(</span>limit <span class="op">=</span> <span class="fl">5000</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 5,000 × 43</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>    unique_key created_date          agency agency_name complaint_type descriptor</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                 <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>       <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>          <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>     </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 1</span> 66925104   2025-11-23T02:20:26.… NYPD   New York C… Noise - Stree… Loud Talk…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 2</span> 66922869   2025-11-23T02:19:42.… NYPD   New York C… Noise - Resid… Banging/P…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 3</span> 66918371   2025-11-23T02:19:33.… NYPD   New York C… Noise - Comme… Loud Musi…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 4</span> 66920775   2025-11-23T02:19:32.… DSNY   Department… Vendor Enforc… Food Vend…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 5</span> 66925096   2025-11-23T02:19:17.… NYPD   New York C… Noise - Resid… Loud Musi…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 6</span> 66918347   2025-11-23T02:19:16.… NYPD   New York C… Illegal Parki… Blocked H…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 7</span> 66926189   2025-11-23T02:19:14.… NYPD   New York C… Noise - Resid… Loud Musi…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 8</span> 66918380   2025-11-23T02:19:08.… NYPD   New York C… Noise - Resid… Banging/P…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 9</span> 66918342   2025-11-23T02:18:54.… NYPD   New York C… Illegal Parki… Blocked H…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span> 66922886   2025-11-23T02:17:45.… NYPD   New York C… Noise - Resid… Loud Musi…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 1</span> 67170118   2025-12-14T02:46:11.… DSNY   Department… Graffiti       Graffiti  </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 2</span> 67170119   2025-12-14T02:45:22.… DSNY   Department… Graffiti       Graffiti  </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 3</span> 67164190   2025-12-14T02:21:06.… NYPD   New York C… Noise - Resid… Loud Musi…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 4</span> 67166872   2025-12-14T02:20:47.… NYPD   New York C… Illegal Parki… Posted Pa…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 5</span> 67168351   2025-12-14T02:20:32.… NYPD   New York C… Noise - Resid… Loud Musi…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 6</span> 67168322   2025-12-14T02:20:15.… NYPD   New York C… Noise - Resid… Loud Musi…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 7</span> 67172430   2025-12-14T02:19:42.… NYPD   New York C… Noise - Resid… Loud Musi…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 8</span> 67164142   2025-12-14T02:19:42.… NYPD   New York C… Noise - Resid… Loud Musi…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 9</span> 67166934   2025-12-14T02:19:06.… NYPD   New York C… Noise - Resid… Loud Musi…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span> 67170977   2025-12-14T02:19:04.… NYPD   New York C… Illegal Parki… Blocked S…</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 4,990 more rows</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 37 more variables: location_type &lt;chr&gt;, incident_zip &lt;chr&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   incident_address &lt;chr&gt;, street_name &lt;chr&gt;, cross_street_1 &lt;chr&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   cross_street_2 &lt;chr&gt;, intersection_street_1 &lt;chr&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   intersection_street_2 &lt;chr&gt;, address_type &lt;chr&gt;, city &lt;chr&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   landmark &lt;chr&gt;, status &lt;chr&gt;, community_board &lt;chr&gt;, bbl &lt;chr&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   borough &lt;chr&gt;, x_coordinate_state_plane &lt;chr&gt;, …</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   incident_address &lt;chr&gt;, street_name &lt;chr&gt;, address_type &lt;chr&gt;, city &lt;chr&gt;,</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   facility_type &lt;chr&gt;, status &lt;chr&gt;, due_date &lt;chr&gt;,</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   resolution_description &lt;chr&gt;, resolution_action_updated_date &lt;chr&gt;,</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   community_board &lt;chr&gt;, bbl &lt;chr&gt;, borough &lt;chr&gt;,</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   x_coordinate_state_plane &lt;chr&gt;, y_coordinate_state_plane &lt;chr&gt;, …</span></span>
 <span class="r-in"><span><span class="fu">nyc_311</span><span class="op">(</span>filters <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>agency <span class="op">=</span> <span class="st">"NYPD"</span>, city <span class="op">=</span> <span class="st">"BROOKLYN"</span><span class="op">)</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 10,000 × 35</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>    unique_key created_date          agency agency_name complaint_type descriptor</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                 <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>       <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>          <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>     </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 1</span> 66926189   2025-11-23T02:19:14.… NYPD   New York C… Noise - Resid… Loud Musi…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 2</span> 66921737   2025-11-23T02:17:45.… NYPD   New York C… Noise - Resid… Loud Musi…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 3</span> 66922881   2025-11-23T02:16:51.… NYPD   New York C… Noise - Resid… Loud Musi…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 4</span> 66924020   2025-11-23T02:13:23.… NYPD   New York C… Noise - Stree… Loud Musi…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 5</span> 66919534   2025-11-23T02:13:15.… NYPD   New York C… Noise - Vehic… Car/Truck…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 6</span> 66918348   2025-11-23T02:10:44.… NYPD   New York C… Illegal Parki… Blocked H…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 7</span> 66922846   2025-11-23T02:09:49.… NYPD   New York C… Illegal Parki… Posted Pa…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 8</span> 66922876   2025-11-23T02:09:32.… NYPD   New York C… Noise - Resid… Loud Musi…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 9</span> 66920811   2025-11-23T02:08:54.… NYPD   New York C… Illegal Parki… Blocked C…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span> 66919506   2025-11-23T02:08:10.… NYPD   New York C… Noise - Comme… Loud Musi…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 1</span> 67165590   2025-12-14T02:17:41.… NYPD   New York C… Noise - Resid… Loud Musi…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 2</span> 67171070   2025-12-14T02:17:34.… NYPD   New York C… Noise - Resid… Loud Tele…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 3</span> 67172321   2025-12-14T02:17:07.… NYPD   New York C… Blocked Drive… No Access </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 4</span> 67170949   2025-12-14T02:15:14.… NYPD   New York C… Blocked Drive… Partial A…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 5</span> 67169651   2025-12-14T02:12:58.… NYPD   New York C… Noise - Resid… Loud Musi…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 6</span> 67168314   2025-12-14T02:12:52.… NYPD   New York C… Noise - Resid… Loud Musi…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 7</span> 67166937   2025-12-14T02:11:42.… NYPD   New York C… Noise - Resid… Loud Musi…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 8</span> 67168253   2025-12-14T02:09:47.… NYPD   New York C… Illegal Parki… Blocked H…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 9</span> 67166831   2025-12-14T02:08:57.… NYPD   New York C… Blocked Drive… Partial A…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span> 67169711   2025-12-14T02:05:19.… NYPD   New York C… Noise - Resid… Loud Musi…</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 9,990 more rows</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 29 more variables: location_type &lt;chr&gt;, incident_zip &lt;chr&gt;,</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   incident_address &lt;chr&gt;, street_name &lt;chr&gt;, cross_street_1 &lt;chr&gt;,</span></span>

@@ -75,44 +75,44 @@ and public safety interactions.</p>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co"># Quick example (fetch 10 rows)</span></span></span>
 <span class="r-in"><span><span class="va">small_sample</span> <span class="op">&lt;-</span> <span class="fu">nyc_urban_park_animal_condition</span><span class="op">(</span>limit <span class="op">=</span> <span class="fl">10</span><span class="op">)</span></span></span>
 <span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="va">small_sample</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 6 × 21</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   date_and_time_of_initial date_and_time_of_ranger borough   property   location</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>   </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">1</span> 2024-06-29T18:00:00.000  2024-06-30T10:00:00.000 Brooklyn  Marine Pa… Burnet …</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">2</span> 2024-06-29T15:10:00.000  2024-06-29T15:15:00.000 Brooklyn  Marine Pa… Burnett…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">3</span> 2024-06-29T09:20:00.000  2024-06-29T09:30:00.000 Queens    Forest Pa… K9 Korr…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">4</span> 2024-06-28T17:00:00.000  2024-06-28T18:00:00.000 Manhattan Central P… Central…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">5</span> 2024-06-28T16:40:00.000  2024-06-28T17:00:00.000 Manhattan Central P… Turtle …</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">6</span> 2024-06-28T11:30:00.000  2024-06-28T11:30:00.000 Manhattan Central P… 96st Re…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 16 more variables: species_description &lt;chr&gt;, call_source &lt;chr&gt;,</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 6 × 22</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   date_and_time_of_initial date_and_time_of_ranger borough     property location</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>       <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>   </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">1</span> 2025-06-30T18:30:00.000  2025-06-30T18:38:00.000 Brooklyn    Coney I… Brighto…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">2</span> 2025-06-30T16:00:00.000  2025-06-30T16:00:00.000 Queens      Rockawa… Beach 1…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">3</span> 2025-06-30T14:45:00.000  2025-06-30T15:00:00.000 Queens      Fort To… Buildin…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">4</span> 2025-06-30T14:00:00.000  2025-06-30T14:15:00.000 Staten Isl… Silver … Silver …</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">5</span> 2025-06-30T13:15:00.000  2025-06-30T13:20:00.000 Queens      Baisley… 155th S…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">6</span> 2025-06-30T11:00:00.000  2025-06-30T11:00:00.000 Brooklyn    Coney I… At the …</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 17 more variables: species_description &lt;chr&gt;, call_source &lt;chr&gt;,</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   species_status &lt;chr&gt;, animal_condition &lt;chr&gt;, duration_of_response &lt;chr&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   age &lt;chr&gt;, animal_class &lt;chr&gt;, final_ranger_action &lt;chr&gt;, of_animals &lt;chr&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   pep_response &lt;lgl&gt;, animal_monitored &lt;lgl&gt;, police_response &lt;lgl&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   esu_response &lt;lgl&gt;, `_311sr_number` &lt;chr&gt;, acc_intake_number &lt;chr&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   hours_spent_monitoring &lt;chr&gt;</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   age &lt;chr&gt;, animal_class &lt;chr&gt;, `_311sr_number` &lt;chr&gt;,</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   final_ranger_action &lt;chr&gt;, of_animals &lt;chr&gt;, pep_response &lt;lgl&gt;,</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   animal_monitored &lt;lgl&gt;, rehabilitator &lt;chr&gt;, police_response &lt;lgl&gt;,</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   esu_response &lt;lgl&gt;, acc_intake_number &lt;chr&gt;, hours_spent_monitoring &lt;chr&gt;</span></span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="co"># \donttest{</span></span></span>
 <span class="r-in"><span><span class="fu">nyc_urban_park_animal_condition</span><span class="op">(</span>limit <span class="op">=</span> <span class="fl">5000</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 5,000 × 22</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>    date_and_time_of_initial date_and_time_of_ranger borough   property  location</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>   </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 1</span> 2024-06-29T18:00:00.000  2024-06-30T10:00:00.000 Brooklyn  Marine P… Burnet …</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 2</span> 2024-06-29T15:10:00.000  2024-06-29T15:15:00.000 Brooklyn  Marine P… Burnett…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 3</span> 2024-06-29T09:20:00.000  2024-06-29T09:30:00.000 Queens    Forest P… K9 Korr…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 4</span> 2024-06-28T17:00:00.000  2024-06-28T18:00:00.000 Manhattan Central … Central…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 5</span> 2024-06-28T16:40:00.000  2024-06-28T17:00:00.000 Manhattan Central … Turtle …</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 6</span> 2024-06-28T11:30:00.000  2024-06-28T11:30:00.000 Manhattan Central … 96st Re…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 7</span> 2024-06-28T09:46:00.000  2024-06-28T10:00:00.000 Manhattan Central … Resevoi…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 8</span> 2024-06-28T09:00:00.000  2024-06-28T09:07:00.000 Queens    Forest P… Jackson…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 9</span> 2024-06-27T16:00:00.000  2024-06-27T04:20:00.000 Brooklyn  Betsy He… Women's…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span> 2024-06-27T16:00:00.000  2024-06-27T17:15:00.000 Manhattan Highbrid… By the …</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    date_and_time_of_initial date_and_time_of_ranger borough    property location</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>   </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 1</span> 2025-06-30T18:30:00.000  2025-06-30T18:38:00.000 Brooklyn   Coney I… Brighto…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 2</span> 2025-06-30T16:00:00.000  2025-06-30T16:00:00.000 Queens     Rockawa… Beach 1…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 3</span> 2025-06-30T14:45:00.000  2025-06-30T15:00:00.000 Queens     Fort To… Buildin…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 4</span> 2025-06-30T14:00:00.000  2025-06-30T14:15:00.000 Staten Is… Silver … Silver …</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 5</span> 2025-06-30T13:15:00.000  2025-06-30T13:20:00.000 Queens     Baisley… 155th S…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 6</span> 2025-06-30T11:00:00.000  2025-06-30T11:00:00.000 Brooklyn   Coney I… At the …</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 7</span> 2025-06-29T12:35:00.000  2025-06-29T12:40:00.000 Queens     Arverne… B44 ST/…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 8</span> 2025-06-29T11:50:00.000  2025-06-29T13:15:00.000 Queens     Forest … Sobelso…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 9</span> 2025-06-29T11:00:00.000  2025-06-29T11:10:00.000 Manhattan  Inwood … by the …</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span> 2025-06-28T16:40:00.000  2025-06-28T16:40:00.000 Queens     Forest … Across …</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 4,990 more rows</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 17 more variables: species_description &lt;chr&gt;, call_source &lt;chr&gt;,</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   species_status &lt;chr&gt;, animal_condition &lt;chr&gt;, duration_of_response &lt;chr&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   age &lt;chr&gt;, animal_class &lt;chr&gt;, final_ranger_action &lt;chr&gt;, of_animals &lt;chr&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   pep_response &lt;lgl&gt;, animal_monitored &lt;lgl&gt;, police_response &lt;lgl&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   esu_response &lt;lgl&gt;, `_311sr_number` &lt;chr&gt;, acc_intake_number &lt;chr&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   hours_spent_monitoring &lt;chr&gt;, rehabilitator &lt;chr&gt;</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   age &lt;chr&gt;, animal_class &lt;chr&gt;, `_311sr_number` &lt;chr&gt;,</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   final_ranger_action &lt;chr&gt;, of_animals &lt;chr&gt;, pep_response &lt;lgl&gt;,</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   animal_monitored &lt;lgl&gt;, rehabilitator &lt;chr&gt;, police_response &lt;lgl&gt;,</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   esu_response &lt;lgl&gt;, acc_intake_number &lt;chr&gt;, hours_spent_monitoring &lt;chr&gt;</span></span>
 <span class="r-in"><span><span class="fu">nyc_urban_park_animal_condition</span><span class="op">(</span>filters <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>age <span class="op">=</span> <span class="st">"Infant"</span><span class="op">)</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 273 × 22</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>    date_and_time_of_initial date_and_time_of_ranger borough    property location</span>
