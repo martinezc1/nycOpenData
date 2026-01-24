@@ -52,8 +52,9 @@
 <img src="logo.png" class="logo" alt=""><h1 id="nycopendata-">nycOpenData <a class="anchor" aria-label="anchor" href="#nycopendata-"></a>
 </h1>
 </div>
+<p><a href="https://CRAN.R-project.org/package=nycOpenData" class="external-link"><img src="https://www.r-pkg.org/badges/version/nycOpenData" alt="CRAN status"></a> <a href="https://CRAN.R-project.org/package=nycOpenData" class="external-link"><img src="https://cranlogs.r-pkg.org/badges/grand-total/nycOpenData" alt="CRAN downloads"></a> <a href="https://lifecycle.r-lib.org/articles/stages.html" class="external-link"><img src="https://img.shields.io/badge/lifecycle-stable-brightgreen.svg" alt="Lifecycle: stable"></a></p>
 <p><code>nycOpenData</code> provides simple, reproducible access to datasets from the<br><a href="https://opendata.cityofnewyork.us/" class="external-link">NYC Open Data</a> platform — directly from R,<br>
-with <strong>no API keys</strong> or manual downloads required.</p>
+with <strong>no API keys</strong> or manual downloads required. The package is available on <strong>CRAN</strong>.</p>
 <p>Version <strong>0.1.4</strong> now includes wrappers for <strong>30+ NYC Open Data APIs</strong>, covering:</p>
 <ul>
 <li>311 Service Requests<br>
@@ -84,7 +85,8 @@ with <strong>no API keys</strong> or manual downloads required.</p>
 <h2 id="installation">Installation<a class="anchor" aria-label="anchor" href="#installation"></a>
 </h2>
 <div class="section level3">
-<h3 id="from-cran-once-published">From <strong>CRAN</strong> (once published)<a class="anchor" aria-label="anchor" href="#from-cran-once-published"></a>
+<h3 id="from-cran">From <strong>CRAN</strong>
+<a class="anchor" aria-label="anchor" href="#from-cran"></a>
 </h3>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html" class="external-link">install.packages</a></span><span class="op">(</span><span class="st">"nycOpenData"</span><span class="op">)</span></span></code></pre></div>
@@ -101,10 +103,9 @@ with <strong>no API keys</strong> or manual downloads required.</p>
 <h2 id="example">Example<a class="anchor" aria-label="anchor" href="#example"></a>
 </h2>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://martinezc1.github.io/nycOpenData/">nycOpenData</a></span><span class="op">)</span></span></code></pre></div>
-<div class="sourceCode" id="cb4"><pre class="sourceCode R"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" tabindex="-1"></a><span class="do">## Warning: package 'nycOpenData' was built under R version 4.5.2</span></span></code></pre></div>
-<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="co"># Get 5,000 most recent 311 requests</span></span>
+<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://martinezc1.github.io/nycOpenData/">nycOpenData</a></span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># Get 5,000 most recent 311 requests</span></span>
 <span><span class="va">data</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/nyc_311.html">nyc_311</a></span><span class="op">(</span>limit <span class="op">=</span> <span class="fl">5000</span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># Filter by agency and city</span></span>
@@ -114,22 +115,22 @@ with <strong>no API keys</strong> or manual downloads required.</p>
 <span><span class="op">)</span></span>
 <span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="va">filtered</span><span class="op">)</span></span></code></pre></div>
-<div class="sourceCode" id="cb6"><pre class="sourceCode R"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" tabindex="-1"></a><span class="do">## # A tibble: 6 × 37</span></span>
-<span id="cb6-2"><a href="#cb6-2" tabindex="-1"></a><span class="do">##   unique_key created_date    agency agency_name complaint_type descriptor</span></span>
-<span id="cb6-3"><a href="#cb6-3" tabindex="-1"></a><span class="do">##   &lt;chr&gt;      &lt;chr&gt;           &lt;chr&gt;  &lt;chr&gt;       &lt;chr&gt;          &lt;chr&gt;     </span></span>
-<span id="cb6-4"><a href="#cb6-4" tabindex="-1"></a><span class="do">## 1 67573446   2026-01-23T02:… NYPD   New York C… Noise - Resid… Loud Musi…</span></span>
-<span id="cb6-5"><a href="#cb6-5" tabindex="-1"></a><span class="do">## 2 67572026   2026-01-23T02:… NYPD   New York C… Illegal Parki… Commercia…</span></span>
-<span id="cb6-6"><a href="#cb6-6" tabindex="-1"></a><span class="do">## 3 67570616   2026-01-23T02:… NYPD   New York C… Noise - Comme… Loud Musi…</span></span>
-<span id="cb6-7"><a href="#cb6-7" tabindex="-1"></a><span class="do">## 4 67570609   2026-01-23T02:… NYPD   New York C… Illegal Parki… Blocked H…</span></span>
-<span id="cb6-8"><a href="#cb6-8" tabindex="-1"></a><span class="do">## 5 67574840   2026-01-23T02:… NYPD   New York C… Noise - Resid… Loud Talk…</span></span>
-<span id="cb6-9"><a href="#cb6-9" tabindex="-1"></a><span class="do">## 6 67572050   2026-01-23T02:… NYPD   New York C… Noise - Resid… Loud Tele…</span></span>
-<span id="cb6-10"><a href="#cb6-10" tabindex="-1"></a><span class="do">## # ℹ 31 more variables: location_type &lt;chr&gt;, incident_zip &lt;chr&gt;,</span></span>
-<span id="cb6-11"><a href="#cb6-11" tabindex="-1"></a><span class="do">## #   incident_address &lt;chr&gt;, street_name &lt;chr&gt;, cross_street_1 &lt;chr&gt;,</span></span>
-<span id="cb6-12"><a href="#cb6-12" tabindex="-1"></a><span class="do">## #   cross_street_2 &lt;chr&gt;, intersection_street_1 &lt;chr&gt;,</span></span>
-<span id="cb6-13"><a href="#cb6-13" tabindex="-1"></a><span class="do">## #   intersection_street_2 &lt;chr&gt;, address_type &lt;chr&gt;, city &lt;chr&gt;,</span></span>
-<span id="cb6-14"><a href="#cb6-14" tabindex="-1"></a><span class="do">## #   landmark &lt;chr&gt;, status &lt;chr&gt;, community_board &lt;chr&gt;,</span></span>
-<span id="cb6-15"><a href="#cb6-15" tabindex="-1"></a><span class="do">## #   council_district &lt;chr&gt;, police_precinct &lt;chr&gt;, bbl &lt;chr&gt;,</span></span>
-<span id="cb6-16"><a href="#cb6-16" tabindex="-1"></a><span class="do">## #   borough &lt;chr&gt;, x_coordinate_state_plane &lt;chr&gt;, …</span></span></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode R"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" tabindex="-1"></a><span class="do">## # A tibble: 6 × 37</span></span>
+<span id="cb4-2"><a href="#cb4-2" tabindex="-1"></a><span class="do">##   unique_key created_date    agency agency_name complaint_type descriptor</span></span>
+<span id="cb4-3"><a href="#cb4-3" tabindex="-1"></a><span class="do">##   &lt;chr&gt;      &lt;chr&gt;           &lt;chr&gt;  &lt;chr&gt;       &lt;chr&gt;          &lt;chr&gt;     </span></span>
+<span id="cb4-4"><a href="#cb4-4" tabindex="-1"></a><span class="do">## 1 67573446   2026-01-23T02:… NYPD   New York C… Noise - Resid… Loud Musi…</span></span>
+<span id="cb4-5"><a href="#cb4-5" tabindex="-1"></a><span class="do">## 2 67572026   2026-01-23T02:… NYPD   New York C… Illegal Parki… Commercia…</span></span>
+<span id="cb4-6"><a href="#cb4-6" tabindex="-1"></a><span class="do">## 3 67570616   2026-01-23T02:… NYPD   New York C… Noise - Comme… Loud Musi…</span></span>
+<span id="cb4-7"><a href="#cb4-7" tabindex="-1"></a><span class="do">## 4 67570609   2026-01-23T02:… NYPD   New York C… Illegal Parki… Blocked H…</span></span>
+<span id="cb4-8"><a href="#cb4-8" tabindex="-1"></a><span class="do">## 5 67574840   2026-01-23T02:… NYPD   New York C… Noise - Resid… Loud Talk…</span></span>
+<span id="cb4-9"><a href="#cb4-9" tabindex="-1"></a><span class="do">## 6 67572050   2026-01-23T02:… NYPD   New York C… Noise - Resid… Loud Tele…</span></span>
+<span id="cb4-10"><a href="#cb4-10" tabindex="-1"></a><span class="do">## # ℹ 31 more variables: location_type &lt;chr&gt;, incident_zip &lt;chr&gt;,</span></span>
+<span id="cb4-11"><a href="#cb4-11" tabindex="-1"></a><span class="do">## #   incident_address &lt;chr&gt;, street_name &lt;chr&gt;, cross_street_1 &lt;chr&gt;,</span></span>
+<span id="cb4-12"><a href="#cb4-12" tabindex="-1"></a><span class="do">## #   cross_street_2 &lt;chr&gt;, intersection_street_1 &lt;chr&gt;,</span></span>
+<span id="cb4-13"><a href="#cb4-13" tabindex="-1"></a><span class="do">## #   intersection_street_2 &lt;chr&gt;, address_type &lt;chr&gt;, city &lt;chr&gt;,</span></span>
+<span id="cb4-14"><a href="#cb4-14" tabindex="-1"></a><span class="do">## #   landmark &lt;chr&gt;, status &lt;chr&gt;, community_board &lt;chr&gt;,</span></span>
+<span id="cb4-15"><a href="#cb4-15" tabindex="-1"></a><span class="do">## #   council_district &lt;chr&gt;, police_precinct &lt;chr&gt;, bbl &lt;chr&gt;,</span></span>
+<span id="cb4-16"><a href="#cb4-16" tabindex="-1"></a><span class="do">## #   borough &lt;chr&gt;, x_coordinate_state_plane &lt;chr&gt;, …</span></span></code></pre></div>
 <hr>
 </div>
 <div class="section level2">

@@ -1,10 +1,18 @@
 # nycOpenData
 
+[![CRAN
+status](https://www.r-pkg.org/badges/version/nycOpenData)](https://CRAN.R-project.org/package=nycOpenData)
+[![CRAN
+downloads](https://cranlogs.r-pkg.org/badges/grand-total/nycOpenData)](https://CRAN.R-project.org/package=nycOpenData)
+[![Lifecycle:
+stable](https://img.shields.io/badge/lifecycle-stable-brightgreen.svg)](https://lifecycle.r-lib.org/articles/stages.html)
+
 `nycOpenData` provides simple, reproducible access to datasets from
 the  
 [NYC Open Data](https://opendata.cityofnewyork.us/) platform — directly
 from R,  
-with **no API keys** or manual downloads required.
+with **no API keys** or manual downloads required. The package is
+available on **CRAN**.
 
 Version **0.1.4** now includes wrappers for **30+ NYC Open Data APIs**,
 covering:
@@ -29,7 +37,7 @@ via
 
 ## Installation
 
-### From **CRAN** (once published)
+### From **CRAN**
 
 ``` r
 install.packages("nycOpenData")
@@ -47,13 +55,7 @@ devtools::install_github("martinezc1/nycOpenData")
 
 ``` r
 library(nycOpenData)
-```
 
-``` R
-## Warning: package 'nycOpenData' was built under R version 4.5.2
-```
-
-``` r
 # Get 5,000 most recent 311 requests
 data <- nyc_311(limit = 5000)
 
