@@ -2,13 +2,13 @@
 output: github_document
 ---
 
-# nycOpenData <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f7/NYC_logo.svg/64px-NYC_logo.svg.png" align="right" width="60"/>
+# nycOpenData <img src="man/figures/logo.png" alt="nycOpenData logo" width="72" align="right" />
 
 `nycOpenData` provides simple, reproducible access to datasets from the  
 [NYC Open Data](https://opendata.cityofnewyork.us/) platform — directly from R,  
 with **no API keys** or manual downloads required.
 
-Version **0.1.2** now includes wrappers for **15+ NYC Open Data APIs**, covering:
+Version **0.1.4** now includes wrappers for **30+ NYC Open Data APIs**, covering:
 
 - 311 Service Requests  
 - For-Hire Vehicles (FHV)  

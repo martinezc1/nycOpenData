@@ -54,6 +54,6 @@ if (curl::has_internet()) {
 #> Try again later or increase `timeout_sec`.
 #> 
 #> Underlying error: Timeout was reached [data.cityofnewyork.us]:
-#> Operation timed out after 60002 milliseconds with 0 bytes received
+#> Operation timed out after 60001 milliseconds with 0 bytes received
 # }
 ```

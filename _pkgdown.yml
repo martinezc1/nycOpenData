@@ -1,4 +1,5 @@
 url: https://martinezc1.github.io/nycOpenData/
+logo: man/figures/logo.png
 template:
   bootstrap: 5
 
