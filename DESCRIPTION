@@ -1,7 +1,7 @@
 Package: nycOpenData
 Type: Package
 Title: Convenient Access to NYC Open Data API Endpoints
-Version: 0.1.2
+Version: 0.1.4
 Authors@R: 
     person("Christian", "Martinez", 
            email = "c.martinez0@outlook.com", 
@@ -19,10 +19,10 @@ RoxygenNote: 7.3.3
 Imports: 
     httr,
     jsonlite,
-    tibble
+    tibble,
+    curl
 Suggests: 
     knitr,
     rmarkdown
-URL: https://github.com/martinezc1/nycOpenData, https://martinezc1.github.io/nycOpenData/
+URL: URL: https://martinezc1.github.io/nycOpenData/, https://github.com/martinezc1/nycOpenData
 BugReports: https://github.com/martinezc1/nycOpenData/issues
-VignetteBuilder: knitr

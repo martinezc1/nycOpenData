@@ -1,5 +1,5 @@
 
-# nycOpenData <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f7/NYC_logo.svg/64px-NYC_logo.svg.png" align="right" width="60"/>
+# nycOpenData <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f7/NYC_logo.svg/64px-NYC_logo.svg.png" alt="NYC logo">
 
 `nycOpenData` provides simple, reproducible access to datasets from
 the  
