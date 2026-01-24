@@ -6,7 +6,11 @@ Open Data.
 ## Usage
 
 ``` r
-nyc_restaurant_inspection_results(limit = 10000, filters = list())
+nyc_restaurant_inspection_results(
+  limit = 10000,
+  filters = list(),
+  timeout_sec = 30
+)
 ```
 
 ## Source
@@ -23,6 +27,10 @@ NYC Open Data:
 - filters:
 
   Optional list of field-value pairs to filter results.
+
+- timeout_sec:
+
+  Request timeout in seconds (default = 30).
 
 ## Value
 
@@ -59,48 +67,17 @@ for a summary of data fields and allowable values.
 ## Examples
 
 ``` r
-# Quick example (fetch 10 rows)
-small_sample <- nyc_restaurant_inspection_results(limit = 10)
-head(small_sample)
-#> # A tibble: 6 × 28
-#>   camis    dba           boro  building street zipcode phone cuisine_description
-#>   <chr>    <chr>         <chr> <chr>    <chr>  <chr>   <chr> <chr>              
-#> 1 50096479 TACO BELL     Manh… 246      EAST … 10010   6468… Tex-Mex            
-#> 2 50147024 KINGS KITCHE… Broo… 158      LEWIS… 11221   7189… Chinese            
-#> 3 50167644 AL HIRSCHFEL… Manh… 302      W 45T… 10036   9142… Nuts/Confectionary 
-#> 4 50138596 MIKADO        Broo… 177      ATLAN… 11201   2123… Japanese           
-#> 5 40510647 ROTI CORNER … Quee… 18018    HILLS… 11432   7186… Caribbean          
-#> 6 50167730 SURAM - SERA… Manh… 132      W 31S… 10001   9173… Fusion             
-#> # ℹ 20 more variables: inspection_date <chr>, action <chr>,
-#> #   violation_code <chr>, violation_description <chr>, critical_flag <chr>,
-#> #   score <chr>, record_date <chr>, inspection_type <chr>, latitude <chr>,
-#> #   longitude <chr>, community_board <chr>, council_district <chr>,
-#> #   census_tract <chr>, bin <chr>, bbl <chr>, nta <chr>, grade <chr>,
-#> #   grade_date <chr>, location.type <chr>, location.coordinates <list>
-
+# Examples that hit the live NYC Open Data API are wrapped so CRAN checks
+# do not fail when the network is unavailable or slow.
 # \donttest{
-nyc_restaurant_inspection_results(limit = 5000)
-#> # A tibble: 5,000 × 28
-#>    camis    dba          boro  building street zipcode phone cuisine_description
-#>    <chr>    <chr>        <chr> <chr>    <chr>  <chr>   <chr> <chr>              
-#>  1 50096479 TACO BELL    Manh… 246      EAST … 10010   6468… Tex-Mex            
-#>  2 50147024 KINGS KITCH… Broo… 158      LEWIS… 11221   7189… Chinese            
-#>  3 50167644 AL HIRSCHFE… Manh… 302      W 45T… 10036   9142… Nuts/Confectionary 
-#>  4 50138596 MIKADO       Broo… 177      ATLAN… 11201   2123… Japanese           
-#>  5 40510647 ROTI CORNER… Quee… 18018    HILLS… 11432   7186… Caribbean          
-#>  6 50167730 SURAM - SER… Manh… 132      W 31S… 10001   9173… Fusion             
-#>  7 50138596 MIKADO       Broo… 177      ATLAN… 11201   2123… Japanese           
-#>  8 41597047 Z-TWO DINER… Stat… 2925     VETER… 10309   7183… American           
-#>  9 50166327 WABI NORI    Manh… 115      ESSEX… 10002   9176… Japanese           
-#> 10 50125120 TAIM MEDITE… Broo… 11       HOYT … 11201   6782… Mediterranean      
-#> # ℹ 4,990 more rows
-#> # ℹ 20 more variables: inspection_date <chr>, action <chr>,
-#> #   violation_code <chr>, violation_description <chr>, critical_flag <chr>,
-#> #   score <chr>, record_date <chr>, inspection_type <chr>, latitude <chr>,
-#> #   longitude <chr>, community_board <chr>, council_district <chr>,
-#> #   census_tract <chr>, bin <chr>, bbl <chr>, nta <chr>, grade <chr>,
-#> #   grade_date <chr>, location.type <chr>, location.coordinates <list>
-nyc_restaurant_inspection_results(filters = list(boro = "Queens"))
+if (curl::has_internet()) {
+  # Quick example (fetch 10 rows)
+  small_sample <- nyc_restaurant_inspection_results(limit = 10)
+  head(small_sample)
+
+  nyc_restaurant_inspection_results(limit = 5000)
+  nyc_restaurant_inspection_results(filters = list(boro = "Queens"))
+}
 #> # A tibble: 10,000 × 28
 #>    camis    dba          boro  building street zipcode phone cuisine_description
 #>    <chr>    <chr>        <chr> <chr>    <chr>  <chr>   <chr> <chr>              

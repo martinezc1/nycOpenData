@@ -38,7 +38,7 @@
 
     <div class="section level2">
     <h2 id="ref-usage">Usage<a class="anchor" aria-label="anchor" href="#ref-usage"></a></h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">nyc_city_record</span><span class="op">(</span>limit <span class="op">=</span> <span class="fl">10000</span>, filters <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">nyc_city_record</span><span class="op">(</span>limit <span class="op">=</span> <span class="fl">10000</span>, filters <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span><span class="op">)</span>, timeout_sec <span class="op">=</span> <span class="fl">30</span><span class="op">)</span></span></code></pre></div>
     </div>
 
     <div class="section level2">
@@ -56,6 +56,10 @@
 <dt id="arg-filters">filters<a class="anchor" aria-label="anchor" href="#arg-filters"></a></dt>
 <dd><p>Optional list of field-value pairs to filter results.</p></dd>
 
+
+<dt id="arg-timeout-sec">timeout_sec<a class="anchor" aria-label="anchor" href="#arg-timeout-sec"></a></dt>
+<dd><p>Request timeout in seconds (default = 30).</p></dd>
+
 </dl></div>
     <div class="section level2">
     <h2 id="value">Value<a class="anchor" aria-label="anchor" href="#value"></a></h2>
@@ -71,62 +75,30 @@ awards and official rules proposed and adopted by city agencies.</p>
 
     <div class="section level2">
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co"># Quick example (fetch 10 rows)</span></span></span>
-<span class="r-in"><span><span class="va">small_sample</span> <span class="op">&lt;-</span> <span class="fu">nyc_city_record</span><span class="op">(</span>limit <span class="op">=</span> <span class="fl">10</span><span class="op">)</span></span></span>
-<span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="va">small_sample</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 6 × 25</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   request_id  start_date             end_date agency_name type_of_notice_descr…¹</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>       <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                  <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>       <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                 </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">1</span> 20260116008 2026-01-23T00:00:00.0… 2026-01… Education   Award                 </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">2</span> 20260121002 2026-01-23T00:00:00.0… 2026-01… Housing Au… Notice                </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">3</span> 20260115017 2026-01-23T00:00:00.0… 2026-01… Parks and … Public Hearings       </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">4</span> 20260105003 2026-01-23T00:00:00.0… 2026-01… Franchise … Meeting               </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">5</span> 20260114032 2026-01-23T00:00:00.0… 2026-01… Health and… Public Comment        </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">6</span> 20260120026 2026-01-23T00:00:00.0… 2026-01… Parks and … Solicitation          </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ abbreviated name: ¹​type_of_notice_description</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 20 more variables: category_description &lt;chr&gt;, short_title &lt;chr&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   selection_method_description &lt;chr&gt;, section_name &lt;chr&gt;, pin &lt;chr&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   contact_name &lt;chr&gt;, contact_phone &lt;chr&gt;, email &lt;chr&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   contract_amount &lt;chr&gt;, vendor_name &lt;chr&gt;, vendor_address &lt;chr&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   additional_description_1 &lt;chr&gt;, event_date &lt;chr&gt;, street_address_1 &lt;chr&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   street_address_2 &lt;chr&gt;, city &lt;chr&gt;, state &lt;chr&gt;, zip_code &lt;chr&gt;, …</span></span>
-<span class="r-in"><span></span></span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co"># Examples that hit the live NYC Open Data API are wrapped so CRAN checks</span></span></span>
+<span class="r-in"><span><span class="co"># do not fail when the network is unavailable or slow.</span></span></span>
 <span class="r-in"><span><span class="co"># \donttest{</span></span></span>
-<span class="r-in"><span><span class="fu">nyc_city_record</span><span class="op">(</span>limit <span class="op">=</span> <span class="fl">5000</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 5,000 × 29</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>    request_id  start_date            end_date agency_name type_of_notice_descr…¹</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>       <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                 <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>       <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                 </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 1</span> 20260116008 2026-01-23T00:00:00.… 2026-01… Education   Award                 </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 2</span> 20260121002 2026-01-23T00:00:00.… 2026-01… Housing Au… Notice                </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 3</span> 20260115017 2026-01-23T00:00:00.… 2026-01… Parks and … Public Hearings       </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 4</span> 20260105003 2026-01-23T00:00:00.… 2026-01… Franchise … Meeting               </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 5</span> 20260114032 2026-01-23T00:00:00.… 2026-01… Health and… Public Comment        </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 6</span> 20260120026 2026-01-23T00:00:00.… 2026-01… Parks and … Solicitation          </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 7</span> 20260116014 2026-01-23T00:00:00.… 2026-01… Citywide A… Award                 </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 8</span> 20260116006 2026-01-23T00:00:00.… 2026-01… Dept. of S… Award                 </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 9</span> 20260116013 2026-01-23T00:00:00.… 2026-01… Law Depart… Award                 </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span> 20260116003 2026-01-23T00:00:00.… 2026-01… Homeless S… Intent to Award       </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 4,990 more rows</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ abbreviated name: ¹​type_of_notice_description</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 24 more variables: category_description &lt;chr&gt;, short_title &lt;chr&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   selection_method_description &lt;chr&gt;, section_name &lt;chr&gt;, pin &lt;chr&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   contact_name &lt;chr&gt;, contact_phone &lt;chr&gt;, email &lt;chr&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   contract_amount &lt;chr&gt;, vendor_name &lt;chr&gt;, vendor_address &lt;chr&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   additional_description_1 &lt;chr&gt;, event_date &lt;chr&gt;, street_address_1 &lt;chr&gt;, …</span></span>
-<span class="r-in"><span><span class="fu">nyc_city_record</span><span class="op">(</span>filters <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>short_title <span class="op">=</span> <span class="st">"APPOINTED"</span><span class="op">)</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="kw">if</span> <span class="op">(</span><span class="fu">curl</span><span class="fu">::</span><span class="fu"><a href="https://jeroen.r-universe.dev/curl/reference/nslookup.html" class="external-link">has_internet</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span></span></span>
+<span class="r-in"><span>  <span class="co"># Quick example (fetch 10 rows)</span></span></span>
+<span class="r-in"><span>  <span class="va">small_sample</span> <span class="op">&lt;-</span> <span class="fu">nyc_city_record</span><span class="op">(</span>limit <span class="op">=</span> <span class="fl">10</span><span class="op">)</span></span></span>
+<span class="r-in"><span>  <span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="va">small_sample</span><span class="op">)</span></span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span>  <span class="fu">nyc_city_record</span><span class="op">(</span>limit <span class="op">=</span> <span class="fl">5000</span><span class="op">)</span></span></span>
+<span class="r-in"><span>  <span class="fu">nyc_city_record</span><span class="op">(</span>filters <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>short_title <span class="op">=</span> <span class="st">"APPOINTED"</span><span class="op">)</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="op">}</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 10,000 × 7</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>    request_id start_date           end_date agency_name short_title section_name</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>       <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>       <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>       </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 1</span> 951950     2025-11-07T00:00:00… 2025-10… DEPARTMENT… APPOINTED   Changes in …</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 2</span> 951790     2025-11-07T00:00:00… 2025-10… MAYORS OFF… APPOINTED   Changes in …</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 3</span> 951921     2025-11-07T00:00:00… 2025-10… TAXI &amp; LIM… APPOINTED   Changes in …</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 4</span> 951717     2025-11-07T00:00:00… 2025-10… HRA/DEPT O… APPOINTED   Changes in …</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 5</span> 951798     2025-11-07T00:00:00… 2025-10… FIRE DEPAR… APPOINTED   Changes in …</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 6</span> 951754     2025-11-07T00:00:00… 2025-10… FIRE DEPAR… APPOINTED   Changes in …</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 7</span> 952023     2025-11-07T00:00:00… 2025-10… FIRE DEPAR… APPOINTED   Changes in …</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 8</span> 951867     2025-11-07T00:00:00… 2025-10… FIRE DEPAR… APPOINTED   Changes in …</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 9</span> 951835     2025-11-07T00:00:00… 2025-10… DEPT. OF H… APPOINTED   Changes in …</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span> 951769     2025-11-07T00:00:00… 2025-10… FIRE DEPAR… APPOINTED   Changes in …</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 1</span> 952751     2025-11-07T00:00:00… 2025-10… BOARD OF E… APPOINTED   Changes in …</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 2</span> 952782     2025-11-07T00:00:00… 2025-01… BOARD OF E… APPOINTED   Changes in …</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 3</span> 952907     2025-11-07T00:00:00… 2025-01… BOARD OF E… APPOINTED   Changes in …</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 4</span> 952788     2025-11-07T00:00:00… 2025-01… BOARD OF E… APPOINTED   Changes in …</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 5</span> 952921     2025-11-07T00:00:00… 2025-01… BOARD OF E… APPOINTED   Changes in …</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 6</span> 952975     2025-11-07T00:00:00… 2025-01… BOARD OF E… APPOINTED   Changes in …</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 7</span> 952871     2025-11-07T00:00:00… 2025-01… BOARD OF E… APPOINTED   Changes in …</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 8</span> 952858     2025-11-07T00:00:00… 2025-01… BOARD OF E… APPOINTED   Changes in …</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 9</span> 952687     2025-11-07T00:00:00… 2025-01… BOARD OF E… APPOINTED   Changes in …</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span> 952703     2025-11-07T00:00:00… 2025-01… BOARD OF E… APPOINTED   Changes in …</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 9,990 more rows</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 1 more variable: additional_description_1 &lt;chr&gt;</span></span>
 <span class="r-in"><span><span class="co"># }</span></span></span>

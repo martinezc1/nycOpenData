@@ -5,7 +5,7 @@ Downloads historical permitted event data from NYC Open Data.
 ## Usage
 
 ``` r
-nyc_permit_events_historic(limit = 10000, filters = list())
+nyc_permit_events_historic(limit = 10000, filters = list(), timeout_sec = 60)
 ```
 
 ## Source
@@ -22,6 +22,10 @@ NYC Open Data: \<https://data.cityofnewyork.us/resource/bkfu-528j\>
 
   Optional list of field-value pairs to filter results.
 
+- timeout_sec:
+
+  Request timeout in seconds (default = 60).
+
 ## Value
 
 A tibble containing NYC Permitted Event Information - Historical data.
@@ -35,15 +39,21 @@ including parades, festivals, street fairs, and other public gatherings.
 ## Examples
 
 ``` r
-if (FALSE) { # \dontrun{
-# Fetch a small sample
-small_sample <- nyc_permit_events_historic(limit = 10)
-head(small_sample)
+# Examples that hit the live NYC Open Data API are wrapped so CRAN checks
+# do not fail when the network is unavailable or slow.
+# \donttest{
+if (curl::has_internet()) {
+  # Quick example (fetch 2 rows)
+  small_sample <- nyc_permit_events_historic(limit = 2)
+  small_sample
 
-# Larger pull (will depend on API stability)
-nyc_permit_events_historic(limit = 5000)
-
-# With a filter
-nyc_permit_events_historic(filters = list(event_type = "Construction"))
-} # }
+  nyc_permit_events_historic(limit = 5000)
+  nyc_permit_events_historic(filters = list(event_type = "Construction"))
+}
+#> Error: NYC Open Data request failed (network unavailable or API slow).
+#> Try again later or increase `timeout_sec`.
+#> 
+#> Underlying error: Timeout was reached [data.cityofnewyork.us]:
+#> Operation timed out after 60002 milliseconds with 0 bytes received
+# }
 ```

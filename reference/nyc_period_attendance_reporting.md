@@ -6,7 +6,11 @@ Open Data.
 ## Usage
 
 ``` r
-nyc_period_attendance_reporting(limit = 10000, filters = list())
+nyc_period_attendance_reporting(
+  limit = 10000,
+  filters = list(),
+  timeout_sec = 30
+)
 ```
 
 ## Source
@@ -24,6 +28,10 @@ NYC Open Data:
 
   Optional list of field-value pairs to filter results.
 
+- timeout_sec:
+
+  Request timeout in seconds (default = 30).
+
 ## Value
 
 A tibble containing Period Attendance data.
@@ -38,49 +46,17 @@ home/hospital, CBO UPK.
 ## Examples
 
 ``` r
-# Quick example (fetch 10 rows)
-small_sample <- nyc_period_attendance_reporting(limit = 10)
-head(small_sample)
-#> # A tibble: 6 × 39
-#>   boro  year      period district level school grade_code instruction_days
-#>   <chr> <chr>     <chr>  <chr>    <chr> <chr>  <chr>      <chr>           
-#> 1 NA    NA        NA     NA       NA    NA     NA         NA              
-#> 2 Q     2015-2016 3      28       220   217    0          17              
-#> 3 Q     2015-2016 1      28       340   328    0          12              
-#> 4 M     2015-2016 1      2        340   586    0          12              
-#> 5 K     2015-2016 3      18       110   244    0          17              
-#> 6 K     2015-2016 2      21       110   212    0          21              
-#> # ℹ 31 more variables: religious_holydays <chr>, classes <chr>,
-#> #   register_last_report <chr>, admissions <chr>, present_register <chr>,
-#> #   aggregate_register <chr>, aggregate_attendance <chr>,
-#> #   holyday_counter <chr>, register_01 <chr>, attendance_01 <chr>,
-#> #   register_02 <chr>, attendance_02 <chr>, register_03 <chr>,
-#> #   attendance_03 <chr>, register_04 <chr>, attendance_04 <chr>,
-#> #   register_05 <chr>, attendance_05 <chr>, register_06 <chr>, …
-
+# Examples that hit the live NYC Open Data API are wrapped so CRAN checks
+# do not fail when the network is unavailable or slow.
 # \donttest{
-nyc_period_attendance_reporting(limit = 5000)
-#> # A tibble: 5,000 × 39
-#>    boro  year      period district level school grade_code instruction_days
-#>    <chr> <chr>     <chr>  <chr>    <chr> <chr>  <chr>      <chr>           
-#>  1 NA    NA        NA     NA       NA    NA     NA         NA              
-#>  2 Q     2015-2016 3      28       220   217    0          17              
-#>  3 Q     2015-2016 1      28       340   328    0          12              
-#>  4 M     2015-2016 1      2        340   586    0          12              
-#>  5 K     2015-2016 3      18       110   244    0          17              
-#>  6 K     2015-2016 2      21       110   212    0          21              
-#>  7 Q     2015-2016 1      29       340   326    0          12              
-#>  8 M     2015-2016 2      2        340   425    0          21              
-#>  9 R     2015-2016 3      31       110   3      0          17              
-#> 10 K     2015-2016 2      17       220   354    0          21              
-#> # ℹ 4,990 more rows
-#> # ℹ 31 more variables: religious_holydays <chr>, classes <chr>,
-#> #   register_last_report <chr>, admissions <chr>, present_register <chr>,
-#> #   aggregate_register <chr>, aggregate_attendance <chr>,
-#> #   holyday_counter <chr>, register_01 <chr>, attendance_01 <chr>,
-#> #   register_02 <chr>, attendance_02 <chr>, register_03 <chr>,
-#> #   attendance_03 <chr>, register_04 <chr>, attendance_04 <chr>, …
-nyc_period_attendance_reporting(filters = list(boro = "X"))
+if (curl::has_internet()) {
+  # Quick example (fetch 10 rows)
+  small_sample <- nyc_period_attendance_reporting(limit = 10)
+  head(small_sample)
+
+  nyc_period_attendance_reporting(limit = 5000)
+  nyc_period_attendance_reporting(filters = list(boro = "X"))
+}
 #> # A tibble: 5,760 × 39
 #>    boro  year      period district level school grade_code instruction_days
 #>    <chr> <chr>     <chr>  <chr>    <chr> <chr>  <chr>      <chr>           

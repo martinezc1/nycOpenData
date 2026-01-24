@@ -6,7 +6,11 @@ Data.
 ## Usage
 
 ``` r
-nyc_urban_park_animal_condition(limit = 10000, filters = list())
+nyc_urban_park_animal_condition(
+  limit = 10000,
+  filters = list(),
+  timeout_sec = 30
+)
 ```
 
 ## Source
@@ -23,6 +27,10 @@ NYC Open Data: \<https://data.cityofnewyork.us/resource/fuhs-xmg2\>
 
   Optional list of field-value pairs to filter results.
 
+- timeout_sec:
+
+  Request timeout in seconds (default = 30).
+
 ## Value
 
 A tibble containing Urban Park Ranger Animal Condition Response data.
@@ -37,48 +45,17 @@ monitor urban wildlife trends and public safety interactions.
 ## Examples
 
 ``` r
-# Quick example (fetch 10 rows)
-small_sample <- nyc_urban_park_animal_condition(limit = 10)
-head(small_sample)
-#> # A tibble: 6 × 22
-#>   date_and_time_of_initial date_and_time_of_ranger borough     property location
-#>   <chr>                    <chr>                   <chr>       <chr>    <chr>   
-#> 1 2025-06-30T18:30:00.000  2025-06-30T18:38:00.000 Brooklyn    Coney I… Brighto…
-#> 2 2025-06-30T16:00:00.000  2025-06-30T16:00:00.000 Queens      Rockawa… Beach 1…
-#> 3 2025-06-30T14:45:00.000  2025-06-30T15:00:00.000 Queens      Fort To… Buildin…
-#> 4 2025-06-30T14:00:00.000  2025-06-30T14:15:00.000 Staten Isl… Silver … Silver …
-#> 5 2025-06-30T13:15:00.000  2025-06-30T13:20:00.000 Queens      Baisley… 155th S…
-#> 6 2025-06-30T11:00:00.000  2025-06-30T11:00:00.000 Brooklyn    Coney I… At the …
-#> # ℹ 17 more variables: species_description <chr>, call_source <chr>,
-#> #   species_status <chr>, animal_condition <chr>, duration_of_response <chr>,
-#> #   age <chr>, animal_class <chr>, `_311sr_number` <chr>,
-#> #   final_ranger_action <chr>, of_animals <chr>, pep_response <lgl>,
-#> #   animal_monitored <lgl>, rehabilitator <chr>, police_response <lgl>,
-#> #   esu_response <lgl>, acc_intake_number <chr>, hours_spent_monitoring <chr>
-
+# Examples that hit the live NYC Open Data API are wrapped so CRAN checks
+# do not fail when the network is unavailable or slow.
 # \donttest{
-nyc_urban_park_animal_condition(limit = 5000)
-#> # A tibble: 5,000 × 22
-#>    date_and_time_of_initial date_and_time_of_ranger borough    property location
-#>    <chr>                    <chr>                   <chr>      <chr>    <chr>   
-#>  1 2025-06-30T18:30:00.000  2025-06-30T18:38:00.000 Brooklyn   Coney I… Brighto…
-#>  2 2025-06-30T16:00:00.000  2025-06-30T16:00:00.000 Queens     Rockawa… Beach 1…
-#>  3 2025-06-30T14:45:00.000  2025-06-30T15:00:00.000 Queens     Fort To… Buildin…
-#>  4 2025-06-30T14:00:00.000  2025-06-30T14:15:00.000 Staten Is… Silver … Silver …
-#>  5 2025-06-30T13:15:00.000  2025-06-30T13:20:00.000 Queens     Baisley… 155th S…
-#>  6 2025-06-30T11:00:00.000  2025-06-30T11:00:00.000 Brooklyn   Coney I… At the …
-#>  7 2025-06-29T12:35:00.000  2025-06-29T12:40:00.000 Queens     Arverne… B44 ST/…
-#>  8 2025-06-29T11:50:00.000  2025-06-29T13:15:00.000 Queens     Forest … Sobelso…
-#>  9 2025-06-29T11:00:00.000  2025-06-29T11:10:00.000 Manhattan  Inwood … by the …
-#> 10 2025-06-28T16:40:00.000  2025-06-28T16:40:00.000 Queens     Forest … Across …
-#> # ℹ 4,990 more rows
-#> # ℹ 17 more variables: species_description <chr>, call_source <chr>,
-#> #   species_status <chr>, animal_condition <chr>, duration_of_response <chr>,
-#> #   age <chr>, animal_class <chr>, `_311sr_number` <chr>,
-#> #   final_ranger_action <chr>, of_animals <chr>, pep_response <lgl>,
-#> #   animal_monitored <lgl>, rehabilitator <chr>, police_response <lgl>,
-#> #   esu_response <lgl>, acc_intake_number <chr>, hours_spent_monitoring <chr>
-nyc_urban_park_animal_condition(filters = list(age = "Infant"))
+if (curl::has_internet()) {
+  # Quick example (fetch 10 rows)
+  small_sample <- nyc_urban_park_animal_condition(limit = 10)
+  head(small_sample)
+
+  nyc_urban_park_animal_condition(limit = 5000)
+  nyc_urban_park_animal_condition(filters = list(age = "Infant"))
+}
 #> # A tibble: 273 × 22
 #>    date_and_time_of_initial date_and_time_of_ranger borough    property location
 #>    <chr>                    <chr>                   <chr>      <chr>    <chr>   

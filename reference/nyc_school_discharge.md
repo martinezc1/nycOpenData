@@ -6,7 +6,7 @@ Data.
 ## Usage
 
 ``` r
-nyc_school_discharge(limit = 10000, filters = list())
+nyc_school_discharge(limit = 10000, filters = list(), timeout_sec = 30)
 ```
 
 ## Source
@@ -23,6 +23,10 @@ NYC Open Data: \<https://data.cityofnewyork.us/resource/a2gn-nyzs\>
 
   Optional list of field-value pairs to filter results.
 
+- timeout_sec:
+
+  Request timeout in seconds (default = 30).
+
 ## Value
 
 A tibble containing School Discharge Reporting (Local Law 42) data.
@@ -38,40 +42,17 @@ student outcomes across the city.
 ## Examples
 
 ``` r
-# Quick example (fetch 10 rows)
-small_sample <- nyc_school_discharge(limit = 10)
-head(small_sample)
-#> # A tibble: 6 × 9
-#>   year      report_category school_level  geographic_unit school_name           
-#>   <chr>     <chr>           <chr>         <chr>           <chr>                 
-#> 1 2022-2023 School          Middle School 32K562          EVERGREEN MS FOR URBA…
-#> 2 2022-2023 School          Middle School 75K036          PS 36                 
-#> 3 2022-2023 School          Middle School 75K036          PS 36                 
-#> 4 2022-2023 School          Middle School 75K140          PS K140               
-#> 5 2022-2023 School          Middle School 75K140          PS K140               
-#> 6 2022-2023 School          Middle School 75K141          PS K141               
-#> # ℹ 4 more variables: student_category <chr>, discharge_category <chr>,
-#> #   count_of_students <chr>, total_enrolled_students <chr>
-
+# Examples that hit the live NYC Open Data API are wrapped so CRAN checks
+# do not fail when the network is unavailable or slow.
 # \donttest{
-nyc_school_discharge(limit = 5000)
-#> # A tibble: 5,000 × 9
-#>    year      report_category school_level  geographic_unit school_name          
-#>    <chr>     <chr>           <chr>         <chr>           <chr>                
-#>  1 2022-2023 School          Middle School 32K562          EVERGREEN MS FOR URB…
-#>  2 2022-2023 School          Middle School 75K036          PS 36                
-#>  3 2022-2023 School          Middle School 75K036          PS 36                
-#>  4 2022-2023 School          Middle School 75K140          PS K140              
-#>  5 2022-2023 School          Middle School 75K140          PS K140              
-#>  6 2022-2023 School          Middle School 75K141          PS K141              
-#>  7 2022-2023 School          Middle School 75K231          PS K231              
-#>  8 2022-2023 School          Middle School 75K368          PS 368               
-#>  9 2022-2023 School          Middle School 75K369          PS K369  COY L COX S…
-#> 10 2022-2023 School          Middle School 75K369          PS K369  COY L COX S…
-#> # ℹ 4,990 more rows
-#> # ℹ 4 more variables: student_category <chr>, discharge_category <chr>,
-#> #   count_of_students <chr>, total_enrolled_students <chr>
-nyc_school_discharge(filters = list(school_level = "High School"))
+if (curl::has_internet()) {
+  # Quick example (fetch 10 rows)
+  small_sample <- nyc_school_discharge(limit = 10)
+  head(small_sample)
+
+  nyc_school_discharge(limit = 5000)
+  nyc_school_discharge(filters = list(school_level = "High School"))
+}
 #> # A tibble: 10,000 × 9
 #>    year      report_category school_level geographic_unit school_name           
 #>    <chr>     <chr>           <chr>        <chr>           <chr>                 

@@ -5,7 +5,7 @@ Downloads New York City Leading Causes of Death data from NYC Open Data.
 ## Usage
 
 ``` r
-nyc_cause_of_death(limit = 10000, filters = list())
+nyc_cause_of_death(limit = 10000, filters = list(), timeout_sec = 30)
 ```
 
 ## Source
@@ -23,6 +23,10 @@ NYC Open Data:
 
   Optional list of field-value pairs to filter results.
 
+- timeout_sec:
+
+  Request timeout in seconds (default = 30).
+
 ## Value
 
 A tibble containing New York City Leading Causes of Death data.
@@ -36,38 +40,17 @@ which is issued for every death that occurs in New York City.
 ## Examples
 
 ``` r
-# Quick example (fetch 10 rows)
-small_sample <- nyc_cause_of_death(limit = 10)
-head(small_sample)
-#> # A tibble: 6 × 7
-#>   year  leading_cause                     sex   race_ethnicity deaths death_rate
-#>   <chr> <chr>                             <chr> <chr>          <chr>  <chr>     
-#> 1 2014  Influenza (Flu) and Pneumonia (J… M     Not Stated/Un… 14     .         
-#> 2 2014  Essential Hypertension and Renal… F     Other Race/ E… .      .         
-#> 3 2014  Cerebrovascular Disease (Stroke:… F     Other Race/ E… 8      .         
-#> 4 2014  Mental and Behavioral Disorders … F     Not Stated/Un… 6      .         
-#> 5 2014  Cerebrovascular Disease (Stroke:… F     Black Non-His… 274    26.1      
-#> 6 2014  Chronic Lower Respiratory Diseas… M     Not Stated/Un… 14     .         
-#> # ℹ 1 more variable: age_adjusted_death_rate <chr>
-
+# Examples that hit the live NYC Open Data API are wrapped so CRAN checks
+# do not fail when the network is unavailable or slow.
 # \donttest{
-nyc_cause_of_death(limit = 5000)
-#> # A tibble: 1,094 × 7
-#>    year  leading_cause                    sex   race_ethnicity deaths death_rate
-#>    <chr> <chr>                            <chr> <chr>          <chr>  <chr>     
-#>  1 2014  Influenza (Flu) and Pneumonia (… M     Not Stated/Un… 14     .         
-#>  2 2014  Essential Hypertension and Rena… F     Other Race/ E… .      .         
-#>  3 2014  Cerebrovascular Disease (Stroke… F     Other Race/ E… 8      .         
-#>  4 2014  Mental and Behavioral Disorders… F     Not Stated/Un… 6      .         
-#>  5 2014  Cerebrovascular Disease (Stroke… F     Black Non-His… 274    26.1      
-#>  6 2014  Chronic Lower Respiratory Disea… M     Not Stated/Un… 14     .         
-#>  7 2014  Human Immunodeficiency Virus Di… F     Not Stated/Un… 7      .         
-#>  8 2014  Certain Conditions originating … F     Not Stated/Un… 10     .         
-#>  9 2014  Mental and Behavioral Disorders… M     Other Race/ E… 12     .         
-#> 10 2014  Diseases of Heart (I00-I09, I11… F     White Non-His… 4507   318       
-#> # ℹ 1,084 more rows
-#> # ℹ 1 more variable: age_adjusted_death_rate <chr>
-nyc_cause_of_death(filters = list(sex = "M"))
+if (curl::has_internet()) {
+  # Quick example (fetch 10 rows)
+  small_sample <- nyc_cause_of_death(limit = 10)
+  head(small_sample)
+
+  nyc_cause_of_death(limit = 5000)
+  nyc_cause_of_death(filters = list(sex = "M"))
+}
 #> # A tibble: 540 × 7
 #>    year  leading_cause                    sex   race_ethnicity deaths death_rate
 #>    <chr> <chr>                            <chr> <chr>          <chr>  <chr>     

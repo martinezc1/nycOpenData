@@ -38,7 +38,7 @@
 
     <div class="section level2">
     <h2 id="ref-usage">Usage<a class="anchor" aria-label="anchor" href="#ref-usage"></a></h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">nyc_tree_census_2015</span><span class="op">(</span>limit <span class="op">=</span> <span class="fl">10000</span>, filters <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">nyc_tree_census_2015</span><span class="op">(</span>limit <span class="op">=</span> <span class="fl">10000</span>, filters <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span><span class="op">)</span>, timeout_sec <span class="op">=</span> <span class="fl">30</span><span class="op">)</span></span></code></pre></div>
     </div>
 
     <div class="section level2">
@@ -56,6 +56,10 @@
 <dt id="arg-filters">filters<a class="anchor" aria-label="anchor" href="#arg-filters"></a></dt>
 <dd><p>Optional list of field-value pairs to filter results.</p></dd>
 
+
+<dt id="arg-timeout-sec">timeout_sec<a class="anchor" aria-label="anchor" href="#arg-timeout-sec"></a></dt>
+<dd><p>Request timeout in seconds (default = 30).</p></dd>
+
 </dl></div>
     <div class="section level2">
     <h2 id="value">Value<a class="anchor" aria-label="anchor" href="#value"></a></h2>
@@ -70,49 +74,17 @@ Data collected by NYC Parks and volunteers.</p>
 
     <div class="section level2">
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co"># Quick example (fetch 10 rows)</span></span></span>
-<span class="r-in"><span><span class="va">small_sample</span> <span class="op">&lt;-</span> <span class="fu">nyc_tree_census_2015</span><span class="op">(</span>limit <span class="op">=</span> <span class="fl">10</span><span class="op">)</span></span></span>
-<span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="va">small_sample</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 6 × 45</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   tree_id block_id created_at         tree_dbh stump_diam curb_loc status health</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>              <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">1</span> 722693  999999   2016-10-05T00:00:… 3        0          OnCurb   Alive  Good  </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">2</span> 722688  217025   2016-10-05T00:00:… 6        0          OnCurb   Alive  Poor  </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">3</span> 722690  999999   2016-10-05T00:00:… 3        0          OnCurb   Alive  Good  </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">4</span> 722689  217025   2016-10-05T00:00:… 5        0          OnCurb   Alive  Good  </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">5</span> 722692  999999   2016-10-05T00:00:… 2        0          OnCurb   Alive  Good  </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">6</span> 722691  999999   2016-10-05T00:00:… 2        0          OnCurb   Alive  Good  </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 37 more variables: spc_latin &lt;chr&gt;, spc_common &lt;chr&gt;, steward &lt;chr&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   guards &lt;chr&gt;, sidewalk &lt;chr&gt;, user_type &lt;chr&gt;, problems &lt;chr&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   root_stone &lt;chr&gt;, root_grate &lt;chr&gt;, root_other &lt;chr&gt;, trunk_wire &lt;chr&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   trnk_light &lt;chr&gt;, trnk_other &lt;chr&gt;, brch_light &lt;chr&gt;, brch_shoe &lt;chr&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   brch_other &lt;chr&gt;, address &lt;chr&gt;, zipcode &lt;chr&gt;, zip_city &lt;chr&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   cb_num &lt;chr&gt;, borocode &lt;chr&gt;, boroname &lt;chr&gt;, cncldist &lt;chr&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   st_assem &lt;chr&gt;, st_senate &lt;chr&gt;, nta &lt;chr&gt;, nta_name &lt;chr&gt;, …</span></span>
-<span class="r-in"><span></span></span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co"># Examples that hit the live NYC Open Data API are wrapped so CRAN checks</span></span></span>
+<span class="r-in"><span><span class="co"># do not fail when the network is unavailable or slow.</span></span></span>
 <span class="r-in"><span><span class="co"># \donttest{</span></span></span>
-<span class="r-in"><span><span class="fu">nyc_tree_census_2015</span><span class="op">(</span>limit <span class="op">=</span> <span class="fl">5000</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 5,000 × 45</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>    tree_id block_id created_at        tree_dbh stump_diam curb_loc status health</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>             <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 1</span> 722693  999999   2016-10-05T00:00… 3        0          OnCurb   Alive  Good  </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 2</span> 722688  217025   2016-10-05T00:00… 6        0          OnCurb   Alive  Poor  </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 3</span> 722690  999999   2016-10-05T00:00… 3        0          OnCurb   Alive  Good  </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 4</span> 722689  217025   2016-10-05T00:00… 5        0          OnCurb   Alive  Good  </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 5</span> 722692  999999   2016-10-05T00:00… 2        0          OnCurb   Alive  Good  </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 6</span> 722691  999999   2016-10-05T00:00… 2        0          OnCurb   Alive  Good  </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 7</span> 722685  217025   2016-10-05T00:00… 4        0          OnCurb   Alive  Good  </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 8</span> 722686  217025   2016-10-05T00:00… 18       0          OnCurb   Alive  Good  </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 9</span> 722687  217025   2016-10-05T00:00… 3        0          OnCurb   Alive  Fair  </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span> 722694  999999   2016-10-05T00:00… 3        0          OnCurb   Alive  Good  </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 4,990 more rows</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 37 more variables: spc_latin &lt;chr&gt;, spc_common &lt;chr&gt;, steward &lt;chr&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   guards &lt;chr&gt;, sidewalk &lt;chr&gt;, user_type &lt;chr&gt;, problems &lt;chr&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   root_stone &lt;chr&gt;, root_grate &lt;chr&gt;, root_other &lt;chr&gt;, trunk_wire &lt;chr&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   trnk_light &lt;chr&gt;, trnk_other &lt;chr&gt;, brch_light &lt;chr&gt;, brch_shoe &lt;chr&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   brch_other &lt;chr&gt;, address &lt;chr&gt;, zipcode &lt;chr&gt;, zip_city &lt;chr&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   cb_num &lt;chr&gt;, borocode &lt;chr&gt;, boroname &lt;chr&gt;, cncldist &lt;chr&gt;, …</span></span>
-<span class="r-in"><span><span class="fu">nyc_tree_census_2015</span><span class="op">(</span>filters <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>curb_loc <span class="op">=</span> <span class="st">"OnCurb"</span><span class="op">)</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="kw">if</span> <span class="op">(</span><span class="fu">curl</span><span class="fu">::</span><span class="fu"><a href="https://jeroen.r-universe.dev/curl/reference/nslookup.html" class="external-link">has_internet</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span></span></span>
+<span class="r-in"><span>  <span class="co"># Quick example (fetch 10 rows)</span></span></span>
+<span class="r-in"><span>  <span class="va">small_sample</span> <span class="op">&lt;-</span> <span class="fu">nyc_tree_census_2015</span><span class="op">(</span>limit <span class="op">=</span> <span class="fl">10</span><span class="op">)</span></span></span>
+<span class="r-in"><span>  <span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="va">small_sample</span><span class="op">)</span></span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span>  <span class="fu">nyc_tree_census_2015</span><span class="op">(</span>limit <span class="op">=</span> <span class="fl">5000</span><span class="op">)</span></span></span>
+<span class="r-in"><span>  <span class="fu">nyc_tree_census_2015</span><span class="op">(</span>filters <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>curb_loc <span class="op">=</span> <span class="st">"OnCurb"</span><span class="op">)</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="op">}</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 10,000 × 45</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>    tree_id block_id created_at        tree_dbh stump_diam curb_loc status health</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>             <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> </span>

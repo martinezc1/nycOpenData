@@ -5,7 +5,11 @@ Downloads Open Parking and Camera Violations data from NYC Open Data.
 ## Usage
 
 ``` r
-nyc_open_parking_camera_violations(limit = 10000, filters = list())
+nyc_open_parking_camera_violations(
+  limit = 10000,
+  filters = list(),
+  timeout_sec = 30
+)
 ```
 
 ## Source
@@ -23,6 +27,10 @@ NYC Open Data:
 
   Optional list of field-value pairs to filter results.
 
+- timeout_sec:
+
+  Request timeout in seconds (default = 30).
+
 ## Value
 
 A tibble containing Open Parking and Camera Violations data.
@@ -35,45 +43,17 @@ all violations contained in the mainframe database as of May 2016.
 ## Examples
 
 ``` r
-# Quick example (fetch 10 rows)
-small_sample <- nyc_open_parking_camera_violations(limit = 10)
-head(small_sample)
-#> # A tibble: 6 × 18
-#>   plate   state license_type summons_number violation_time violation fine_amount
-#>   <chr>   <chr> <chr>        <chr>          <chr>          <chr>     <chr>      
-#> 1 HPK2083 NY    PAS          1420103131     00:00A         INSP. ST… 65         
-#> 2 FFZ7198 NY    PAS          1405797526     06:49A         OBSTRUCT… 95         
-#> 3 BLANKP… 99    999          1405210989     NA             NO PARKI… 45         
-#> 4 BLANKP… 99    999          1271713305     00:00A         MISCELLA… 0          
-#> 5 BLANKP… 99    999          8541784496     NA             NA        0          
-#> 6 BLANKP… 99    999          1434159012     00:00P         MISCELLA… 0          
-#> # ℹ 11 more variables: penalty_amount <chr>, interest_amount <chr>,
-#> #   reduction_amount <chr>, payment_amount <chr>, amount_due <chr>,
-#> #   precinct <chr>, issuing_agency <chr>, county <chr>, violation_status <chr>,
-#> #   summons_image.url <chr>, summons_image.description <chr>
-
+# Examples that hit the live NYC Open Data API are wrapped so CRAN checks
+# do not fail when the network is unavailable or slow.
 # \donttest{
-nyc_open_parking_camera_violations(limit = 5000)
-#> # A tibble: 5,000 × 20
-#>    plate  state license_type summons_number violation_time violation fine_amount
-#>    <chr>  <chr> <chr>        <chr>          <chr>          <chr>     <chr>      
-#>  1 HPK20… NY    PAS          1420103131     00:00A         INSP. ST… 65         
-#>  2 FFZ71… NY    PAS          1405797526     06:49A         OBSTRUCT… 95         
-#>  3 BLANK… 99    999          1405210989     NA             NO PARKI… 45         
-#>  4 BLANK… 99    999          1271713305     00:00A         MISCELLA… 0          
-#>  5 BLANK… 99    999          8541784496     NA             NA        0          
-#>  6 BLANK… 99    999          1434159012     00:00P         MISCELLA… 0          
-#>  7 BLANK… 99    999          1373139043     11:25A         NO STAND… 115        
-#>  8 BLANK… 99    999          1384820061     00:00A         NO PARKI… 45         
-#>  9 GNH25… NY    PAS          1345442774     08:05A         NO STAND… 95         
-#> 10 BLANK… 99    999          1398441624     09:17A         NO PARKI… 65         
-#> # ℹ 4,990 more rows
-#> # ℹ 13 more variables: penalty_amount <chr>, interest_amount <chr>,
-#> #   reduction_amount <chr>, payment_amount <chr>, amount_due <chr>,
-#> #   precinct <chr>, issuing_agency <chr>, county <chr>, violation_status <chr>,
-#> #   issue_date <chr>, judgment_entry_date <chr>, summons_image.url <chr>,
-#> #   summons_image.description <chr>
-nyc_open_parking_camera_violations(filters = list(state = "NJ"))
+if (curl::has_internet()) {
+  # Quick example (fetch 10 rows)
+  small_sample <- nyc_open_parking_camera_violations(limit = 2)
+  small_sample
+
+  nyc_open_parking_camera_violations(limit = 5000)
+  nyc_open_parking_camera_violations(filters = list(state = "NJ"))
+}
 #> # A tibble: 10,000 × 20
 #>    plate   state license_type summons_number issue_date violation_time violation
 #>    <chr>   <chr> <chr>        <chr>          <chr>      <chr>          <chr>    

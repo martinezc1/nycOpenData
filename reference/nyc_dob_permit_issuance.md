@@ -5,7 +5,7 @@ Downloads DOB Permit Issuance data from NYC Open Data.
 ## Usage
 
 ``` r
-nyc_dob_permit_issuance(limit = 10000, filters = list())
+nyc_dob_permit_issuance(limit = 10000, filters = list(), timeout_sec = 30)
 ```
 
 ## Source
@@ -22,6 +22,10 @@ NYC Open Data:
 - filters:
 
   Optional list of field-value pairs to filter results.
+
+- timeout_sec:
+
+  Request timeout in seconds (default = 30).
 
 ## Value
 
@@ -46,49 +50,17 @@ to reflect the latest status of the application.
 ## Examples
 
 ``` r
-# Quick example (fetch 10 rows)
-small_sample <- nyc_dob_permit_issuance(limit = 10)
-head(small_sample)
-#> # A tibble: 6 × 50
-#>   borough    bin__ house__ street_name job__ job_doc___ job_type self_cert block
-#>   <chr>      <chr> <chr>   <chr>       <chr> <chr>      <chr>    <chr>     <chr>
-#> 1 BRONX      2115… 1072    INTERVALE … 2009… 01         NB       Y         02705
-#> 2 STATEN IS… 5106… 280     PARK HILL … 5203… 01         A2       N         02922
-#> 3 BRONX      2067… 3913    PROVOST AV… 2206… 01         A2       Y         04973
-#> 4 BRONX      2012… 666     EAST 181ST… 2400… 01         A2       Y         03081
-#> 5 QUEENS     4616… 148-36  89TH AVENUE 4405… 01         A3       Y         09681
-#> 6 STATEN IS… 5019… 292     MOUNTAINVI… 5204… 01         A3       N         00763
-#> # ℹ 41 more variables: lot <chr>, community_board <chr>, zip_code <chr>,
-#> #   bldg_type <chr>, residential <chr>, permit_status <chr>,
-#> #   filing_status <chr>, permit_type <chr>, permit_sequence__ <chr>,
-#> #   site_fill <chr>, issuance_date <chr>, expiration_date <chr>,
-#> #   job_start_date <chr>, permittee_s_first_name <chr>,
-#> #   permittee_s_last_name <chr>, permittee_s_business_name <chr>,
-#> #   permittee_s_phone__ <chr>, permittee_s_license_type <chr>, …
-
+# Examples that hit the live NYC Open Data API are wrapped so CRAN checks
+# do not fail when the network is unavailable or slow.
 # \donttest{
-nyc_dob_permit_issuance(limit = 5000)
-#> # A tibble: 5,000 × 59
-#>    borough   bin__ house__ street_name job__ job_doc___ job_type self_cert block
-#>    <chr>     <chr> <chr>   <chr>       <chr> <chr>      <chr>    <chr>     <chr>
-#>  1 BRONX     2115… 1072    INTERVALE … 2009… 01         NB       Y         02705
-#>  2 STATEN I… 5106… 280     PARK HILL … 5203… 01         A2       N         02922
-#>  3 BRONX     2067… 3913    PROVOST AV… 2206… 01         A2       Y         04973
-#>  4 BRONX     2012… 666     EAST 181ST… 2400… 01         A2       Y         03081
-#>  5 QUEENS    4616… 148-36  89TH AVENUE 4405… 01         A3       Y         09681
-#>  6 STATEN I… 5019… 292     MOUNTAINVI… 5204… 01         A3       N         00763
-#>  7 MANHATTAN 1083… 100     BEEKMAN ST  1238… 01         A2       N         00094
-#>  8 BRONX     2009… 1745    UNIVERSITY… 2206… 01         A2       Y         02878
-#>  9 BROOKLYN  3050… 280     LEXINGTON … 3407… 01         A2       Y         01803
-#> 10 MANHATTAN 1081… 695     PARK AVENUE 1235… 02         A2       N         01403
-#> # ℹ 4,990 more rows
-#> # ℹ 50 more variables: lot <chr>, community_board <chr>, zip_code <chr>,
-#> #   bldg_type <chr>, residential <chr>, permit_status <chr>,
-#> #   filing_status <chr>, permit_type <chr>, permit_sequence__ <chr>,
-#> #   site_fill <chr>, issuance_date <chr>, expiration_date <chr>,
-#> #   job_start_date <chr>, permittee_s_first_name <chr>,
-#> #   permittee_s_last_name <chr>, permittee_s_business_name <chr>, …
-nyc_dob_permit_issuance(filters = list(borough = "BROOKLYN"))
+if (curl::has_internet()) {
+  # Quick example (fetch 10 rows)
+  small_sample <- nyc_dob_permit_issuance(limit = 10)
+  head(small_sample)
+
+  nyc_dob_permit_issuance(limit = 5000)
+  nyc_dob_permit_issuance(filters = list(borough = "BROOKLYN"))
+}
 #> # A tibble: 10,000 × 60
 #>    borough  bin__  house__ street_name job__ job_doc___ job_type self_cert block
 #>    <chr>    <chr>  <chr>   <chr>       <chr> <chr>      <chr>    <chr>     <chr>

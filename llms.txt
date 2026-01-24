@@ -128,6 +128,8 @@ Brooklyn College, City University of New York
   : 2018-2019 Daily Attendance
 - [`nyc_detention_admissions()`](https://martinezc1.github.io/nycOpenData/reference/nyc_detention_admissions.md)
   : NYC Detention Admissions by Community District
+- [`nyc_dhs_daily_report()`](https://martinezc1.github.io/nycOpenData/reference/nyc_dhs_daily_report.md)
+  : NYC Department of Homeless Services (DHS) Daily Report
 - [`nyc_dob_job_applications()`](https://martinezc1.github.io/nycOpenData/reference/nyc_dob_job_applications.md)
   : NYC DOB Job Application Filings
 - [`nyc_dob_permit_issuance()`](https://martinezc1.github.io/nycOpenData/reference/nyc_dob_permit_issuance.md)
@@ -143,6 +145,10 @@ Brooklyn College, City University of New York
   : Film Permits
 - [`nyc_for_hire_vehicles()`](https://martinezc1.github.io/nycOpenData/reference/nyc_for_hire_vehicles.md)
   : NYC For-Hire Vehicles (FHV) - Active
+- [`nyc_homeless_drop_in_centers()`](https://martinezc1.github.io/nycOpenData/reference/nyc_homeless_drop_in_centers.md)
+  : NYC Homeless Drop- In Centers
+- [`nyc_homeless_population_by_year()`](https://martinezc1.github.io/nycOpenData/reference/nyc_homeless_population_by_year.md)
+  : NYC Homeless Population By Year
 - [`nyc_medallion_drivers_active()`](https://martinezc1.github.io/nycOpenData/reference/nyc_medallion_drivers_active.md)
   : Medallion Drivers - Active
 - [`nyc_medallion_drivers_authorized()`](https://martinezc1.github.io/nycOpenData/reference/nyc_medallion_drivers_authorized.md)
@@ -153,16 +159,18 @@ Brooklyn College, City University of New York
   : MUSEUM
 - [`nyc_nypd_hate_crimes()`](https://martinezc1.github.io/nycOpenData/reference/nyc_nypd_hate_crimes.md)
   : NYC NYPD Hate Crimes
-- [`nyc_oath_hearing_case_status()`](https://martinezc1.github.io/nycOpenData/reference/nyc_oath_hearing_case_status.md)
-  : OATH Hearings Division Case Status
 - [`nyc_open_parking_camera_violations()`](https://martinezc1.github.io/nycOpenData/reference/nyc_open_parking_camera_violations.md)
   : Open Parking and Camera Violations
 - [`nyc_period_attendance_reporting()`](https://martinezc1.github.io/nycOpenData/reference/nyc_period_attendance_reporting.md)
   : Statistical Summary Period Attendance Reporting (PAR)
 - [`nyc_permit_events_historic()`](https://martinezc1.github.io/nycOpenData/reference/nyc_permit_events_historic.md)
   : NYC Permitted Event Information - Historical
+- [`nyc_pets_in_shelters()`](https://martinezc1.github.io/nycOpenData/reference/nyc_pets_in_shelters.md)
+  : NYC Pets in Shelter Report
 - [`nyc_restaurant_inspection_results()`](https://martinezc1.github.io/nycOpenData/reference/nyc_restaurant_inspection_results.md)
   : DOHMH New York City Restaurant Inspection Results
+- [`nyc_runaway_and_homeless_youth_daily_census()`](https://martinezc1.github.io/nycOpenData/reference/nyc_runaway_and_homeless_youth_daily_census.md)
+  : NYC Runaway and Homeless Youth (RHY) Daily Census
 - [`nyc_school_discharge()`](https://martinezc1.github.io/nycOpenData/reference/nyc_school_discharge.md)
   : NYC School Discharge Reporting (Local Law 42)
 - [`nyc_school_discharge_report_2013_2015()`](https://martinezc1.github.io/nycOpenData/reference/nyc_school_discharge_report_2013_2015.md)

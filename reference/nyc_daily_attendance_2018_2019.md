@@ -5,7 +5,11 @@ Downloads 2018-2019 Daily Student Attendance from NYC Open Data.
 ## Usage
 
 ``` r
-nyc_daily_attendance_2018_2019(limit = 10000, filters = list())
+nyc_daily_attendance_2018_2019(
+  limit = 10000,
+  filters = list(),
+  timeout_sec = 30
+)
 ```
 
 ## Source
@@ -23,6 +27,10 @@ NYC Open Data:
 
   Optional list of field-value pairs to filter results.
 
+- timeout_sec:
+
+  Request timeout in seconds (default = 30).
+
 ## Value
 
 A tibble containing 2018–2019 NYC Daily Student Attendance data.
@@ -35,36 +43,17 @@ released by School DBN.
 ## Examples
 
 ``` r
-# Quick example (fetch 10 rows)
-small_sample <- nyc_daily_attendance_2018_2019(limit = 10)
-head(small_sample)
-#> # A tibble: 6 × 6
-#>   school_dbn date     enrolled absent present released
-#>   <chr>      <chr>    <chr>    <chr>  <chr>   <chr>   
-#> 1 79X695     20190626 216      27     68      121     
-#> 2 31R030     20190626 838      53     785     0       
-#> 3 31R031     20190626 392      83     309     0       
-#> 4 31R032     20190626 676      47     629     0       
-#> 5 31R034     20190626 1058     80     976     2       
-#> 6 31R035     20190626 410      36     374     0       
-
+# Examples that hit the live NYC Open Data API are wrapped so CRAN checks
+# do not fail when the network is unavailable or slow.
 # \donttest{
-nyc_daily_attendance_2018_2019(limit = 5000)
-#> # A tibble: 5,000 × 6
-#>    school_dbn date     enrolled absent present released
-#>    <chr>      <chr>    <chr>    <chr>  <chr>   <chr>   
-#>  1 79X695     20190626 216      27     68      121     
-#>  2 31R030     20190626 838      53     785     0       
-#>  3 31R031     20190626 392      83     309     0       
-#>  4 31R032     20190626 676      47     629     0       
-#>  5 31R034     20190626 1058     80     976     2       
-#>  6 31R035     20190626 410      36     374     0       
-#>  7 31R036     20190626 862      35     827     0       
-#>  8 31R038     20190626 365      36     329     0       
-#>  9 31R039     20190626 535      61     474     0       
-#> 10 31R041     20190626 702      44     658     0       
-#> # ℹ 4,990 more rows
-nyc_daily_attendance_2018_2019(filters = list(school_dbn = "01M015"))
+if (curl::has_internet()) {
+  # Quick example (fetch 10 rows)
+  small_sample <- nyc_daily_attendance_2018_2019(limit = 10)
+  head(small_sample)
+
+  nyc_daily_attendance_2018_2019(limit = 5000)
+  nyc_daily_attendance_2018_2019(filters = list(school_dbn = "01M015"))
+}
 #> # A tibble: 178 × 6
 #>    school_dbn date     enrolled absent present released
 #>    <chr>      <chr>    <chr>    <chr>  <chr>   <chr>   
