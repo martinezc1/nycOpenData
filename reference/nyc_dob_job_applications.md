@@ -39,7 +39,7 @@ approval status.
 # Quick example (fetch 10 rows)
 small_sample <- nyc_dob_job_applications(limit = 10)
 head(small_sample)
-#> # A tibble: 6 × 76
+#> # A tibble: 6 × 75
 #>   job__  doc__ borough house__ street_name block lot   bin__ job_type job_status
 #>   <chr>  <chr> <chr>   <chr>   <chr>       <chr> <chr> <chr> <chr>    <chr>     
 #> 1 12302… 01    MANHAT… 408     WEST 25 ST… 00722 00046 1012… A2       A         
@@ -48,7 +48,7 @@ head(small_sample)
 #> 4 52039… 01    STATEN… 162     YETMAN AVE… 08025 00088 5174… A2       A         
 #> 5 32200… 01    BROOKL… 750     56TH STREET 00842 00027 3015… A2       A         
 #> 6 42190… 01    QUEENS  130-11  127TH. STR… 11765 00029 4255… DM       A         
-#> # ℹ 66 more variables: job_status_descrp <chr>, latest_action_date <chr>,
+#> # ℹ 65 more variables: job_status_descrp <chr>, latest_action_date <chr>,
 #> #   building_type <chr>, community___board <chr>, cluster <chr>,
 #> #   landmarked <chr>, adult_estab <chr>, loft_board <chr>, little_e <chr>,
 #> #   efiling_filed <chr>, other <chr>, other_description <chr>,

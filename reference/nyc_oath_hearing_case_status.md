@@ -48,10 +48,10 @@ head(small_sample)
 #>   ticket_number violation_date          issuing_agency respondent_first_name
 #>   <chr>         <chr>                   <chr>          <chr>                
 #> 1 018543P       2109-10-19T00:00:00.000 TAXI_TLC       ILYAS                
-#> 2 74942215A     2026-01-22T00:00:00.000 TAXI_TLC       CEDENO CEVALLOS      
-#> 3 73071435A     2026-01-22T00:00:00.000 TAXI_TLC       ADEBANJO             
-#> 4 74731351A     2026-01-22T00:00:00.000 TAXI_TLC       ZAHID                
-#> 5 73902267A     2026-01-21T00:00:00.000 TAXI_TLC       BRUNEUS              
+#> 2 74731351A     2026-01-22T00:00:00.000 TAXI_TLC       ZAHID                
+#> 3 74942215A     2026-01-22T00:00:00.000 TAXI_TLC       CEDENO CEVALLOS      
+#> 4 73071435A     2026-01-22T00:00:00.000 TAXI_TLC       ADEBANJO             
+#> 5 74942213A     2026-01-21T00:00:00.000 TAXI_TLC       NA                   
 #> # ℹ 18 more variables: respondent_last_name <chr>,
 #> #   violation_location_borough <chr>, violation_location_city <chr>,
 #> #   violation_location_zip_code <chr>, respondent_address_borough <chr>,
