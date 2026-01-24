@@ -58,7 +58,7 @@ head(small_sample)
 
 # \donttest{
 nyc_dob_job_applications(limit = 10)
-#> # A tibble: 10 × 76
+#> # A tibble: 10 × 75
 #>    job__ doc__ borough house__ street_name block lot   bin__ job_type job_status
 #>    <chr> <chr> <chr>   <chr>   <chr>       <chr> <chr> <chr> <chr>    <chr>     
 #>  1 1230… 01    MANHAT… 408     WEST 25 ST… 00722 00046 1012… A2       A         
@@ -69,9 +69,9 @@ nyc_dob_job_applications(limit = 10)
 #>  6 4219… 01    QUEENS  130-11  127TH. STR… 11765 00029 4255… DM       A         
 #>  7 5203… 01    STATEN… 402     WILLOW ROA… 01494 00122 5112… A2       A         
 #>  8 1237… 01    MANHAT… 17      BATTERY PL… 00015 07501 1082… A2       A         
-#>  9 3001… 05    BROOKL… 1852    58 STREET   05505 00028 3131… A1       P         
+#>  9 1224… 02    MANHAT… 233     PARK AVENU… 00874 00004 1017… A2       P         
 #> 10 4217… 04    QUEENS  190     BEACH 69 S… 15939 00103 4614… A2       P         
-#> # ℹ 66 more variables: job_status_descrp <chr>, latest_action_date <chr>,
+#> # ℹ 65 more variables: job_status_descrp <chr>, latest_action_date <chr>,
 #> #   building_type <chr>, community___board <chr>, cluster <chr>,
 #> #   landmarked <chr>, adult_estab <chr>, loft_board <chr>, little_e <chr>,
 #> #   efiling_filed <chr>, other <chr>, other_description <chr>,
