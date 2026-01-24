@@ -7,12 +7,14 @@
 NYC Open Data: <https://data.cityofnewyork.us/resource/bkfu-528j>
 }
 \usage{
-nyc_permit_events_historic(limit = 10000, filters = list())
+nyc_permit_events_historic(limit = 10000, filters = list(), timeout_sec = 60)
 }
 \arguments{
 \item{limit}{Number of rows to retrieve (default = 10,000).}
 
 \item{filters}{Optional list of field-value pairs to filter results.}
+
+\item{timeout_sec}{Request timeout in seconds (default = 60).}
 }
 \value{
 A tibble containing NYC Permitted Event Information - Historical data.
@@ -26,16 +28,16 @@ through the Office of Citywide Event Coordination and Management (CECM),
 including parades, festivals, street fairs, and other public gatherings.
 }
 \examples{
-\dontrun{
-# Fetch a small sample
-small_sample <- nyc_permit_events_historic(limit = 10)
-head(small_sample)
+# Examples that hit the live NYC Open Data API are wrapped so CRAN checks
+# do not fail when the network is unavailable or slow.
+\donttest{
+if (curl::has_internet()) {
+  # Quick example (fetch 2 rows)
+  small_sample <- nyc_permit_events_historic(limit = 2)
+  small_sample
 
-# Larger pull (will depend on API stability)
-nyc_permit_events_historic(limit = 5000)
-
-# With a filter
-nyc_permit_events_historic(filters = list(event_type = "Construction"))
+  nyc_permit_events_historic(limit = 5000)
+  nyc_permit_events_historic(filters = list(event_type = "Construction"))
 }
-
+}
 }

@@ -7,12 +7,14 @@
 NYC Open Data: <https://data.cityofnewyork.us/Housing-Development/DOB-Permit-Issuance/ipu4-2q9a/about_data>
 }
 \usage{
-nyc_dob_permit_issuance(limit = 10000, filters = list())
+nyc_dob_permit_issuance(limit = 10000, filters = list(), timeout_sec = 30)
 }
 \arguments{
 \item{limit}{Number of rows to retrieve (default = 10,000).}
 
 \item{filters}{Optional list of field-value pairs to filter results.}
+
+\item{timeout_sec}{Request timeout in seconds (default = 30).}
 }
 \value{
 A tibble containing DOB Permit Issuance data.
@@ -29,12 +31,16 @@ Each work type will receive a separate permit. (See the DOB Job Application Fili
 Each row/record in this dataset represents the life cycle of one permit for one work type. The dataset is updated daily with new records, and each existing record will be updated as the permit application moves through the approval process to reflect the latest status of the application.
 }
 \examples{
-# Quick example (fetch 10 rows)
-small_sample <- nyc_dob_permit_issuance(limit = 10)
-head(small_sample)
-
+# Examples that hit the live NYC Open Data API are wrapped so CRAN checks
+# do not fail when the network is unavailable or slow.
 \donttest{
-nyc_dob_permit_issuance(limit = 5000)
-nyc_dob_permit_issuance(filters = list(borough = "BROOKLYN"))
+if (curl::has_internet()) {
+  # Quick example (fetch 10 rows)
+  small_sample <- nyc_dob_permit_issuance(limit = 10)
+  head(small_sample)
+
+  nyc_dob_permit_issuance(limit = 5000)
+  nyc_dob_permit_issuance(filters = list(borough = "BROOKLYN"))
+}
 }
 }

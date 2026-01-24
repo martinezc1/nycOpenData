@@ -7,12 +7,18 @@
 NYC Open Data: <https://data.cityofnewyork.us/Public-Safety/Motor-Vehicle-Collisions-Crashes/h9gi-nx95/about_data>
 }
 \usage{
-nyc_motor_vehicle_collisions_crashes(limit = 10000, filters = list())
+nyc_motor_vehicle_collisions_crashes(
+  limit = 10000,
+  filters = list(),
+  timeout_sec = 30
+)
 }
 \arguments{
 \item{limit}{Number of rows to retrieve (default = 10,000).}
 
 \item{filters}{Optional list of field-value pairs to filter results.}
+
+\item{timeout_sec}{Request timeout in seconds (default = 30).}
 }
 \value{
 A tibble containing Motor Vehicle Collisions - Crashes data.
@@ -26,12 +32,16 @@ Each row represents a crash event. The Motor Vehicle Collisions data tables cont
 The police report (MV104-AN) is required to be filled out for collisions where someone is injured or killed, or where there is at least $1000 worth of damage (https://www.nhtsa.gov/sites/nhtsa.dot.gov/files/documents/ny_overlay_mv-104an_rev05_2004.pdf).
 }
 \examples{
-# Quick example (fetch 10 rows)
-small_sample <- nyc_motor_vehicle_collisions_crashes(limit = 10)
-head(small_sample)
-
+# Examples that hit the live NYC Open Data API are wrapped so CRAN checks
+# do not fail when the network is unavailable or slow.
 \donttest{
-nyc_motor_vehicle_collisions_crashes(limit = 5000)
-nyc_motor_vehicle_collisions_crashes(filters = list(borough = "BROOKLYN"))
+if (curl::has_internet()) {
+  # Quick example (fetch 10 rows)
+  small_sample <- nyc_motor_vehicle_collisions_crashes(limit = 10)
+  head(small_sample)
+
+  nyc_motor_vehicle_collisions_crashes(limit = 5000)
+  nyc_motor_vehicle_collisions_crashes(filters = list(borough = "BROOKLYN"))
+}
 }
 }

@@ -7,12 +7,14 @@
 NYC Open Data: <https://data.cityofnewyork.us/Social-Services/311-Service-Requests-from-2010-to-Present/erm2-nwe9/about_data>
 }
 \usage{
-nyc_311(limit = 10000, filters = list())
+nyc_311(limit = 10000, filters = list(), timeout_sec = 30)
 }
 \arguments{
 \item{limit}{Number of rows to retrieve (default = 10,000).}
 
 \item{filters}{Optional list of field-value pairs to filter results.}
+
+\item{timeout_sec}{Request timeout in seconds (default = 30).}
 }
 \value{
 A tibble containing 311 Service Request data.
@@ -25,13 +27,14 @@ This dataset contains all service requests made to NYC 311 since 2010.
 Data is updated daily and includes agency, complaint type, location, and resolution.
 }
 \examples{
-
-# Quick example (fetch 10 rows)
-small_sample <- nyc_311(limit = 10)
-head(small_sample)
-
+# Examples that hit the live NYC Open Data API are wrapped so CRAN checks
+# do not fail when the network is unavailable or slow.
 \donttest{
-nyc_311(limit = 5000)
-nyc_311(filters = list(agency = "NYPD", city = "BROOKLYN"))
+if (curl::has_internet()) {
+  # Quick example (fetch 2 rows)
+  small_sample <- nyc_311(limit = 2)
+  small_sample
+  nyc_311(filters = list(agency = "NYPD", city = "BROOKLYN"))
+}
 }
 }

@@ -7,12 +7,18 @@
 NYC Open Data: <https://data.cityofnewyork.us/Transportation/Medallion-Vehicles-Authorized/rhe8-mgbb/about_data>
 }
 \usage{
-nyc_medallion_drivers_authorized(limit = 10000, filters = list())
+nyc_medallion_drivers_authorized(
+  limit = 10000,
+  filters = list(),
+  timeout_sec = 30
+)
 }
 \arguments{
 \item{limit}{Number of rows to retrieve (default = 10,000).}
 
 \item{filters}{Optional list of field-value pairs to filter results.}
+
+\item{timeout_sec}{Request timeout in seconds (default = 30).}
 }
 \value{
 A tibble containing Medallion Vehicles - Authorized data.
@@ -21,17 +27,22 @@ A tibble containing Medallion Vehicles - Authorized data.
 Downloads Medallion Vehicles - Authorized data from NYC Open Data.
 }
 \details{
-This dataset, which includes all TLC licensed medallion vehicles which are in good standing and able to drive, is updated every day in the evening between 4-7pm.
+This dataset, which includes all TLC licensed medallion vehicles which are in good standing and able to drive,
+is updated every day in the evening between 4–7pm.
 Please check the 'Last Update Date' field to make sure the list has updated successfully.
 'Last Update Date' should show either today or yesterday's date, depending on the time of day.
 }
 \examples{
-# Quick example (fetch 10 rows)
-small_sample <- nyc_medallion_drivers_authorized(limit = 10)
-head(small_sample)
-
+# Examples that hit the live NYC Open Data API are wrapped so CRAN checks
+# do not fail when the network is unavailable or slow.
 \donttest{
-nyc_medallion_drivers_authorized(limit = 5000)
-nyc_medallion_drivers_authorized(filters = list(current_status = "CUR"))
+if (curl::has_internet()) {
+  # Quick example (fetch 10 rows)
+  small_sample <- nyc_medallion_drivers_authorized(limit = 10)
+  head(small_sample)
+
+  nyc_medallion_drivers_authorized(limit = 5000)
+  nyc_medallion_drivers_authorized(filters = list(current_status = "CUR"))
+}
 }
 }

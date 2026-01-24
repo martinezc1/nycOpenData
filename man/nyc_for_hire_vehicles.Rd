@@ -7,12 +7,14 @@
 NYC Open Data: <https://data.cityofnewyork.us/resource/8wbx-tsch>
 }
 \usage{
-nyc_for_hire_vehicles(limit = 10000, filters = list())
+nyc_for_hire_vehicles(limit = 10000, filters = list(), timeout_sec = 30)
 }
 \arguments{
 \item{limit}{Number of rows to retrieve (default = 10,000).}
 
 \item{filters}{Optional list of field-value pairs to filter results.}
+
+\item{timeout_sec}{Request timeout in seconds (default = 30).}
 }
 \value{
 A tibble containing For-Hire Vehicles (FHV) - Active data.
@@ -26,12 +28,16 @@ such as taxis, limousines, and app-based services (e.g., Uber, Lyft).
 Maintained by the NYC Taxi and Limousine Commission (TLC).
 }
 \examples{
-# Quick example (fetch 10 rows)
-small_sample <- nyc_for_hire_vehicles(limit = 10)
-head(small_sample)
-
+# Examples that hit the live NYC Open Data API are wrapped so CRAN checks
+# do not fail when the network is unavailable or slow.
 \donttest{
-nyc_for_hire_vehicles(limit = 5000)
-nyc_for_hire_vehicles(filters = list(active = "YES"))
+if (curl::has_internet()) {
+  # Quick example (fetch 10 rows)
+  small_sample <- nyc_for_hire_vehicles(limit = 10)
+  head(small_sample)
+
+  nyc_for_hire_vehicles(limit = 5000)
+  nyc_for_hire_vehicles(filters = list(active = "YES"))
+}
 }
 }

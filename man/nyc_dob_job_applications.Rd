@@ -7,12 +7,14 @@
 NYC Open Data: <https://data.cityofnewyork.us/resource/ic3t-wcy2>
 }
 \usage{
-nyc_dob_job_applications(limit = 10000, filters = list())
+nyc_dob_job_applications(limit = 10000, filters = list(), timeout_sec = 30)
 }
 \arguments{
 \item{limit}{Number of rows to retrieve (default = 10,000).}
 
 \item{filters}{Optional list of field-value pairs to filter results.}
+
+\item{timeout_sec}{Request timeout in seconds (default = 30).}
 }
 \value{
 A tibble containing DOB Job Application Filings data.
@@ -26,11 +28,16 @@ of Buildings (DOB). Each record represents a construction or alteration
 project application, including location, work type, and approval status.
 }
 \examples{
-# Quick example (fetch 10 rows)
-small_sample <- nyc_dob_job_applications(limit = 10)
-head(small_sample)
-
+# Examples that hit the live NYC Open Data API are wrapped so CRAN checks
+# do not fail when the network is unavailable or slow.
 \donttest{
-nyc_dob_job_applications(limit = 10)
+if (curl::has_internet()) {
+  # Quick example (fetch 10 rows)
+  small_sample <- nyc_dob_job_applications(limit = 10)
+  head(small_sample)
+
+  nyc_dob_job_applications(limit = 5000)
 }
+}
+
 }

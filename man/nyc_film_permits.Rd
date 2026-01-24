@@ -7,12 +7,14 @@
 NYC Open Data: <https://data.cityofnewyork.us/City-Government/Film-Permits/tg4x-b46p/about_data>
 }
 \usage{
-nyc_film_permits(limit = 10000, filters = list())
+nyc_film_permits(limit = 10000, filters = list(), timeout_sec = 30)
 }
 \arguments{
 \item{limit}{Number of rows to retrieve (default = 10,000).}
 
 \item{filters}{Optional list of field-value pairs to filter results.}
+
+\item{timeout_sec}{Request timeout in seconds (default = 30).}
 }
 \value{
 A tibble containing Film Permits data.
@@ -21,16 +23,21 @@ A tibble containing Film Permits data.
 Downloads Film Permits data from NYC Open Data.
 }
 \details{
-Permits are generally required when asserting the exclusive use of city property, like a sidewalk, a street, or a park.
+Permits are generally required when asserting the exclusive use of city property,
+like a sidewalk, a street, or a park.
 See http://www1.nyc.gov/site/mome/permits/when-permit-required.page
 }
 \examples{
-# Quick example (fetch 10 rows)
-small_sample <- nyc_film_permits(limit = 10)
-head(small_sample)
-
+# Examples that hit the live NYC Open Data API are wrapped so CRAN checks
+# do not fail when the network is unavailable or slow.
 \donttest{
-nyc_film_permits(limit = 5000)
-nyc_film_permits(filters = list(eventtype = "Shooting Permit"))
+if (curl::has_internet()) {
+  # Quick example (fetch 10 rows)
+  small_sample <- nyc_film_permits(limit = 10)
+  head(small_sample)
+
+  nyc_film_permits(limit = 5000)
+  nyc_film_permits(filters = list(eventtype = "Shooting Permit"))
+}
 }
 }

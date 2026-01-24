@@ -7,12 +7,14 @@
 NYC Open Data: <https://data.cityofnewyork.us/Health/New-York-City-Leading-Causes-of-Death/jb7j-dtam/about_data>
 }
 \usage{
-nyc_cause_of_death(limit = 10000, filters = list())
+nyc_cause_of_death(limit = 10000, filters = list(), timeout_sec = 30)
 }
 \arguments{
 \item{limit}{Number of rows to retrieve (default = 10,000).}
 
 \item{filters}{Optional list of field-value pairs to filter results.}
+
+\item{timeout_sec}{Request timeout in seconds (default = 30).}
 }
 \value{
 A tibble containing New York City Leading Causes of Death data.
@@ -25,12 +27,16 @@ The leading causes of death by sex and ethnicity in New York City in since 2007.
 Cause of death is derived from the NYC death certificate which is issued for every death that occurs in New York City.
 }
 \examples{
-# Quick example (fetch 10 rows)
-small_sample <- nyc_cause_of_death(limit = 10)
-head(small_sample)
-
+# Examples that hit the live NYC Open Data API are wrapped so CRAN checks
+# do not fail when the network is unavailable or slow.
 \donttest{
-nyc_cause_of_death(limit = 5000)
-nyc_cause_of_death(filters = list(sex = "M"))
+if (curl::has_internet()) {
+  # Quick example (fetch 10 rows)
+  small_sample <- nyc_cause_of_death(limit = 10)
+  head(small_sample)
+
+  nyc_cause_of_death(limit = 5000)
+  nyc_cause_of_death(filters = list(sex = "M"))
+}
 }
 }

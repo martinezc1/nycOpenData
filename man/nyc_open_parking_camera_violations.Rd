@@ -7,12 +7,18 @@
 NYC Open Data: <https://data.cityofnewyork.us/City-Government/Open-Parking-and-Camera-Violations/nc67-uf89/about_data>
 }
 \usage{
-nyc_open_parking_camera_violations(limit = 10000, filters = list())
+nyc_open_parking_camera_violations(
+  limit = 10000,
+  filters = list(),
+  timeout_sec = 30
+)
 }
 \arguments{
 \item{limit}{Number of rows to retrieve (default = 10,000).}
 
 \item{filters}{Optional list of field-value pairs to filter results.}
+
+\item{timeout_sec}{Request timeout in seconds (default = 30).}
 }
 \value{
 A tibble containing Open Parking and Camera Violations data.
@@ -24,12 +30,16 @@ Downloads Open Parking and Camera Violations data from NYC Open Data.
 The Open Parking and Camera Violations dataset was initially loaded with all violations contained in the mainframe database as of May 2016.
 }
 \examples{
-# Quick example (fetch 10 rows)
-small_sample <- nyc_open_parking_camera_violations(limit = 10)
-head(small_sample)
-
+# Examples that hit the live NYC Open Data API are wrapped so CRAN checks
+# do not fail when the network is unavailable or slow.
 \donttest{
-nyc_open_parking_camera_violations(limit = 5000)
-nyc_open_parking_camera_violations(filters = list(state = "NJ"))
+if (curl::has_internet()) {
+  # Quick example (fetch 10 rows)
+  small_sample <- nyc_open_parking_camera_violations(limit = 2)
+  small_sample
+
+  nyc_open_parking_camera_violations(limit = 5000)
+  nyc_open_parking_camera_violations(filters = list(state = "NJ"))
+}
 }
 }

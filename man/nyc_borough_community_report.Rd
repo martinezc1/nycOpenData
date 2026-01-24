@@ -7,12 +7,14 @@
 NYC Open Data: <https://data.cityofnewyork.us/resource/5awp-wfkt>
 }
 \usage{
-nyc_borough_community_report(limit = 10000, filters = list())
+nyc_borough_community_report(limit = 10000, filters = list(), timeout_sec = 30)
 }
 \arguments{
 \item{limit}{Number of rows to retrieve (default = 10,000).}
 
 \item{filters}{Optional list of field-value pairs to filter results.}
+
+\item{timeout_sec}{Request timeout in seconds (default = 30).}
 }
 \value{
 A tibble containing Borough/Community District Report data.
@@ -26,12 +28,16 @@ covering metrics such as service requests, inspections, and community outreach.
 It’s published by NYC Department of Social Services for transparency and analysis.
 }
 \examples{
-# Quick example (fetch 10 rows)
-small_sample <- nyc_borough_community_report(limit = 10)
-head(small_sample)
-
+# Examples that hit the live NYC Open Data API are wrapped so CRAN checks
+# do not fail when the network is unavailable or slow.
 \donttest{
-nyc_borough_community_report(limit = 5000)
-nyc_borough_community_report(filters = list(borough = "Bronx"))
+if (curl::has_internet()) {
+  # Quick example (fetch 10 rows)
+  small_sample <- nyc_borough_community_report(limit = 10)
+  head(small_sample)
+
+  nyc_borough_community_report(limit = 5000)
+  nyc_borough_community_report(filters = list(borough = "Bronx"))
+}
 }
 }

@@ -7,12 +7,18 @@
 NYC Open Data: <https://data.cityofnewyork.us/Education/2013-2015-School-Closure-Discharge-Reporting/r773-ytwa/about_data>
 }
 \usage{
-nyc_school_discharge_report_2013_2015(limit = 10000, filters = list())
+nyc_school_discharge_report_2013_2015(
+  limit = 10000,
+  filters = list(),
+  timeout_sec = 30
+)
 }
 \arguments{
 \item{limit}{Number of rows to retrieve (default = 10,000).}
 
 \item{filters}{Optional list of field-value pairs to filter results.}
+
+\item{timeout_sec}{Request timeout in seconds (default = 30).}
 }
 \value{
 A tibble containing School Closure Discharge data.
@@ -21,15 +27,20 @@ A tibble containing School Closure Discharge data.
 Downloads 2013-2015 School Closure Discharge Reporting data from NYC Open Data.
 }
 \details{
-This report provides data regarding students enrolled in the closed schools according to the guidelines set by Local Law 43 of 2011.
+This report provides data regarding students enrolled in the closed schools
+according to the guidelines set by Local Law 43 of 2011.
 }
 \examples{
-# Quick example (fetch 10 rows)
-small_sample <- nyc_school_discharge_report_2013_2015(limit = 10)
-head(small_sample)
-
+# Examples that hit the live NYC Open Data API are wrapped so CRAN checks
+# do not fail when the network is unavailable or slow.
 \donttest{
-nyc_school_discharge_report_2013_2015(limit = 5000)
-nyc_school_discharge_report_2013_2015(filters = list(geography = "Citywide"))
+if (curl::has_internet()) {
+  # Quick example (fetch 10 rows)
+  small_sample <- nyc_school_discharge_report_2013_2015(limit = 10)
+  head(small_sample)
+
+  nyc_school_discharge_report_2013_2015(limit = 5000)
+  nyc_school_discharge_report_2013_2015(filters = list(geography = "Citywide"))
+}
 }
 }
