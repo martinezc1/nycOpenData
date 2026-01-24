@@ -40,38 +40,38 @@ Services (DCAS).
 small_sample <- nyc_civil_service_list(limit = 10)
 head(small_sample)
 #> # A tibble: 6 × 15
-#>   exam_no list_no first_name last_name   adj_fa list_title_code list_title_desc 
-#>   <chr>   <chr>   <chr>      <chr>       <chr>  <chr>           <chr>           
-#> 1 3317    329     IESHA      ELLIS       78     70410           CORRECTION OFFI…
-#> 2 2611    720     ERIK       HAZEL       75     91203           BUS OPERATOR    
-#> 3 2064    97      JESENIA    FARCIERT    79     55038           ASSOCIATE HUMAN…
-#> 4 5045    740     MARTHA     KRAWCZYNSKI 70     22122           CITY PLANNER    
-#> 5 6601    5025    LEON       HELGEROD    95     91207           CONDUCTOR       
-#> 6 3116    2425    JONNELLE   MYRIE       75     12626           STAFF ANALYST   
-#> # ℹ 8 more variables: group_no <chr>, list_agency_code <chr>,
-#> #   list_agency_desc <chr>, established_date <chr>, anniversary_date <chr>,
-#> #   mi <chr>, extension_date <chr>, veteran_credit <chr>
+#>   exam_no list_no first_name mi    last_name       adj_fa list_title_code
+#>   <chr>   <chr>   <chr>      <chr> <chr>           <chr>  <chr>          
+#> 1 9086    854     EMEEL      S     FALTAS          78     81805          
+#> 2 4044    501     DIWANI     M     WILES-SINGLETAR 107    70310          
+#> 3 5333    561     QUEEN-ASIA S     DAVIS           94     70210          
+#> 4 0144    1456    SEAN       NA    WILLIAMS        88     71012          
+#> 5 3072    302     CADEDRA    D     WATSON          100    10144          
+#> 6 6311    1198    LIAM       NA    HOLMES          87     70210          
+#> # ℹ 8 more variables: list_title_desc <chr>, group_no <chr>,
+#> #   list_agency_code <chr>, list_agency_desc <chr>, established_date <chr>,
+#> #   anniversary_date <chr>, veteran_credit <chr>, residency_credit <chr>
 
 # \donttest{
 nyc_civil_service_list(limit = 5000)
 #> # A tibble: 5,000 × 18
-#>    exam_no list_no first_name last_name   adj_fa list_title_code list_title_desc
-#>    <chr>   <chr>   <chr>      <chr>       <chr>  <chr>           <chr>          
-#>  1 3317    329     IESHA      ELLIS       78     70410           CORRECTION OFF…
-#>  2 2611    720     ERIK       HAZEL       75     91203           BUS OPERATOR   
-#>  3 2064    97      JESENIA    FARCIERT    79     55038           ASSOCIATE HUMA…
-#>  4 5045    740     MARTHA     KRAWCZYNSKI 70     22122           CITY PLANNER   
-#>  5 6601    5025    LEON       HELGEROD    95     91207           CONDUCTOR      
-#>  6 3116    2425    JONNELLE   MYRIE       75     12626           STAFF ANALYST  
-#>  7 5061    357     JAWAD      ATIF        97     13633           CYBER SECURITY…
-#>  8 2614    60      LETASHA    WRIGHT      93     91203           BUS OPERATOR   
-#>  9 5302    368     STEVEN     SONNICK     81     70410           CORRECTION OFF…
-#> 10 6601    7021    ALEXANDRIA DEFARIA     94     91207           CONDUCTOR      
+#>    exam_no list_no first_name mi    last_name       adj_fa list_title_code
+#>    <chr>   <chr>   <chr>      <chr> <chr>           <chr>  <chr>          
+#>  1 9086    854     EMEEL      S     FALTAS          78     81805          
+#>  2 4044    501     DIWANI     M     WILES-SINGLETAR 107    70310          
+#>  3 5333    561     QUEEN-ASIA S     DAVIS           94     70210          
+#>  4 0144    1456    SEAN       NA    WILLIAMS        88     71012          
+#>  5 3072    302     CADEDRA    D     WATSON          100    10144          
+#>  6 6311    1198    LIAM       NA    HOLMES          87     70210          
+#>  7 2064    39      SHELLEY    NA    LUONG           86     55038          
+#>  8 3304    264     AALIYAH    J     ANDERSON        84     60817          
+#>  9 4022    479     DEMETRIC   NA    HOLMES          74     10260          
+#> 10 4041    313     OLIVIA     NA    TIWARI          77     53053          
 #> # ℹ 4,990 more rows
-#> # ℹ 11 more variables: group_no <chr>, list_agency_code <chr>,
-#> #   list_agency_desc <chr>, established_date <chr>, anniversary_date <chr>,
-#> #   mi <chr>, extension_date <chr>, veteran_credit <chr>,
-#> #   residency_credit <chr>, sibling_lgy_credit <chr>, parent_lgy_credit <chr>
+#> # ℹ 11 more variables: list_title_desc <chr>, group_no <chr>,
+#> #   list_agency_code <chr>, list_agency_desc <chr>, established_date <chr>,
+#> #   anniversary_date <chr>, veteran_credit <chr>, residency_credit <chr>,
+#> #   extension_date <chr>, parent_lgy_credit <chr>, sibling_lgy_credit <chr>
 nyc_civil_service_list(filters = list(last_name = "Martinez"))
 #> # A tibble: 0 × 0
 # }

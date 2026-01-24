@@ -1,4 +1,4 @@
-# nycOpenData ![](https://upload.wikimedia.org/wikipedia/commons/thumb/f/f7/NYC_logo.svg/64px-NYC_logo.svg.png)
+# nycOpenData ![NYC logo](https://upload.wikimedia.org/wikipedia/commons/thumb/f/f7/NYC_logo.svg/64px-NYC_logo.svg.png)
 
 `nycOpenData` provides simple, reproducible access to datasets from
 the  

@@ -43,38 +43,38 @@ at least \$1000 worth of damage
 # Quick example (fetch 10 rows)
 small_sample <- nyc_motor_vehicle_collisions_crashes(limit = 10)
 head(small_sample)
-#> # A tibble: 6 × 27
+#> # A tibble: 6 × 26
 #>   crash_date       crash_time borough zip_code latitude longitude on_street_name
 #>   <chr>            <chr>      <chr>   <chr>    <chr>    <chr>     <chr>         
-#> 1 2025-12-09T00:0… 13:00      STATEN… 10306    40.58124 -74.09844 HYLAN BLVD    
-#> 2 2025-12-09T00:0… 7:30       MANHAT… 10013    40.7205… -74.0022… NA            
-#> 3 2025-12-09T00:0… 18:50      NA      NA       40.68798 -73.80529 109 AVENUE    
-#> 4 2025-12-09T00:0… 14:15      MANHAT… 10018    40.75898 -73.9939… W 42 ST       
-#> 5 2025-12-09T00:0… 18:45      NA      NA       40.61898 -74.1638… STATEN ISLAND…
-#> 6 2025-12-09T00:0… 23:53      MANHAT… 10017    40.7488  -73.96985 E 42 ST       
-#> # ℹ 20 more variables: off_street_name <chr>, number_of_persons_injured <chr>,
+#> 1 2026-01-20T00:0… 8:30       QUEENS  11433    40.70197 -73.8018… ARCHER AVE    
+#> 2 2026-01-20T00:0… 15:04      QUEENS  11357    40.7867… -73.82384 14 AVENUE     
+#> 3 2026-01-20T00:0… 17:48      BROOKL… 11226    40.6505… -73.9558… CHURCH AVE    
+#> 4 2026-01-20T00:0… 19:41      QUEENS  11377    40.74719 -73.90268 61 ST         
+#> 5 2026-01-20T00:0… 9:00       MANHAT… 10038    0.00000… 0.0000000 NA            
+#> 6 2026-01-20T00:0… 8:47       QUEENS  11370    40.7672  -73.88782 82 ST         
+#> # ℹ 19 more variables: off_street_name <chr>, number_of_persons_injured <chr>,
 #> #   number_of_persons_killed <chr>, number_of_pedestrians_injured <chr>,
 #> #   number_of_pedestrians_killed <chr>, number_of_cyclist_injured <chr>,
 #> #   number_of_cyclist_killed <chr>, number_of_motorist_injured <chr>,
 #> #   number_of_motorist_killed <chr>, contributing_factor_vehicle_1 <chr>,
 #> #   contributing_factor_vehicle_2 <chr>, collision_id <chr>,
-#> #   vehicle_type_code1 <chr>, cross_street_name <chr>, …
+#> #   vehicle_type_code1 <chr>, vehicle_type_code2 <chr>, …
 
 # \donttest{
 nyc_motor_vehicle_collisions_crashes(limit = 5000)
 #> # A tibble: 5,000 × 31
 #>    crash_date      crash_time borough zip_code latitude longitude on_street_name
 #>    <chr>           <chr>      <chr>   <chr>    <chr>    <chr>     <chr>         
-#>  1 2025-12-09T00:… 13:00      STATEN… 10306    40.58124 -74.09844 HYLAN BLVD    
-#>  2 2025-12-09T00:… 7:30       MANHAT… 10013    40.7205… -74.0022… NA            
-#>  3 2025-12-09T00:… 18:50      NA      NA       40.68798 -73.80529 109 AVENUE    
-#>  4 2025-12-09T00:… 14:15      MANHAT… 10018    40.75898 -73.9939… W 42 ST       
-#>  5 2025-12-09T00:… 18:45      NA      NA       40.61898 -74.1638… STATEN ISLAND…
-#>  6 2025-12-09T00:… 23:53      MANHAT… 10017    40.7488  -73.96985 E 42 ST       
-#>  7 2025-12-09T00:… 14:45      QUEENS  11375    40.7322… -73.8492… 64 RD         
-#>  8 2025-12-09T00:… 8:07       QUEENS  11429    40.7117… -73.74628 212 ST        
-#>  9 2025-12-09T00:… 18:10      QUEENS  11372    40.7473… -73.89057 75 ST         
-#> 10 2025-12-09T00:… 14:34      MANHAT… 10036    40.75979 -73.98792 8 AVE         
+#>  1 2026-01-20T00:… 8:30       QUEENS  11433    40.70197 -73.8018… ARCHER AVE    
+#>  2 2026-01-20T00:… 15:04      QUEENS  11357    40.7867… -73.82384 14 AVENUE     
+#>  3 2026-01-20T00:… 17:48      BROOKL… 11226    40.6505… -73.9558… CHURCH AVE    
+#>  4 2026-01-20T00:… 19:41      QUEENS  11377    40.74719 -73.90268 61 ST         
+#>  5 2026-01-20T00:… 9:00       MANHAT… 10038    0.00000… 0.0000000 NA            
+#>  6 2026-01-20T00:… 8:47       QUEENS  11370    40.7672  -73.88782 82 ST         
+#>  7 2026-01-20T00:… 7:10       NA      NA       40.6087… -74.0380… VERRAZANO BRI…
+#>  8 2026-01-20T00:… 7:07       BROOKL… 11203    40.6466… -73.92459 KINGS HWY     
+#>  9 2026-01-20T00:… 7:40       STATEN… 10306    40.56453 -74.1417… BLYTHE PL     
+#> 10 2026-01-20T00:… 7:54       BROOKL… 11207    40.6773… -73.89622 NEW JERSEY AVE
 #> # ℹ 4,990 more rows
 #> # ℹ 24 more variables: off_street_name <chr>, number_of_persons_injured <chr>,
 #> #   number_of_persons_killed <chr>, number_of_pedestrians_injured <chr>,
@@ -86,22 +86,22 @@ nyc_motor_vehicle_collisions_crashes(filters = list(borough = "BROOKLYN"))
 #> # A tibble: 10,000 × 31
 #>    crash_date      crash_time borough zip_code latitude longitude on_street_name
 #>    <chr>           <chr>      <chr>   <chr>    <chr>    <chr>     <chr>         
-#>  1 2025-12-09T00:… 10:40      BROOKL… 11215    40.6732… -73.9928… 8 ST          
-#>  2 2025-12-09T00:… 10:12      BROOKL… 11217    40.6865  -73.9864  NA            
-#>  3 2025-12-09T00:… 13:05      BROOKL… 11207    40.6616… -73.89331 NA            
-#>  4 2025-12-09T00:… 9:38       BROOKL… 11223    40.6003… -73.96812 NA            
-#>  5 2025-12-09T00:… 9:00       BROOKL… 11249    40.6999… -73.96118 NA            
-#>  6 2025-12-09T00:… 18:00      BROOKL… 11203    40.6631… -73.93726 TROY AVE      
-#>  7 2025-12-09T00:… 16:10      BROOKL… 11235    40.5786… -73.96667 OCEAN VIEW AVE
-#>  8 2025-12-09T00:… 6:30       BROOKL… 11220    40.6419… -74.00624 NA            
-#>  9 2025-12-09T00:… 9:18       BROOKL… 11234    40.61957 -73.93354 FLATBUSH AVE  
-#> 10 2025-12-09T00:… 9:01       BROOKL… 11231    40.6757… -73.99836 NA            
+#>  1 2026-01-20T00:… 17:48      BROOKL… 11226    40.6505… -73.9558… CHURCH AVE    
+#>  2 2026-01-20T00:… 8:50       BROOKL… 11231    40.6746… -74.00771 COLUMBIA ST   
+#>  3 2026-01-20T00:… 7:22       BROOKL… 11204    40.6225… -73.99461 NA            
+#>  4 2026-01-20T00:… 4:48       BROOKL… 11238    40.6729… -73.9674… EASTERN PKWY  
+#>  5 2026-01-20T00:… 18:02      BROOKL… 11226    40.6413… -73.9477… NA            
+#>  6 2026-01-20T00:… 13:50      BROOKL… 11230    0.00000… 0.0000000 NA            
+#>  7 2026-01-20T00:… 14:05      BROOKL… 11215    40.67045 -73.9819… 6 AVE         
+#>  8 2026-01-20T00:… 8:37       BROOKL… 11213    40.67801 -73.9413… ATLANTIC AVE  
+#>  9 2026-01-20T00:… 2:47       BROOKL… 11222    40.7237… -73.93753 CHERRY ST     
+#> 10 2026-01-20T00:… 16:55      BROOKL… 11208    40.68081 -73.8848… ARLINGTON AVE 
 #> # ℹ 9,990 more rows
 #> # ℹ 24 more variables: off_street_name <chr>, number_of_persons_injured <chr>,
 #> #   number_of_persons_killed <chr>, number_of_pedestrians_injured <chr>,
 #> #   number_of_pedestrians_killed <chr>, number_of_cyclist_injured <chr>,
 #> #   number_of_cyclist_killed <chr>, number_of_motorist_injured <chr>,
 #> #   number_of_motorist_killed <chr>, contributing_factor_vehicle_1 <chr>,
-#> #   contributing_factor_vehicle_2 <chr>, collision_id <chr>, …
+#> #   collision_id <chr>, vehicle_type_code1 <chr>, …
 # }
 ```

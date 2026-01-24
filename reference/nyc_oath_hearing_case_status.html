@@ -7,7 +7,7 @@
 
     <a class="navbar-brand me-2" href="../index.html">nycOpenData</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.1.2</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.1.4</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -77,10 +77,10 @@ The summonses listed in this dataset are issued and filed at the OATH Hearings D
 <span class="r-out co"><span class="r-pr">#&gt;</span>   ticket_number violation_date          issuing_agency respondent_first_name</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>         <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>          <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">1</span> 018543P       2109-10-19T00:00:00.000 TAXI_TLC       ILYAS                </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">2</span> 73221914A     2025-12-11T00:00:00.000 TAXI_TLC       SHAIKH               </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">3</span> 74761380A     2025-12-10T00:00:00.000 TAXI_TLC       SALEEM               </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">4</span> 73221911A     2025-12-10T00:00:00.000 TAXI_TLC       MARYERING CASTANEDA  </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">5</span> 74092720A     2025-12-10T00:00:00.000 TAXI_TLC       BABOU                </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">2</span> 74942215A     2026-01-22T00:00:00.000 TAXI_TLC       CEDENO CEVALLOS      </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">3</span> 73071435A     2026-01-22T00:00:00.000 TAXI_TLC       ADEBANJO             </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">4</span> 74731351A     2026-01-22T00:00:00.000 TAXI_TLC       ZAHID                </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">5</span> 73902267A     2026-01-21T00:00:00.000 TAXI_TLC       BRUNEUS              </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 18 more variables: respondent_last_name &lt;chr&gt;,</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   violation_location_borough &lt;chr&gt;, violation_location_city &lt;chr&gt;,</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   violation_location_zip_code &lt;chr&gt;, respondent_address_borough &lt;chr&gt;,</span></span>
@@ -91,21 +91,21 @@ The summonses listed in this dataset are issued and filed at the OATH Hearings D
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="co"># \donttest{</span></span></span>
 <span class="r-in"><span><span class="fu">nyc_oath_hearing_case_status</span><span class="op">(</span>limit <span class="op">=</span> <span class="fl">5000</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 5,000 × 45</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 5,000 × 60</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>    ticket_number violation_date          issuing_agency respondent_first_name</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>         <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>          <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 1</span> 018543P       2109-10-19T00:00:00.000 TAXI_TLC       ILYAS                </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 2</span> 73221914A     2025-12-11T00:00:00.000 TAXI_TLC       SHAIKH               </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 3</span> 74512129A     2025-12-10T00:00:00.000 TAXI_TLC       AKHUNOVA             </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 4</span> 73121114A     2025-12-10T00:00:00.000 TAXI_TLC       JUAN                 </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 5</span> 73722812A     2025-12-10T00:00:00.000 TAXI_TLC       A                    </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 6</span> 73281467A     2025-12-10T00:00:00.000 TAXI_TLC       LEON LOZADA          </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 7</span> 74710819A     2025-12-10T00:00:00.000 TAXI_TLC       MEJIA                </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 8</span> 74460838A     2025-12-10T00:00:00.000 TAXI_TLC       KHAN                 </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 9</span> 73150794A     2025-12-10T00:00:00.000 TAXI_TLC       BARUA                </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span> 73221911A     2025-12-10T00:00:00.000 TAXI_TLC       MARYERING CASTANEDA  </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 2</span> 74942215A     2026-01-22T00:00:00.000 TAXI_TLC       CEDENO CEVALLOS      </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 3</span> 73071435A     2026-01-22T00:00:00.000 TAXI_TLC       ADEBANJO             </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 4</span> 74731351A     2026-01-22T00:00:00.000 TAXI_TLC       ZAHID                </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 5</span> 74750860A     2026-01-21T00:00:00.000 TAXI_TLC       EGBO IBEZIM K        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 6</span> 74761468A     2026-01-21T00:00:00.000 TAXI_TLC       HOSSAIN              </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 7</span> 73553954A     2026-01-21T00:00:00.000 TAXI_TLC       POWER TRANSIT INC    </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 8</span> 75261989A     2026-01-21T00:00:00.000 TAXI_TLC       CAMILO               </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 9</span> 74512244A     2026-01-21T00:00:00.000 TAXI_TLC       DIALLO               </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span> 74731350A     2026-01-21T00:00:00.000 TAXI_TLC       GOURAV               </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 4,990 more rows</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 41 more variables: respondent_last_name &lt;chr&gt;,</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 56 more variables: respondent_last_name &lt;chr&gt;,</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   violation_location_borough &lt;chr&gt;, violation_location_city &lt;chr&gt;,</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   violation_location_zip_code &lt;chr&gt;, respondent_address_borough &lt;chr&gt;,</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   total_violation_amount &lt;chr&gt;, violation_details &lt;chr&gt;,</span></span>

@@ -7,7 +7,7 @@
 
     <a class="navbar-brand me-2" href="../index.html">nycOpenData</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.1.2</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.1.4</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -78,32 +78,32 @@ defensive driving completion, and final approval outcome.</p>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 6 × 12</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   app_no  type  app_date      status fru_interview_schedu…¹ drug_test wav_course</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>         <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                  <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>     </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">1</span> 6128212 HDR   2025-12-15T0… Incom… Not Applicable         Needed    Needed    </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">2</span> 6128224 HDR   2025-12-15T0… Incom… Not Applicable         Needed    Needed    </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">3</span> 6128187 HDR   2025-12-15T0… Incom… Not Applicable         Needed    Needed    </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">4</span> 6128211 HDR   2025-12-15T0… Incom… Not Applicable         Needed    Needed    </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">5</span> 6128208 HDR   2025-12-15T0… Incom… Not Applicable         Needed    Needed    </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">6</span> 6128228 HDR   2025-12-15T0… Incom… Not Applicable         Needed    Needed    </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">1</span> 6131208 HDR   2026-01-24T0… Incom… Not Applicable         Needed    Needed    </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">2</span> 6131209 HDR   2026-01-24T0… Incom… Not Applicable         Needed    Needed    </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">3</span> 6131210 HDR   2026-01-24T0… Incom… Not Applicable         Needed    Needed    </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">4</span> 6131164 HDR   2026-01-23T0… Incom… Not Applicable         Needed    Needed    </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">5</span> 6131187 HDR   2026-01-23T0… Incom… Not Applicable         Needed    Needed    </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">6</span> 6131135 HDR   2026-01-23T0… Incom… Not Applicable         Needed    Needed    </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ abbreviated name: ¹​fru_interview_scheduled</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 5 more variables: defensive_driving &lt;chr&gt;, driver_exam &lt;chr&gt;,</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   medical_clearance_form &lt;chr&gt;, other_requirements &lt;chr&gt;, lastupdate &lt;chr&gt;</span></span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="co"># \donttest{</span></span></span>
 <span class="r-in"><span><span class="fu">nyc_tlc_new_driver_app_status</span><span class="op">(</span>limit <span class="op">=</span> <span class="fl">5000</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 5,000 × 12</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 4,910 × 12</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>    app_no  type  app_date     status fru_interview_schedu…¹ drug_test wav_course</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>        <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                  <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>     </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 1</span> 6128212 HDR   2025-12-15T… Incom… Not Applicable         Needed    Needed    </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 2</span> 6128224 HDR   2025-12-15T… Incom… Not Applicable         Needed    Needed    </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 3</span> 6128187 HDR   2025-12-15T… Incom… Not Applicable         Needed    Needed    </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 4</span> 6128211 HDR   2025-12-15T… Incom… Not Applicable         Needed    Needed    </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 5</span> 6128208 HDR   2025-12-15T… Incom… Not Applicable         Needed    Needed    </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 6</span> 6128228 HDR   2025-12-15T… Incom… Not Applicable         Needed    Needed    </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 7</span> 6128196 HDR   2025-12-15T… Incom… Not Applicable         Needed    Needed    </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 8</span> 6128203 HDR   2025-12-15T… Incom… Not Applicable         Needed    Needed    </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 9</span> 6128204 HDR   2025-12-15T… Incom… Not Applicable         Needed    Needed    </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span> 6128216 HDR   2025-12-15T… Incom… Not Applicable         Needed    Needed    </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 4,990 more rows</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 1</span> 6131208 HDR   2026-01-24T… Incom… Not Applicable         Needed    Needed    </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 2</span> 6131209 HDR   2026-01-24T… Incom… Not Applicable         Needed    Needed    </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 3</span> 6131210 HDR   2026-01-24T… Incom… Not Applicable         Needed    Needed    </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 4</span> 6131164 HDR   2026-01-23T… Incom… Not Applicable         Needed    Needed    </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 5</span> 6131187 HDR   2026-01-23T… Incom… Not Applicable         Needed    Needed    </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 6</span> 6131135 HDR   2026-01-23T… Incom… Not Applicable         Needed    Needed    </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 7</span> 6131147 HDR   2026-01-23T… Incom… Not Applicable         Needed    Complete  </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 8</span> 6131123 HDR   2026-01-23T… Incom… Not Applicable         Needed    Needed    </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 9</span> 6131145 HDR   2026-01-23T… Incom… Not Applicable         Needed    Complete  </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span> 6131171 HDR   2026-01-23T… Incom… Not Applicable         Needed    Needed    </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 4,900 more rows</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ abbreviated name: ¹​fru_interview_scheduled</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 5 more variables: defensive_driving &lt;chr&gt;, driver_exam &lt;chr&gt;,</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   medical_clearance_form &lt;chr&gt;, other_requirements &lt;chr&gt;, lastupdate &lt;chr&gt;</span></span>

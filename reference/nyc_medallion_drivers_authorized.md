@@ -44,12 +44,12 @@ head(small_sample)
 #> # A tibble: 6 × 15
 #>   license_number name                type  current_status dmv_license_plate_nu…¹
 #>   <chr>          <chr>               <chr> <chr>          <chr>                 
-#> 1 4W44           AXIZ MANAGEMENT IN… 05/3… CUR            Y205218C              
-#> 2 4P65           GMEN3 LLC           05/3… CUR            Y206201C              
-#> 3 9F46           MILON,SHEIKH        05/3… CUR            Y209013C              
-#> 4 8B92           ROYAL RADIANCE CAR… 05/3… CUR            Y209362C              
-#> 5 9K49           YUVI SINGH LLC      05/3… CUR            Y208512C              
-#> 6 1K99           BARGAIN TRANSIT LLC 05/3… CUR            Y208805C              
+#> 1 3G12           FAYYAZ TRANSIT LLC  05/3… CUR            Y200701C              
+#> 2 2N40           AC TAXI 2 LLC       05/3… CUR            Y205345C              
+#> 3 7L34           HEMLOCK CAB CORP.   05/3… CUR            Y100847C              
+#> 4 2B26           PARMAR,JASVIR,SINGH 05/3… CUR            Y208268C              
+#> 5 4D88           RAKOS TAXI INC.     05/3… CUR            Y209822C              
+#> 6 8V44           DAYTONATWO LLC      05/3… CUR            Y207953C              
 #> # ℹ abbreviated name: ¹​dmv_license_plate_number
 #> # ℹ 10 more variables: vehicle_vin_number <chr>, vehicle_type <chr>,
 #> #   model_year <chr>, medallion_type <chr>, last_updated_date <chr>,
@@ -61,16 +61,16 @@ nyc_medallion_drivers_authorized(limit = 5000)
 #> # A tibble: 5,000 × 15
 #>    license_number name               type  current_status dmv_license_plate_nu…¹
 #>    <chr>          <chr>              <chr> <chr>          <chr>                 
-#>  1 4W44           AXIZ MANAGEMENT I… 05/3… CUR            Y205218C              
-#>  2 4P65           GMEN3 LLC          05/3… CUR            Y206201C              
-#>  3 9F46           MILON,SHEIKH       05/3… CUR            Y209013C              
-#>  4 8B92           ROYAL RADIANCE CA… 05/3… CUR            Y209362C              
-#>  5 9K49           YUVI SINGH LLC     05/3… CUR            Y208512C              
-#>  6 1K99           BARGAIN TRANSIT L… 05/3… CUR            Y208805C              
-#>  7 9K33           RESERVOIR HACKING… 05/3… CUR            9K33C                 
-#>  8 2C47           KERZHNER, FELIX    05/3… CUR            2C47H                 
-#>  9 1N52           COURT TRANS INC    05/3… CUR            Y209341C              
-#> 10 7M91           ARABY SERVICE CORP 05/3… CUR            Y210166C              
+#>  1 3G12           FAYYAZ TRANSIT LLC 05/3… CUR            Y200701C              
+#>  2 2N40           AC TAXI 2 LLC      05/3… CUR            Y205345C              
+#>  3 7L34           HEMLOCK CAB CORP.  05/3… CUR            Y100847C              
+#>  4 2B26           PARMAR,JASVIR,SIN… 05/3… CUR            Y208268C              
+#>  5 4D88           RAKOS TAXI INC.    05/3… CUR            Y209822C              
+#>  6 8V44           DAYTONATWO LLC     05/3… CUR            Y207953C              
+#>  7 6F70           IPTE LLC           05/3… CUR            Y207776C              
+#>  8 2P10           FANCY CAB CORP     05/3… CUR            Y208059C              
+#>  9 1B63           HASPIA & MISKAT L… 05/3… CUR            Y103166C              
+#> 10 9F28           NOVEMBRE, PAUL A.  05/3… CUR            Y202953C              
 #> # ℹ 4,990 more rows
 #> # ℹ abbreviated name: ¹​dmv_license_plate_number
 #> # ℹ 10 more variables: vehicle_vin_number <chr>, vehicle_type <chr>,
@@ -81,16 +81,16 @@ nyc_medallion_drivers_authorized(filters = list(current_status = "CUR"))
 #> # A tibble: 10,000 × 15
 #>    license_number name               type  current_status dmv_license_plate_nu…¹
 #>    <chr>          <chr>              <chr> <chr>          <chr>                 
-#>  1 4W44           AXIZ MANAGEMENT I… 05/3… CUR            Y205218C              
-#>  2 4P65           GMEN3 LLC          05/3… CUR            Y206201C              
-#>  3 9F46           MILON,SHEIKH       05/3… CUR            Y209013C              
-#>  4 8B92           ROYAL RADIANCE CA… 05/3… CUR            Y209362C              
-#>  5 9K49           YUVI SINGH LLC     05/3… CUR            Y208512C              
-#>  6 1K99           BARGAIN TRANSIT L… 05/3… CUR            Y208805C              
-#>  7 9K33           RESERVOIR HACKING… 05/3… CUR            9K33C                 
-#>  8 2C47           KERZHNER, FELIX    05/3… CUR            2C47H                 
-#>  9 1N52           COURT TRANS INC    05/3… CUR            Y209341C              
-#> 10 7M91           ARABY SERVICE CORP 05/3… CUR            Y210166C              
+#>  1 3G12           FAYYAZ TRANSIT LLC 05/3… CUR            Y200701C              
+#>  2 2N40           AC TAXI 2 LLC      05/3… CUR            Y205345C              
+#>  3 7L34           HEMLOCK CAB CORP.  05/3… CUR            Y100847C              
+#>  4 2B26           PARMAR,JASVIR,SIN… 05/3… CUR            Y208268C              
+#>  5 4D88           RAKOS TAXI INC.    05/3… CUR            Y209822C              
+#>  6 8V44           DAYTONATWO LLC     05/3… CUR            Y207953C              
+#>  7 6F70           IPTE LLC           05/3… CUR            Y207776C              
+#>  8 2P10           FANCY CAB CORP     05/3… CUR            Y208059C              
+#>  9 1B63           HASPIA & MISKAT L… 05/3… CUR            Y103166C              
+#> 10 9F28           NOVEMBRE, PAUL A.  05/3… CUR            Y202953C              
 #> # ℹ 9,990 more rows
 #> # ℹ abbreviated name: ¹​dmv_license_plate_number
 #> # ℹ 10 more variables: vehicle_vin_number <chr>, vehicle_type <chr>,

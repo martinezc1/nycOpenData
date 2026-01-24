@@ -48,10 +48,10 @@ head(small_sample)
 #>   ticket_number violation_date          issuing_agency respondent_first_name
 #>   <chr>         <chr>                   <chr>          <chr>                
 #> 1 018543P       2109-10-19T00:00:00.000 TAXI_TLC       ILYAS                
-#> 2 73221914A     2025-12-11T00:00:00.000 TAXI_TLC       SHAIKH               
-#> 3 74761380A     2025-12-10T00:00:00.000 TAXI_TLC       SALEEM               
-#> 4 73221911A     2025-12-10T00:00:00.000 TAXI_TLC       MARYERING CASTANEDA  
-#> 5 74092720A     2025-12-10T00:00:00.000 TAXI_TLC       BABOU                
+#> 2 74942215A     2026-01-22T00:00:00.000 TAXI_TLC       CEDENO CEVALLOS      
+#> 3 73071435A     2026-01-22T00:00:00.000 TAXI_TLC       ADEBANJO             
+#> 4 74731351A     2026-01-22T00:00:00.000 TAXI_TLC       ZAHID                
+#> 5 73902267A     2026-01-21T00:00:00.000 TAXI_TLC       BRUNEUS              
 #> # ℹ 18 more variables: respondent_last_name <chr>,
 #> #   violation_location_borough <chr>, violation_location_city <chr>,
 #> #   violation_location_zip_code <chr>, respondent_address_borough <chr>,
@@ -62,21 +62,21 @@ head(small_sample)
 
 # \donttest{
 nyc_oath_hearing_case_status(limit = 5000)
-#> # A tibble: 5,000 × 45
+#> # A tibble: 5,000 × 60
 #>    ticket_number violation_date          issuing_agency respondent_first_name
 #>    <chr>         <chr>                   <chr>          <chr>                
 #>  1 018543P       2109-10-19T00:00:00.000 TAXI_TLC       ILYAS                
-#>  2 73221914A     2025-12-11T00:00:00.000 TAXI_TLC       SHAIKH               
-#>  3 74512129A     2025-12-10T00:00:00.000 TAXI_TLC       AKHUNOVA             
-#>  4 73121114A     2025-12-10T00:00:00.000 TAXI_TLC       JUAN                 
-#>  5 73722812A     2025-12-10T00:00:00.000 TAXI_TLC       A                    
-#>  6 73281467A     2025-12-10T00:00:00.000 TAXI_TLC       LEON LOZADA          
-#>  7 74710819A     2025-12-10T00:00:00.000 TAXI_TLC       MEJIA                
-#>  8 74460838A     2025-12-10T00:00:00.000 TAXI_TLC       KHAN                 
-#>  9 73150794A     2025-12-10T00:00:00.000 TAXI_TLC       BARUA                
-#> 10 73221911A     2025-12-10T00:00:00.000 TAXI_TLC       MARYERING CASTANEDA  
+#>  2 74942215A     2026-01-22T00:00:00.000 TAXI_TLC       CEDENO CEVALLOS      
+#>  3 73071435A     2026-01-22T00:00:00.000 TAXI_TLC       ADEBANJO             
+#>  4 74731351A     2026-01-22T00:00:00.000 TAXI_TLC       ZAHID                
+#>  5 74750860A     2026-01-21T00:00:00.000 TAXI_TLC       EGBO IBEZIM K        
+#>  6 74761468A     2026-01-21T00:00:00.000 TAXI_TLC       HOSSAIN              
+#>  7 73553954A     2026-01-21T00:00:00.000 TAXI_TLC       POWER TRANSIT INC    
+#>  8 75261989A     2026-01-21T00:00:00.000 TAXI_TLC       CAMILO               
+#>  9 74512244A     2026-01-21T00:00:00.000 TAXI_TLC       DIALLO               
+#> 10 74731350A     2026-01-21T00:00:00.000 TAXI_TLC       GOURAV               
 #> # ℹ 4,990 more rows
-#> # ℹ 41 more variables: respondent_last_name <chr>,
+#> # ℹ 56 more variables: respondent_last_name <chr>,
 #> #   violation_location_borough <chr>, violation_location_city <chr>,
 #> #   violation_location_zip_code <chr>, respondent_address_borough <chr>,
 #> #   total_violation_amount <chr>, violation_details <chr>,

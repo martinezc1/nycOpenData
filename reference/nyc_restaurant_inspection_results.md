@@ -65,62 +65,61 @@ head(small_sample)
 #> # A tibble: 6 × 28
 #>   camis    dba           boro  building street zipcode phone cuisine_description
 #>   <chr>    <chr>         <chr> <chr>    <chr>  <chr>   <chr> <chr>              
-#> 1 50170017 U&M CAFE BAK… Manh… 303      GRAND… 10002   5166… Chinese            
-#> 2 50068508 KUNG FU TEA   Quee… 82-02    ROOSE… 11372   9174… Coffee/Tea         
-#> 3 50077169 SERENDIPITY 3 Manh… 225      EAST … 10022   2128… American           
-#> 4 50178009 MALA TOWN     Manh… 162      EAST … 10010   6608… Chinese            
-#> 5 50163454 TILIA LA CAS… Bronx 3648     BAILE… 10463   9292… Spanish            
-#> 6 50177364 GUAC TIME     Bronx 205      EAST … 10458   9174… Mexican            
+#> 1 50096479 TACO BELL     Manh… 246      EAST … 10010   6468… Tex-Mex            
+#> 2 50147024 KINGS KITCHE… Broo… 158      LEWIS… 11221   7189… Chinese            
+#> 3 50167644 AL HIRSCHFEL… Manh… 302      W 45T… 10036   9142… Nuts/Confectionary 
+#> 4 50138596 MIKADO        Broo… 177      ATLAN… 11201   2123… Japanese           
+#> 5 40510647 ROTI CORNER … Quee… 18018    HILLS… 11432   7186… Caribbean          
+#> 6 50167730 SURAM - SERA… Manh… 132      W 31S… 10001   9173… Fusion             
 #> # ℹ 20 more variables: inspection_date <chr>, action <chr>,
 #> #   violation_code <chr>, violation_description <chr>, critical_flag <chr>,
-#> #   score <chr>, grade <chr>, record_date <chr>, inspection_type <chr>,
-#> #   latitude <chr>, longitude <chr>, community_board <chr>,
-#> #   council_district <chr>, census_tract <chr>, bin <chr>, bbl <chr>,
-#> #   nta <chr>, grade_date <chr>, location.type <chr>,
-#> #   location.coordinates <list>
+#> #   score <chr>, record_date <chr>, inspection_type <chr>, latitude <chr>,
+#> #   longitude <chr>, community_board <chr>, council_district <chr>,
+#> #   census_tract <chr>, bin <chr>, bbl <chr>, nta <chr>, grade <chr>,
+#> #   grade_date <chr>, location.type <chr>, location.coordinates <list>
 
 # \donttest{
 nyc_restaurant_inspection_results(limit = 5000)
 #> # A tibble: 5,000 × 28
 #>    camis    dba          boro  building street zipcode phone cuisine_description
 #>    <chr>    <chr>        <chr> <chr>    <chr>  <chr>   <chr> <chr>              
-#>  1 50170017 U&M CAFE BA… Manh… 303      GRAND… 10002   5166… Chinese            
-#>  2 50068508 KUNG FU TEA  Quee… 82-02    ROOSE… 11372   9174… Coffee/Tea         
-#>  3 50077169 SERENDIPITY… Manh… 225      EAST … 10022   2128… American           
-#>  4 50178009 MALA TOWN    Manh… 162      EAST … 10010   6608… Chinese            
-#>  5 50163454 TILIA LA CA… Bronx 3648     BAILE… 10463   9292… Spanish            
-#>  6 50177364 GUAC TIME    Bronx 205      EAST … 10458   9174… Mexican            
-#>  7 50134501 WENDY'S      Manh… 24       WEST … 10010   5169… American           
-#>  8 50039250 LIN'S GARDEN Bronx 3986     WHITE… 10466   7185… Chinese            
-#>  9 50175950 POKE BURRIT… Broo… 265      METRO… 11211   9177… Japanese           
-#> 10 40700664 PHO BANG     Manh… 157      MOTT … 10013   2129… Southeast Asian    
+#>  1 50096479 TACO BELL    Manh… 246      EAST … 10010   6468… Tex-Mex            
+#>  2 50147024 KINGS KITCH… Broo… 158      LEWIS… 11221   7189… Chinese            
+#>  3 50167644 AL HIRSCHFE… Manh… 302      W 45T… 10036   9142… Nuts/Confectionary 
+#>  4 50138596 MIKADO       Broo… 177      ATLAN… 11201   2123… Japanese           
+#>  5 40510647 ROTI CORNER… Quee… 18018    HILLS… 11432   7186… Caribbean          
+#>  6 50167730 SURAM - SER… Manh… 132      W 31S… 10001   9173… Fusion             
+#>  7 50138596 MIKADO       Broo… 177      ATLAN… 11201   2123… Japanese           
+#>  8 41597047 Z-TWO DINER… Stat… 2925     VETER… 10309   7183… American           
+#>  9 50166327 WABI NORI    Manh… 115      ESSEX… 10002   9176… Japanese           
+#> 10 50125120 TAIM MEDITE… Broo… 11       HOYT … 11201   6782… Mediterranean      
 #> # ℹ 4,990 more rows
 #> # ℹ 20 more variables: inspection_date <chr>, action <chr>,
 #> #   violation_code <chr>, violation_description <chr>, critical_flag <chr>,
-#> #   score <chr>, grade <chr>, record_date <chr>, inspection_type <chr>,
-#> #   latitude <chr>, longitude <chr>, community_board <chr>,
-#> #   council_district <chr>, census_tract <chr>, bin <chr>, bbl <chr>,
-#> #   nta <chr>, grade_date <chr>, location.type <chr>, …
+#> #   score <chr>, record_date <chr>, inspection_type <chr>, latitude <chr>,
+#> #   longitude <chr>, community_board <chr>, council_district <chr>,
+#> #   census_tract <chr>, bin <chr>, bbl <chr>, nta <chr>, grade <chr>,
+#> #   grade_date <chr>, location.type <chr>, location.coordinates <list>
 nyc_restaurant_inspection_results(filters = list(boro = "Queens"))
 #> # A tibble: 10,000 × 28
 #>    camis    dba          boro  building street zipcode phone cuisine_description
 #>    <chr>    <chr>        <chr> <chr>    <chr>  <chr>   <chr> <chr>              
-#>  1 50068508 KUNG FU TEA  Quee… 82-02    ROOSE… 11372   9174… Coffee/Tea         
-#>  2 50084337 AREPA LADY   Quee… 77-17    37 AV… 11372   9177… Latin American     
-#>  3 50084337 AREPA LADY   Quee… 77-17    37 AV… 11372   9177… Latin American     
-#>  4 41254984 CAFE SALAMA… Quee… 79-05    NORTH… 11372   7184… Spanish            
-#>  5 50165093 ZAO DIAN JI… Quee… 59-14    MAIN … 11355   9292… Chinese            
-#>  6 41391483 TIGER SUGAR  Quee… 135-45   ROOSE… 11354   7185… Coffee/Tea         
-#>  7 50009411 DELICIAS CA… Quee… 94-18    SUTPH… 11435   7182… Spanish            
-#>  8 40880194 TOURNESOL    Quee… 50-12    VERNO… 11101   7184… French             
-#>  9 50174517 ROSA'S PIZZA Quee… 55-26    69 ST… 11378   7184… Pizza              
-#> 10 50009411 DELICIAS CA… Quee… 94-18    SUTPH… 11435   7182… Spanish            
+#>  1 40510647 ROTI CORNER… Quee… 18018    HILLS… 11432   7186… Caribbean          
+#>  2 41143410 PRESS 195    Quee… 40-11    BELL … 11361   7182… Sandwiches/Salads/…
+#>  3 50117709 CHUN YANG T… Quee… 4910     VERNO… 11101   3474… Coffee/Tea         
+#>  4 50175203 PRINCE GRIL… Quee… 3801     VERNO… 11101   3479… Sandwiches/Salads/…
+#>  5 40370167 BURGER KING  Quee… 222-10   NORTH… 11361   7182… Hamburgers         
+#>  6 50142811 IZAYAKA NON… Quee… 46-44    VERNO… 11101   9149… Thai               
+#>  7 50087176 K & L DELIC… Quee… 76-01    37 AV… 11372   2015… Sandwiches         
+#>  8 50065723 PANTRY MARK… Quee… 2420     JACKS… 11101   7186… Sandwiches/Salads/…
+#>  9 50038249 TOUS LES JO… Quee… 39-02    UNION… 11354   7187… Bakery Products/De…
+#> 10 50170107 SOL DE COLO… Quee… 3437     BELL … 11361   6315… Latin American     
 #> # ℹ 9,990 more rows
 #> # ℹ 20 more variables: inspection_date <chr>, action <chr>,
 #> #   violation_code <chr>, violation_description <chr>, critical_flag <chr>,
-#> #   score <chr>, grade <chr>, grade_date <chr>, record_date <chr>,
-#> #   inspection_type <chr>, latitude <chr>, longitude <chr>,
-#> #   community_board <chr>, council_district <chr>, census_tract <chr>,
-#> #   bin <chr>, bbl <chr>, nta <chr>, location.type <chr>, …
+#> #   score <chr>, record_date <chr>, inspection_type <chr>, latitude <chr>,
+#> #   longitude <chr>, community_board <chr>, council_district <chr>,
+#> #   census_tract <chr>, bin <chr>, bbl <chr>, nta <chr>, grade <chr>,
+#> #   grade_date <chr>, location.type <chr>, location.coordinates <list>
 # }
 ```

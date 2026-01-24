@@ -42,32 +42,32 @@ head(small_sample)
 #> # A tibble: 6 × 12
 #>   app_no  type  app_date      status fru_interview_schedu…¹ drug_test wav_course
 #>   <chr>   <chr> <chr>         <chr>  <chr>                  <chr>     <chr>     
-#> 1 6128212 HDR   2025-12-15T0… Incom… Not Applicable         Needed    Needed    
-#> 2 6128224 HDR   2025-12-15T0… Incom… Not Applicable         Needed    Needed    
-#> 3 6128187 HDR   2025-12-15T0… Incom… Not Applicable         Needed    Needed    
-#> 4 6128211 HDR   2025-12-15T0… Incom… Not Applicable         Needed    Needed    
-#> 5 6128208 HDR   2025-12-15T0… Incom… Not Applicable         Needed    Needed    
-#> 6 6128228 HDR   2025-12-15T0… Incom… Not Applicable         Needed    Needed    
+#> 1 6131208 HDR   2026-01-24T0… Incom… Not Applicable         Needed    Needed    
+#> 2 6131209 HDR   2026-01-24T0… Incom… Not Applicable         Needed    Needed    
+#> 3 6131210 HDR   2026-01-24T0… Incom… Not Applicable         Needed    Needed    
+#> 4 6131164 HDR   2026-01-23T0… Incom… Not Applicable         Needed    Needed    
+#> 5 6131187 HDR   2026-01-23T0… Incom… Not Applicable         Needed    Needed    
+#> 6 6131135 HDR   2026-01-23T0… Incom… Not Applicable         Needed    Needed    
 #> # ℹ abbreviated name: ¹​fru_interview_scheduled
 #> # ℹ 5 more variables: defensive_driving <chr>, driver_exam <chr>,
 #> #   medical_clearance_form <chr>, other_requirements <chr>, lastupdate <chr>
 
 # \donttest{
 nyc_tlc_new_driver_app_status(limit = 5000)
-#> # A tibble: 5,000 × 12
+#> # A tibble: 4,910 × 12
 #>    app_no  type  app_date     status fru_interview_schedu…¹ drug_test wav_course
 #>    <chr>   <chr> <chr>        <chr>  <chr>                  <chr>     <chr>     
-#>  1 6128212 HDR   2025-12-15T… Incom… Not Applicable         Needed    Needed    
-#>  2 6128224 HDR   2025-12-15T… Incom… Not Applicable         Needed    Needed    
-#>  3 6128187 HDR   2025-12-15T… Incom… Not Applicable         Needed    Needed    
-#>  4 6128211 HDR   2025-12-15T… Incom… Not Applicable         Needed    Needed    
-#>  5 6128208 HDR   2025-12-15T… Incom… Not Applicable         Needed    Needed    
-#>  6 6128228 HDR   2025-12-15T… Incom… Not Applicable         Needed    Needed    
-#>  7 6128196 HDR   2025-12-15T… Incom… Not Applicable         Needed    Needed    
-#>  8 6128203 HDR   2025-12-15T… Incom… Not Applicable         Needed    Needed    
-#>  9 6128204 HDR   2025-12-15T… Incom… Not Applicable         Needed    Needed    
-#> 10 6128216 HDR   2025-12-15T… Incom… Not Applicable         Needed    Needed    
-#> # ℹ 4,990 more rows
+#>  1 6131208 HDR   2026-01-24T… Incom… Not Applicable         Needed    Needed    
+#>  2 6131209 HDR   2026-01-24T… Incom… Not Applicable         Needed    Needed    
+#>  3 6131210 HDR   2026-01-24T… Incom… Not Applicable         Needed    Needed    
+#>  4 6131164 HDR   2026-01-23T… Incom… Not Applicable         Needed    Needed    
+#>  5 6131187 HDR   2026-01-23T… Incom… Not Applicable         Needed    Needed    
+#>  6 6131135 HDR   2026-01-23T… Incom… Not Applicable         Needed    Needed    
+#>  7 6131147 HDR   2026-01-23T… Incom… Not Applicable         Needed    Complete  
+#>  8 6131123 HDR   2026-01-23T… Incom… Not Applicable         Needed    Needed    
+#>  9 6131145 HDR   2026-01-23T… Incom… Not Applicable         Needed    Complete  
+#> 10 6131171 HDR   2026-01-23T… Incom… Not Applicable         Needed    Needed    
+#> # ℹ 4,900 more rows
 #> # ℹ abbreviated name: ¹​fru_interview_scheduled
 #> # ℹ 5 more variables: defensive_driving <chr>, driver_exam <chr>,
 #> #   medical_clearance_form <chr>, other_requirements <chr>, lastupdate <chr>
