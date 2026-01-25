@@ -53,7 +53,7 @@
 <img src="logo.png" class="logo" alt=""><h1 id="nycopendata-">nycOpenData <a class="anchor" aria-label="anchor" href="#nycopendata-"></a>
 </h1>
 </div>
-<p><a href="https://CRAN.R-project.org/package=nycOpenData" class="external-link"><img src="https://www.r-pkg.org/badges/version/nycOpenData" alt="CRAN status"></a> <a href="https://CRAN.R-project.org/package=nycOpenData" class="external-link"><img src="https://cranlogs.r-pkg.org/badges/grand-total/nycOpenData" alt="CRAN downloads"></a> <a href="https://lifecycle.r-lib.org/articles/stages.html" class="external-link"><img src="https://img.shields.io/badge/lifecycle-stable-brightgreen.svg" alt="Lifecycle: stable"></a></p>
+<p><a href="https://CRAN.R-project.org/package=nycOpenData" class="external-link"><img src="https://www.r-pkg.org/badges/version/nycOpenData" alt="CRAN status"></a> <a href="https://CRAN.R-project.org/package=nycOpenData" class="external-link"><img src="https://cranlogs.r-pkg.org/badges/grand-total/nycOpenData" alt="CRAN downloads"></a> <a href="https://lifecycle.r-lib.org/articles/stages.html" class="external-link"><img src="https://img.shields.io/badge/lifecycle-stable-brightgreen.svg" alt="Lifecycle: stable"></a> <a href="https://app.codecov.io/gh/martinezc1/nycOpenData" class="external-link"><img src="https://codecov.io/gh/martinezc1/nycOpenData/graph/badge.svg" alt="Codecov test coverage"></a></p>
 <p><code>nycOpenData</code> provides simple, reproducible access to datasets from the<br><a href="https://opendata.cityofnewyork.us/" class="external-link">NYC Open Data</a> platform — directly from R,<br>
 with <strong>no API keys</strong> or manual downloads required. The package is available on <strong>CRAN</strong>.</p>
 <p>Version <strong>0.1.5</strong> now includes wrappers for <strong>30+ NYC Open Data APIs</strong>, covering:</p>
@@ -117,14 +117,14 @@ with <strong>no API keys</strong> or manual downloads required. The package is a
 <span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="va">filtered</span><span class="op">)</span></span></code></pre></div>
 <div class="sourceCode" id="cb4"><pre class="sourceCode R"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" tabindex="-1"></a><span class="do">## # A tibble: 6 × 37</span></span>
-<span id="cb4-2"><a href="#cb4-2" tabindex="-1"></a><span class="do">##   unique_key created_date    agency agency_name complaint_type descriptor</span></span>
-<span id="cb4-3"><a href="#cb4-3" tabindex="-1"></a><span class="do">##   &lt;chr&gt;      &lt;chr&gt;           &lt;chr&gt;  &lt;chr&gt;       &lt;chr&gt;          &lt;chr&gt;     </span></span>
-<span id="cb4-4"><a href="#cb4-4" tabindex="-1"></a><span class="do">## 1 67573446   2026-01-23T02:… NYPD   New York C… Noise - Resid… Loud Musi…</span></span>
-<span id="cb4-5"><a href="#cb4-5" tabindex="-1"></a><span class="do">## 2 67572026   2026-01-23T02:… NYPD   New York C… Illegal Parki… Commercia…</span></span>
-<span id="cb4-6"><a href="#cb4-6" tabindex="-1"></a><span class="do">## 3 67570616   2026-01-23T02:… NYPD   New York C… Noise - Comme… Loud Musi…</span></span>
-<span id="cb4-7"><a href="#cb4-7" tabindex="-1"></a><span class="do">## 4 67570609   2026-01-23T02:… NYPD   New York C… Illegal Parki… Blocked H…</span></span>
-<span id="cb4-8"><a href="#cb4-8" tabindex="-1"></a><span class="do">## 5 67574840   2026-01-23T02:… NYPD   New York C… Noise - Resid… Loud Talk…</span></span>
-<span id="cb4-9"><a href="#cb4-9" tabindex="-1"></a><span class="do">## 6 67572050   2026-01-23T02:… NYPD   New York C… Noise - Resid… Loud Tele…</span></span>
+<span id="cb4-2"><a href="#cb4-2" tabindex="-1"></a><span class="do">##   unique_key created_date agency agency_name complaint_type descriptor</span></span>
+<span id="cb4-3"><a href="#cb4-3" tabindex="-1"></a><span class="do">##   &lt;chr&gt;      &lt;chr&gt;        &lt;chr&gt;  &lt;chr&gt;       &lt;chr&gt;          &lt;chr&gt;     </span></span>
+<span id="cb4-4"><a href="#cb4-4" tabindex="-1"></a><span class="do">## 1 67591844   2026-01-24T… NYPD   New York C… Noise - Resid… Loud Talk…</span></span>
+<span id="cb4-5"><a href="#cb4-5" tabindex="-1"></a><span class="do">## 2 67583315   2026-01-24T… NYPD   New York C… Noise - Resid… Banging/P…</span></span>
+<span id="cb4-6"><a href="#cb4-6" tabindex="-1"></a><span class="do">## 3 67586147   2026-01-24T… NYPD   New York C… Noise - Resid… Banging/P…</span></span>
+<span id="cb4-7"><a href="#cb4-7" tabindex="-1"></a><span class="do">## 4 67591820   2026-01-24T… NYPD   New York C… Illegal Parki… Posted Pa…</span></span>
+<span id="cb4-8"><a href="#cb4-8" tabindex="-1"></a><span class="do">## 5 67583301   2026-01-24T… NYPD   New York C… Noise - Comme… Loud Musi…</span></span>
+<span id="cb4-9"><a href="#cb4-9" tabindex="-1"></a><span class="do">## 6 67587630   2026-01-24T… NYPD   New York C… Noise - Resid… Banging/P…</span></span>
 <span id="cb4-10"><a href="#cb4-10" tabindex="-1"></a><span class="do">## # ℹ 31 more variables: location_type &lt;chr&gt;, incident_zip &lt;chr&gt;,</span></span>
 <span id="cb4-11"><a href="#cb4-11" tabindex="-1"></a><span class="do">## #   incident_address &lt;chr&gt;, street_name &lt;chr&gt;, cross_street_1 &lt;chr&gt;,</span></span>
 <span id="cb4-12"><a href="#cb4-12" tabindex="-1"></a><span class="do">## #   cross_street_2 &lt;chr&gt;, intersection_street_1 &lt;chr&gt;,</span></span>
@@ -139,7 +139,7 @@ with <strong>no API keys</strong> or manual downloads required. The package is a
 </h2>
 <ul>
 <li>
-<code><a href="https://martinezc1.github.io/nycOpenData/articles/nyc-311.html">vignette("nyc-311", package = "nycOpenData")</a></code> – Working with NYC 311 data end-to-end</li>
+<code>vignette("nyc-311", package = "nycOpenData")</code> – Working with NYC 311 data end-to-end</li>
 </ul>
 </div>
 <div class="section level2">
@@ -176,6 +176,13 @@ Brooklyn College, City University of New York</p>
 </ul>
 </div>
 
+<div class="community">
+<h2 data-toc-skip>Community</h2>
+<ul class="list-unstyled">
+<li><a href="CONTRIBUTING.html">Contributing guide</a></li>
+<li><a href="CODE_OF_CONDUCT.html">Code of conduct</a></li>
+</ul>
+</div>
 
 <div class="citation">
 <h2 data-toc-skip>Citation</h2>

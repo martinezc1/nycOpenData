@@ -6,6 +6,8 @@ status](https://www.r-pkg.org/badges/version/nycOpenData)](https://CRAN.R-projec
 downloads](https://cranlogs.r-pkg.org/badges/grand-total/nycOpenData)](https://CRAN.R-project.org/package=nycOpenData)
 [![Lifecycle:
 stable](https://img.shields.io/badge/lifecycle-stable-brightgreen.svg)](https://lifecycle.r-lib.org/articles/stages.html)
+[![Codecov test
+coverage](https://codecov.io/gh/martinezc1/nycOpenData/graph/badge.svg)](https://app.codecov.io/gh/martinezc1/nycOpenData)
 
 `nycOpenData` provides simple, reproducible access to datasets from
 the  
@@ -70,14 +72,14 @@ head(filtered)
 
 ``` R
 ## # A tibble: 6 × 37
-##   unique_key created_date    agency agency_name complaint_type descriptor
-##   <chr>      <chr>           <chr>  <chr>       <chr>          <chr>     
-## 1 67573446   2026-01-23T02:… NYPD   New York C… Noise - Resid… Loud Musi…
-## 2 67572026   2026-01-23T02:… NYPD   New York C… Illegal Parki… Commercia…
-## 3 67570616   2026-01-23T02:… NYPD   New York C… Noise - Comme… Loud Musi…
-## 4 67570609   2026-01-23T02:… NYPD   New York C… Illegal Parki… Blocked H…
-## 5 67574840   2026-01-23T02:… NYPD   New York C… Noise - Resid… Loud Talk…
-## 6 67572050   2026-01-23T02:… NYPD   New York C… Noise - Resid… Loud Tele…
+##   unique_key created_date agency agency_name complaint_type descriptor
+##   <chr>      <chr>        <chr>  <chr>       <chr>          <chr>     
+## 1 67591844   2026-01-24T… NYPD   New York C… Noise - Resid… Loud Talk…
+## 2 67583315   2026-01-24T… NYPD   New York C… Noise - Resid… Banging/P…
+## 3 67586147   2026-01-24T… NYPD   New York C… Noise - Resid… Banging/P…
+## 4 67591820   2026-01-24T… NYPD   New York C… Illegal Parki… Posted Pa…
+## 5 67583301   2026-01-24T… NYPD   New York C… Noise - Comme… Loud Musi…
+## 6 67587630   2026-01-24T… NYPD   New York C… Noise - Resid… Banging/P…
 ## # ℹ 31 more variables: location_type <chr>, incident_zip <chr>,
 ## #   incident_address <chr>, street_name <chr>, cross_street_1 <chr>,
 ## #   cross_street_2 <chr>, intersection_street_1 <chr>,
@@ -91,8 +93,8 @@ head(filtered)
 
 ## Learn by example
 
-- [`vignette("nyc-311", package = "nycOpenData")`](https://martinezc1.github.io/nycOpenData/articles/nyc-311.html)
-  – Working with NYC 311 data end-to-end
+- `vignette("nyc-311", package = "nycOpenData")` – Working with NYC 311
+  data end-to-end
 
 ## About
 
@@ -201,6 +203,8 @@ Core helpers
   : City Record Online
 - [`nyc_civil_service_list()`](https://martinezc1.github.io/nycOpenData/reference/nyc_civil_service_list.md)
   : NYC Civil Service List (Active)
+- [`nyc_permit_events_historic()`](https://martinezc1.github.io/nycOpenData/reference/nyc_permit_events_historic.md)
+  : NYC Permitted Event Information - Historical
 
 ## Health
 
@@ -280,6 +284,8 @@ Other NYC Open Data wrappers
   : Open Parking and Camera Violations
 - [`nyc_period_attendance_reporting()`](https://martinezc1.github.io/nycOpenData/reference/nyc_period_attendance_reporting.md)
   : Statistical Summary Period Attendance Reporting (PAR)
+- [`nyc_permit_events_historic()`](https://martinezc1.github.io/nycOpenData/reference/nyc_permit_events_historic.md)
+  : NYC Permitted Event Information - Historical
 - [`nyc_pets_in_shelters()`](https://martinezc1.github.io/nycOpenData/reference/nyc_pets_in_shelters.md)
   : NYC Pets in Shelter Report
 - [`nyc_restaurant_inspection_results()`](https://martinezc1.github.io/nycOpenData/reference/nyc_restaurant_inspection_results.md)
