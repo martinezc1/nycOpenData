@@ -36,39 +36,18 @@ schools according to the guidelines set by Local Law 43 of 2011.
 ## Examples
 
 ``` r
-# Quick example (fetch 10 rows)
-small_sample <- nyc_school_discharge_report_2015_2018(limit = 10)
-head(small_sample)
-#> # A tibble: 6 × 9
+# Quick example (fetch 2 rows)
+small_sample <- nyc_school_discharge_report_2015_2018(limit = 2)
+small_sample
+#> # A tibble: 2 × 9
 #>   school_year geography report_category report_subcategory dbn    category_group
 #>   <chr>       <chr>     <chr>           <chr>              <chr>  <chr>         
 #> 1 2017-2018   School    SWD             Not SWD            08X519 Credit Recove…
 #> 2 2017-2018   School    SWD             Not SWD            09X325 Credit Recove…
-#> 3 2017-2018   School    SWD             Not SWD            12X092 Credit Recove…
-#> 4 2017-2018   School    SWD             Not SWD            12X321 Credit Recove…
-#> 5 2017-2018   School    SWD             Not SWD            12X321 Credit Recove…
-#> 6 2017-2018   School    SWD             Not SWD            12X372 Credit Recove…
 #> # ℹ 3 more variables: category_subgroup <chr>, value <chr>,
 #> #   value_percentage <chr>
 
 # \donttest{
-nyc_school_discharge_report_2015_2018(limit = 5000)
-#> # A tibble: 5,000 × 9
-#>    school_year geography report_category report_subcategory dbn   category_group
-#>    <chr>       <chr>     <chr>           <chr>              <chr> <chr>         
-#>  1 2017-2018   School    SWD             Not SWD            08X5… Credit Recove…
-#>  2 2017-2018   School    SWD             Not SWD            09X3… Credit Recove…
-#>  3 2017-2018   School    SWD             Not SWD            12X0… Credit Recove…
-#>  4 2017-2018   School    SWD             Not SWD            12X3… Credit Recove…
-#>  5 2017-2018   School    SWD             Not SWD            12X3… Credit Recove…
-#>  6 2017-2018   School    SWD             Not SWD            12X3… Credit Recove…
-#>  7 2017-2018   School    SWD             Not SWD            12X3… To School     
-#>  8 2017-2018   School    SWD             Not SWD            12X3… To School     
-#>  9 2017-2018   School    SWD             Not SWD            12X3… To School     
-#> 10 2017-2018   School    SWD             Not SWD            12X3… To School     
-#> # ℹ 4,990 more rows
-#> # ℹ 3 more variables: category_subgroup <chr>, value <chr>,
-#> #   value_percentage <chr>
 nyc_school_discharge_report_2015_2018(filters = list(geography = "Borough"))
 #> # A tibble: 10,000 × 9
 #>    school_year geography report_category report_subcategory borough  

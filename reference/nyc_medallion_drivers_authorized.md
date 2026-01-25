@@ -50,31 +50,30 @@ either today or yesterday's date, depending on the time of day.
 # do not fail when the network is unavailable or slow.
 # \donttest{
 if (curl::has_internet()) {
-  # Quick example (fetch 10 rows)
-  small_sample <- nyc_medallion_drivers_authorized(limit = 10)
-  head(small_sample)
+  # Quick example (fetch 2 rows)
+  small_sample <- nyc_medallion_drivers_authorized(limit = 2)
+  small_sample
 
-  nyc_medallion_drivers_authorized(limit = 5000)
   nyc_medallion_drivers_authorized(filters = list(current_status = "CUR"))
 }
 #> # A tibble: 10,000 × 15
-#>    license_number name               type  current_status dmv_license_plate_nu…¹
-#>    <chr>          <chr>              <chr> <chr>          <chr>                 
-#>  1 3G12           FAYYAZ TRANSIT LLC 05/3… CUR            Y200701C              
-#>  2 2N40           AC TAXI 2 LLC      05/3… CUR            Y205345C              
-#>  3 7L34           HEMLOCK CAB CORP.  05/3… CUR            Y100847C              
-#>  4 2B26           PARMAR,JASVIR,SIN… 05/3… CUR            Y208268C              
-#>  5 4D88           RAKOS TAXI INC.    05/3… CUR            Y209822C              
-#>  6 8V44           DAYTONATWO LLC     05/3… CUR            Y207953C              
-#>  7 6F70           IPTE LLC           05/3… CUR            Y207776C              
-#>  8 2P10           FANCY CAB CORP     05/3… CUR            Y208059C              
-#>  9 1B63           HASPIA & MISKAT L… 05/3… CUR            Y103166C              
-#> 10 9F28           NOVEMBRE, PAUL A.  05/3… CUR            Y202953C              
+#>    license_number name             type    current_status dmv_license_plate_nu…¹
+#>    <chr>          <chr>            <chr>   <chr>          <chr>                 
+#>  1 4D13           SARRAN,BICKHAM   05/31/… CUR            4D13B                 
+#>  2 7N59           SSSA TAXI LLC    05/31/… CUR            Y210079C              
+#>  3 7D77           AMARDARSHAN CORP 05/31/… CUR            Y210296C              
+#>  4 7B37           ORTIZ,TELMO,E    05/31/… CUR            Y208518C              
+#>  5 9A22           MIAH TRANS LLC   05/31/… CUR            Y208343C              
+#>  6 3T23           NAAN CAB LLC     05/31/… CUR            Y102539C              
+#>  7 2A91           GROSMAN, JOSEPH  05/31/… CUR            Y204177C              
+#>  8 4Y76           KEROIL INC       05/31/… CUR            Y201831C              
+#>  9 9P11           TOPS CAB CORP    05/31/… CUR            Y205404C              
+#> 10 1M25           MENG5 LLC        05/31/… CUR            Y210565C              
 #> # ℹ 9,990 more rows
 #> # ℹ abbreviated name: ¹​dmv_license_plate_number
 #> # ℹ 10 more variables: vehicle_vin_number <chr>, vehicle_type <chr>,
-#> #   model_year <chr>, medallion_type <chr>, last_updated_date <chr>,
-#> #   last_updated_time <chr>, agent_number <chr>, agent_name <chr>,
+#> #   model_year <chr>, medallion_type <chr>, agent_number <chr>,
+#> #   last_updated_date <chr>, last_updated_time <chr>, agent_name <chr>,
 #> #   agent_telephone_number <chr>, agent_address <chr>
 # }
 ```

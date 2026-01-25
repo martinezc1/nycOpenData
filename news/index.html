@@ -7,7 +7,7 @@
 
     <a class="navbar-brand me-2" href="../index.html">nycOpenData</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.1.4</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.1.5</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -16,6 +16,7 @@
 
     <div id="navbar" class="collapse navbar-collapse ms-3">
       <ul class="navbar-nav me-auto"><li class="nav-item"><a class="nav-link" href="../reference/index.html">Reference</a></li>
+<li class="nav-item"><a class="nav-link" href="../articles/index.html">Articles</a></li>
 <li class="active nav-item"><a class="nav-link" href="../news/index.html">Changelog</a></li>
       </ul><ul class="navbar-nav"><li class="nav-item"><form class="form-inline" role="search">
  <input class="form-control" type="search" name="search-input" id="search-input" autocomplete="off" aria-label="Search site" placeholder="Search for" data-search-index="../search.json"></form></li>
@@ -32,13 +33,18 @@
     </div>
 
     <div class="section level2">
-<h2 class="pkg-version" data-toc-text="0.1.4" id="nycopendata-014">nycOpenData 0.1.4<a class="anchor" aria-label="anchor" href="#nycopendata-014"></a></h2><p class="text-muted">CRAN release: 2026-01-21</p>
+<h2 class="pkg-version" data-toc-text="0.1.5" id="nycopendata-015">nycOpenData 0.1.5<a class="anchor" aria-label="anchor" href="#nycopendata-015"></a></h2>
 <div class="section level3">
-<h3 id="bug-fixes-and-maintenance-0-1-4">Bug fixes and maintenance<a class="anchor" aria-label="anchor" href="#bug-fixes-and-maintenance-0-1-4"></a></h3>
-<ul><li>Refactored all NYC Open Data API requests to use a shared internal request helper with improved timeout handling and graceful failure behavior.</li>
-<li>Ensured all functions that rely on live internet resources fail cleanly with informative error messages when the NYC Open Data API is unavailable or slow, in accordance with CRAN policies.</li>
-<li>Updated examples to avoid unintended failures during CRAN checks while preserving runnable examples for users with internet access.</li>
-<li>No changes to function names, arguments, or returned data structures.</li>
+<h3 id="new-features-and-documentation-0-1-5">New features and documentation<a class="anchor" aria-label="anchor" href="#new-features-and-documentation-0-1-5"></a></h3>
+<ul><li><p>Added a new vignette, <em>“Working with NYC 311 Data”</em>, demonstrating an end-to-end, reproducible workflow for accessing, filtering, and visualizing NYC 311 service requests using <code><a href="../reference/nyc_311.html">nyc_311()</a></code>. The vignette is available on the package website and via <code><a href="https://martinezc1.github.io/nycOpenData/articles/nyc-311.html">vignette("nyc-311", package = "nycOpenData")</a></code>.</p></li>
+<li><p>Updated <code><a href="../reference/nyc_311.html">nyc_311()</a></code> to explicitly target the NYC 311 Service Requests dataset covering <strong>2020–present</strong>, aligning the function with the current primary NYC Open Data endpoint.</p></li>
+<li><p>Added a new function, <code><a href="../reference/nyc_311_2010_2019.html">nyc_311_2010_2019()</a></code>, providing access to historical NYC 311 service request data from <strong>2010–2019</strong>, which is maintained as a separate dataset on the NYC Open Data platform.</p></li>
+</ul></div>
+<div class="section level3">
+<h3 id="bug-fixes-and-maintenance-0-1-5">Bug fixes and maintenance<a class="anchor" aria-label="anchor" href="#bug-fixes-and-maintenance-0-1-5"></a></h3>
+<ul><li><p>Continued improvements to internal request handling for reliability and consistency when interacting with live NYC Open Data APIs.</p></li>
+<li><p>Updated documentation and examples to ensure robust behavior during CRAN checks while preserving reproducible workflows for interactive use.</p></li>
+<li><p>No breaking changes to existing function interfaces.</p></li>
 </ul></div>
 </div>
   </main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>

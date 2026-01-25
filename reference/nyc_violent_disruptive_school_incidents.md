@@ -47,11 +47,10 @@ analyses and comparisons across school types.
 # do not fail when the network is unavailable or slow.
 # \donttest{
 if (curl::has_internet()) {
-  # Quick example (fetch 10 rows)
-  small_sample <- nyc_violent_disruptive_school_incidents(limit = 10)
-  head(small_sample)
+  # Quick example (fetch 2 rows)
+  small_sample <- nyc_violent_disruptive_school_incidents(limit = 2)
+  small_sample
 
-  nyc_violent_disruptive_school_incidents(limit = 5000)
   nyc_violent_disruptive_school_incidents(filters = list(school_type = "Public"))
 }
 #> # A tibble: 10,000 × 45

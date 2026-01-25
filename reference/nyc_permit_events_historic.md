@@ -47,8 +47,7 @@ if (curl::has_internet()) {
   small_sample <- nyc_permit_events_historic(limit = 2)
   small_sample
 
-  nyc_permit_events_historic(limit = 5000)
-  nyc_permit_events_historic(filters = list(event_type = "Construction"))
+  nyc_permit_events_historic(limit = 2, filters = list(event_type = "Construction"))
 }
 #> Error: NYC Open Data request failed (network unavailable or API slow).
 #> Try again later or increase `timeout_sec`.

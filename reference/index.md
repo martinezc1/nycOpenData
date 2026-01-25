@@ -84,8 +84,6 @@ Core helpers
   : City Record Online
 - [`nyc_civil_service_list()`](https://martinezc1.github.io/nycOpenData/reference/nyc_civil_service_list.md)
   : NYC Civil Service List (Active)
-- [`nyc_permit_events_historic()`](https://martinezc1.github.io/nycOpenData/reference/nyc_permit_events_historic.md)
-  : NYC Permitted Event Information - Historical
 
 ## Health
 
@@ -113,6 +111,8 @@ Core helpers
 Other NYC Open Data wrappers
 
 - [`nyc_311()`](https://martinezc1.github.io/nycOpenData/reference/nyc_311.md)
+  : NYC 311 Service Requests
+- [`nyc_311_2010_2019()`](https://martinezc1.github.io/nycOpenData/reference/nyc_311_2010_2019.md)
   : NYC 311 Service Requests
 - [`nyc_any_dataset()`](https://martinezc1.github.io/nycOpenData/reference/nyc_any_dataset.md)
   : Load Any NYC Open Data Dataset
@@ -163,8 +163,6 @@ Other NYC Open Data wrappers
   : Open Parking and Camera Violations
 - [`nyc_period_attendance_reporting()`](https://martinezc1.github.io/nycOpenData/reference/nyc_period_attendance_reporting.md)
   : Statistical Summary Period Attendance Reporting (PAR)
-- [`nyc_permit_events_historic()`](https://martinezc1.github.io/nycOpenData/reference/nyc_permit_events_historic.md)
-  : NYC Permitted Event Information - Historical
 - [`nyc_pets_in_shelters()`](https://martinezc1.github.io/nycOpenData/reference/nyc_pets_in_shelters.md)
   : NYC Pets in Shelter Report
 - [`nyc_restaurant_inspection_results()`](https://martinezc1.github.io/nycOpenData/reference/nyc_restaurant_inspection_results.md)

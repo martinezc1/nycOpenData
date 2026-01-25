@@ -47,11 +47,10 @@ all violations contained in the mainframe database as of May 2016.
 # do not fail when the network is unavailable or slow.
 # \donttest{
 if (curl::has_internet()) {
-  # Quick example (fetch 10 rows)
+  # Quick example (fetch 2 rows)
   small_sample <- nyc_open_parking_camera_violations(limit = 2)
   small_sample
 
-  nyc_open_parking_camera_violations(limit = 5000)
   nyc_open_parking_camera_violations(filters = list(state = "NJ"))
 }
 #> # A tibble: 10,000 × 20

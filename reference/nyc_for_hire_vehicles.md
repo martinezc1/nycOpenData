@@ -43,11 +43,10 @@ Maintained by the NYC Taxi and Limousine Commission (TLC).
 # do not fail when the network is unavailable or slow.
 # \donttest{
 if (curl::has_internet()) {
-  # Quick example (fetch 10 rows)
-  small_sample <- nyc_for_hire_vehicles(limit = 10)
-  head(small_sample)
+  # Quick example (fetch 2 rows)
+  small_sample <- nyc_for_hire_vehicles(limit = 2)
+  small_sample
 
-  nyc_for_hire_vehicles(limit = 5000)
   nyc_for_hire_vehicles(filters = list(active = "YES"))
 }
 #> # A tibble: 10,000 × 22

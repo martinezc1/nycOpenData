@@ -44,26 +44,26 @@ approval status.
 # do not fail when the network is unavailable or slow.
 # \donttest{
 if (curl::has_internet()) {
-  # Quick example (fetch 10 rows)
-  small_sample <- nyc_dob_job_applications(limit = 10)
-  head(small_sample)
+  # Quick example (fetch 2 rows)
+  small_sample <- nyc_dob_job_applications(limit = 2)
+  small_sample
 
-  nyc_dob_job_applications(limit = 5000)
+  nyc_dob_job_applications(filters = list(borough = "BROOKLYN"))
 }
-#> # A tibble: 5,000 × 96
+#> # A tibble: 10,000 × 96
 #>    job__ doc__ borough house__ street_name block lot   bin__ job_type job_status
 #>    <chr> <chr> <chr>   <chr>   <chr>       <chr> <chr> <chr> <chr>    <chr>     
-#>  1 1230… 01    MANHAT… 408     WEST 25 ST… 00722 00046 1012… A2       A         
-#>  2 3220… 01    BROOKL… 5224    3RD AVENUE  00805 00049 3332… A1       A         
-#>  3 5203… 01    STATEN… 20      BUTTONWOOD… 00880 00007 5174… A2       A         
-#>  4 5203… 01    STATEN… 162     YETMAN AVE… 08025 00088 5174… A2       A         
-#>  5 3220… 01    BROOKL… 750     56TH STREET 00842 00027 3015… A2       A         
-#>  6 4219… 01    QUEENS  130-11  127TH. STR… 11765 00029 4255… DM       A         
-#>  7 5203… 01    STATEN… 402     WILLOW ROA… 01494 00122 5112… A2       A         
-#>  8 1237… 01    MANHAT… 17      BATTERY PL… 00015 07501 1082… A2       A         
-#>  9 1224… 02    MANHAT… 233     PARK AVENU… 00874 00004 1017… A2       P         
-#> 10 4217… 04    QUEENS  190     BEACH 69 S… 15939 00103 4614… A2       P         
-#> # ℹ 4,990 more rows
+#>  1 3220… 01    BROOKL… 5224    3RD AVENUE  00805 00049 3332… A1       A         
+#>  2 3220… 01    BROOKL… 750     56TH STREET 00842 00027 3015… A2       A         
+#>  3 3001… 05    BROOKL… 1852    58 STREET   05505 00028 3131… A1       P         
+#>  4 3211… 04    BROOKL… 36      GUNNISON C… 08800 00083 3247… NB       P         
+#>  5 3404… 02    BROOKL… 1519    52ND STREET 05465 00070 3129… A2       P         
+#>  6 3211… 05    BROOKL… 113     CONGRESS S… 00295 00038 3003… A1       P         
+#>  7 3202… 02    BROOKL… 2812    BRIGHTON  … 07260 00054 3196… PA       P         
+#>  8 3214… 02    BROOKL… 235     SUMPTER ST  01520 00070 3041… A2       P         
+#>  9 3218… 01    BROOKL… 775     39 STREET   00903 00043 3017… A2       A         
+#> 10 3210… 01    BROOKL… 1718 G… 53 STREET   05479 00015 3408… A2       A         
+#> # ℹ 9,990 more rows
 #> # ℹ 86 more variables: job_status_descrp <chr>, latest_action_date <chr>,
 #> #   building_type <chr>, community___board <chr>, cluster <chr>,
 #> #   landmarked <chr>, adult_estab <chr>, loft_board <chr>, little_e <chr>,

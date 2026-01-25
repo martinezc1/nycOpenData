@@ -43,11 +43,10 @@ borough, providing insight into hate crime trends across New York City.
 # do not fail when the network is unavailable or slow.
 # \donttest{
 if (curl::has_internet()) {
-  # Quick example (fetch 10 rows)
-  small_sample <- nyc_nypd_hate_crimes(limit = 10)
-  head(small_sample)
+  # Quick example (fetch 2 rows)
+  small_sample <- nyc_nypd_hate_crimes(limit = 2)
+  small_sample
 
-  nyc_nypd_hate_crimes(limit = 5000)
   nyc_nypd_hate_crimes(filters = list(county = "KINGS"))
 }
 #> # A tibble: 1,360 × 13

@@ -48,11 +48,10 @@ defensive driving completion, and final approval outcome.
 # do not fail when the network is unavailable or slow.
 # \donttest{
 if (curl::has_internet()) {
-  # Quick example (fetch 10 rows)
-  small_sample <- nyc_tlc_new_driver_app_status(limit = 10)
-  head(small_sample)
+  # Quick example (fetch 2 rows)
+  small_sample <- nyc_tlc_new_driver_app_status(limit = 2)
+  small_sample
 
-  nyc_tlc_new_driver_app_status(limit = 5000)
   nyc_tlc_new_driver_app_status(filters = list(drug_test = "NEEDED"))
 }
 #> # A tibble: 0 × 0

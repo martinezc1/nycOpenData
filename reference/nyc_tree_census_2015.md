@@ -43,11 +43,10 @@ tree. Data collected by NYC Parks and volunteers.
 # do not fail when the network is unavailable or slow.
 # \donttest{
 if (curl::has_internet()) {
-  # Quick example (fetch 10 rows)
-  small_sample <- nyc_tree_census_2015(limit = 10)
+  # Quick example (fetch 2 rows)
+  small_sample <- nyc_tree_census_2015(limit = 2)
   head(small_sample)
 
-  nyc_tree_census_2015(limit = 5000)
   nyc_tree_census_2015(filters = list(curb_loc = "OnCurb"))
 }
 #> # A tibble: 10,000 × 45

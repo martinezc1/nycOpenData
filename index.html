@@ -11,8 +11,8 @@
 <script src="deps/bootstrap-5.3.1/bootstrap.bundle.min.js"></script><link href="deps/font-awesome-6.5.2/css/all.min.css" rel="stylesheet">
 <link href="deps/font-awesome-6.5.2/css/v4-shims.min.css" rel="stylesheet">
 <script src="deps/headroom-0.11.0/headroom.min.js"></script><script src="deps/headroom-0.11.0/jQuery.headroom.min.js"></script><script src="deps/bootstrap-toc-1.0.1/bootstrap-toc.min.js"></script><script src="deps/clipboard.js-2.0.11/clipboard.min.js"></script><script src="deps/search-1.0.0/autocomplete.jquery.min.js"></script><script src="deps/search-1.0.0/fuse.min.js"></script><script src="deps/search-1.0.0/mark.min.js"></script><!-- pkgdown --><script src="pkgdown.js"></script><meta property="og:title" content="Convenient Access to NYC Open Data API Endpoints">
-<meta name="description" content="Provides a unified set of helper functions to access datasets from the NYC Open Data platform &lt;https://opendata.cityofnewyork.us/&gt;. Functions return results as tidy tibbles and support optional filtering, sorting, and row limits via the Socrata API. The package includes endpoints for 311 service requests, DOB job applications, juvenile justice metrics, school safety, environmental data, event permitting, and additional citywide datasets.">
-<meta property="og:description" content="Provides a unified set of helper functions to access datasets from the NYC Open Data platform &lt;https://opendata.cityofnewyork.us/&gt;. Functions return results as tidy tibbles and support optional filtering, sorting, and row limits via the Socrata API. The package includes endpoints for 311 service requests, DOB job applications, juvenile justice metrics, school safety, environmental data, event permitting, and additional citywide datasets.">
+<meta name="description" content="Provides a unified set of helper functions to access datasets from the NYC Open Data platform &lt;https://opendata.cityofnewyork.us/&gt;. Functions return results as tidy tibbles and support optional filtering, sorting, and row limits via the Socrata API. The package includes endpoints for 311 service requests, DOB job applications, juvenile justice metrics, school safety, environmental data, event permitting, and additional citywide datasets. The package is utilized as a primary pedagogical tool for teaching data acquisition in Reproducible Research Using R.">
+<meta property="og:description" content="Provides a unified set of helper functions to access datasets from the NYC Open Data platform &lt;https://opendata.cityofnewyork.us/&gt;. Functions return results as tidy tibbles and support optional filtering, sorting, and row limits via the Socrata API. The package includes endpoints for 311 service requests, DOB job applications, juvenile justice metrics, school safety, environmental data, event permitting, and additional citywide datasets. The package is utilized as a primary pedagogical tool for teaching data acquisition in Reproducible Research Using R.">
 <meta property="og:image" content="https://martinezc1.github.io/nycOpenData/logo.png">
 </head>
 <body>
@@ -23,7 +23,7 @@
 
     <a class="navbar-brand me-2" href="index.html">nycOpenData</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.1.4</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.1.5</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -33,6 +33,7 @@
     <div id="navbar" class="collapse navbar-collapse ms-3">
       <ul class="navbar-nav me-auto">
 <li class="nav-item"><a class="nav-link" href="reference/index.html">Reference</a></li>
+<li class="nav-item"><a class="nav-link" href="articles/index.html">Articles</a></li>
 <li class="nav-item"><a class="nav-link" href="news/index.html">Changelog</a></li>
       </ul>
 <ul class="navbar-nav">
@@ -55,7 +56,7 @@
 <p><a href="https://CRAN.R-project.org/package=nycOpenData" class="external-link"><img src="https://www.r-pkg.org/badges/version/nycOpenData" alt="CRAN status"></a> <a href="https://CRAN.R-project.org/package=nycOpenData" class="external-link"><img src="https://cranlogs.r-pkg.org/badges/grand-total/nycOpenData" alt="CRAN downloads"></a> <a href="https://lifecycle.r-lib.org/articles/stages.html" class="external-link"><img src="https://img.shields.io/badge/lifecycle-stable-brightgreen.svg" alt="Lifecycle: stable"></a></p>
 <p><code>nycOpenData</code> provides simple, reproducible access to datasets from the<br><a href="https://opendata.cityofnewyork.us/" class="external-link">NYC Open Data</a> platform — directly from R,<br>
 with <strong>no API keys</strong> or manual downloads required. The package is available on <strong>CRAN</strong>.</p>
-<p>Version <strong>0.1.4</strong> now includes wrappers for <strong>30+ NYC Open Data APIs</strong>, covering:</p>
+<p>Version <strong>0.1.5</strong> now includes wrappers for <strong>30+ NYC Open Data APIs</strong>, covering:</p>
 <ul>
 <li>311 Service Requests<br>
 </li>
@@ -132,6 +133,14 @@ with <strong>no API keys</strong> or manual downloads required. The package is a
 <span id="cb4-15"><a href="#cb4-15" tabindex="-1"></a><span class="do">## #   council_district &lt;chr&gt;, police_precinct &lt;chr&gt;, bbl &lt;chr&gt;,</span></span>
 <span id="cb4-16"><a href="#cb4-16" tabindex="-1"></a><span class="do">## #   borough &lt;chr&gt;, x_coordinate_state_plane &lt;chr&gt;, …</span></span></code></pre></div>
 <hr>
+</div>
+<div class="section level2">
+<h2 id="learn-by-example">Learn by example<a class="anchor" aria-label="anchor" href="#learn-by-example"></a>
+</h2>
+<ul>
+<li>
+<code><a href="https://martinezc1.github.io/nycOpenData/articles/nyc-311.html">vignette("nyc-311", package = "nycOpenData")</a></code> – Working with NYC 311 data end-to-end</li>
+</ul>
 </div>
 <div class="section level2">
 <h2 id="about">About<a class="anchor" aria-label="anchor" href="#about"></a>

@@ -44,11 +44,10 @@ Services (DCAS).
 # do not fail when the network is unavailable or slow.
 # \donttest{
 if (curl::has_internet()) {
-  # Quick example (fetch 10 rows)
-  small_sample <- nyc_civil_service_list(limit = 10)
-  head(small_sample)
+  # Quick example (fetch 2 rows)
+  small_sample <- nyc_civil_service_list(limit = 2)
+  small_sample
 
-  nyc_civil_service_list(limit = 5000)
   nyc_civil_service_list(filters = list(last_name = "Martinez"))
 }
 #> # A tibble: 0 × 0

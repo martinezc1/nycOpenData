@@ -44,11 +44,10 @@ which is issued for every death that occurs in New York City.
 # do not fail when the network is unavailable or slow.
 # \donttest{
 if (curl::has_internet()) {
-  # Quick example (fetch 10 rows)
-  small_sample <- nyc_cause_of_death(limit = 10)
-  head(small_sample)
+  # Quick example (fetch 2 rows)
+  small_sample <- nyc_cause_of_death(limit = 2)
+  small_sample
 
-  nyc_cause_of_death(limit = 5000)
   nyc_cause_of_death(filters = list(sex = "M"))
 }
 #> # A tibble: 540 × 7

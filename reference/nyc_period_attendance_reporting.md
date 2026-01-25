@@ -50,11 +50,10 @@ home/hospital, CBO UPK.
 # do not fail when the network is unavailable or slow.
 # \donttest{
 if (curl::has_internet()) {
-  # Quick example (fetch 10 rows)
-  small_sample <- nyc_period_attendance_reporting(limit = 10)
-  head(small_sample)
+  # Quick example (fetch 2 rows)
+  small_sample <- nyc_period_attendance_reporting(limit = 2)
+  small_sample
 
-  nyc_period_attendance_reporting(limit = 5000)
   nyc_period_attendance_reporting(filters = list(boro = "X"))
 }
 #> # A tibble: 5,760 × 39
