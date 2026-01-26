@@ -1,4 +1,4 @@
-# nycOpenData
+# nycOpenData ![nycOpenData logo](reference/figures/nycOpenData_hex.png)
 
 [![CRAN
 status](https://www.r-pkg.org/badges/version/nycOpenData)](https://CRAN.R-project.org/package=nycOpenData)

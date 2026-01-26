@@ -2,6 +2,8 @@
 
 ## nycOpenData 0.1.5
 
+CRAN release: 2026-01-25
+
 ### New features and documentation
 
 - Added a new vignette, *“Working with NYC 311 Data”*, demonstrating an
