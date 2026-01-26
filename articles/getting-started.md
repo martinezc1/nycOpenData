@@ -43,38 +43,34 @@ this, we can set `limit = 3`.
 ``` r
 small_sample <- nyc_311(limit = 3)
 small_sample
-#> # A tibble: 3 × 32
+#> # A tibble: 3 × 24
 #>   unique_key created_date           agency agency_name complaint_type descriptor
 #>   <chr>      <chr>                  <chr>  <chr>       <chr>          <chr>     
-#> 1 67591844   2026-01-24T02:05:45.0… NYPD   New York C… Noise - Resid… Loud Talk…
-#> 2 67590426   2026-01-24T02:05:27.0… NYPD   New York C… Noise - Resid… Loud Musi…
-#> 3 67583315   2026-01-24T02:04:34.0… NYPD   New York C… Noise - Resid… Banging/P…
-#> # ℹ 26 more variables: location_type <chr>, incident_zip <chr>,
-#> #   incident_address <chr>, street_name <chr>, cross_street_1 <chr>,
-#> #   cross_street_2 <chr>, intersection_street_1 <chr>,
-#> #   intersection_street_2 <chr>, address_type <chr>, city <chr>,
-#> #   landmark <chr>, status <chr>, community_board <chr>,
-#> #   council_district <chr>, police_precinct <chr>, bbl <chr>, borough <chr>,
-#> #   x_coordinate_state_plane <chr>, y_coordinate_state_plane <chr>, …
+#> 1 67603407   2026-01-25T02:47:41.0… DOT    Department… Street Condit… Pothole   
+#> 2 67602402   2026-01-25T02:46:50.0… DOT    Department… Street Condit… Pothole   
+#> 3 67596744   2026-01-25T02:45:12.0… DOT    Department… Street Condit… Pothole   
+#> # ℹ 18 more variables: incident_zip <chr>, incident_address <chr>,
+#> #   street_name <chr>, cross_street_1 <chr>, cross_street_2 <chr>,
+#> #   address_type <chr>, city <chr>, facility_type <chr>, status <chr>,
+#> #   resolution_description <chr>, resolution_action_updated_date <chr>,
+#> #   community_board <chr>, police_precinct <chr>, borough <chr>,
+#> #   open_data_channel_type <chr>, park_facility_name <chr>, park_borough <chr>,
+#> #   closed_date <chr>
 
 # Seeing what columns are in the dataset
 colnames(small_sample)
-#>  [1] "unique_key"               "created_date"            
-#>  [3] "agency"                   "agency_name"             
-#>  [5] "complaint_type"           "descriptor"              
-#>  [7] "location_type"            "incident_zip"            
-#>  [9] "incident_address"         "street_name"             
-#> [11] "cross_street_1"           "cross_street_2"          
-#> [13] "intersection_street_1"    "intersection_street_2"   
-#> [15] "address_type"             "city"                    
-#> [17] "landmark"                 "status"                  
-#> [19] "community_board"          "council_district"        
-#> [21] "police_precinct"          "bbl"                     
-#> [23] "borough"                  "x_coordinate_state_plane"
-#> [25] "y_coordinate_state_plane" "open_data_channel_type"  
-#> [27] "park_facility_name"       "park_borough"            
-#> [29] "latitude"                 "longitude"               
-#> [31] "location.type"            "location.coordinates"
+#>  [1] "unique_key"                     "created_date"                  
+#>  [3] "agency"                         "agency_name"                   
+#>  [5] "complaint_type"                 "descriptor"                    
+#>  [7] "incident_zip"                   "incident_address"              
+#>  [9] "street_name"                    "cross_street_1"                
+#> [11] "cross_street_2"                 "address_type"                  
+#> [13] "city"                           "facility_type"                 
+#> [15] "status"                         "resolution_description"        
+#> [17] "resolution_action_updated_date" "community_board"               
+#> [19] "police_precinct"                "borough"                       
+#> [21] "open_data_channel_type"         "park_facility_name"            
+#> [23] "park_borough"                   "closed_date"
 ```
 
 Fantastic! We successfully pulled 311 data from the NYC Open Data
@@ -95,9 +91,9 @@ brooklyn_311
 #> # A tibble: 3 × 32
 #>   unique_key created_date           agency agency_name complaint_type descriptor
 #>   <chr>      <chr>                  <chr>  <chr>       <chr>          <chr>     
-#> 1 67591844   2026-01-24T02:05:45.0… NYPD   New York C… Noise - Resid… Loud Talk…
-#> 2 67583315   2026-01-24T02:04:34.0… NYPD   New York C… Noise - Resid… Banging/P…
-#> 3 67586147   2026-01-24T02:03:40.0… NYPD   New York C… Noise - Resid… Banging/P…
+#> 1 67596881   2026-01-25T02:04:27.0… NYPD   New York C… Noise - Resid… Loud Musi…
+#> 2 67601964   2026-01-25T02:04:12.0… NYPD   New York C… Noise - Stree… Loud Musi…
+#> 3 67596867   2026-01-25T02:03:40.0… NYPD   New York C… Noise - Comme… Loud Musi…
 #> # ℹ 26 more variables: location_type <chr>, incident_zip <chr>,
 #> #   incident_address <chr>, street_name <chr>, cross_street_1 <chr>,
 #> #   cross_street_2 <chr>, intersection_street_1 <chr>,
@@ -130,12 +126,12 @@ head(brooklyn_nypd)
 #> # A tibble: 6 × 36
 #>   unique_key created_date           agency agency_name complaint_type descriptor
 #>   <chr>      <chr>                  <chr>  <chr>       <chr>          <chr>     
-#> 1 67591844   2026-01-24T02:05:45.0… NYPD   New York C… Noise - Resid… Loud Talk…
-#> 2 67583315   2026-01-24T02:04:34.0… NYPD   New York C… Noise - Resid… Banging/P…
-#> 3 67586147   2026-01-24T02:03:40.0… NYPD   New York C… Noise - Resid… Banging/P…
-#> 4 67591820   2026-01-24T02:03:14.0… NYPD   New York C… Illegal Parki… Posted Pa…
-#> 5 67583301   2026-01-24T02:02:49.0… NYPD   New York C… Noise - Comme… Loud Musi…
-#> 6 67587630   2026-01-24T02:01:57.0… NYPD   New York C… Noise - Resid… Banging/P…
+#> 1 67596881   2026-01-25T02:04:27.0… NYPD   New York C… Noise - Resid… Loud Musi…
+#> 2 67601964   2026-01-25T02:04:12.0… NYPD   New York C… Noise - Stree… Loud Musi…
+#> 3 67596867   2026-01-25T02:03:40.0… NYPD   New York C… Noise - Comme… Loud Musi…
+#> 4 67595131   2026-01-25T02:03:13.0… NYPD   New York C… Blocked Drive… Partial A…
+#> 5 67600240   2026-01-25T02:00:47.0… NYPD   New York C… Noise - Resid… Banging/P…
+#> 6 67600279   2026-01-25T01:58:32.0… NYPD   New York C… Illegal Parki… Parking P…
 #> # ℹ 30 more variables: location_type <chr>, incident_zip <chr>,
 #> #   incident_address <chr>, street_name <chr>, cross_street_1 <chr>,
 #> #   cross_street_2 <chr>, intersection_street_1 <chr>,

@@ -62,12 +62,5 @@ if (curl::has_internet()) {
 #>   <chr>       
 #> 1 "43, "      
 #> 2 "43, "      
-#> # A tibble: 2 × 11
-#>   event_id event_name      start_date_time end_date_time event_agency event_type
-#>   <chr>    <chr>           <chr>           <chr>         <chr>        <chr>     
-#> 1 349083   FIELD 15 CLOSE… 2019-09-05T08:… 2019-09-05T2… Parks Depar… Construct…
-#> 2 364912   CRICKET FIELDS… 2019-09-05T08:… 2019-09-05T2… Parks Depar… Construct…
-#> # ℹ 5 more variables: event_borough <chr>, event_location <chr>,
-#> #   street_closure_type <chr>, community_board <chr>, police_precinct <chr>
 # }
 ```

@@ -59,21 +59,21 @@ if (curl::has_internet()) {
 #> # A tibble: 10,000 × 15
 #>    license_number name               type  current_status dmv_license_plate_nu…¹
 #>    <chr>          <chr>              <chr> <chr>          <chr>                 
-#>  1 9L56           9L56 & 9L57 ACQUI… 05/3… CUR            Y206688C              
-#>  2 8V70           PUMO TAXI INC.     05/3… CUR            Y203934C              
-#>  3 6J78           NAMBA CAB CORP     05/3… CUR            Y208983C              
-#>  4 6K65           YASIA TAXI CORP    05/3… CUR            Y205559C              
-#>  5 9L82           7H93 & 9L82 ACQUI… 05/3… CUR            Y209929C              
-#>  6 8T39           WHEELER TAXI 20 L… 05/3… CUR            Y210329C              
-#>  7 3E43           ADAMCZYK,ZBIGNIEW  05/3… CUR            3E43B                 
-#>  8 9J75           9J75 & 9J76 ACQUI… 05/3… CUR            Y206684C              
-#>  9 1C93           LY, DAN            05/3… CUR            1C93A                 
-#> 10 4Y20           BUDD TAXI CORP     05/3… CUR            4Y20H                 
+#>  1 8L13           H & S TRANS USA I… 05/3… CUR            Y204760C              
+#>  2 5H72           REIGER TAXI 21 LLC 05/3… CUR            Y201147C              
+#>  3 1N14           ROGER CAB CORP     05/3… CUR            Y201001C              
+#>  4 8A99           SINGH CAB LLC      05/3… CUR            Y205505C              
+#>  5 6J10           ARWIN TRANS LLC    05/3… CUR            Y206726C              
+#>  6 4E27           PURI CAB LLC       05/3… CUR            Y200165C              
+#>  7 4M36           ZOGRAFOU LLC       05/3… CUR            Y209018C              
+#>  8 2F32           GUIRAND, LOUIS     05/3… CUR            Y102276C              
+#>  9 1L21           XENO CAB LLC       05/3… CUR            Y104116C              
+#> 10 2P71           LEFJOHN TAXI CORP  05/3… CUR            Y208642C              
 #> # ℹ 9,990 more rows
 #> # ℹ abbreviated name: ¹​dmv_license_plate_number
 #> # ℹ 10 more variables: vehicle_vin_number <chr>, vehicle_type <chr>,
-#> #   model_year <chr>, medallion_type <chr>, agent_number <chr>,
-#> #   agent_name <chr>, agent_telephone_number <chr>, agent_address <chr>,
-#> #   last_updated_date <chr>, last_updated_time <chr>
+#> #   model_year <chr>, medallion_type <chr>, last_updated_date <chr>,
+#> #   last_updated_time <chr>, agent_number <chr>, agent_name <chr>,
+#> #   agent_telephone_number <chr>, agent_address <chr>
 # }
 ```
