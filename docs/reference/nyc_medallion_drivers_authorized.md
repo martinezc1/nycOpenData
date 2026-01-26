@@ -57,23 +57,23 @@ if (curl::has_internet()) {
   nyc_medallion_drivers_authorized(filters = list(current_status = "CUR"))
 }
 #> # A tibble: 10,000 × 15
-#>    license_number name             type    current_status dmv_license_plate_nu…¹
-#>    <chr>          <chr>            <chr>   <chr>          <chr>                 
-#>  1 4D13           SARRAN,BICKHAM   05/31/… CUR            4D13B                 
-#>  2 7N59           SSSA TAXI LLC    05/31/… CUR            Y210079C              
-#>  3 7D77           AMARDARSHAN CORP 05/31/… CUR            Y210296C              
-#>  4 7B37           ORTIZ,TELMO,E    05/31/… CUR            Y208518C              
-#>  5 9A22           MIAH TRANS LLC   05/31/… CUR            Y208343C              
-#>  6 3T23           NAAN CAB LLC     05/31/… CUR            Y102539C              
-#>  7 2A91           GROSMAN, JOSEPH  05/31/… CUR            Y204177C              
-#>  8 4Y76           KEROIL INC       05/31/… CUR            Y201831C              
-#>  9 9P11           TOPS CAB CORP    05/31/… CUR            Y205404C              
-#> 10 1M25           MENG5 LLC        05/31/… CUR            Y210565C              
+#>    license_number name               type  current_status dmv_license_plate_nu…¹
+#>    <chr>          <chr>              <chr> <chr>          <chr>                 
+#>  1 9L56           9L56 & 9L57 ACQUI… 05/3… CUR            Y206688C              
+#>  2 8V70           PUMO TAXI INC.     05/3… CUR            Y203934C              
+#>  3 6J78           NAMBA CAB CORP     05/3… CUR            Y208983C              
+#>  4 6K65           YASIA TAXI CORP    05/3… CUR            Y205559C              
+#>  5 9L82           7H93 & 9L82 ACQUI… 05/3… CUR            Y209929C              
+#>  6 8T39           WHEELER TAXI 20 L… 05/3… CUR            Y210329C              
+#>  7 3E43           ADAMCZYK,ZBIGNIEW  05/3… CUR            3E43B                 
+#>  8 9J75           9J75 & 9J76 ACQUI… 05/3… CUR            Y206684C              
+#>  9 1C93           LY, DAN            05/3… CUR            1C93A                 
+#> 10 4Y20           BUDD TAXI CORP     05/3… CUR            4Y20H                 
 #> # ℹ 9,990 more rows
 #> # ℹ abbreviated name: ¹​dmv_license_plate_number
 #> # ℹ 10 more variables: vehicle_vin_number <chr>, vehicle_type <chr>,
 #> #   model_year <chr>, medallion_type <chr>, agent_number <chr>,
-#> #   last_updated_date <chr>, last_updated_time <chr>, agent_name <chr>,
-#> #   agent_telephone_number <chr>, agent_address <chr>
+#> #   agent_name <chr>, agent_telephone_number <chr>, agent_address <chr>,
+#> #   last_updated_date <chr>, last_updated_time <chr>
 # }
 ```

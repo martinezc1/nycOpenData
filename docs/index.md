@@ -1,4 +1,4 @@
-# nycOpenData
+# nycOpenData ![nycOpenData logo](reference/figures/nycOpenData_hex.png)
 
 [![CRAN
 status](https://www.r-pkg.org/badges/version/nycOpenData)](https://CRAN.R-project.org/package=nycOpenData)
@@ -93,8 +93,8 @@ head(filtered)
 
 ## Learn by example
 
-- [`vignette("nyc-311", package = "nycOpenData")`](https://martinezc1.github.io/nycOpenData/articles/nyc-311.html)
-  – Working with NYC 311 data end-to-end
+- `vignette("nyc-311", package = "nycOpenData")` – Working with NYC 311
+  data end-to-end
 
 ## About
 

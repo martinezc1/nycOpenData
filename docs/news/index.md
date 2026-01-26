@@ -2,6 +2,8 @@
 
 ## nycOpenData 0.1.5
 
+CRAN release: 2026-01-25
+
 ### New features and documentation
 
 - Added a new vignette, *“Working with NYC 311 Data”*, demonstrating an
@@ -9,7 +11,7 @@
   visualizing NYC 311 service requests using
   [`nyc_311()`](https://martinezc1.github.io/nycOpenData/reference/nyc_311.md).
   The vignette is available on the package website and via
-  [`vignette("nyc-311", package = "nycOpenData")`](https://martinezc1.github.io/nycOpenData/articles/nyc-311.html).
+  `vignette("nyc-311", package = "nycOpenData")`.
 
 - Updated
   [`nyc_311()`](https://martinezc1.github.io/nycOpenData/reference/nyc_311.md)
