@@ -84,28 +84,19 @@ Maintained by the NYC Taxi and Limousine Commission (TLC).</p>
 <span class="r-in"><span>  <span class="va">small_sample</span> <span class="op">&lt;-</span> <span class="fu">nyc_for_hire_vehicles</span><span class="op">(</span>limit <span class="op">=</span> <span class="fl">2</span><span class="op">)</span></span></span>
 <span class="r-in"><span>  <span class="va">small_sample</span></span></span>
 <span class="r-in"><span></span></span>
-<span class="r-in"><span>  <span class="fu">nyc_for_hire_vehicles</span><span class="op">(</span>filters <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>active <span class="op">=</span> <span class="st">"YES"</span><span class="op">)</span><span class="op">)</span></span></span>
+<span class="r-in"><span>  <span class="fu">nyc_for_hire_vehicles</span><span class="op">(</span>limit <span class="op">=</span> <span class="fl">2</span>, filters <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>active <span class="op">=</span> <span class="st">"YES"</span><span class="op">)</span><span class="op">)</span></span></span>
 <span class="r-in"><span><span class="op">}</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 10,000 × 22</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>    active vehicle_license_number name               license_type expiration_date</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                  <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>              <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>        <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>          </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 1</span> YES    6032728                UPPAL, ARSHDEEP    FOR HIRE VE… 2026-06-30T00:…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 2</span> YES    5953896                ELIHORI,ASIM,SALIH FOR HIRE VE… 2027-11-07T00:…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 3</span> YES    5729129                LORENZO,MARTIN     FOR HIRE VE… 2026-10-12T00:…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 4</span> YES    6035913                GULYAMOV,,AMINJON  FOR HIRE VE… 2026-06-30T00:…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 5</span> YES    6033635                KHAN,DEWAN,M       FOR HIRE VE… 2026-06-30T00:…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 6</span> YES    6039929                HOSSAIN,MD,ALAMGIR FOR HIRE VE… 2027-08-21T00:…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 7</span> YES    5964337                FRIAS,RAFAEL,A     FOR HIRE VE… 2026-08-21T00:…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 8</span> YES    6036626                AHMED,IQBAL        FOR HIRE VE… 2027-07-21T00:…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 9</span> YES    6043991                ABSALOMOV, ILKHOM  FOR HIRE VE… 2026-06-30T00:…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span> YES    5964655                ALI,NUSRAT         FOR HIRE VE… 2026-09-09T00:…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 9,990 more rows</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 17 more variables: permit_license_number &lt;chr&gt;,</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 2 × 21</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   active vehicle_license_number name               license_type  expiration_date</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                  <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>              <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>         <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>          </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">1</span> YES    6032728                UPPAL, ARSHDEEP    FOR HIRE VEH… 2026-06-30T00:…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">2</span> YES    5953896                ELIHORI,ASIM,SALIH FOR HIRE VEH… 2027-11-07T00:…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 16 more variables: permit_license_number &lt;chr&gt;,</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   dmv_license_plate_number &lt;chr&gt;, vehicle_vin_number &lt;chr&gt;,</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   wheelchair_accessible &lt;chr&gt;, vehicle_year &lt;chr&gt;, base_number &lt;chr&gt;,</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   base_name &lt;chr&gt;, base_type &lt;chr&gt;, veh &lt;chr&gt;, base_telephone_number &lt;chr&gt;,</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   base_address &lt;chr&gt;, reason &lt;chr&gt;, last_date_updated &lt;chr&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   last_time_updated &lt;chr&gt;, certification_date &lt;chr&gt;, hack_up_date &lt;chr&gt;, …</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   last_time_updated &lt;chr&gt;, certification_date &lt;chr&gt;, hack_up_date &lt;chr&gt;</span></span>
 <span class="r-in"><span><span class="co"># }</span></span></span>
 </code></pre></div>
     </div>

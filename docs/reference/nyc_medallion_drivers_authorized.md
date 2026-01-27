@@ -54,23 +54,13 @@ if (curl::has_internet()) {
   small_sample <- nyc_medallion_drivers_authorized(limit = 2)
   small_sample
 
-  nyc_medallion_drivers_authorized(filters = list(current_status = "CUR"))
+  nyc_medallion_drivers_authorized(limit = 2, filters = list(current_status = "CUR"))
 }
-#> # A tibble: 10,000 × 15
-#>    license_number name               type  current_status dmv_license_plate_nu…¹
-#>    <chr>          <chr>              <chr> <chr>          <chr>                 
-#>  1 4C97           HADIA LLC          05/3… CUR            Y101758C              
-#>  2 2M40           MIGALOO LLC        05/3… CUR            Y201452C              
-#>  3 4H82           CAFE SERVICE CO I… 05/3… CUR            4H82H                 
-#>  4 3V93           APHRODITE HACKING… 05/3… CUR            Y206609C              
-#>  5 1A89           MANAV TAXI CORP.   05/3… CUR            Y100969C              
-#>  6 5L99           NEDON CAB CORP.    05/3… CUR            Y204736C              
-#>  7 5G17           METRO URBAN TRANS… 05/3… CUR            Y210276C              
-#>  8 2Y81           PRUDENT TAXI CORP. 05/3… CUR            Y205406C              
-#>  9 3J58           PAPER TRANSIT INC  05/3… CUR            Y210240C              
-#> 10 1B53           TAFURA & MEHJABIN… 05/3… CUR            Y206881C              
-#> # ℹ 9,990 more rows
-#> # ℹ abbreviated name: ¹​dmv_license_plate_number
+#> # A tibble: 2 × 15
+#>   license_number name        type       current_status dmv_license_plate_number
+#>   <chr>          <chr>       <chr>      <chr>          <chr>                   
+#> 1 4C97           HADIA LLC   05/31/2027 CUR            Y101758C                
+#> 2 2M40           MIGALOO LLC 05/31/2026 CUR            Y201452C                
 #> # ℹ 10 more variables: vehicle_vin_number <chr>, vehicle_type <chr>,
 #> #   model_year <chr>, medallion_type <chr>, last_updated_date <chr>,
 #> #   last_updated_time <chr>, agent_number <chr>, agent_name <chr>,

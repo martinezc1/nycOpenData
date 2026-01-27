@@ -58,27 +58,19 @@ if (curl::has_internet()) {
   small_sample <- nyc_dob_permit_issuance(limit = 2)
   small_sample
 
-  nyc_dob_permit_issuance(filters = list(borough = "BROOKLYN"))
+  nyc_dob_permit_issuance(limit = 2, filters = list(borough = "BROOKLYN"))
 }
-#> # A tibble: 10,000 × 60
-#>    borough  bin__  house__ street_name job__ job_doc___ job_type self_cert block
-#>    <chr>    <chr>  <chr>   <chr>       <chr> <chr>      <chr>    <chr>     <chr>
-#>  1 BROOKLYN 30506… 280     LEXINGTON … 3407… 01         A2       Y         01803
-#>  2 BROOKLYN 32124… 1657    EAST 37 ST… 3217… 01         A2       N         07710
-#>  3 BROOKLYN 30506… 286     LEXINGTON … 3407… 01         A2       Y         01803
-#>  4 BROOKLYN 30501… 352     CLIFTON PL… 3407… 01         A2       Y         01794
-#>  5 BROOKLYN 31444… 350     67 STREET   3025… 01         A2       Y         05850
-#>  6 BROOKLYN 33456… 8973    BAY PARKWAY 3407… 01         A3       Y         06491
-#>  7 BROOKLYN 31309… 1845    58TH STREET 3215… 01         A1       N         05494
-#>  8 BROOKLYN 30362… 188     ROCHESTER … 3025… 01         A2       Y         01367
-#>  9 BROOKLYN 30624… 17      FILLMORE P… 3220… 01         A2       N         02367
-#> 10 BROOKLYN 30591… 30      LAFAYETTE … 3406… 01         A2       Y         02111
-#> # ℹ 9,990 more rows
-#> # ℹ 51 more variables: lot <chr>, community_board <chr>, zip_code <chr>,
+#> # A tibble: 2 × 50
+#>   borough  bin__   house__ street_name job__ job_doc___ job_type self_cert block
+#>   <chr>    <chr>   <chr>   <chr>       <chr> <chr>      <chr>    <chr>     <chr>
+#> 1 BROOKLYN 3050655 280     LEXINGTON … 3407… 01         A2       Y         01803
+#> 2 BROOKLYN 3212495 1657    EAST 37 ST… 3217… 01         A2       N         07710
+#> # ℹ 41 more variables: lot <chr>, community_board <chr>, zip_code <chr>,
 #> #   bldg_type <chr>, residential <chr>, work_type <chr>, permit_status <chr>,
 #> #   filing_status <chr>, permit_type <chr>, permit_sequence__ <chr>,
 #> #   permit_subtype <chr>, site_fill <chr>, filing_date <chr>,
 #> #   issuance_date <chr>, expiration_date <chr>, job_start_date <chr>,
-#> #   permittee_s_first_name <chr>, permittee_s_last_name <chr>, …
+#> #   permittee_s_first_name <chr>, permittee_s_last_name <chr>,
+#> #   permittee_s_business_name <chr>, permittee_s_phone__ <chr>, …
 # }
 ```

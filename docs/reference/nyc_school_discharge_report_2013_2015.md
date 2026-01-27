@@ -52,24 +52,14 @@ if (curl::has_internet()) {
   small_sample <- nyc_school_discharge_report_2013_2015(limit = 2)
   small_sample
 
-  nyc_school_discharge_report_2013_2015(filters = list(geography = "Citywide"))
+  nyc_school_discharge_report_2013_2015(limit = 2, filters = list(geography = "Citywide"))
 }
-#> # A tibble: 10,000 × 11
-#>    school_year geography report_category by_group              group_demographic
-#>    <chr>       <chr>     <chr>           <chr>                 <chr>            
-#>  1 2014-2015   Citywide  Attendance Rate Gender by Attendance… Female           
-#>  2 2014-2015   Citywide  Attendance Rate Gender by Attendance… Female           
-#>  3 2014-2015   Citywide  Attendance Rate Gender by Attendance… Female           
-#>  4 2014-2015   Citywide  Attendance Rate Gender by Attendance… Female           
-#>  5 2014-2015   Citywide  Attendance Rate Gender by Attendance… Male             
-#>  6 2014-2015   Citywide  Attendance Rate Gender by Attendance… Male             
-#>  7 2014-2015   Citywide  Attendance Rate Gender by Attendance… Male             
-#>  8 2014-2015   Citywide  Attendance Rate Gender by Attendance… Male             
-#>  9 2014-2015   Citywide  Attendance Rate Gender by Attendance… Male             
-#> 10 2014-2015   Citywide  Attendance Rate Gender by Attendance… Male             
-#> # ℹ 9,990 more rows
-#> # ℹ 6 more variables: group_metrics <chr>, value <chr>,
-#> #   percentage_within_demographic <chr>, total_number_within <chr>,
-#> #   to_school_dbn <chr>, to_school_name <chr>
+#> # A tibble: 2 × 9
+#>   school_year geography report_category by_group group_demographic group_metrics
+#>   <chr>       <chr>     <chr>           <chr>    <chr>             <chr>        
+#> 1 2014-2015   Citywide  Attendance Rate Gender … Female            0-20% Attend…
+#> 2 2014-2015   Citywide  Attendance Rate Gender … Female            41-60% Atten…
+#> # ℹ 3 more variables: value <chr>, percentage_within_demographic <chr>,
+#> #   total_number_within <chr>
 # }
 ```

@@ -52,7 +52,7 @@ if (curl::has_internet()) {
   small_sample <- nyc_tlc_new_driver_app_status(limit = 2)
   small_sample
 
-  nyc_tlc_new_driver_app_status(filters = list(drug_test = "NEEDED"))
+  nyc_tlc_new_driver_app_status(limit = 2, filters = list(drug_test = "NEEDED"))
 }
 #> # A tibble: 0 × 0
 # }

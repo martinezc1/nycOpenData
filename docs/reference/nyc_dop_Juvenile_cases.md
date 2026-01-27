@@ -48,22 +48,12 @@ if (curl::has_internet()) {
   small_sample <- nyc_dop_Juvenile_cases(limit = 2)
   small_sample
 
-  nyc_dop_Juvenile_cases(filters = list(borough = "Citywide"))
+  nyc_dop_Juvenile_cases(limit = 2, filters = list(borough = "Citywide"))
 }
-#> # A tibble: 579 × 5
-#>    borough  supervision_caseload_type         month year  supervision_caseload…¹
-#>    <chr>    <chr>                             <chr> <chr> <chr>                 
-#>  1 Citywide Advocate Intervene Mentor         Janu… 2025  19                    
-#>  2 Citywide Juvenile Justice Initiative       Janu… 2025  110                   
-#>  3 Citywide Enhanced Supervision Program      Nove… 2025  294                   
-#>  4 Citywide Pathways to Excellence Achieveme… Nove… 2025  0                     
-#>  5 Citywide Enhanced Supervision Program      Octo… 2025  282                   
-#>  6 Citywide Juvenile Justice Initiative       Octo… 2025  135                   
-#>  7 Citywide Pathways to Excellence Achieveme… Octo… 2025  0                     
-#>  8 Citywide IMPACT                            Octo… 2025  0                     
-#>  9 Citywide Every Child Has An Opportunity T… Octo… 2025  6                     
-#> 10 Citywide General Supervision               Octo… 2025  648                   
-#> # ℹ 569 more rows
-#> # ℹ abbreviated name: ¹​supervision_caseload_count
+#> # A tibble: 2 × 5
+#>   borough  supervision_caseload_type   month   year  supervision_caseload_count
+#>   <chr>    <chr>                       <chr>   <chr> <chr>                     
+#> 1 Citywide Advocate Intervene Mentor   January 2025  19                        
+#> 2 Citywide Juvenile Justice Initiative January 2025  110                       
 # }
 ```

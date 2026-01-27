@@ -21,7 +21,7 @@
 #'   small_sample <- nyc_homeless_drop_in_centers(limit = 2)
 #'   small_sample
 #'
-#'   nyc_homeless_drop_in_centers(filters = list(borough = "Bronx"))
+#'   nyc_homeless_drop_in_centers(limit = 2, filters = list(borough = "Bronx"))
 #' }
 #' }
 #' @export

@@ -42,7 +42,7 @@ if (curl::has_internet()) {
   small_sample <- nyc_restaurant_inspection_results(limit = 2)
   small_sample
 
-  nyc_restaurant_inspection_results(filters = list(boro = "Queens"))
+  nyc_restaurant_inspection_results(limit = 2, filters = list(boro = "Queens"))
 }
 }
 }

@@ -23,7 +23,7 @@
 #'   small_sample <- nyc_pets_in_shelters(limit = 2)
 #'   small_sample
 #'
-#'   nyc_pets_in_shelters(filters = list(date_quarter = "Qtr 1"))
+#'   nyc_pets_in_shelters(limit = 2, filters = list(date_quarter = "Qtr 1"))
 #' }
 #' }
 #' @export

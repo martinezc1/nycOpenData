@@ -23,7 +23,7 @@
 #'   small_sample <- nyc_dop_Juvenile_cases(limit = 2)
 #'   small_sample
 #'
-#'   nyc_dop_Juvenile_cases(filters = list(borough = "Citywide"))
+#'   nyc_dop_Juvenile_cases(limit = 2, filters = list(borough = "Citywide"))
 #' }
 #' }
 #' @export

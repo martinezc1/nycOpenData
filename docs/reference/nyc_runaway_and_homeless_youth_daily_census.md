@@ -54,21 +54,14 @@ if (curl::has_internet()) {
   small_sample <- nyc_runaway_and_homeless_youth_daily_census(limit = 2)
   small_sample
 
-  nyc_runaway_and_homeless_youth_daily_census(filters = list(program_type = "Crisis Shelters"))
+  nyc_runaway_and_homeless_youth_daily_census(limit = 2,
+  filters = list(program_type = "Crisis Shelters")
+  )
 }
-#> # A tibble: 2,192 × 5
-#>    date               program_type vacancies_per_day beds_per_day vacant_per_day
-#>    <chr>              <chr>        <chr>             <chr>        <chr>         
-#>  1 2025-06-30T00:00:… Crisis Shel… 40                258          0.16          
-#>  2 2025-06-29T00:00:… Crisis Shel… 34                258          0.13          
-#>  3 2025-06-28T00:00:… Crisis Shel… 33                258          0.13          
-#>  4 2025-06-27T00:00:… Crisis Shel… 34                258          0.13          
-#>  5 2025-06-26T00:00:… Crisis Shel… 28                258          0.11          
-#>  6 2025-06-25T00:00:… Crisis Shel… 30                258          0.12          
-#>  7 2025-06-24T00:00:… Crisis Shel… 32                258          0.12          
-#>  8 2025-06-23T00:00:… Crisis Shel… 29                258          0.11          
-#>  9 2025-06-22T00:00:… Crisis Shel… 30                258          0.12          
-#> 10 2025-06-21T00:00:… Crisis Shel… 28                258          0.11          
-#> # ℹ 2,182 more rows
+#> # A tibble: 2 × 5
+#>   date                program_type vacancies_per_day beds_per_day vacant_per_day
+#>   <chr>               <chr>        <chr>             <chr>        <chr>         
+#> 1 2025-06-30T00:00:0… Crisis Shel… 40                258          0.16          
+#> 2 2025-06-29T00:00:0… Crisis Shel… 34                258          0.13          
 # }
 ```

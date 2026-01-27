@@ -34,7 +34,7 @@ if (curl::has_internet()) {
   small_sample <- nyc_museum_locations(limit = 2)
   small_sample
 
-  nyc_museum_locations(filters = list(city = "New York"))
+  nyc_museum_locations(limit = 2, filters = list(city = "New York"))
 }
 }
 }

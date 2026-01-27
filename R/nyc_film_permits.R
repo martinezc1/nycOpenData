@@ -23,9 +23,10 @@
 #'   small_sample <- nyc_film_permits(limit = 2)
 #'   small_sample
 #'
-#'   nyc_film_permits(filters = list(eventtype = "Shooting Permit"))
+#'   nyc_film_permits(limit = 2, filters = list(eventtype = "Shooting Permit"))
 #' }
 #' }
+#'
 #' @export
 nyc_film_permits <- function(limit = 10000, filters = list(), timeout_sec = 30) {
   endpoint <- "https://data.cityofnewyork.us/resource/tg4x-b46p.json"

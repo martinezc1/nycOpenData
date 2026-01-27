@@ -48,12 +48,19 @@ if (curl::has_internet()) {
   small_sample <- nyc_dob_job_applications(limit = 2)
   small_sample
 
-  nyc_dob_job_applications(filters = list(borough = "BROOKLYN"))
+  nyc_dob_job_applications(limit = 2, filters = list(borough = "BROOKLYN"))
 }
-#> Error: NYC Open Data request failed (network unavailable or API slow).
-#> Try again later or increase `timeout_sec`.
-#> 
-#> Underlying error: Timeout was reached [data.cityofnewyork.us]:
-#> Operation timed out after 30002 milliseconds with 1601664 bytes received
+#> # A tibble: 2 × 71
+#>   job__  doc__ borough house__ street_name block lot   bin__ job_type job_status
+#>   <chr>  <chr> <chr>   <chr>   <chr>       <chr> <chr> <chr> <chr>    <chr>     
+#> 1 32206… 01    BROOKL… 5224    3RD AVENUE  00805 00049 3332… A1       A         
+#> 2 32200… 01    BROOKL… 750     56TH STREET 00842 00027 3015… A2       A         
+#> # ℹ 61 more variables: job_status_descrp <chr>, latest_action_date <chr>,
+#> #   building_type <chr>, community___board <chr>, cluster <chr>,
+#> #   landmarked <chr>, adult_estab <chr>, loft_board <chr>, little_e <chr>,
+#> #   efiling_filed <chr>, other <chr>, other_description <chr>,
+#> #   applicant_s_first_name <chr>, applicant_s_last_name <chr>,
+#> #   applicant_professional_title <chr>, applicant_license__ <chr>,
+#> #   professional_cert <chr>, pre__filing_date <chr>, initial_cost <chr>, …
 # }
 ```

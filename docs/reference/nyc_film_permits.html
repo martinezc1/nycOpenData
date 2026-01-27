@@ -84,26 +84,17 @@ See http://www1.nyc.gov/site/mome/permits/when-permit-required.page</p>
 <span class="r-in"><span>  <span class="va">small_sample</span> <span class="op">&lt;-</span> <span class="fu">nyc_film_permits</span><span class="op">(</span>limit <span class="op">=</span> <span class="fl">2</span><span class="op">)</span></span></span>
 <span class="r-in"><span>  <span class="va">small_sample</span></span></span>
 <span class="r-in"><span></span></span>
-<span class="r-in"><span>  <span class="fu">nyc_film_permits</span><span class="op">(</span>filters <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>eventtype <span class="op">=</span> <span class="st">"Shooting Permit"</span><span class="op">)</span><span class="op">)</span></span></span>
+<span class="r-in"><span>  <span class="fu">nyc_film_permits</span><span class="op">(</span>limit <span class="op">=</span> <span class="fl">2</span>, filters <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>eventtype <span class="op">=</span> <span class="st">"Shooting Permit"</span><span class="op">)</span><span class="op">)</span></span></span>
 <span class="r-in"><span><span class="op">}</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 10,000 × 14</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>    eventid eventtype   startdatetime enddatetime eventagency parkingheld borough</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>       <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>         <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>       <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>       <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>       <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>  </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 1</span> 897040  Shooting P… 2025-10-28T1… 2025-10-29… Mayor's Of… EAST   27 … Manhat…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 2</span> 896782  Shooting P… 2025-10-27T0… 2025-10-27… Mayor's Of… EAST   69 … Manhat…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 3</span> 895804  Shooting P… 2025-10-23T0… 2025-10-23… Mayor's Of… MANHATTAN … Bronx  </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 4</span> 895813  Shooting P… 2025-10-23T0… 2025-10-23… Mayor's Of… LORIMER ST… Brookl…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 5</span> 895465  Shooting P… 2025-10-21T0… 2025-10-22… Mayor's Of… KINGSLAND … Brookl…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 6</span> 895316  Shooting P… 2025-10-21T0… 2025-10-21… Mayor's Of… WEST  118 … Manhat…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 7</span> 743256  Shooting P… 2023-10-08T0… 2023-10-08… Mayor's Of… PEARL STRE… Manhat…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 8</span> 758109  Shooting P… 2024-01-17T0… 2024-01-17… Mayor's Of… RIVERSIDE … Manhat…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 9</span> 816598  Shooting P… 2024-10-22T0… 2024-10-22… Mayor's Of… EAST   73 … Manhat…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span> 889096  Shooting P… 2025-09-15T0… 2025-09-15… Mayor's Of… EAST    9 … Manhat…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 9,990 more rows</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 7 more variables: communityboard_s &lt;chr&gt;, policeprecinct_s &lt;chr&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   category &lt;chr&gt;, subcategoryname &lt;chr&gt;, country &lt;chr&gt;, zipcode_s &lt;chr&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   enteredon &lt;chr&gt;</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 2 × 13</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   eventid eventtype    startdatetime enddatetime eventagency parkingheld borough</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>        <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>         <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>       <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>       <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>       <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>  </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">1</span> 897040  Shooting Pe… 2025-10-28T1… 2025-10-29… Mayor's Of… EAST   27 … Manhat…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">2</span> 896782  Shooting Pe… 2025-10-27T0… 2025-10-27… Mayor's Of… EAST   69 … Manhat…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 6 more variables: communityboard_s &lt;chr&gt;, policeprecinct_s &lt;chr&gt;,</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   category &lt;chr&gt;, subcategoryname &lt;chr&gt;, country &lt;chr&gt;, zipcode_s &lt;chr&gt;</span></span>
 <span class="r-in"><span><span class="co"># }</span></span></span>
+<span class="r-in"><span></span></span>
 </code></pre></div>
     </div>
   </main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>

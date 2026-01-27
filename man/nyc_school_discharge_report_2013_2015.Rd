@@ -39,7 +39,7 @@ if (curl::has_internet()) {
   small_sample <- nyc_school_discharge_report_2013_2015(limit = 2)
   small_sample
 
-  nyc_school_discharge_report_2013_2015(filters = list(geography = "Citywide"))
+  nyc_school_discharge_report_2013_2015(limit = 2, filters = list(geography = "Citywide"))
 }
 }
 }

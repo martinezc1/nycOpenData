@@ -40,7 +40,7 @@ if (curl::has_internet()) {
   small_sample <- nyc_motor_vehicle_collisions_crashes(limit = 2)
   small_sample
 
-  nyc_motor_vehicle_collisions_crashes(filters = list(borough = "BROOKLYN"))
+  nyc_motor_vehicle_collisions_crashes(limit = 2, filters = list(borough = "BROOKLYN"))
 }
 }
 }

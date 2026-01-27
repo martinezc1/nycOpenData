@@ -21,7 +21,7 @@
 #'   small_sample <- nyc_open_parking_camera_violations(limit = 2)
 #'   small_sample
 #'
-#'   nyc_open_parking_camera_violations(filters = list(state = "NJ"))
+#'   nyc_open_parking_camera_violations(limit = 2, filters = list(state = "NJ"))
 #' }
 #' }
 #' @export

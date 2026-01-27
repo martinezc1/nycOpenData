@@ -39,7 +39,7 @@ if (curl::has_internet()) {
   small_sample <- nyc_street_hail_livery_active(limit = 2)
   small_sample
 
-  nyc_street_hail_livery_active(filters = list(status_description = "SHL UNRESTRICTED"))
+  nyc_street_hail_livery_active(limit = 2, filters = list(status_description = "SHL UNRESTRICTED"))
 }
 }
 }

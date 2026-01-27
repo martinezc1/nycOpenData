@@ -24,7 +24,7 @@
 #'   small_sample <- nyc_city_record(limit = 2)
 #'   small_sample
 #'
-#'   nyc_city_record(filters = list(short_title = "APPOINTED"))
+#'   nyc_city_record(limit = 2, filters = list(short_title = "APPOINTED"))
 #' }
 #' }
 #' @export

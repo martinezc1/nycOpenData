@@ -21,7 +21,7 @@
 #'   small_sample <- nyc_domestic_violence_annual_report(limit = 2)
 #'   small_sample
 #'
-#'   nyc_domestic_violence_annual_report(filters = list(category = "FJC_Client_Visits"))
+#'   nyc_domestic_violence_annual_report(limit = 2, filters = list(category = "FJC_Client_Visits"))
 #' }
 #' }
 #' @export

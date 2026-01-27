@@ -89,28 +89,18 @@ and public safety interactions.</p>
 <span class="r-in"><span>  <span class="va">small_sample</span> <span class="op">&lt;-</span> <span class="fu">nyc_urban_park_animal_condition</span><span class="op">(</span>limit <span class="op">=</span> <span class="fl">2</span><span class="op">)</span></span></span>
 <span class="r-in"><span>  <span class="va">small_sample</span></span></span>
 <span class="r-in"><span></span></span>
-<span class="r-in"><span>  <span class="fu">nyc_urban_park_animal_condition</span><span class="op">(</span>filters <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>age <span class="op">=</span> <span class="st">"Infant"</span><span class="op">)</span><span class="op">)</span></span></span>
+<span class="r-in"><span>  <span class="fu">nyc_urban_park_animal_condition</span><span class="op">(</span>limit <span class="op">=</span> <span class="fl">2</span>, filters <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>age <span class="op">=</span> <span class="st">"Infant"</span><span class="op">)</span><span class="op">)</span></span></span>
 <span class="r-in"><span><span class="op">}</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 273 × 22</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>    date_and_time_of_initial date_and_time_of_ranger borough    property location</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>   </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 1</span> 2023-06-29T14:00:00.000  2023-06-29T14:00:00.000 Bronx      Crotona… In fron…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 2</span> 2023-06-25T12:45:00.000  2023-06-25T13:00:00.000 Manhattan  J. Hood… 174 Str…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 3</span> 2023-06-25T11:15:00.000  2023-06-25T11:16:00.000 Staten Is… Blue He… On the …</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 4</span> 2023-06-24T11:00:00.000  2023-06-24T11:00:00.000 Brooklyn   Prospec… South s…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 5</span> 2023-06-19T19:33:00.000  2023-06-20T12:20:00.000 Bronx      Crotona… norther…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 6</span> 2023-06-15T12:00:00.000  2023-06-15T12:00:00.000 Brooklyn   Prospec… Behind …</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 7</span> 2023-06-15T10:00:00.000  2023-06-15T10:30:00.000 Bronx      Van Cor… Pool    </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 8</span> 2023-06-11T14:10:00.000  2023-06-11T14:30:00.000 Staten Is… Blue He… Eyeland…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 9</span> 2023-06-11T11:00:00.000  2023-06-11T11:20:00.000 Bronx      Pelham … Orchard…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span> 2023-06-05T12:00:00.000  2023-06-05T12:00:00.000 Brooklyn   Bushwic… Bushwic…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 263 more rows</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 17 more variables: species_description &lt;chr&gt;, call_source &lt;chr&gt;,</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 2 × 20</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   date_and_time_of_initial date_and_time_of_ranger borough   property   location</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>   </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">1</span> 2023-06-29T14:00:00.000  2023-06-29T14:00:00.000 Bronx     Crotona P… In fron…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">2</span> 2023-06-25T12:45:00.000  2023-06-25T13:00:00.000 Manhattan J. Hood W… 174 Str…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 15 more variables: species_description &lt;chr&gt;, call_source &lt;chr&gt;,</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   species_status &lt;chr&gt;, animal_condition &lt;chr&gt;, duration_of_response &lt;chr&gt;,</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   age &lt;chr&gt;, animal_class &lt;chr&gt;, final_ranger_action &lt;chr&gt;, of_animals &lt;chr&gt;,</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   pep_response &lt;lgl&gt;, animal_monitored &lt;lgl&gt;, police_response &lt;lgl&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   esu_response &lt;lgl&gt;, `_311sr_number` &lt;chr&gt;, rehabilitator &lt;chr&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   hours_spent_monitoring &lt;chr&gt;, acc_intake_number &lt;chr&gt;</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   esu_response &lt;lgl&gt;, `_311sr_number` &lt;chr&gt;, rehabilitator &lt;chr&gt;</span></span>
 <span class="r-in"><span><span class="co"># }</span></span></span>
 <span class="r-in"><span></span></span>
 </code></pre></div>

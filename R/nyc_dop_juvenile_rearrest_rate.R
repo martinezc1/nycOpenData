@@ -23,7 +23,7 @@
 #'   small_sample <- nyc_dop_juvenile_rearrest_rate(limit = 2)
 #'   small_sample
 #'
-#'   nyc_dop_juvenile_rearrest_rate(filters = list(borough = "Citywide"))
+#'   nyc_dop_juvenile_rearrest_rate(limit = 2, filters = list(borough = "Citywide"))
 #' }
 #' }
 #' @export

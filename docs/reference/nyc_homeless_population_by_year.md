@@ -50,7 +50,7 @@ if (curl::has_internet()) {
   small_sample <- nyc_homeless_population_by_year(limit = 2)
   small_sample
 
-  nyc_homeless_population_by_year(filters = list(area = "Subways"))
+  nyc_homeless_population_by_year(limit = 2, filters = list(area = "Subways"))
 }
 #> # A tibble: 0 × 0
 # }

@@ -48,22 +48,13 @@ if (curl::has_internet()) {
   small_sample <- nyc_cause_of_death(limit = 2)
   small_sample
 
-  nyc_cause_of_death(filters = list(sex = "M"))
+  nyc_cause_of_death(limit = 2, filters = list(sex = "M"))
 }
-#> # A tibble: 609 × 7
-#>    year  leading_cause                    sex   race_ethnicity deaths death_rate
-#>    <chr> <chr>                            <chr> <chr>          <chr>  <chr>     
-#>  1 2018  Mental and Behavioral Disorders… M     Other Race/ E… 13     NA        
-#>  2 2018  Mental and Behavioral Disorders… M     Non-Hispanic … 271    32.335    
-#>  3 2018  Mental and Behavioral Disorders… M     Non-Hispanic … 413    31.381    
-#>  4 2018  Mental and Behavioral Disorders… M     Not Stated/Un… 23     28.794    
-#>  5 2018  Influenza (Flu) and Pneumonia (… M     Non-Hispanic … 240    28.637    
-#>  6 2018  Malignant Neoplasms (Cancer: C0… M     Other Race/ E… 36     NA        
-#>  7 2018  Chronic Lower Respiratory Disea… M     Non-Hispanic … 364    27.658    
-#>  8 2018  All Other Causes                 M     Non-Hispanic … 1538   183.513   
-#>  9 2018  Diseases of Heart (I00-I09, I11… M     Other Race/ E… 82     NA        
-#> 10 2018  All Other Causes                 M     Other Race/ E… 55     NA        
-#> # ℹ 599 more rows
+#> # A tibble: 2 × 7
+#>   year  leading_cause                     sex   race_ethnicity deaths death_rate
+#>   <chr> <chr>                             <chr> <chr>          <chr>  <chr>     
+#> 1 2018  Mental and Behavioral Disorders … M     Other Race/ E… 13     NA        
+#> 2 2018  Mental and Behavioral Disorders … M     Non-Hispanic … 271    32.335    
 #> # ℹ 1 more variable: age_adjusted_death_rate <chr>
 # }
 ```

@@ -50,14 +50,13 @@ if (curl::has_internet()) {
   small_sample <- nyc_pets_in_shelters(limit = 2)
   small_sample
 
-  nyc_pets_in_shelters(filters = list(date_quarter = "Qtr 1"))
+  nyc_pets_in_shelters(limit = 2, filters = list(date_quarter = "Qtr 1"))
 }
-#> # A tibble: 3 × 24
+#> # A tibble: 2 × 24
 #>   date_year date_quarter total_applicants had_pet client_borough_of_entry_bronx
 #>   <chr>     <chr>        <chr>            <chr>   <chr>                        
 #> 1 2026      Qtr 1        12062            16      16                           
 #> 2 2025      Qtr 1        11901            2       2                            
-#> 3 2024      Qtr 1        11651            3       2                            
 #> # ℹ 19 more variables: client_borough_of_entry <chr>,
 #> #   client_borough_of_entry_1 <chr>, clients_who_would_have_entered <chr>,
 #> #   clients_choosing_to_forego <chr>, chose_to_forego_shelter_for <chr>,

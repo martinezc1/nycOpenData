@@ -23,7 +23,7 @@
 #'   small_sample <- nyc_tree_census_2015(limit = 2)
 #'   head(small_sample)
 #'
-#'   nyc_tree_census_2015(filters = list(curb_loc = "OnCurb"))
+#'   nyc_tree_census_2015(limit = 2, filters = list(curb_loc = "OnCurb"))
 #' }
 #' }
 #' @export

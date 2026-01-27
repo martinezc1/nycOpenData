@@ -36,7 +36,7 @@ if (curl::has_internet()) {
   small_sample <- nyc_nypd_hate_crimes(limit = 2)
   small_sample
 
-  nyc_nypd_hate_crimes(filters = list(county = "KINGS"))
+  nyc_nypd_hate_crimes(limit = 2, filters = list(county = "KINGS"))
 }
 }
 }

@@ -34,9 +34,9 @@ It’s published by NYC Department of Social Services for transparency and analy
 if (curl::has_internet()) {
   # Quick example (fetch 2 rows)
   small_sample <- nyc_borough_community_report(limit = 2)
-  head(small_sample)
+  small_sample
 
-  nyc_borough_community_report(filters = list(borough = "Bronx"))
+  nyc_borough_community_report(limit = 2, filters = list(borough = "Bronx"))
 }
 }
 }

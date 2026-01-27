@@ -39,7 +39,9 @@ if (curl::has_internet()) {
   small_sample <- nyc_runaway_and_homeless_youth_daily_census(limit = 2)
   small_sample
 
-  nyc_runaway_and_homeless_youth_daily_census(filters = list(program_type = "Crisis Shelters"))
+  nyc_runaway_and_homeless_youth_daily_census(limit = 2,
+  filters = list(program_type = "Crisis Shelters")
+  )
 }
 }
 }

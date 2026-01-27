@@ -38,7 +38,7 @@ if (curl::has_internet()) {
   small_sample <- nyc_daily_attendance_2018_2019(limit = 2)
   small_sample
 
-  nyc_daily_attendance_2018_2019(filters = list(school_dbn = "01M015"))
+  nyc_daily_attendance_2018_2019(limit = 2, filters = list(school_dbn = "01M015"))
 }
 }
 }

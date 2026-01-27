@@ -52,15 +52,12 @@ if (curl::has_internet()) {
   small_sample <- nyc_domestic_violence_annual_report(limit = 2)
   small_sample
 
-  nyc_domestic_violence_annual_report(filters = list(category = "FJC_Client_Visits"))
+  nyc_domestic_violence_annual_report(limit = 2, filters = list(category = "FJC_Client_Visits"))
 }
-#> # A tibble: 5 × 8
+#> # A tibble: 2 × 8
 #>   year  category          bronx brooklyn manhattan queens staten_island citywide
 #>   <chr> <chr>             <chr> <chr>    <chr>     <chr>  <chr>         <chr>   
 #> 1 2024  FJC_Client_Visits 10844 12860    11003     13421  9528          57,656  
 #> 2 2023  FJC_Client_Visits 11033 10492    8931      11906  6801          49,163  
-#> 3 2022  FJC_Client_Visits 12188 11414    9028      11463  6705          50,798  
-#> 4 2021  FJC_Client_Visits 7792  8267     7938      11955  6754          42,706  
-#> 5 2020  FJC_Client_Visits 7602  9470     6857      12870  6535          43,334  
 # }
 ```

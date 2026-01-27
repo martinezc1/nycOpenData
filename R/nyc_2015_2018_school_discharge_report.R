@@ -18,7 +18,7 @@
 #' small_sample
 #'
 #' \donttest{
-#' nyc_school_discharge_report_2015_2018(filters = list(geography = "Borough"))
+#' nyc_school_discharge_report_2015_2018(limit = 2, filters = list(geography = "Borough"))
 #' }
 #' @export
 nyc_school_discharge_report_2015_2018 <- function(limit = 10000, filters = list()) {

@@ -25,7 +25,7 @@
 #'   small_sample <- nyc_school_discharge(limit = 2)
 #'   small_sample
 #'
-#'   nyc_school_discharge(filters = list(school_level = "High School"))
+#'   nyc_school_discharge(limit = 2, filters = list(school_level = "High School"))
 #' }
 #' }
 #' @export

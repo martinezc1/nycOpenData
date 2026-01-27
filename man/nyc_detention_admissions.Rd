@@ -36,7 +36,7 @@ if (curl::has_internet()) {
   small_sample <- nyc_detention_admissions(limit = 2)
   small_sample
 
-  nyc_detention_admissions(filters = list(borough = "Bronx"))
+  nyc_detention_admissions(limit = 2, filters = list(borough = "Bronx"))
 }
 }
 }

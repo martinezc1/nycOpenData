@@ -22,7 +22,7 @@
 #'   small_sample <- nyc_311_2010_2019(limit = 2)
 #'   small_sample
 #'
-#'   nyc_311_2010_2019(filters = list(agency = "NYPD", city = "BROOKLYN"))
+#'   nyc_311_2010_2019(limit = 2, filters = list(agency = "NYPD", city = "BROOKLYN"))
 #' }
 #' }
 #' @export

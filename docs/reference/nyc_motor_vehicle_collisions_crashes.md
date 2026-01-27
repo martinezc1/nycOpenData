@@ -56,27 +56,19 @@ if (curl::has_internet()) {
   small_sample <- nyc_motor_vehicle_collisions_crashes(limit = 2)
   small_sample
 
-  nyc_motor_vehicle_collisions_crashes(filters = list(borough = "BROOKLYN"))
+  nyc_motor_vehicle_collisions_crashes(limit = 2, filters = list(borough = "BROOKLYN"))
 }
-#> # A tibble: 10,000 × 31
-#>    crash_date      crash_time borough zip_code latitude longitude on_street_name
-#>    <chr>           <chr>      <chr>   <chr>    <chr>    <chr>     <chr>         
-#>  1 2026-01-23T00:… 11:20      BROOKL… 11219    40.6325… -74.0063  FORT HAMILTON…
-#>  2 2026-01-23T00:… 16:13      BROOKL… 11219    40.62677 -73.99354 59 ST         
-#>  3 2026-01-23T00:… 21:16      BROOKL… 11236    40.6343… -73.90198 AVENUE L      
-#>  4 2026-01-23T00:… 16:05      BROOKL… 11226    40.6487… -73.95019 NA            
-#>  5 2026-01-23T00:… 16:02      BROOKL… 11213    40.67356 -73.9362… TROY AVE      
-#>  6 2026-01-23T00:… 6:45       BROOKL… 11234    40.6185… -73.94242 NEW YORK AVE  
-#>  7 2026-01-23T00:… 21:01      BROOKL… 11230    40.62628 -73.95629 NA            
-#>  8 2026-01-23T00:… 22:10      BROOKL… 11201    40.6892… -73.98872 STATE ST      
-#>  9 2026-01-23T00:… 22:04      BROOKL… 11237    40.69328 -73.90429 IRVING AVE    
-#> 10 2026-01-23T00:… 23:45      BROOKL… 11226    40.6510… -73.9643… CATON AVE     
-#> # ℹ 9,990 more rows
-#> # ℹ 24 more variables: off_street_name <chr>, number_of_persons_injured <chr>,
+#> # A tibble: 2 × 25
+#>   crash_date       crash_time borough zip_code latitude longitude on_street_name
+#>   <chr>            <chr>      <chr>   <chr>    <chr>    <chr>     <chr>         
+#> 1 2026-01-23T00:0… 5:05       BROOKL… 11233    40.6772… -73.92823 ATLANTIC AVE  
+#> 2 2026-01-23T00:0… 16:20      BROOKL… 11213    40.6691… -73.9299  NA            
+#> # ℹ 18 more variables: off_street_name <chr>, number_of_persons_injured <chr>,
 #> #   number_of_persons_killed <chr>, number_of_pedestrians_injured <chr>,
 #> #   number_of_pedestrians_killed <chr>, number_of_cyclist_injured <chr>,
 #> #   number_of_cyclist_killed <chr>, number_of_motorist_injured <chr>,
 #> #   number_of_motorist_killed <chr>, contributing_factor_vehicle_1 <chr>,
-#> #   contributing_factor_vehicle_2 <chr>, collision_id <chr>, …
+#> #   contributing_factor_vehicle_2 <chr>, collision_id <chr>,
+#> #   vehicle_type_code1 <chr>, vehicle_type_code2 <chr>, …
 # }
 ```

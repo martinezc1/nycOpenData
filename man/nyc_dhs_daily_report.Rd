@@ -35,7 +35,7 @@ if (curl::has_internet()) {
   small_sample <- nyc_dhs_daily_report(limit = 2)
   small_sample
 
-  nyc_dhs_daily_report(filters = list(total_adults_in_shelter = 55694))
+  nyc_dhs_daily_report(limit = 2, filters = list(total_adults_in_shelter = 55694))
 }
 }
 }

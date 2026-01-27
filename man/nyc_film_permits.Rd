@@ -36,7 +36,8 @@ if (curl::has_internet()) {
   small_sample <- nyc_film_permits(limit = 2)
   small_sample
 
-  nyc_film_permits(filters = list(eventtype = "Shooting Permit"))
+  nyc_film_permits(limit = 2, filters = list(eventtype = "Shooting Permit"))
 }
 }
+
 }

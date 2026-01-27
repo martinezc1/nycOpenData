@@ -24,7 +24,7 @@
 #'   small_sample <- nyc_medallion_drivers_authorized(limit = 2)
 #'   small_sample
 #'
-#'   nyc_medallion_drivers_authorized(filters = list(current_status = "CUR"))
+#'   nyc_medallion_drivers_authorized(limit = 2, filters = list(current_status = "CUR"))
 #' }
 #' }
 #' @export

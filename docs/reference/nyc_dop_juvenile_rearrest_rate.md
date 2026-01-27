@@ -53,21 +53,12 @@ if (curl::has_internet()) {
   small_sample <- nyc_dop_juvenile_rearrest_rate(limit = 2)
   small_sample
 
-  nyc_dop_juvenile_rearrest_rate(filters = list(borough = "Citywide"))
+  nyc_dop_juvenile_rearrest_rate(limit = 2, filters = list(borough = "Citywide"))
 }
-#> # A tibble: 117 × 4
-#>    borough  month     year  rate 
-#>    <chr>    <chr>     <chr> <chr>
-#>  1 Citywide November  2025  4.5  
-#>  2 Citywide October   2025  4.7  
-#>  3 Citywide September 2025  4.9  
-#>  4 Citywide August    2025  4.1  
-#>  5 Citywide July      2025  4.7  
-#>  6 Citywide June      2025  4.7  
-#>  7 Citywide May       2025  4.4  
-#>  8 Citywide April     2025  4.4  
-#>  9 Citywide March     2025  4.3  
-#> 10 Citywide February  2025  4.1  
-#> # ℹ 107 more rows
+#> # A tibble: 2 × 4
+#>   borough  month    year  rate 
+#>   <chr>    <chr>    <chr> <chr>
+#> 1 Citywide November 2025  4.5  
+#> 2 Citywide October  2025  4.7  
 # }
 ```

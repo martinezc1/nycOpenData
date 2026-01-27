@@ -40,7 +40,7 @@ if (curl::has_internet()) {
   small_sample <- nyc_period_attendance_reporting(limit = 2)
   small_sample
 
-  nyc_period_attendance_reporting(filters = list(boro = "X"))
+  nyc_period_attendance_reporting(limit = 2, filters = list(boro = "X"))
 }
 }
 }

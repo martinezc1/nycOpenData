@@ -35,7 +35,7 @@ if (curl::has_internet()) {
   small_sample <- nyc_311(limit = 2)
   small_sample
 
-  nyc_311(filters = list(agency = "NYPD", city = "BROOKLYN"))
+  nyc_311(limit = 2, filters = list(agency = "NYPD", city = "BROOKLYN"))
 }
 }
 }

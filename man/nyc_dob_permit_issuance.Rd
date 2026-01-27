@@ -39,7 +39,7 @@ if (curl::has_internet()) {
   small_sample <- nyc_dob_permit_issuance(limit = 2)
   small_sample
 
-  nyc_dob_permit_issuance(filters = list(borough = "BROOKLYN"))
+  nyc_dob_permit_issuance(limit = 2, filters = list(borough = "BROOKLYN"))
 }
 }
 }

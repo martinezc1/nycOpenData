@@ -36,7 +36,7 @@ if (curl::has_internet()) {
   small_sample <- nyc_for_hire_vehicles(limit = 2)
   small_sample
 
-  nyc_for_hire_vehicles(filters = list(active = "YES"))
+  nyc_for_hire_vehicles(limit = 2, filters = list(active = "YES"))
 }
 }
 }

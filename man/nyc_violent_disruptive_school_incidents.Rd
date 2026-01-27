@@ -40,7 +40,7 @@ if (curl::has_internet()) {
   small_sample <- nyc_violent_disruptive_school_incidents(limit = 2)
   small_sample
 
-  nyc_violent_disruptive_school_incidents(filters = list(school_type = "Public"))
+  nyc_violent_disruptive_school_incidents(limit = 2, filters = list(school_type = "Public"))
 }
 }
 }

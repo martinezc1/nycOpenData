@@ -35,7 +35,7 @@ if (curl::has_internet()) {
   small_sample <- nyc_cause_of_death(limit = 2)
   small_sample
 
-  nyc_cause_of_death(filters = list(sex = "M"))
+  nyc_cause_of_death(limit = 2, filters = list(sex = "M"))
 }
 }
 }

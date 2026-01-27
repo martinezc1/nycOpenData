@@ -50,22 +50,13 @@ if (curl::has_internet()) {
   small_sample <- nyc_school_discharge(limit = 2)
   small_sample
 
-  nyc_school_discharge(filters = list(school_level = "High School"))
+  nyc_school_discharge(limit = 2, filters = list(school_level = "High School"))
 }
-#> # A tibble: 10,000 × 9
-#>    year      report_category school_level geographic_unit school_name           
-#>    <chr>     <chr>           <chr>        <chr>           <chr>                 
-#>  1 2022-2023 School          High School  32K556          BUSHWICK LEADERS HS F…
-#>  2 2022-2023 School          High School  32K564          BUSHWICK COMMUNITY HS 
-#>  3 2022-2023 School          High School  32K564          BUSHWICK COMMUNITY HS 
-#>  4 2022-2023 School          High School  32K564          BUSHWICK COMMUNITY HS 
-#>  5 2022-2023 School          High School  32K564          BUSHWICK COMMUNITY HS 
-#>  6 2022-2023 School          High School  75K036          PS 36                 
-#>  7 2022-2023 School          High School  75K036          PS 36                 
-#>  8 2022-2023 School          High School  75K053          PS K053               
-#>  9 2022-2023 School          High School  75K053          PS K053               
-#> 10 2022-2023 School          High School  75K140          PS K140               
-#> # ℹ 9,990 more rows
+#> # A tibble: 2 × 9
+#>   year      report_category school_level geographic_unit school_name            
+#>   <chr>     <chr>           <chr>        <chr>           <chr>                  
+#> 1 2022-2023 School          High School  32K556          BUSHWICK LEADERS HS FO…
+#> 2 2022-2023 School          High School  32K564          BUSHWICK COMMUNITY HS  
 #> # ℹ 4 more variables: student_category <chr>, discharge_category <chr>,
 #> #   count_of_students <chr>, total_enrolled_students <chr>
 # }

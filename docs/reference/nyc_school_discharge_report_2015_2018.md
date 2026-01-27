@@ -48,21 +48,12 @@ small_sample
 #> #   value_percentage <chr>
 
 # \donttest{
-nyc_school_discharge_report_2015_2018(filters = list(geography = "Borough"))
-#> # A tibble: 10,000 × 9
-#>    school_year geography report_category report_subcategory borough  
-#>    <chr>       <chr>     <chr>           <chr>              <chr>    
-#>  1 2017-2018   Borough   SWD             Not SWD            Manhattan
-#>  2 2017-2018   Borough   SWD             Not SWD            Manhattan
-#>  3 2017-2018   Borough   SWD             Not SWD            Manhattan
-#>  4 2017-2018   Borough   SWD             Not SWD            Manhattan
-#>  5 2017-2018   Borough   SWD             Not SWD            Manhattan
-#>  6 2017-2018   Borough   SWD             Not SWD            Manhattan
-#>  7 2017-2018   Borough   SWD             Not SWD            Manhattan
-#>  8 2017-2018   Borough   SWD             Not SWD            Manhattan
-#>  9 2017-2018   Borough   SWD             Not SWD            Manhattan
-#> 10 2017-2018   Borough   SWD             Not SWD            Manhattan
-#> # ℹ 9,990 more rows
+nyc_school_discharge_report_2015_2018(limit = 2, filters = list(geography = "Borough"))
+#> # A tibble: 2 × 9
+#>   school_year geography report_category report_subcategory borough  
+#>   <chr>       <chr>     <chr>           <chr>              <chr>    
+#> 1 2017-2018   Borough   SWD             Not SWD            Manhattan
+#> 2 2017-2018   Borough   SWD             Not SWD            Manhattan
 #> # ℹ 4 more variables: category_group <chr>, category_subgroup <chr>,
 #> #   value <chr>, value_percentage <chr>
 # }

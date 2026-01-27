@@ -51,21 +51,12 @@ if (curl::has_internet()) {
   small_sample <- nyc_daily_attendance_2018_2019(limit = 2)
   small_sample
 
-  nyc_daily_attendance_2018_2019(filters = list(school_dbn = "01M015"))
+  nyc_daily_attendance_2018_2019(limit = 2, filters = list(school_dbn = "01M015"))
 }
-#> # A tibble: 178 × 6
-#>    school_dbn date     enrolled absent present released
-#>    <chr>      <chr>    <chr>    <chr>  <chr>   <chr>   
-#>  1 01M015     20190626 174      45     129     0       
-#>  2 01M015     20190625 174      37     137     0       
-#>  3 01M015     20190624 174      21     153     0       
-#>  4 01M015     20190621 174      27     147     0       
-#>  5 01M015     20190620 174      21     153     0       
-#>  6 01M015     20190619 174      11     163     0       
-#>  7 01M015     20190618 174      18     156     0       
-#>  8 01M015     20190617 174      11     163     0       
-#>  9 01M015     20190614 175      9      166     0       
-#> 10 01M015     20190613 175      14     161     0       
-#> # ℹ 168 more rows
+#> # A tibble: 2 × 6
+#>   school_dbn date     enrolled absent present released
+#>   <chr>      <chr>    <chr>    <chr>  <chr>   <chr>   
+#> 1 01M015     20190626 174      45     129     0       
+#> 2 01M015     20190625 174      37     137     0       
 # }
 ```

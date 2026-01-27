@@ -37,7 +37,7 @@ if (curl::has_internet()) {
   small_sample <- nyc_medallion_drivers_active(limit = 2)
   small_sample
 
-  nyc_medallion_drivers_active(filters = list(type = "MEDALLION TAXI DRIVER"))
+  nyc_medallion_drivers_active(limit = 2, filters = list(type = "MEDALLION TAXI DRIVER"))
 }
 }
 }

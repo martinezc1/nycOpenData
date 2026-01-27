@@ -23,7 +23,7 @@
 #'   small_sample <- nyc_civil_service_list(limit = 2)
 #'   small_sample
 #'
-#'   nyc_civil_service_list(filters = list(last_name = "Martinez"))
+#'   nyc_civil_service_list(limit = 2, filters = list(last_name = "Martinez"))
 #' }
 #' }
 #' @export

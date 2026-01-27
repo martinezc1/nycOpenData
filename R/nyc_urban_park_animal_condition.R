@@ -24,7 +24,7 @@
 #'   small_sample <- nyc_urban_park_animal_condition(limit = 2)
 #'   small_sample
 #'
-#'   nyc_urban_park_animal_condition(filters = list(age = "Infant"))
+#'   nyc_urban_park_animal_condition(limit = 2, filters = list(age = "Infant"))
 #' }
 #' }
 #'

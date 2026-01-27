@@ -36,7 +36,7 @@ if (curl::has_internet()) {
   small_sample <- nyc_dob_job_applications(limit = 2)
   small_sample
 
-  nyc_dob_job_applications(filters = list(borough = "BROOKLYN"))
+  nyc_dob_job_applications(limit = 2, filters = list(borough = "BROOKLYN"))
 }
 }
 
