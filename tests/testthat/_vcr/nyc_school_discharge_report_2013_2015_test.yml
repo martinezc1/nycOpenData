@@ -1,0 +1,32 @@
+http_interactions:
+- request:
+    method: GET
+    uri: https://data.cityofnewyork.us/resource/r773-ytwa.json?%24limit=2&%24order=school_year+DESC
+  response:
+    status: 200
+    headers:
+      server: nginx
+      date: Tue, 27 Jan 2026 00:18:57 GMT
+      content-type: application/json;charset=utf-8
+      transfer-encoding: chunked
+      connection: keep-alive
+      access-control-allow-origin: '*'
+      etag: '"anVsaWV0dC4xMDI4NTZfMV8yMEJUVHoydy1PUWp6Zmp4M1B1R24yVmhLUDBwTQ---gzih0gywaejidUSj8jOJlbUom-WCbO--gzip--gzip"'
+      x-soda2-fields: '["school_year","geography","report_category","borough","district","school_dbn","school_name","by_group","group_demographic","group_metrics","to_school_dbn","to_school_name","value","percentage_within_demographic","total_number_within"]'
+      x-soda2-types: '["text","text","text","text","text","text","text","text","text","text","text","text","text","text","text"]'
+      x-soda2-data-out-of-date: 'false'
+      x-soda2-truth-last-modified: Wed, 13 Aug 2025 20:02:41 GMT
+      x-soda2-secondary-last-modified: Wed, 13 Aug 2025 20:02:41 GMT
+      last-modified: Wed, 13 Aug 2025 20:02:41 GMT
+      vary: Accept-Encoding
+      content-encoding: gzip
+      age: '2'
+      x-socrata-region: aws-us-east-1-fedramp-prod
+      strict-transport-security: max-age=31536000; includeSubDomains
+      x-socrata-requestid: 06bb8c394ab1a2d8a236598e0850bcd3
+    body:
+      string: |
+        [{"school_year":"2014-2015","geography":"School","report_category":"Attendance Rate","school_dbn":"31R014","school_name":"P.S. 014 Cornelius Vanderbilt","by_group":"Gender by Attendance Rate","group_demographic":"Female","group_metrics":"61-80% Attendance Rate","value":"19","percentage_within_demographic":"0.1508","total_number_within":"126"}
+        ,{"school_year":"2014-2015","geography":"School","report_category":"Attendance Rate","school_dbn":"31R014","school_name":"P.S. 014 Cornelius Vanderbilt","by_group":"Gender by Attendance Rate","group_demographic":"Female","group_metrics":"81-100% Attendance Rate","value":"104","percentage_within_demographic":"0.8254","total_number_within":"126"}]
+  recorded_at: 2026-01-27 00:18:57
+recorded_with: VCR-vcr/2.1.0

@@ -1,0 +1,32 @@
+http_interactions:
+- request:
+    method: GET
+    uri: https://data.cityofnewyork.us/resource/7t9i-jsfp.json?%24limit=2&%24order=year+DESC
+  response:
+    status: 200
+    headers:
+      server: nginx
+      date: Tue, 27 Jan 2026 00:18:52 GMT
+      content-type: application/json;charset=utf-8
+      transfer-encoding: chunked
+      connection: keep-alive
+      access-control-allow-origin: '*'
+      etag: '"aG90ZWwuMzE1MzNfNV8xNDh0dzdIWnFWNXFBTzVzaWp6aWJxME5Mc1dzT1k---gzipxo4GHqfzQxkZrGpooxw2YpoVtqg--gzip--gzip"'
+      x-soda2-fields: '["year","category","bronx","brooklyn","manhattan","queens","staten_island","citywide"]'
+      x-soda2-types: '["text","text","number","number","number","number","number","text"]'
+      x-soda2-data-out-of-date: 'false'
+      x-soda2-truth-last-modified: Tue, 13 May 2025 19:28:06 GMT
+      x-soda2-secondary-last-modified: Tue, 13 May 2025 19:28:06 GMT
+      last-modified: Tue, 13 May 2025 19:28:06 GMT
+      vary: Accept-Encoding
+      content-encoding: gzip
+      age: '2'
+      x-socrata-region: aws-us-east-1-fedramp-prod
+      strict-transport-security: max-age=31536000; includeSubDomains
+      x-socrata-requestid: a598f5104547501c12ce84a4ef1b7957
+    body:
+      string: |
+        [{"year":"2024","category":"FJC_Client_Visits","bronx":"10844","brooklyn":"12860","manhattan":"11003","queens":"13421","staten_island":"9528","citywide":"57,656"}
+        ,{"year":"2024","category":"FJC_Unique_Clients","bronx":"3007","brooklyn":"4247","manhattan":"2688","queens":"3472","staten_island":"1793","citywide":"15,207"}]
+  recorded_at: 2026-01-27 00:18:52
+recorded_with: VCR-vcr/2.1.0

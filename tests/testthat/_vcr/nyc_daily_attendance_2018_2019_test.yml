@@ -1,0 +1,32 @@
+http_interactions:
+- request:
+    method: GET
+    uri: https://data.cityofnewyork.us/resource/x3bb-kg5j.json?%24limit=2&%24order=date+DESC
+  response:
+    status: 200
+    headers:
+      server: nginx
+      date: Tue, 27 Jan 2026 00:23:04 GMT
+      content-type: application/json;charset=utf-8
+      transfer-encoding: chunked
+      connection: keep-alive
+      access-control-allow-origin: '*'
+      etag: '"Z29sZi4yNjM3N18yXzMzZ3p4X1dqbTNnVFctcVduelVrSWk2dDdaVGI4---gzipQNQzuLiZHmA8KR1eobmBNYJkdhI--gzip--gzip"'
+      x-soda2-fields: '["school_dbn","date","enrolled","absent","present","released"]'
+      x-soda2-types: '["text","text","number","number","number","number"]'
+      x-soda2-data-out-of-date: 'false'
+      x-soda2-truth-last-modified: Wed, 11 Sep 2019 13:54:05 GMT
+      x-soda2-secondary-last-modified: Wed, 11 Sep 2019 13:54:05 GMT
+      last-modified: Wed, 11 Sep 2019 13:54:05 GMT
+      vary: Accept-Encoding
+      content-encoding: gzip
+      age: '0'
+      x-socrata-region: aws-us-east-1-fedramp-prod
+      strict-transport-security: max-age=31536000; includeSubDomains
+      x-socrata-requestid: e8d1cfe7fb834e4f43bee0b46a6fa1a1
+    body:
+      string: |
+        [{"school_dbn":"79X695","date":"20190626","enrolled":"216","absent":"27","present":"68","released":"121"}
+        ,{"school_dbn":"31R030","date":"20190626","enrolled":"838","absent":"53","present":"785","released":"0"}]
+  recorded_at: 2026-01-27 00:23:04
+recorded_with: VCR-vcr/2.1.0

@@ -1,0 +1,32 @@
+http_interactions:
+- request:
+    method: GET
+    uri: https://data.cityofnewyork.us/resource/c49b-3kmd.json?%24limit=2&%24order=year+DESC
+  response:
+    status: 200
+    headers:
+      server: nginx
+      date: Tue, 27 Jan 2026 00:18:52 GMT
+      content-type: application/json;charset=utf-8
+      transfer-encoding: chunked
+      connection: keep-alive
+      access-control-allow-origin: '*'
+      etag: '"Zm94dHJvdC41NjQwOV8xXzEyMkdRZG1XQjBSaFBzeHZnTFFTalVkRkp4NWc5QQ---gzimUCfZ8WJHs1KIgbhWeQT58PtdHS--gzip--gzip"'
+      x-soda2-fields: '["borough","supervision_caseload_type","month","year","supervision_caseload_count"]'
+      x-soda2-types: '["text","text","text","number","number"]'
+      x-soda2-data-out-of-date: 'false'
+      x-soda2-truth-last-modified: Wed, 07 Jan 2026 20:22:03 GMT
+      x-soda2-secondary-last-modified: Wed, 07 Jan 2026 20:22:03 GMT
+      last-modified: Wed, 07 Jan 2026 20:22:03 GMT
+      vary: Accept-Encoding
+      content-encoding: gzip
+      age: '0'
+      x-socrata-region: aws-us-east-1-fedramp-prod
+      strict-transport-security: max-age=31536000; includeSubDomains
+      x-socrata-requestid: c6af5ccb43f94e8b24960eadb822c5e5
+    body:
+      string: |
+        [{"borough":"Citywide","supervision_caseload_type":"Advocate Intervene Mentor","month":"November","year":"2025","supervision_caseload_count":"37"}
+        ,{"borough":"Citywide","supervision_caseload_type":"Juvenile Justice Initiative","month":"November","year":"2025","supervision_caseload_count":"132"}]
+  recorded_at: 2026-01-27 00:18:52
+recorded_with: VCR-vcr/2.1.0

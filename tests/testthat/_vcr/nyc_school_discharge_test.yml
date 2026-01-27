@@ -1,0 +1,32 @@
+http_interactions:
+- request:
+    method: GET
+    uri: https://data.cityofnewyork.us/resource/a2gn-nyzs.json?%24limit=2&%24order=year+DESC
+  response:
+    status: 200
+    headers:
+      server: nginx
+      date: Tue, 27 Jan 2026 00:18:58 GMT
+      content-type: application/json;charset=utf-8
+      transfer-encoding: chunked
+      connection: keep-alive
+      access-control-allow-origin: '*'
+      etag: '"anVsaWV0dC4xMzA0MTZfMV8xNXZ4WTctWFpLa0poUkQ5XzBFMEZtcGd1YllSQQ---gzimqALToNS88sXcTU7x9hroReeICV--gzip--gzip"'
+      x-soda2-fields: '["year","report_category","school_level","geographic_unit","school_name","student_category","code","discharge_category","discharge_description","count_of_students","total_enrolled_students"]'
+      x-soda2-types: '["text","text","text","text","text","text","text","text","text","text","text"]'
+      x-soda2-data-out-of-date: 'false'
+      x-soda2-truth-last-modified: Fri, 03 Oct 2025 13:50:20 GMT
+      x-soda2-secondary-last-modified: Fri, 03 Oct 2025 13:50:20 GMT
+      last-modified: Fri, 03 Oct 2025 13:50:20 GMT
+      vary: Accept-Encoding
+      content-encoding: gzip
+      age: '2'
+      x-socrata-region: aws-us-east-1-fedramp-prod
+      strict-transport-security: max-age=31536000; includeSubDomains
+      x-socrata-requestid: 41f070528f44e857d9d4bbde1bf397b6
+    body:
+      string: |
+        [{"year":"2022-2023","report_category":"School","school_level":"Middle School","geographic_unit":"32K562","school_name":"EVERGREEN MS FOR URBAN EXPLORATION","student_category":"Male","discharge_category":"Drop Out","count_of_students":"s","total_enrolled_students":"180"}
+        ,{"year":"2022-2023","report_category":"School","school_level":"Middle School","geographic_unit":"75K036","school_name":"PS 36","student_category":"Female","discharge_category":"Discharge out of NYC School","count_of_students":"s","total_enrolled_students":"22"}]
+  recorded_at: 2026-01-27 00:18:58
+recorded_with: VCR-vcr/2.1.0

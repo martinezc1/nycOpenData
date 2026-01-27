@@ -1,0 +1,32 @@
+http_interactions:
+- request:
+    method: GET
+    uri: https://data.cityofnewyork.us/resource/2hrw-qfsu.json?%24limit=2&%24order=calendar_year+DESC
+  response:
+    status: 200
+    headers:
+      server: nginx
+      date: Tue, 27 Jan 2026 00:21:22 GMT
+      content-type: application/json;charset=utf-8
+      transfer-encoding: chunked
+      connection: keep-alive
+      access-control-allow-origin: '*'
+      etag: '"aG90ZWwuNDgzMTlfMV8xNFRGbS1BOHREY2Q2WHNTM2loX0xNNlZGcVcyYw---gzius_ENdo3gWS2Wl3s6CxodkJQkYf--gzip--gzip"'
+      x-soda2-fields: '["calendar_year","borough","borough_cd","number_admitted"]'
+      x-soda2-types: '["text","text","text","number"]'
+      x-soda2-data-out-of-date: 'false'
+      x-soda2-truth-last-modified: Fri, 14 Feb 2025 16:45:28 GMT
+      x-soda2-secondary-last-modified: Fri, 14 Feb 2025 16:45:28 GMT
+      last-modified: Fri, 14 Feb 2025 16:45:28 GMT
+      vary: Accept-Encoding
+      content-encoding: gzip
+      age: '0'
+      x-socrata-region: aws-us-east-1-fedramp-prod
+      strict-transport-security: max-age=31536000; includeSubDomains
+      x-socrata-requestid: 2bcc531ec63cc9bfd8108ac3531f03c3
+    body:
+      string: |
+        [{"calendar_year":"2024","borough":"BRONX","borough_cd":"BX01 Mott Haven/Melrose","number_admitted":"72"}
+        ,{"calendar_year":"2024","borough":"BRONX","borough_cd":"BX02 Hunts Point/Longwood","number_admitted":"30"}]
+  recorded_at: 2026-01-27 00:21:22
+recorded_with: VCR-vcr/2.1.0
