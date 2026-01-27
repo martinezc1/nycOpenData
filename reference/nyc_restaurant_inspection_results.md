@@ -80,16 +80,16 @@ if (curl::has_internet()) {
 #> # A tibble: 10,000 × 28
 #>    camis    dba          boro  building street zipcode phone cuisine_description
 #>    <chr>    <chr>        <chr> <chr>    <chr>  <chr>   <chr> <chr>              
-#>  1 40510647 ROTI CORNER… Quee… 18018    HILLS… 11432   7186… Caribbean          
-#>  2 41143410 PRESS 195    Quee… 40-11    BELL … 11361   7182… Sandwiches/Salads/…
-#>  3 50117709 CHUN YANG T… Quee… 4910     VERNO… 11101   3474… Coffee/Tea         
-#>  4 50175203 PRINCE GRIL… Quee… 3801     VERNO… 11101   3479… Sandwiches/Salads/…
-#>  5 40370167 BURGER KING  Quee… 222-10   NORTH… 11361   7182… Hamburgers         
-#>  6 50142811 IZAYAKA NON… Quee… 46-44    VERNO… 11101   9149… Thai               
-#>  7 50087176 K & L DELIC… Quee… 76-01    37 AV… 11372   2015… Sandwiches         
-#>  8 50065723 PANTRY MARK… Quee… 2420     JACKS… 11101   7186… Sandwiches/Salads/…
-#>  9 50038249 TOUS LES JO… Quee… 39-02    UNION… 11354   7187… Bakery Products/De…
-#> 10 50170107 SOL DE COLO… Quee… 3437     BELL … 11361   6315… Latin American     
+#>  1 41630095 DUNKIN       Quee… 102-27   ROOSE… 11368   7184… Donuts             
+#>  2 50154932 BUDDHA BAR … Quee… 70-04    ROOSE… 11372   3473… Asian/Asian Fusion 
+#>  3 50173958 375 CHICKEN… Quee… 34-60    JUNCT… 11372   3477… Chicken            
+#>  4 50046429 CHARO RESTA… Quee… 102-01   37 AV… 11368   7187… Spanish            
+#>  5 50178825 NANCY BLAKE… Quee… 82-19    NORTH… 11372   7184… Irish              
+#>  6 40864277 GALLAGHER'S… Quee… 43-19    37 ST… 11101   7183… American           
+#>  7 50066843 VANESSA'S D… Quee… 30-30    47 AV… 11101   9173… Chinese            
+#>  8 50169321 ASADERO LA … Quee… 84-01    NORTH… 11372   3476… Latin American     
+#>  9 50114831 HOME OF AST… Quee… 28-49    STEIN… 11103   9177… Fusion             
+#> 10 50114831 HOME OF AST… Quee… 28-49    STEIN… 11103   9177… Fusion             
 #> # ℹ 9,990 more rows
 #> # ℹ 20 more variables: inspection_date <chr>, action <chr>,
 #> #   violation_code <chr>, violation_description <chr>, critical_flag <chr>,
