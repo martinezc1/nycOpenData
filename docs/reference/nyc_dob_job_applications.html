@@ -86,11 +86,26 @@ project application, including location, work type, and approval status.</p>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span>  <span class="fu">nyc_dob_job_applications</span><span class="op">(</span>filters <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>borough <span class="op">=</span> <span class="st">"BROOKLYN"</span><span class="op">)</span><span class="op">)</span></span></span>
 <span class="r-in"><span><span class="op">}</span></span></span>
-<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error:</span> NYC Open Data request failed (network unavailable or API slow).</span>
-<span class="r-err co"><span class="r-pr">#&gt;</span> Try again later or increase `timeout_sec`.</span>
-<span class="r-err co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-err co"><span class="r-pr">#&gt;</span> Underlying error: Timeout was reached [data.cityofnewyork.us]:</span>
-<span class="r-err co"><span class="r-pr">#&gt;</span> Operation timed out after 30002 milliseconds with 537311 bytes received</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 10,000 × 96</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    job__ doc__ borough house__ street_name block lot   bin__ job_type job_status</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>       <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>     </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 1</span> 3220… 01    BROOKL… 5224    3RD AVENUE  00805 00049 3332… A1       A         </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 2</span> 3220… 01    BROOKL… 750     56TH STREET 00842 00027 3015… A2       A         </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 3</span> 3001… 05    BROOKL… 1852    58 STREET   05505 00028 3131… A1       P         </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 4</span> 3211… 04    BROOKL… 36      GUNNISON C… 08800 00083 3247… NB       P         </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 5</span> 3404… 02    BROOKL… 1519    52ND STREET 05465 00070 3129… A2       P         </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 6</span> 3211… 05    BROOKL… 113     CONGRESS S… 00295 00038 3003… A1       P         </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 7</span> 3202… 02    BROOKL… 2812    BRIGHTON  … 07260 00054 3196… PA       P         </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 8</span> 3214… 02    BROOKL… 235     SUMPTER ST  01520 00070 3041… A2       P         </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 9</span> 3218… 01    BROOKL… 775     39 STREET   00903 00043 3017… A2       A         </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span> 3210… 01    BROOKL… 1718 G… 53 STREET   05479 00015 3408… A2       A         </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 9,990 more rows</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 86 more variables: job_status_descrp &lt;chr&gt;, latest_action_date &lt;chr&gt;,</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   building_type &lt;chr&gt;, community___board &lt;chr&gt;, cluster &lt;chr&gt;,</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   landmarked &lt;chr&gt;, adult_estab &lt;chr&gt;, loft_board &lt;chr&gt;, little_e &lt;chr&gt;,</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   efiling_filed &lt;chr&gt;, other &lt;chr&gt;, other_description &lt;chr&gt;,</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   applicant_s_first_name &lt;chr&gt;, applicant_s_last_name &lt;chr&gt;,</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   applicant_professional_title &lt;chr&gt;, applicant_license__ &lt;chr&gt;, …</span></span>
 <span class="r-in"><span><span class="co"># }</span></span></span>
 <span class="r-in"><span></span></span>
 </code></pre></div>
