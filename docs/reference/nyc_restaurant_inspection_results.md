@@ -81,15 +81,15 @@ if (curl::has_internet()) {
 #>    camis    dba          boro  building street zipcode phone cuisine_description
 #>    <chr>    <chr>        <chr> <chr>    <chr>  <chr>   <chr> <chr>              
 #>  1 41630095 DUNKIN       Quee… 102-27   ROOSE… 11368   7184… Donuts             
-#>  2 50154932 BUDDHA BAR … Quee… 70-04    ROOSE… 11372   3473… Asian/Asian Fusion 
-#>  3 50173958 375 CHICKEN… Quee… 34-60    JUNCT… 11372   3477… Chicken            
-#>  4 50046429 CHARO RESTA… Quee… 102-01   37 AV… 11368   7187… Spanish            
-#>  5 50178825 NANCY BLAKE… Quee… 82-19    NORTH… 11372   7184… Irish              
-#>  6 40864277 GALLAGHER'S… Quee… 43-19    37 ST… 11101   7183… American           
-#>  7 50066843 VANESSA'S D… Quee… 30-30    47 AV… 11101   9173… Chinese            
-#>  8 50169321 ASADERO LA … Quee… 84-01    NORTH… 11372   3476… Latin American     
-#>  9 50114831 HOME OF AST… Quee… 28-49    STEIN… 11103   9177… Fusion             
-#> 10 50114831 HOME OF AST… Quee… 28-49    STEIN… 11103   9177… Fusion             
+#>  2 50045971 GT KINGSTON… Quee… 114-45   LEFFE… 11420   7188… Caribbean          
+#>  3 50129004 NEW TASTE R… Quee… 54-02    FLUSH… 11378   7184… Chinese            
+#>  4 50041280 STARBUCKS    Quee… 329      WYCKO… 11385   3476… Coffee/Tea         
+#>  5 50077505 KIN'D        Quee… 192-03   UNION… 11366   7184… Thai               
+#>  6 50097060 55 DELI-COF… Quee… 55-14    37 AV… 11377   9293… Mexican            
+#>  7 41630095 DUNKIN       Quee… 102-27   ROOSE… 11368   7184… Donuts             
+#>  8 50173958 375 CHICKEN… Quee… 34-60    JUNCT… 11372   3477… Chicken            
+#>  9 50112504 XI'AN NOODL… Quee… 136-20   ROOSE… 11354   6462… Chinese            
+#> 10 50045971 GT KINGSTON… Quee… 114-45   LEFFE… 11420   7188… Caribbean          
 #> # ℹ 9,990 more rows
 #> # ℹ 20 more variables: inspection_date <chr>, action <chr>,
 #> #   violation_code <chr>, violation_description <chr>, critical_flag <chr>,
