@@ -5,7 +5,7 @@
 [![CRAN downloads](https://cranlogs.r-pkg.org/badges/grand-total/nycOpenData?color=blue)](https://r-pkg.org/pkg/nycOpenData)
 [![Lifecycle: stable](https://img.shields.io/badge/lifecycle-stable-brightgreen.svg)](https://lifecycle.r-lib.org/articles/stages.html)
 [![Project Status: Active](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active)
-[![Codecov test coverage](https://codecov.io/gh/martinezc1/nycOpenData/graph/badge.svg)](https://app.codecov.io/gh/martinezc1/nycOpenData)
+[![Codecov test coverage](https://codecov.io/gh/martinezc1/nycOpenData/branch/main/graph/badge.svg)](https://app.codecov.io/gh/martinezc1/nycOpenData)
 [![R-bloggers](https://img.shields.io/badge/Featured%20on-R--bloggers-orange)](https://www.r-bloggers.com/2026/01/nycopendata-a-unified-r-interface-to-nyc-open-data-apis/) 
 [![R Weekly](https://img.shields.io/badge/Featured%20on-R%20Weekly-blue)](https://rweekly.org/#RintheRealWorld)
 

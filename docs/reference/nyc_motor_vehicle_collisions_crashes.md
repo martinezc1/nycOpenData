@@ -59,16 +59,16 @@ if (curl::has_internet()) {
   nyc_motor_vehicle_collisions_crashes(limit = 2, filters = list(borough = "BROOKLYN"))
 }
 #> # A tibble: 2 × 25
-#>   crash_date       crash_time borough zip_code latitude longitude on_street_name
-#>   <chr>            <chr>      <chr>   <chr>    <chr>    <chr>     <chr>         
-#> 1 2026-01-23T00:0… 5:05       BROOKL… 11233    40.6772… -73.92823 ATLANTIC AVE  
-#> 2 2026-01-23T00:0… 16:20      BROOKL… 11213    40.6691… -73.9299  NA            
-#> # ℹ 18 more variables: off_street_name <chr>, number_of_persons_injured <chr>,
+#>   crash_date    crash_time borough zip_code latitude longitude cross_street_name
+#>   <chr>         <chr>      <chr>   <chr>    <chr>    <chr>     <chr>            
+#> 1 2026-01-24T0… 21:07      BROOKL… 11207    40.6622… -73.8931… 609       PENNSY…
+#> 2 2026-01-24T0… 12:35      BROOKL… 11237    40.7031… -73.92158 NA               
+#> # ℹ 18 more variables: number_of_persons_injured <chr>,
 #> #   number_of_persons_killed <chr>, number_of_pedestrians_injured <chr>,
 #> #   number_of_pedestrians_killed <chr>, number_of_cyclist_injured <chr>,
 #> #   number_of_cyclist_killed <chr>, number_of_motorist_injured <chr>,
 #> #   number_of_motorist_killed <chr>, contributing_factor_vehicle_1 <chr>,
-#> #   contributing_factor_vehicle_2 <chr>, collision_id <chr>,
-#> #   vehicle_type_code1 <chr>, vehicle_type_code2 <chr>, …
+#> #   collision_id <chr>, vehicle_type_code1 <chr>, on_street_name <chr>,
+#> #   off_street_name <chr>, contributing_factor_vehicle_2 <chr>, …
 # }
 ```

@@ -51,9 +51,9 @@ if (curl::has_internet()) {
   nyc_dop_Juvenile_cases(limit = 2, filters = list(borough = "Citywide"))
 }
 #> # A tibble: 2 × 5
-#>   borough  supervision_caseload_type   month   year  supervision_caseload_count
-#>   <chr>    <chr>                       <chr>   <chr> <chr>                     
-#> 1 Citywide Advocate Intervene Mentor   January 2025  19                        
-#> 2 Citywide Juvenile Justice Initiative January 2025  110                       
+#>   borough  supervision_caseload_type   month    year  supervision_caseload_count
+#>   <chr>    <chr>                       <chr>    <chr> <chr>                     
+#> 1 Citywide Advocate Intervene Mentor   November 2025  37                        
+#> 2 Citywide Juvenile Justice Initiative November 2025  132                       
 # }
 ```

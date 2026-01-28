@@ -80,13 +80,14 @@ if (curl::has_internet()) {
 #> # A tibble: 2 × 28
 #>   camis    dba           boro  building street zipcode phone cuisine_description
 #>   <chr>    <chr>         <chr> <chr>    <chr>  <chr>   <chr> <chr>              
-#> 1 41630095 DUNKIN        Quee… 102-27   ROOSE… 11368   7184… Donuts             
-#> 2 50154932 BUDDHA BAR Q… Quee… 70-04    ROOSE… 11372   3473… Asian/Asian Fusion 
+#> 1 50134789 EL POLLO REA… Quee… 69-51    GRAND… 11378   3472… Spanish            
+#> 2 50145366 BIGWELL BAKE… Quee… 131-03   LIBER… 11419   6463… Caribbean          
 #> # ℹ 20 more variables: inspection_date <chr>, action <chr>,
 #> #   violation_code <chr>, violation_description <chr>, critical_flag <chr>,
-#> #   score <chr>, record_date <chr>, inspection_type <chr>, latitude <chr>,
-#> #   longitude <chr>, community_board <chr>, council_district <chr>,
-#> #   census_tract <chr>, bin <chr>, bbl <chr>, nta <chr>, grade <chr>,
-#> #   grade_date <chr>, location.type <chr>, location.coordinates <list>
+#> #   score <chr>, grade <chr>, grade_date <chr>, record_date <chr>,
+#> #   inspection_type <chr>, latitude <chr>, longitude <chr>,
+#> #   community_board <chr>, council_district <chr>, census_tract <chr>,
+#> #   bin <chr>, bbl <chr>, nta <chr>, location.type <chr>,
+#> #   location.coordinates <list>
 # }
 ```

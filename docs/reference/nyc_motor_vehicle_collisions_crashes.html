@@ -91,17 +91,17 @@ The police report (MV104-AN) is required to be filled out for collisions where s
 <span class="r-in"><span>  <span class="fu">nyc_motor_vehicle_collisions_crashes</span><span class="op">(</span>limit <span class="op">=</span> <span class="fl">2</span>, filters <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>borough <span class="op">=</span> <span class="st">"BROOKLYN"</span><span class="op">)</span><span class="op">)</span></span></span>
 <span class="r-in"><span><span class="op">}</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 2 × 25</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   crash_date       crash_time borough zip_code latitude longitude on_street_name</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>            <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>         </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">1</span> 2026-01-23T00:0… 5:05       BROOKL… 11233    40.6772… -73.92823 ATLANTIC AVE  </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">2</span> 2026-01-23T00:0… 16:20      BROOKL… 11213    40.6691… -73.9299  <span style="color: #BB0000;">NA</span>            </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 18 more variables: off_street_name &lt;chr&gt;, number_of_persons_injured &lt;chr&gt;,</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   crash_date    crash_time borough zip_code latitude longitude cross_street_name</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>         <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>            </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">1</span> 2026-01-24T0… 21:07      BROOKL… 11207    40.6622… -73.8931… 609       PENNSY…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">2</span> 2026-01-24T0… 12:35      BROOKL… 11237    40.7031… -73.92158 <span style="color: #BB0000;">NA</span>               </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 18 more variables: number_of_persons_injured &lt;chr&gt;,</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   number_of_persons_killed &lt;chr&gt;, number_of_pedestrians_injured &lt;chr&gt;,</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   number_of_pedestrians_killed &lt;chr&gt;, number_of_cyclist_injured &lt;chr&gt;,</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   number_of_cyclist_killed &lt;chr&gt;, number_of_motorist_injured &lt;chr&gt;,</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   number_of_motorist_killed &lt;chr&gt;, contributing_factor_vehicle_1 &lt;chr&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   contributing_factor_vehicle_2 &lt;chr&gt;, collision_id &lt;chr&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   vehicle_type_code1 &lt;chr&gt;, vehicle_type_code2 &lt;chr&gt;, …</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   collision_id &lt;chr&gt;, vehicle_type_code1 &lt;chr&gt;, on_street_name &lt;chr&gt;,</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   off_street_name &lt;chr&gt;, contributing_factor_vehicle_2 &lt;chr&gt;, …</span></span>
 <span class="r-in"><span><span class="co"># }</span></span></span>
 </code></pre></div>
     </div>
