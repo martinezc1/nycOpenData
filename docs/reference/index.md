@@ -151,6 +151,8 @@ Other NYC Open Data wrappers
   : NYC Homeless Drop- In Centers
 - [`nyc_homeless_population_by_year()`](https://martinezc1.github.io/nycOpenData/reference/nyc_homeless_population_by_year.md)
   : NYC Homeless Population By Year
+- [`nyc_locallaw18_payreport()`](https://martinezc1.github.io/nycOpenData/reference/nyc_locallaw18_payreport.md)
+  : Local Law 18 Pay and Demographics Report - Agency Report Table
 - [`nyc_medallion_drivers_active()`](https://martinezc1.github.io/nycOpenData/reference/nyc_medallion_drivers_active.md)
   : Medallion Drivers - Active
 - [`nyc_medallion_drivers_authorized()`](https://martinezc1.github.io/nycOpenData/reference/nyc_medallion_drivers_authorized.md)

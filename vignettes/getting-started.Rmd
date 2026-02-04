@@ -1,6 +1,7 @@
 ---
 title: "Getting Started with nycOpenData"
 output: rmarkdown::html_vignette
+author: "Christian Martinez"
 vignette: >
   %\VignetteIndexEntry{Working with NYC 311 Data}
   %\VignetteEngine{knitr::rmarkdown}

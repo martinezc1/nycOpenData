@@ -6,6 +6,7 @@ articles:
   - title: "Vignettes"
     contents:
       - getting-started
+      - Using-Local-Law18-Pay-Report
 reference:
   - title: "Getting started"
     desc: "Core helpers"

@@ -1,6 +1,7 @@
-
-title: "UsingLocalLaw18PayReport"
+---
+title: "Using Local Law18 Pay Report"
 output: rmarkdown::html_vignette
+author: "Jonah Dratfield"
 vignette: >
   %\VignetteIndexEntry{Working with Local Law 18 Pay Report Data}
   %\VignetteEngine{knitr::rmarkdown}
@@ -18,6 +19,7 @@ knitr::opts_chunk$set(
 knitr::opts_chunk$set(warning = FALSE, message = FALSE)
 library(nycOpenData)
 library(ggplot2)
+library(dplyr)
 ```
 
 ## Introduction
@@ -91,8 +93,6 @@ To do this, we will create a bar graph of the ethnicities.
 ```{r compaint-type-graph, fig.alt="Bar chart showing the ethnicity of female workers in departments with less than 5 employees in Technology & Innovation.", fig.cap="Bar chart showing the ethnicity of female workers in municipal departments with less than 5 people in Technology & Innovation (15 most recent.", fig.height=5, fig.width=7}
 
 # Visualizing the distribution, ordered by frequency
-library(dplyr)
-library(ggplot2)
 
 lessthan5TI_payreport %>%
   count(ethnicity) %>%          # count how many rows fall in each ethnicity
