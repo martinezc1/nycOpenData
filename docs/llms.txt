@@ -13,6 +13,7 @@ coverage](https://codecov.io/gh/martinezc1/nycOpenData/branch/main/graph/badge.s
 [![R-bloggers](https://img.shields.io/badge/Featured%20on-R--bloggers-orange)](https://www.r-bloggers.com/2026/01/nycopendata-a-unified-r-interface-to-nyc-open-data-apis/)
 [![R
 Weekly](https://img.shields.io/badge/Featured%20on-R%20Weekly-blue)](https://rweekly.org/#RintheRealWorld)
+[![R-CMD-check](https://github.com/martinezc1/nycOpenData/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/martinezc1/nycOpenData/actions/workflows/R-CMD-check.yaml)
 
 `nycOpenData` provides simple, reproducible access to datasets from
 the  
@@ -160,7 +161,7 @@ functions and documentation:
 
 This package is developed as a primary pedagogical tool for teaching
 data acquisition and open science practices at **Brooklyn College, City
-University of New York**.
+University of New York (CUNY)**.
 
 # Package index
 
