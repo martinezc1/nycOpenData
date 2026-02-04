@@ -28,8 +28,9 @@ through the Office of Citywide Event Coordination and Management (CECM),
 including parades, festivals, street fairs, and other public gatherings.
 }
 \examples{
-\donttest{
-if (curl::has_internet()) {
+# Examples that hit the live NYC Open Data API are guarded so CRAN checks
+# do not fail when the network is unavailable or slow.
+if (interactive() && curl::has_internet()) {
   small_sample <- try(
     nyc_permit_events_historic(limit = 2, timeout_sec = 10),
     silent = TRUE
@@ -45,7 +46,6 @@ if (curl::has_internet()) {
     silent = TRUE
   )
   if (!inherits(filtered, "try-error")) print(filtered)
-}
 }
 
 }

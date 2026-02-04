@@ -31,15 +31,16 @@ NYC TLC licensed drivers that are currently active, in good standing and authori
 This list is accurate to the date and time represented in the Last Date Updated and Last Time Updated fields.
 }
 \examples{
-# Examples that hit the live NYC Open Data API are wrapped so CRAN checks
+# Examples that hit the live NYC Open Data API are guarded so CRAN checks
 # do not fail when the network is unavailable or slow.
-\donttest{
-if (curl::has_internet()) {
+if (interactive() && curl::has_internet()) {
   # Quick example (fetch 2 rows)
   small_sample <- nyc_street_hail_livery_active(limit = 2)
   small_sample
 
-  nyc_street_hail_livery_active(limit = 2, filters = list(status_description = "SHL UNRESTRICTED"))
-}
+  nyc_street_hail_livery_active(
+    limit = 2,
+    filters = list(status_description = "SHL UNRESTRICTED")
+  )
 }
 }

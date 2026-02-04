@@ -8,16 +8,14 @@
 #' @return A tibble containing the requested dataset.
 #'
 #' @examples
-#' # Examples that hit the live NYC Open Data API are wrapped so CRAN checks
+#' # Examples that hit the live NYC Open Data API are guarded so CRAN checks
 #' # do not fail when the network is unavailable or slow.
-#' \donttest{
-#' if (curl::has_internet()) {
+#' if (interactive() && curl::has_internet()) {
 #'   endpoint <- "https://data.cityofnewyork.us/resource/erm2-nwe9.json"
 #'   out <- try(nyc_any_dataset(endpoint, limit = 3), silent = TRUE)
 #'   if (!inherits(out, "try-error")) {
 #'     head(out)
 #'   }
-#' }
 #' }
 #' @export
 nyc_any_dataset <- function(json_link, limit = 10000, timeout_sec = 30) {

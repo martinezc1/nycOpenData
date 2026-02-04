@@ -28,15 +28,13 @@ including species, health, and location information for each recorded tree.
 Data collected by NYC Parks and volunteers.
 }
 \examples{
-# Examples that hit the live NYC Open Data API are wrapped so CRAN checks
+# Examples that hit the live NYC Open Data API are guarded so CRAN checks
 # do not fail when the network is unavailable or slow.
-\donttest{
-if (curl::has_internet()) {
+if (interactive() && curl::has_internet()) {
   # Quick example (fetch 2 rows)
   small_sample <- nyc_tree_census_2015(limit = 2)
   head(small_sample)
 
   nyc_tree_census_2015(limit = 2, filters = list(curb_loc = "OnCurb"))
-}
 }
 }

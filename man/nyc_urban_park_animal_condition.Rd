@@ -33,16 +33,14 @@ condition, location, and outcome, helping to monitor urban wildlife trends
 and public safety interactions.
 }
 \examples{
-# Examples that hit the live NYC Open Data API are wrapped so CRAN checks
+# Examples that hit the live NYC Open Data API are guarded so CRAN checks
 # do not fail when the network is unavailable or slow.
-\donttest{
-if (curl::has_internet()) {
+if (interactive() && curl::has_internet()) {
   # Quick example (fetch 2 rows)
   small_sample <- nyc_urban_park_animal_condition(limit = 2)
   small_sample
 
   nyc_urban_park_animal_condition(limit = 2, filters = list(age = "Infant"))
-}
 }
 
 }

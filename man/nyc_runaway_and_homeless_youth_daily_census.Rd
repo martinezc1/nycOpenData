@@ -31,17 +31,16 @@ This data tracks the number of beds available for runaway and homeless youth and
 Data include Crisis Shelters, Crisis Shelters HYA (Homeless Young Adults), Transitional Independent Living, and Transitional Independent Living HYA.
 }
 \examples{
-# Examples that hit the live NYC Open Data API are wrapped so CRAN checks
+# Examples that hit the live NYC Open Data API are guarded so CRAN checks
 # do not fail when the network is unavailable or slow.
-\donttest{
-if (curl::has_internet()) {
+if (interactive() && curl::has_internet()) {
   # Quick example (fetch 2 rows)
   small_sample <- nyc_runaway_and_homeless_youth_daily_census(limit = 2)
   small_sample
 
-  nyc_runaway_and_homeless_youth_daily_census(limit = 2,
-  filters = list(program_type = "Crisis Shelters")
+  nyc_runaway_and_homeless_youth_daily_census(
+    limit = 2,
+    filters = list(program_type = "Crisis Shelters")
   )
-}
 }
 }

@@ -28,15 +28,13 @@ covering metrics such as service requests, inspections, and community outreach.
 It’s published by NYC Department of Social Services for transparency and analysis.
 }
 \examples{
-# Examples that hit the live NYC Open Data API are wrapped so CRAN checks
+# Examples that hit the live NYC Open Data API are guarded so CRAN checks
 # do not fail when the network is unavailable or slow.
-\donttest{
-if (curl::has_internet()) {
+if (interactive() && curl::has_internet()) {
   # Quick example (fetch 2 rows)
   small_sample <- nyc_borough_community_report(limit = 2)
   small_sample
 
   nyc_borough_community_report(limit = 2, filters = list(borough = "Bronx"))
-}
 }
 }

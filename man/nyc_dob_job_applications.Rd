@@ -28,16 +28,14 @@ of Buildings (DOB). Each record represents a construction or alteration
 project application, including location, work type, and approval status.
 }
 \examples{
-# Examples that hit the live NYC Open Data API are wrapped so CRAN checks
+# Examples that hit the live NYC Open Data API are guarded so CRAN checks
 # do not fail when the network is unavailable or slow.
-\donttest{
-if (curl::has_internet()) {
+if (interactive() && curl::has_internet()) {
   # Quick example (fetch 2 rows)
   small_sample <- nyc_dob_job_applications(limit = 2)
   small_sample
 
   nyc_dob_job_applications(limit = 2, filters = list(borough = "BROOKLYN"))
-}
 }
 
 }

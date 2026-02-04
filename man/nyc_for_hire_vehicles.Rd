@@ -28,15 +28,13 @@ such as taxis, limousines, and app-based services (e.g., Uber, Lyft).
 Maintained by the NYC Taxi and Limousine Commission (TLC).
 }
 \examples{
-# Examples that hit the live NYC Open Data API are wrapped so CRAN checks
+# Examples that hit the live NYC Open Data API are guarded so CRAN checks
 # do not fail when the network is unavailable or slow.
-\donttest{
-if (curl::has_internet()) {
+if (interactive() && curl::has_internet()) {
   # Quick example (fetch 2 rows)
   small_sample <- nyc_for_hire_vehicles(limit = 2)
   small_sample
 
   nyc_for_hire_vehicles(limit = 2, filters = list(active = "YES"))
-}
 }
 }

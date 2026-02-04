@@ -28,15 +28,13 @@ Each entry includes the bias motivation, offense category, and borough,
 providing insight into hate crime trends across New York City.
 }
 \examples{
-# Examples that hit the live NYC Open Data API are wrapped so CRAN checks
+# Examples that hit the live NYC Open Data API are guarded so CRAN checks
 # do not fail when the network is unavailable or slow.
-\donttest{
-if (curl::has_internet()) {
+if (interactive() && curl::has_internet()) {
   # Quick example (fetch 2 rows)
   small_sample <- nyc_nypd_hate_crimes(limit = 2)
   small_sample
 
   nyc_nypd_hate_crimes(limit = 2, filters = list(county = "KINGS"))
-}
 }
 }

@@ -31,15 +31,13 @@ Each work type will receive a separate permit. (See the DOB Job Application Fili
 Each row/record in this dataset represents the life cycle of one permit for one work type. The dataset is updated daily with new records, and each existing record will be updated as the permit application moves through the approval process to reflect the latest status of the application.
 }
 \examples{
-# Examples that hit the live NYC Open Data API are wrapped so CRAN checks
+# Examples that hit the live NYC Open Data API are guarded so CRAN checks
 # do not fail when the network is unavailable or slow.
-\donttest{
-if (curl::has_internet()) {
+if (interactive() && curl::has_internet()) {
   # Quick example (fetch 2 rows)
   small_sample <- nyc_dob_permit_issuance(limit = 2)
   small_sample
 
   nyc_dob_permit_issuance(limit = 2, filters = list(borough = "BROOKLYN"))
-}
 }
 }

@@ -32,15 +32,13 @@ Each row represents a crash event. The Motor Vehicle Collisions data tables cont
 The police report (MV104-AN) is required to be filled out for collisions where someone is injured or killed, or where there is at least $1000 worth of damage (https://www.nhtsa.gov/sites/nhtsa.dot.gov/files/documents/ny_overlay_mv-104an_rev05_2004.pdf).
 }
 \examples{
-# Examples that hit the live NYC Open Data API are wrapped so CRAN checks
+# Examples that hit the live NYC Open Data API are guarded so CRAN checks
 # do not fail when the network is unavailable or slow.
-\donttest{
-if (curl::has_internet()) {
+if (interactive() && curl::has_internet()) {
   # Quick example (fetch 2 rows)
   small_sample <- nyc_motor_vehicle_collisions_crashes(limit = 2)
   small_sample
 
   nyc_motor_vehicle_collisions_crashes(limit = 2, filters = list(borough = "BROOKLYN"))
-}
 }
 }

@@ -33,15 +33,13 @@ Please check the 'Last Update Date' field to make sure the list has updated succ
 'Last Update Date' should show either today or yesterday's date, depending on the time of day.
 }
 \examples{
-# Examples that hit the live NYC Open Data API are wrapped so CRAN checks
+# Examples that hit the live NYC Open Data API are guarded so CRAN checks
 # do not fail when the network is unavailable or slow.
-\donttest{
-if (curl::has_internet()) {
+if (interactive() && curl::has_internet()) {
   # Quick example (fetch 2 rows)
   small_sample <- nyc_medallion_drivers_authorized(limit = 2)
   small_sample
 
   nyc_medallion_drivers_authorized(limit = 2, filters = list(current_status = "CUR"))
-}
 }
 }

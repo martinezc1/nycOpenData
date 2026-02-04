@@ -32,15 +32,13 @@ reported by the NYC Department of Probation (DOP). Data includes region,
 year, and monthly averages, allowing for trend analysis across boroughs.
 }
 \examples{
-# Examples that hit the live NYC Open Data API are wrapped so CRAN checks
+# Examples that hit the live NYC Open Data API are guarded so CRAN checks
 # do not fail when the network is unavailable or slow.
-\donttest{
-if (curl::has_internet()) {
+if (interactive() && curl::has_internet()) {
   # Quick example (fetch 2 rows)
   small_sample <- nyc_dop_juvenile_rearrest_rate(limit = 2)
   small_sample
 
   nyc_dop_juvenile_rearrest_rate(limit = 2, filters = list(borough = "Citywide"))
-}
 }
 }

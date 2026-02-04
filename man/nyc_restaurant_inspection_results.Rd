@@ -34,15 +34,13 @@ This dataset and the information on the Health Department’s Restaurant Grading
 See the data dictionary file in the Attachments section of the OpenData website for a summary of data fields and allowable values.
 }
 \examples{
-# Examples that hit the live NYC Open Data API are wrapped so CRAN checks
+# Examples that hit the live NYC Open Data API are guarded so CRAN checks
 # do not fail when the network is unavailable or slow.
-\donttest{
-if (curl::has_internet()) {
+if (interactive() && curl::has_internet()) {
   # Quick example (fetch 2 rows)
   small_sample <- nyc_restaurant_inspection_results(limit = 2)
   small_sample
 
   nyc_restaurant_inspection_results(limit = 2, filters = list(boro = "Queens"))
-}
 }
 }

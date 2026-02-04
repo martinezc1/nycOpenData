@@ -28,15 +28,13 @@ Data is aggregated at the quarterly level (ie: 2024 Q3).
 The unit of analysis is a fiscal year quarter: Quarter 1 (Q1): July - September; Quarter 2 (Q2): October - December; Quarter 3 (Q3): January - March; Quarter 4 (Q4): April - June.
 }
 \examples{
-# Examples that hit the live NYC Open Data API are wrapped so CRAN checks
+# Examples that hit the live NYC Open Data API are guarded so CRAN checks
 # do not fail when the network is unavailable or slow.
-\donttest{
-if (curl::has_internet()) {
+if (interactive() && curl::has_internet()) {
   # Quick example (fetch 2 rows)
   small_sample <- nyc_pets_in_shelters(limit = 2)
   small_sample
 
   nyc_pets_in_shelters(limit = 2, filters = list(date_quarter = "Qtr 1"))
-}
 }
 }

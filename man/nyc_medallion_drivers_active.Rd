@@ -29,15 +29,16 @@ This list is accurate as of the date and time shown in the Last Date Updated and
 Last Time Updated fields.
 }
 \examples{
-# Examples that hit the live NYC Open Data API are wrapped so CRAN checks
+# Examples that hit the live NYC Open Data API are guarded so CRAN checks
 # do not fail when the network is unavailable or slow.
-\donttest{
-if (curl::has_internet()) {
+if (interactive() && curl::has_internet()) {
   # Quick example (fetch 2 rows)
   small_sample <- nyc_medallion_drivers_active(limit = 2)
   small_sample
 
-  nyc_medallion_drivers_active(limit = 2, filters = list(type = "MEDALLION TAXI DRIVER"))
-}
+  nyc_medallion_drivers_active(
+    limit = 2,
+    filters = list(type = "MEDALLION TAXI DRIVER")
+  )
 }
 }

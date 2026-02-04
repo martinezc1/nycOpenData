@@ -27,15 +27,13 @@ The leading causes of death by sex and ethnicity in New York City in since 2007.
 Cause of death is derived from the NYC death certificate which is issued for every death that occurs in New York City.
 }
 \examples{
-# Examples that hit the live NYC Open Data API are wrapped so CRAN checks
+# Examples that hit the live NYC Open Data API are guarded so CRAN checks
 # do not fail when the network is unavailable or slow.
-\donttest{
-if (curl::has_internet()) {
+if (interactive() && curl::has_internet()) {
   # Quick example (fetch 2 rows)
   small_sample <- nyc_cause_of_death(limit = 2)
   small_sample
 
   nyc_cause_of_death(limit = 2, filters = list(sex = "M"))
-}
 }
 }

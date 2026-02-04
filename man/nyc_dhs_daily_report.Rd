@@ -27,15 +27,13 @@ This dataset includes the daily number of families and individuals residing in t
 shelter system and the daily number of families applying to the DHS shelter system.
 }
 \examples{
-# Examples that hit the live NYC Open Data API are wrapped so CRAN checks
+# Examples that hit the live NYC Open Data API are guarded so CRAN checks
 # do not fail when the network is unavailable or slow.
-\donttest{
-if (curl::has_internet()) {
+if (interactive() && curl::has_internet()) {
   # Quick example (fetch 2 rows)
   small_sample <- nyc_dhs_daily_report(limit = 2)
   small_sample
 
   nyc_dhs_daily_report(limit = 2, filters = list(total_adults_in_shelter = 55694))
-}
 }
 }

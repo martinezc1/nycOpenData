@@ -14,71 +14,26 @@
 #' @source NYC Open Data: <https://data.cityofnewyork.us/Social-Services/311-Service-Requests-from-2010-to-2019/76ig-c548/about_data>
 #'
 #' @examples
-#' # Examples that hit the live NYC Open Data API are wrapped so CRAN checks
+#' # Examples that hit the live NYC Open Data API are guarded so CRAN checks
 #' # do not fail when the network is unavailable or slow.
-#' \donttest{
-#' if (curl::has_internet()) {
+#' if (interactive() && curl::has_internet()) {
 #'   # Quick example (fetch 2 rows)
 #'   small_sample <- nyc_311_2010_2019(limit = 2)
 #'   small_sample
 #'
 #'   nyc_311_2010_2019(limit = 2, filters = list(agency = "NYPD", city = "BROOKLYN"))
 #' }
-#' }
 #' @export
 nyc_311_2010_2019 <- function(limit = 10000, filters = list(), timeout_sec = 30) {
-  endpoint <- "https://data.cityofnewyork.us/resource/erm2-nwe9.json"
+  endpoint <- .nyc_endpoint("erm2-nwe9")
 
   query_list <- list(
     "$limit" = limit,
     "$order" = "created_date DESC"
   )
 
-  if (length(filters) > 0) {
-    where_clauses <- paste0(names(filters), " = '", unlist(filters), "'")
-    query_list[["$where"]] <- paste(where_clauses, collapse = " AND ")
-  }
+  query_list <- .nyc_add_filters(query_list, filters)
 
-  if (!curl::has_internet()) {
-    stop(
-      "No internet connection detected. nyc_311_2010_2019() requires access to data.cityofnewyork.us.",
-      call. = FALSE
-    )
-  }
-
-  resp <- tryCatch(
-    httr::GET(
-      endpoint,
-      query = query_list,
-      httr::timeout(timeout_sec)
-    ),
-    error = function(e) {
-      stop(
-        paste0(
-          "NYC Open Data request failed (network unavailable or API slow).\n",
-          "Try again later or increase `timeout_sec`.\n\n",
-          "Underlying error: ", conditionMessage(e)
-        ),
-        call. = FALSE
-      )
-    }
-  )
-
-  # Convert non-200 responses into friendly errors
-  if (httr::http_error(resp)) {
-    status <- httr::status_code(resp)
-    body_txt <- tryCatch(httr::content(resp, as = "text", encoding = "UTF-8"), error = function(e) "")
-    stop(
-      paste0(
-        "NYC Open Data request failed with HTTP status ", status, ".\n",
-        "Try again later, or verify your filters.\n\n",
-        if (nzchar(body_txt)) paste0("Response: ", substr(body_txt, 1, 500)) else ""
-      ),
-      call. = FALSE
-    )
-  }
-
-  txt <- httr::content(resp, as = "text", encoding = "UTF-8")
-  data <- jsonlite::fromJSON(txt, flatten = TRUE)
+  data <- .nyc_get_json(endpoint, query_list, timeout_sec = timeout_sec)
   tibble::as_tibble(data)
 }
