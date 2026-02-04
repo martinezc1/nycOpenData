@@ -3,9 +3,13 @@ Type: Package
 Title: Convenient Access to NYC Open Data API Endpoints
 Version: 0.1.5
 Authors@R: 
-    person("Christian", "Martinez", 
-           email = "c.martinez0@outlook.com", 
-           role = c("aut", "cre"))
+    c(person("Christian", "Martinez", 
+             email = "c.martinez0@outlook.com", 
+             role = c("aut", "cre"),
+             comment = c(GitHub = "martinezc1")),
+      person("Jonah", "Dratfield", 
+             role = "ctb",
+             comment = c(GitHub = "jdratfield38")))
 Description: Provides a unified set of helper functions to access datasets 
     from the NYC Open Data platform <https://opendata.cityofnewyork.us/>. 
     Functions return results as tidy tibbles and support optional filtering, 

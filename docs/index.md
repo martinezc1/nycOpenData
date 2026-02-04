@@ -138,12 +138,26 @@ pull request on [GitHub](https://github.com/martinezc1/nycOpenData).
 
 ------------------------------------------------------------------------
 
-## Author
+## Authors & Contributors
 
-**Christian A. Martinez**  
-<c.martinez0@outlook.com>  
-GitHub: <https://github.com/martinezc1>
+### Maintainer
 
-Developed as part of  
-**PSYC 7750G – Reproducible Psychological Research**  
-Brooklyn College, City University of New York
+**Christian A. Martinez** 📧 <c.martinez0@outlook.com>  
+GitHub: [@martinezc1](https://github.com/martinezc1)
+
+### ✨ Contributors
+
+Special thanks to the students of **PSYC 7750G – Reproducible
+Psychological Research** at Brooklyn College (CUNY) who have contributed
+functions and documentation:
+
+- **Jonah Dratfield** ([@jdratfield38](https://github.com/jdratfield38))
+  — Added support for the **Local Law 18 Pay and Demographics Report**.
+
+------------------------------------------------------------------------
+
+## Academic Context
+
+This package is developed as a primary pedagogical tool for teaching
+data acquisition and open science practices at **Brooklyn College, City
+University of New York**.

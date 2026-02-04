@@ -2,7 +2,11 @@
 
 ## Authors
 
-- **Christian Martinez**. Author, maintainer.
+- **Christian Martinez**. Author, maintainer.  
+  martinezc1
+
+- **Jonah Dratfield**. Contributor.  
+  jdratfield38
 
 ## Citation
 
