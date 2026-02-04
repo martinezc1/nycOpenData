@@ -1,0 +1,123 @@
+
+title: "UsingLocalLaw18PayReport"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Working with Local Law 18 Pay Report Data}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+knitr::opts_chunk$set(warning = FALSE, message = FALSE)
+library(nycOpenData)
+library(ggplot2)
+```
+
+## Introduction
+Local Law 18 of 2019 (LL18) requires the Department of Citywide Administrative
+Services (DCAS) to collect data about the city's municipal workforce each year. 
+This information is then made available to the Office of Data Analytics (ODA) [found here](https://data.cityofnewyork.us/resource/423i-ukqr.json). In R, the `nycOpenData` package can be used to pull this data directly.
+
+The `nycOpenData` package provides a streamlined interface for accessing New York City's vast open data resources. It connects directly to the NYC Open Data Portal. It is currently utilized as a primary tool for teaching data acquisition in [Reproducible Research Using R](https://martinezc1-textbook--reproducible-research-using-r.share.connect.posit.cloud), helping students bridge the gap between raw city APIs and tidy data analysis.
+
+By using the `nyc_locallaw18_payreport` function, we can gather the most recent statistics from Local Law 18 and filter based upon any of the columns inside the dataset. 
+
+> Note: `nyc_locallaw18_payreport` automatically sorts in descending order based on the created_date column.
+
+## Pulling a Small Sample
+To start, let's pull a small sample to see what the data looks like. By default, the function pulls in the *10,000 most recent* requests, however, let's change that to only see the latest 3 requests. To do this, we can set `limit = 3`.
+
+```{r small-sample}
+small_sample <- nyc_locallaw18_payreport (limit = 3)
+small_sample
+
+# Seeing what columns are in the dataset
+colnames(small_sample)
+```
+
+Fantastic! We successfully pulled Local Law 18 Pay Report data from the NYC Open Data Portal. 
+
+Let's now take an example of the first 3 returned rows with less than 5 employees. The `nyc_locallaw18_payreport` function can filter based off any of the columns in the dataset. To filter, we add `filters = list()` and put whatever filters we would like inside. From our `colnames` call before, we know that there is a column called "number_of_employees" which we can use to accomplish this.
+
+```{r filter-brooklyn}
+
+lessthan5_locallaw18payreport <- nyc_locallaw18_payreport(limit = 3, filters = list(number_of_employees = "<5"))
+lessthan5_locallaw18payreport 
+
+
+# Checking to see the filtering worked
+unique(lessthan5_locallaw18payreport)
+```
+
+Success! From calling the `nyc_locallaw18_payreport` dataset we see there are only 3 rows of data, and from the `unique(lessthan5_locallaw18payreport)` call we see the only agencies featured are those with less than 5 employees. 
+
+One of the strongest qualities this function has is its ability to filter based off of multiple columns. Let's put everything together and get a dataset of the last *15* pieces of data from the Local law 18 Pay Report for "Technology & Innovation" with "less than 5 employees."
+
+```{r filter-brooklyn-nypd}
+# Creating the dataset
+lessthan5TI_payreport <- nyc_locallaw18_payreport(
+  limit = 15,
+  filters = list(
+    number_of_employees = "<5",
+    agency_name = "TECHNOLOGY & INNOVATION",
+    gender = "Female"
+  )
+)
+
+
+# Calling head of our new dataset
+head(lessthan5TI_payreport)
+
+# Quick check to make sure our filtering worked
+nrow(lessthan5TI_payreport)
+unique(lessthan5TI_payreport$agency_name)
+unique(lessthan5TI_payreport$gender)
+```
+
+We successfully created our dataset that contains the 10 most recent rows with female employees and less than 5 employees overall. 
+
+## Mini analysis
+Now that we have successfully pulled the data and have it in R, let's do a mini analysis on using the `ethnicity` column, to figure out the ethnicity of female employees in departments with less than 5 people. 
+
+To do this, we will create a bar graph of the ethnicity.
+
+```{r compaint-type-graph, fig.alt="Bar chart showing the ethnicity of female workers in departments with less than 5 employees., fig.cap="Bar chart showing the ethnicity of female workers in municipal departments with less than 5 people (10 most recent.", fig.height=5, fig.width=7}
+# Visualizing the distribution, ordered by frequency
+library(dplyr)
+library(ggplot2)
+
+lessthan5TI_payreport %>%
+  count(ethnicity) %>%          # count how many rows fall in each ethnicity
+  ggplot(aes(
+    x = n,                       # n = number of rows per ethnicity
+    y = reorder(ethnicity, n)    # reorder ethnicities by their counts
+  )) +
+  geom_col(fill = "steelblue") + # geom_col uses the counts we already computed
+  theme_minimal() +
+  labs(
+    title = "Ethnicity of Female Employees in Agencies with Fewer Than 5 Employees",
+    subtitle = "Most Recent 15 Records",
+    x = "Number of Individuals",
+    y = "Ethnicity"
+  )
+
+```
+
+This graph shows us not only *who many* workers there are in departments with less than 5 individuals, but *what* their ethnicities are. 
+
+## Summary
+The `nycOpenData` package serves as a robust interface for the NYC Open Data portal, streamlining the path from raw city APIs to actionable insights. By abstracting the complexities of data acquisition—such as pagination, type-casting, and complex filtering—it allows users to focus on analysis rather than data engineering.
+
+As demonstrated in this vignette, the package provides a seamless workflow for targeted data retrieval, automated filtering, and rapid visualization.
+
+## How to Cite
+If you use this package for research or educational purposes, please cite it as follows:
+
+Martinez C (2026). nycOpenData: Convenient Access to NYC Open Data API Endpoints. R package version 0.1.4, https://martinezc1.github.io/nycOpenData/.

@@ -1,0 +1,30 @@
+http_interactions:
+- request:
+    method: GET
+    uri: https://data.cityofnewyork.us/resource/423i-ukqr.json?%24limit=2&%24order=data_year+DESC
+  response:
+    status: 200
+    headers:
+      server: nginx
+      date: Tue, 03 Feb 2026 18:24:53 GMT
+      content-type: application/json;charset=utf-8
+      transfer-encoding: chunked
+      connection: keep-alive
+      access-control-allow-origin: '*'
+      etag: '"aG90ZWwuNDUyNjdfM18zMERtaWR3M0F3VU5yVndTRXdrVVN6cEZkU0IxVQ---gzihguvBOzsItkEVIdFlIF1shM7RMR--gzip--gzip"'
+      x-soda2-fields: '["data_year","agency_name","eeo_4_job_category","pay_band","lower_pay_band_bound","upper_pay_band_bound","employee_status","race","ethnicity","gender","number_of_employees"]'
+      x-soda2-types: '["number","text","text","text","number","number","text","text","text","text","text"]'
+      x-soda2-data-out-of-date: 'false'
+      x-soda2-truth-last-modified: Tue, 06 Jan 2026 20:41:13 GMT
+      x-soda2-secondary-last-modified: Tue, 06 Jan 2026 20:41:13 GMT
+      last-modified: Tue, 06 Jan 2026 20:41:13 GMT
+      vary: Accept-Encoding
+      content-encoding: gzip
+      strict-transport-security: max-age=31536000; includeSubDomains
+      x-socrata-requestid: b1f66bf7b8d928e47870ad26be796bc6
+    body:
+      string: |
+        [{"data_year":"2022","agency_name":"TECHNOLOGY & INNOVATION","eeo_4_job_category":"TECHNICIANS","pay_band":"95000-99999","lower_pay_band_bound":"95000","upper_pay_band_bound":"99999","employee_status":"Full-Time","race":"White","ethnicity":"Non-Hispanic or Latino","gender":"Female","number_of_employees":"<5"}
+        ,{"data_year":"2022","agency_name":"TECHNOLOGY & INNOVATION","eeo_4_job_category":"TECHNICIANS","pay_band":"85000-89999","lower_pay_band_bound":"85000","upper_pay_band_bound":"89999","employee_status":"Full-Time","race":"White","ethnicity":"Hispanic or Latino","gender":"Female","number_of_employees":"<5"}]
+  recorded_at: 2026-02-03 18:24:53
+recorded_with: VCR-vcr/2.1.0
