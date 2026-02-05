@@ -23,16 +23,21 @@
 #'   small_sample <- nyc_borough_population(limit = 2)
 #'   small_sample
 #'
-#'   nyc_borough_population(limit = 2, filters = list(short_title = "APPOINTED"))
+#'   # Example with a filter (replace with a real field/value if desired)
+#'   nyc_borough_population(limit = 2, filters = list(borough = "Bronx"))
 #' }
 #'
 #' @export
 nyc_borough_population <- function(limit = 10000, filters = list(), timeout_sec = 30) {
   endpoint <- .nyc_endpoint("xywu-7bv9")
+
   query_list <- list(
     "$limit" = limit
   )
+
   query_list <- .nyc_add_filters(query_list, filters)
+
   data <- .nyc_get_json(endpoint, query_list, timeout_sec = timeout_sec)
   tibble::as_tibble(data)
 }
+

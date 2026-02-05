@@ -36,7 +36,8 @@ if (interactive() && curl::has_internet()) {
   small_sample <- nyc_borough_population(limit = 2)
   small_sample
 
-  nyc_borough_population(limit = 2, filters = list(short_title = "APPOINTED"))
+  # Example with a filter (replace with a real field/value if desired)
+  nyc_borough_population(limit = 2, filters = list(borough = "Bronx"))
 }
 
 }

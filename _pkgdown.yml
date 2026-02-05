@@ -7,6 +7,7 @@ articles:
     contents:
       - getting-started
       - Using-Local-Law18-Pay-Report
+      - analyzing-nyc-borough-population 
 reference:
   - title: "Getting started"
     desc: "Core helpers"

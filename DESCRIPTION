@@ -9,7 +9,10 @@ Authors@R:
              comment = c(GitHub = "martinezc1")),
       person("Jonah", "Dratfield", 
              role = "ctb",
-             comment = c(GitHub = "jdratfield38")))
+             comment = c(GitHub = "jdratfield38")),
+      person("Rob", "Hutto", 
+             role = "ctb",
+             comment = c(GitHub = "robhutto")))
 Description: Provides a unified set of helper functions to access datasets 
     from the NYC Open Data platform <https://opendata.cityofnewyork.us/>. 
     Functions return results as tidy tibbles and support optional filtering, 
@@ -30,7 +33,9 @@ Suggests:
     ggplot2,
     knitr,
     rmarkdown,
+    scales,
     testthat (>= 3.0.0),
+    tidyr,
     vcr (>= 0.6.0),
     webmockr
 URL: https://martinezc1.github.io/nycOpenData/, https://github.com/martinezc1/nycOpenData

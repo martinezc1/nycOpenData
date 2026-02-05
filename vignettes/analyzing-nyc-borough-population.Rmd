@@ -20,6 +20,7 @@ knitr::opts_chunk$set(warning = FALSE, message = FALSE)
 library(nycOpenData)
 library(ggplot2)
 library(dplyr)
+library(tidyr)
 ```
 
 ## Introduction
@@ -60,7 +61,6 @@ Let's visualize population trends across boroughs. First, we need to reshape the
 
 Let's visualize population trends across boroughs. First, we need to reshape the data from wide to long format:
 ```{r population-trends, fig.alt="Line chart showing population trends for NYC's five boroughs from 1950 to 2040.", fig.cap="Population trends for NYC's five boroughs from 1950 to 2040, including historical data and projections.", fig.height=6, fig.width=8}
-library(tidyr)
 
 # Get full dataset and filter for Total Population rows only
 population_data <- nyc_borough_population()

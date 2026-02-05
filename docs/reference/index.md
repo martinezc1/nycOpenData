@@ -120,6 +120,8 @@ Other NYC Open Data wrappers
   : Load Any NYC Open Data Dataset
 - [`nyc_borough_community_report()`](https://martinezc1.github.io/nycOpenData/reference/nyc_borough_community_report.md)
   : NYC Borough/Community District Report
+- [`nyc_borough_population()`](https://martinezc1.github.io/nycOpenData/reference/nyc_borough_population.md)
+  : New York City Population by Borough, 1950 - 2040
 - [`nyc_cause_of_death()`](https://martinezc1.github.io/nycOpenData/reference/nyc_cause_of_death.md)
   : New York City Leading Causes of Death
 - [`nyc_city_record()`](https://martinezc1.github.io/nycOpenData/reference/nyc_city_record.md)

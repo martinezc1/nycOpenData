@@ -141,6 +141,7 @@ GitHub: [@martinezc1](https://github.com/martinezc1)
 Special thanks to the students of **PSYC 7750G – Reproducible Psychological Research** at Brooklyn College (CUNY) who have contributed functions and documentation:
 
 * **Jonah Dratfield** ([@jdratfield38](https://github.com/jdratfield38)) — Added support for the **Local Law 18 Pay and Demographics Report**.
+* **Robert Hutto** ([@robhutto](https://github.com/robhutto)) — Added support for the **New York City Population by Borough, 1950 - 2040 dataset**.
 
 ------------------------------------------------------------------------
 

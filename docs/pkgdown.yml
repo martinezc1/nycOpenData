@@ -2,9 +2,10 @@ pandoc: 3.6.3
 pkgdown: 2.2.0
 pkgdown_sha: ~
 articles:
+  analyzing-nyc-borough-population: analyzing-nyc-borough-population.html
   getting-started: getting-started.html
   Using-Local-Law18-Pay-Report: Using-Local-Law18-Pay-Report.html
-last_built: 2026-02-04T23:17Z
+last_built: 2026-02-05T00:54Z
 urls:
   reference: https://martinezc1.github.io/nycOpenData/reference
   article: https://martinezc1.github.io/nycOpenData/articles
