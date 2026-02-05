@@ -1,5 +1,5 @@
 ---
-title: "Using Local Law18 Pay Report"
+title: "Using Local Law 18 Pay Report Data"
 output: rmarkdown::html_vignette
 author: "Jonah Dratfield"
 vignette: >
