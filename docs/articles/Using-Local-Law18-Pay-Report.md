@@ -210,5 +210,5 @@ If you use this package for research or educational purposes, please
 cite it as follows:
 
 Martinez C (2026). nycOpenData: Convenient Access to NYC Open Data API
-Endpoints. R package version 0.1.4,
+Endpoints. R package version 0.1.5,
 <https://martinezc1.github.io/nycOpenData/>.
