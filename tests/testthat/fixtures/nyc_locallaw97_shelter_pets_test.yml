@@ -1,0 +1,30 @@
+http_interactions:
+- request:
+    method: GET
+    uri: https://data.cityofnewyork.us/resource/5nux-zfmw.json?%24limit=2&%24order=date_year+DESC%2C+date_quarter+DESC
+  response:
+    status: 200
+    headers:
+      server: nginx
+      date: Wed, 04 Feb 2026 23:01:19 GMT
+      content-type: application/json;charset=utf-8
+      transfer-encoding: chunked
+      connection: keep-alive
+      access-control-allow-origin: '*'
+      etag: '"anVsaWV0dC4xMjgwNTlfM180MUJSR1ZBZnFqajBkTlV1UmlRMlZObVJ2RU9qUQ---gzipeLP2_BJlLsVUbQFEro3NiqYX9n--gzip--gzip"'
+      x-soda2-fields: '["date_year","date_quarter","total_applicants","had_pet","client_borough_of_entry_bronx","client_borough_of_entry","client_borough_of_entry_1","clients_who_would_have_entered","clients_choosing_to_forego","chose_to_forego_shelter_for","clients_who_intend_to_regain","number_of_dogs","number_of_cats","number_of_birds","number_of_small_mammals","number_of_reptiles_small","number_of_fish","did_not_report_pet_type","pet_s_placed_with_foster","pet_s_surrendered_to_animal","pet_s_placed_with_family","pet_s_placed_with_friend","pet_s_placed_with_other","pet_s_placed_with_non_profit"]'
+      x-soda2-types: '["text","text","number","number","number","number","number","number","number","number","number","number","number","number","number","number","number","number","number","number","number","number","number","number"]'
+      x-soda2-data-out-of-date: 'false'
+      x-soda2-truth-last-modified: Fri, 31 Oct 2025 14:26:04 GMT
+      x-soda2-secondary-last-modified: Fri, 31 Oct 2025 14:26:04 GMT
+      last-modified: Fri, 31 Oct 2025 14:26:04 GMT
+      vary: Accept-Encoding
+      content-encoding: gzip
+      strict-transport-security: max-age=31536000; includeSubDomains
+      x-socrata-requestid: 82be5d491591bdfc79f59655d054ba81
+    body:
+      string: |
+        [{"date_year":"2026","date_quarter":"Qtr 1","total_applicants":"12062","had_pet":"16","client_borough_of_entry_bronx":"16","client_borough_of_entry":"0","client_borough_of_entry_1":"0","clients_who_would_have_entered":"14","clients_choosing_to_forego":"3","chose_to_forego_shelter_for":"55.33","clients_who_intend_to_regain":"14","number_of_dogs":"11","number_of_cats":"8","number_of_birds":"0","number_of_small_mammals":"0","number_of_reptiles_small":"0","number_of_fish":"0","did_not_report_pet_type":"0","pet_s_placed_with_foster":"0","pet_s_surrendered_to_animal":"0","pet_s_placed_with_family":"10","pet_s_placed_with_friend":"4","pet_s_placed_with_other":"0","pet_s_placed_with_non_profit":"0"}
+        ,{"date_year":"2025","date_quarter":"Qtr 4","total_applicants":"12727","had_pet":"10","client_borough_of_entry_bronx":"10","client_borough_of_entry":"0","client_borough_of_entry_1":"0","clients_who_would_have_entered":"8","clients_choosing_to_forego":"2","chose_to_forego_shelter_for":"12.5","clients_who_intend_to_regain":"10","number_of_dogs":"6","number_of_cats":"3","number_of_birds":"0","number_of_small_mammals":"0","number_of_reptiles_small":"1","number_of_fish":"0","did_not_report_pet_type":"0","pet_s_placed_with_foster":"0","pet_s_surrendered_to_animal":"0","pet_s_placed_with_family":"8","pet_s_placed_with_friend":"1","pet_s_placed_with_other":"0","pet_s_placed_with_non_profit":"0"}]
+  recorded_at: 2026-02-04 23:01:19
+recorded_with: VCR-vcr/2.1.0
