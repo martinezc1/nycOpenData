@@ -1,0 +1,71 @@
+---
+title: "Analyzing NYC Climate Projections: Extreme Events and Sea Level Rise"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{NYC Climate Extreme Events}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+## Introduction
+
+This vignette demonstrates how to use the `nyc_events_sealevel` function to explore projected
+extreme climate events and sea level rise for New York City.
+
+The dataset provides projections under different climate scenarios, including:
+- Number of heatwaves per year
+- Cooling and heating degree days
+- Projected sea level rise
+
+Researchers, city planners, and policymakers can use this information to understand
+future climate risks, prepare for extreme weather events, and plan adaptation strategies.
+
+## Load the Package
+
+```{r setup}
+library(nycOpenData)
+library(dplyr)
+library(ggplot2)
+```
+
+## Retrive a Sample of Data
+
+```{r retrieve-sample}
+sample_data <- nyc_events_sealevel(limit = 10)
+sample_data
+```
+
+This code retrieves 10 rows of data from NYC Open Data endpoint for extreme events and sea level rise projections.
+
+## Summarize Key Metrics
+
+```{r key-metrics}
+summary_table <- sample_data %>%
+  select(period, number_of_heatwaves_year, cooling_degree_days, heating_degree_days) %>%
+  head(10)
+summary_table
+```
+
+* Period=climate period (e.g., "Baseline", "2030s")
+* number_of_heatwaves_year=projected heatwaves per year
+* cooling_degree_days/heating_degree_days=metrics of temperature extremes
+
+This table gives a quick overview of projected extreme events for different scenarios.
+
+## Visualization
+
+```{r visualization}
+ggplot(sample_data, aes(x = period, y = as.numeric(number_of_heatwaves_year))) +
+  geom_col() +
+  labs(
+    title = "Projected Number of Heatwaves by Scenario",
+    x = "Climate Scenario",
+    y = "Number of Heatwaves"
+  ) +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))
+```
+
+This plot shows how the number of heatwaves is projected to change across scenarios. It helps visualize future climate risks at glance.
+
+
+
