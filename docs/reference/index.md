@@ -155,6 +155,8 @@ Other NYC Open Data wrappers
   : NYC Homeless Population By Year
 - [`nyc_locallaw18_payreport()`](https://martinezc1.github.io/nycOpenData/reference/nyc_locallaw18_payreport.md)
   : Local Law 18 Pay and Demographics Report - Agency Report Table
+- [`nyc_locallaw97_shelter_pets()`](https://martinezc1.github.io/nycOpenData/reference/nyc_locallaw97_shelter_pets.md)
+  : Local Law 97 of 2021 - Pets in Shelter Report
 - [`nyc_medallion_drivers_active()`](https://martinezc1.github.io/nycOpenData/reference/nyc_medallion_drivers_active.md)
   : Medallion Drivers - Active
 - [`nyc_medallion_drivers_authorized()`](https://martinezc1.github.io/nycOpenData/reference/nyc_medallion_drivers_authorized.md)

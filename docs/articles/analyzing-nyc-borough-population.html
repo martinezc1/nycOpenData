@@ -165,9 +165,19 @@ APIs and tidy data analysis.</p>
 <p>We can filter for a specific borough. Let’s look at Brooklyn’s
 population over time:</p>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="va">brooklyn_pop</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/nyc_borough_population.html">nyc_borough_population</a></span><span class="op">(</span>filters <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>borough <span class="op">=</span> <span class="st">"Brooklyn"</span><span class="op">)</span><span class="op">)</span></span>
+<code class="sourceCode R"><span><span class="va">brooklyn_pop</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/nyc_borough_population.html">nyc_borough_population</a></span><span class="op">(</span>filters <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>borough <span class="op">=</span> <span class="st">"   Brooklyn"</span><span class="op">)</span><span class="op">)</span></span>
 <span><span class="va">brooklyn_pop</span></span>
-<span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 0 × 0</span></span></span></code></pre></div>
+<span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 1 × 22</span></span></span>
+<span><span class="co">#&gt;   age_group        borough       `_1950` `_1950_boro_share_of_nyc_total` `_1960`</span></span>
+<span><span class="co">#&gt;   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>            <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>         <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                           <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>  </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">1</span> Total Population <span style="color: #949494;">"</span>   Brooklyn<span style="color: #949494;">"</span> 2738175 34.70                           2627319</span></span>
+<span><span class="co">#&gt; <span style="color: #949494;"># ℹ 17 more variables: `_1960_boro_share_of_nyc_total` &lt;chr&gt;, `_1970` &lt;chr&gt;,</span></span></span>
+<span><span class="co">#&gt; <span style="color: #949494;">#   `_1970_boro_share_of_nyc_total` &lt;chr&gt;, `_1980` &lt;chr&gt;,</span></span></span>
+<span><span class="co">#&gt; <span style="color: #949494;">#   `_1980_boro_share_of_nyc_total` &lt;chr&gt;, `_1990` &lt;chr&gt;,</span></span></span>
+<span><span class="co">#&gt; <span style="color: #949494;">#   `_1990_boro_share_of_nyc_total` &lt;chr&gt;, `_2000` &lt;chr&gt;,</span></span></span>
+<span><span class="co">#&gt; <span style="color: #949494;">#   `_2000_boro_share_of_nyc_total` &lt;chr&gt;, `_2010` &lt;chr&gt;,</span></span></span>
+<span><span class="co">#&gt; <span style="color: #949494;">#   `_2010_boro_share_of_nyc_total` &lt;chr&gt;, `_2020` &lt;chr&gt;,</span></span></span>
+<span><span class="co">#&gt; <span style="color: #949494;">#   `_2020_boro_share_of_nyc_total` &lt;chr&gt;, `_2030` &lt;chr&gt;, …</span></span></span></code></pre></div>
 </div>
 <div class="section level2">
 <h2 id="mini-analysis">Mini analysis<a class="anchor" aria-label="anchor" href="#mini-analysis"></a>
@@ -252,7 +262,7 @@ visualization.</p>
 <p>If you use this package for research or educational purposes, please
 cite it as follows:</p>
 <p>Martinez C (2026). nycOpenData: Convenient Access to NYC Open Data
-API Endpoints. R package version 0.1.4, <a href="https://martinezc1.github.io/nycOpenData/" class="uri">https://martinezc1.github.io/nycOpenData/</a>.</p>
+API Endpoints. R package version 0.1.5, <a href="https://martinezc1.github.io/nycOpenData/" class="uri">https://martinezc1.github.io/nycOpenData/</a>.</p>
 </div>
   </main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>
     </nav></aside>

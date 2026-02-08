@@ -157,6 +157,8 @@ functions and documentation:
 - **Robert Hutto** ([@robhutto](https://github.com/robhutto)) — Added
   support for the **New York City Population by Borough, 1950 - 2040
   dataset**.
+- **Xinru Wang** ([@xrwangxr](https://github.com/xrwangxr)) — Added
+  support for the **Local Law 97 of 2021 - Pets in Shelter Report**.
 
 ------------------------------------------------------------------------
 
@@ -323,6 +325,8 @@ Other NYC Open Data wrappers
   : NYC Homeless Population By Year
 - [`nyc_locallaw18_payreport()`](https://martinezc1.github.io/nycOpenData/reference/nyc_locallaw18_payreport.md)
   : Local Law 18 Pay and Demographics Report - Agency Report Table
+- [`nyc_locallaw97_shelter_pets()`](https://martinezc1.github.io/nycOpenData/reference/nyc_locallaw97_shelter_pets.md)
+  : Local Law 97 of 2021 - Pets in Shelter Report
 - [`nyc_medallion_drivers_active()`](https://martinezc1.github.io/nycOpenData/reference/nyc_medallion_drivers_active.md)
   : Medallion Drivers - Active
 - [`nyc_medallion_drivers_authorized()`](https://martinezc1.github.io/nycOpenData/reference/nyc_medallion_drivers_authorized.md)
@@ -372,3 +376,5 @@ Other NYC Open Data wrappers
   Data](https://martinezc1.github.io/nycOpenData/articles/Using-Local-Law18-Pay-Report.md):
 - [New York City Population by Borough 1950 -
   2040](https://martinezc1.github.io/nycOpenData/articles/analyzing-nyc-borough-population.md):
+- [Analyzing the Local Law 97 of 2021-Pets in Shelter
+  Report](https://martinezc1.github.io/nycOpenData/articles/Analyzing-the-Local-Law-97-of-2021-Pets-in-Shelter-Report.md):

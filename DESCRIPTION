@@ -3,23 +3,29 @@ Type: Package
 Title: Convenient Access to NYC Open Data API Endpoints
 Version: 0.1.5
 Authors@R: 
-    c(person("Christian", "Martinez", 
+    c(
+      person("Christian", "Martinez", 
              email = "c.martinez0@outlook.com", 
              role = c("aut", "cre"),
-             comment = c(GitHub = "martinezc1")),
+             comment = c(
+               GitHub = "martinezc1",
+               ORCID = "0009-0005-6026-6454"
+             )),
       person("Jonah", "Dratfield", 
              role = "ctb",
              comment = c(GitHub = "jdratfield38")),
       person("Rob", "Hutto", 
              role = "ctb",
-             comment = c(GitHub = "robhutto")))
+             comment = c(GitHub = "robhutto")),
+      person("Xinru", "Wang",
+             role = "ctb",
+             comment = c(GitHub = "xrwangxr")))
 Description: Provides a unified set of helper functions to access datasets 
     from the NYC Open Data platform <https://opendata.cityofnewyork.us/>. 
     Functions return results as tidy tibbles and support optional filtering, 
     sorting, and row limits via the Socrata API. The package includes endpoints 
     for 311 service requests, DOB job applications, juvenile justice metrics, 
-    school safety, environmental data, event permitting, and additional citywide datasets. The
-    package is utilized as a primary pedagogical tool for teaching data acquisition in 'Reproducible Research Using R'.
+    school safety, environmental data, event permitting, and additional citywide datasets.
 License: MIT + file LICENSE
 Encoding: UTF-8
 RoxygenNote: 7.3.3

@@ -157,6 +157,8 @@ functions and documentation:
 - **Robert Hutto** ([@robhutto](https://github.com/robhutto)) — Added
   support for the **New York City Population by Borough, 1950 - 2040
   dataset**.
+- **Xinru Wang** ([@xrwangxr](https://github.com/xrwangxr)) — Added
+  support for the **Local Law 97 of 2021 - Pets in Shelter Report**.
 
 ------------------------------------------------------------------------
 

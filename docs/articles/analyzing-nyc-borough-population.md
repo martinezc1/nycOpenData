@@ -105,9 +105,19 @@ We can filter for a specific borough. Let’s look at Brooklyn’s
 population over time:
 
 ``` r
-brooklyn_pop <- nyc_borough_population(filters = list(borough = "Brooklyn"))
+brooklyn_pop <- nyc_borough_population(filters = list(borough = "   Brooklyn"))
 brooklyn_pop
-#> # A tibble: 0 × 0
+#> # A tibble: 1 × 22
+#>   age_group        borough       `_1950` `_1950_boro_share_of_nyc_total` `_1960`
+#>   <chr>            <chr>         <chr>   <chr>                           <chr>  
+#> 1 Total Population "   Brooklyn" 2738175 34.70                           2627319
+#> # ℹ 17 more variables: `_1960_boro_share_of_nyc_total` <chr>, `_1970` <chr>,
+#> #   `_1970_boro_share_of_nyc_total` <chr>, `_1980` <chr>,
+#> #   `_1980_boro_share_of_nyc_total` <chr>, `_1990` <chr>,
+#> #   `_1990_boro_share_of_nyc_total` <chr>, `_2000` <chr>,
+#> #   `_2000_boro_share_of_nyc_total` <chr>, `_2010` <chr>,
+#> #   `_2010_boro_share_of_nyc_total` <chr>, `_2020` <chr>,
+#> #   `_2020_boro_share_of_nyc_total` <chr>, `_2030` <chr>, …
 ```
 
 ## Mini analysis
@@ -202,5 +212,5 @@ If you use this package for research or educational purposes, please
 cite it as follows:
 
 Martinez C (2026). nycOpenData: Convenient Access to NYC Open Data API
-Endpoints. R package version 0.1.4,
+Endpoints. R package version 0.1.5,
 <https://martinezc1.github.io/nycOpenData/>.

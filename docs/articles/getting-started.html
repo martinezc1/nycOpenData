@@ -104,39 +104,40 @@ To do this, we can set <code>limit = 3</code>.</p>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">small_sample</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/nyc_311.html">nyc_311</a></span><span class="op">(</span>limit <span class="op">=</span> <span class="fl">3</span><span class="op">)</span></span>
 <span><span class="va">small_sample</span></span>
-<span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 3 × 33</span></span></span>
-<span><span class="co">#&gt;   unique_key created_date          closed_date agency agency_name complaint_type</span></span>
-<span><span class="co">#&gt;   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                 <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>       <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>       <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>         </span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">1</span> 67819192   2026-02-03T02:55:58.… 2026-02-03… DOT    Department… Street Condit…</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">2</span> 67829262   2026-02-03T02:35:44.… <span style="color: #BB0000;">NA</span>          DOT    Department… Street Condit…</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">3</span> 67827402   2026-02-03T02:34:48.… <span style="color: #BB0000;">NA</span>          DOT    Department… Street Condit…</span></span>
-<span><span class="co">#&gt; <span style="color: #949494;"># ℹ 27 more variables: descriptor &lt;chr&gt;, incident_zip &lt;chr&gt;,</span></span></span>
-<span><span class="co">#&gt; <span style="color: #949494;">#   incident_address &lt;chr&gt;, street_name &lt;chr&gt;, cross_street_1 &lt;chr&gt;,</span></span></span>
-<span><span class="co">#&gt; <span style="color: #949494;">#   cross_street_2 &lt;chr&gt;, address_type &lt;chr&gt;, city &lt;chr&gt;, facility_type &lt;chr&gt;,</span></span></span>
-<span><span class="co">#&gt; <span style="color: #949494;">#   status &lt;chr&gt;, resolution_description &lt;chr&gt;,</span></span></span>
+<span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 3 × 36</span></span></span>
+<span><span class="co">#&gt;   unique_key created_date           agency agency_name complaint_type descriptor</span></span>
+<span><span class="co">#&gt;   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                  <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>       <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>          <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>     </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">1</span> 67853119   2026-02-05T02:53:36.0… DSNY   Department… Graffiti       Graffiti  </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">2</span> 67849376   2026-02-05T02:06:16.0… NYPD   New York C… Noise - Comme… Loud Talk…</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">3</span> 67849620   2026-02-05T02:05:27.0… DSNY   Department… Dirty Conditi… Trash     </span></span>
+<span><span class="co">#&gt; <span style="color: #949494;"># ℹ 30 more variables: location_type &lt;chr&gt;, incident_zip &lt;chr&gt;,</span></span></span>
+<span><span class="co">#&gt; <span style="color: #949494;">#   incident_address &lt;chr&gt;, street_name &lt;chr&gt;, address_type &lt;chr&gt;, city &lt;chr&gt;,</span></span></span>
+<span><span class="co">#&gt; <span style="color: #949494;">#   facility_type &lt;chr&gt;, status &lt;chr&gt;, resolution_description &lt;chr&gt;,</span></span></span>
 <span><span class="co">#&gt; <span style="color: #949494;">#   resolution_action_updated_date &lt;chr&gt;, community_board &lt;chr&gt;,</span></span></span>
-<span><span class="co">#&gt; <span style="color: #949494;">#   police_precinct &lt;chr&gt;, borough &lt;chr&gt;, open_data_channel_type &lt;chr&gt;,</span></span></span>
-<span><span class="co">#&gt; <span style="color: #949494;">#   park_facility_name &lt;chr&gt;, park_borough &lt;chr&gt;, …</span></span></span>
+<span><span class="co">#&gt; <span style="color: #949494;">#   council_district &lt;chr&gt;, police_precinct &lt;chr&gt;, bbl &lt;chr&gt;, borough &lt;chr&gt;,</span></span></span>
+<span><span class="co">#&gt; <span style="color: #949494;">#   x_coordinate_state_plane &lt;chr&gt;, y_coordinate_state_plane &lt;chr&gt;,</span></span></span>
+<span><span class="co">#&gt; <span style="color: #949494;">#   open_data_channel_type &lt;chr&gt;, park_facility_name &lt;chr&gt;, …</span></span></span>
 <span></span>
 <span><span class="co"># Seeing what columns are in the dataset</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/colnames.html" class="external-link">colnames</a></span><span class="op">(</span><span class="va">small_sample</span><span class="op">)</span></span>
 <span><span class="co">#&gt;  [1] "unique_key"                     "created_date"                  </span></span>
-<span><span class="co">#&gt;  [3] "closed_date"                    "agency"                        </span></span>
-<span><span class="co">#&gt;  [5] "agency_name"                    "complaint_type"                </span></span>
-<span><span class="co">#&gt;  [7] "descriptor"                     "incident_zip"                  </span></span>
+<span><span class="co">#&gt;  [3] "agency"                         "agency_name"                   </span></span>
+<span><span class="co">#&gt;  [5] "complaint_type"                 "descriptor"                    </span></span>
+<span><span class="co">#&gt;  [7] "location_type"                  "incident_zip"                  </span></span>
 <span><span class="co">#&gt;  [9] "incident_address"               "street_name"                   </span></span>
-<span><span class="co">#&gt; [11] "cross_street_1"                 "cross_street_2"                </span></span>
-<span><span class="co">#&gt; [13] "address_type"                   "city"                          </span></span>
-<span><span class="co">#&gt; [15] "facility_type"                  "status"                        </span></span>
-<span><span class="co">#&gt; [17] "resolution_description"         "resolution_action_updated_date"</span></span>
-<span><span class="co">#&gt; [19] "community_board"                "police_precinct"               </span></span>
-<span><span class="co">#&gt; [21] "borough"                        "open_data_channel_type"        </span></span>
-<span><span class="co">#&gt; [23] "park_facility_name"             "park_borough"                  </span></span>
-<span><span class="co">#&gt; [25] "intersection_street_1"          "intersection_street_2"         </span></span>
-<span><span class="co">#&gt; [27] "council_district"               "x_coordinate_state_plane"      </span></span>
-<span><span class="co">#&gt; [29] "y_coordinate_state_plane"       "latitude"                      </span></span>
-<span><span class="co">#&gt; [31] "longitude"                      "location.type"                 </span></span>
-<span><span class="co">#&gt; [33] "location.coordinates"</span></span></code></pre></div>
+<span><span class="co">#&gt; [11] "address_type"                   "city"                          </span></span>
+<span><span class="co">#&gt; [13] "facility_type"                  "status"                        </span></span>
+<span><span class="co">#&gt; [15] "resolution_description"         "resolution_action_updated_date"</span></span>
+<span><span class="co">#&gt; [17] "community_board"                "council_district"              </span></span>
+<span><span class="co">#&gt; [19] "police_precinct"                "bbl"                           </span></span>
+<span><span class="co">#&gt; [21] "borough"                        "x_coordinate_state_plane"      </span></span>
+<span><span class="co">#&gt; [23] "y_coordinate_state_plane"       "open_data_channel_type"        </span></span>
+<span><span class="co">#&gt; [25] "park_facility_name"             "park_borough"                  </span></span>
+<span><span class="co">#&gt; [27] "latitude"                       "longitude"                     </span></span>
+<span><span class="co">#&gt; [29] "cross_street_1"                 "cross_street_2"                </span></span>
+<span><span class="co">#&gt; [31] "intersection_street_1"          "intersection_street_2"         </span></span>
+<span><span class="co">#&gt; [33] "landmark"                       "descriptor_2"                  </span></span>
+<span><span class="co">#&gt; [35] "location.type"                  "location.coordinates"</span></span></code></pre></div>
 <p>Fantastic! We successfully pulled 311 data from the NYC Open Data
 Portal.</p>
 <p>Let’s now take an example of the last 3 requests from the borough
@@ -149,19 +150,19 @@ is a column called “borough” which we can use to accomplish this.</p>
 <code class="sourceCode R"><span></span>
 <span><span class="va">brooklyn_311</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/nyc_311.html">nyc_311</a></span><span class="op">(</span>limit <span class="op">=</span> <span class="fl">3</span>, filters <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>borough <span class="op">=</span> <span class="st">"BROOKLYN"</span><span class="op">)</span><span class="op">)</span></span>
 <span><span class="va">brooklyn_311</span></span>
-<span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 3 × 36</span></span></span>
-<span><span class="co">#&gt;   unique_key created_date          closed_date agency agency_name complaint_type</span></span>
-<span><span class="co">#&gt;   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                 <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>       <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>       <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>         </span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">1</span> 67819192   2026-02-03T02:55:58.… 2026-02-03… DOT    Department… Street Condit…</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">2</span> 67831232   2026-02-03T02:04:35.… <span style="color: #BB0000;">NA</span>          NYPD   New York C… Noise - Resid…</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">3</span> 67820574   2026-02-03T02:01:58.… <span style="color: #BB0000;">NA</span>          NYPD   New York C… Illegal Parki…</span></span>
-<span><span class="co">#&gt; <span style="color: #949494;"># ℹ 30 more variables: descriptor &lt;chr&gt;, incident_zip &lt;chr&gt;,</span></span></span>
+<span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 3 × 33</span></span></span>
+<span><span class="co">#&gt;   unique_key created_date           agency agency_name complaint_type descriptor</span></span>
+<span><span class="co">#&gt;   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                  <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>       <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>          <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>     </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">1</span> 67857232   2026-02-05T02:05:21.0… NYPD   New York C… Illegal Parki… Blocked H…</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">2</span> 67852510   2026-02-05T01:51:52.0… NYPD   New York C… Illegal Parki… Double Pa…</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">3</span> 67855641   2026-02-05T01:47:07.0… NYPD   New York C… Noise - Resid… Loud Musi…</span></span>
+<span><span class="co">#&gt; <span style="color: #949494;"># ℹ 27 more variables: location_type &lt;chr&gt;, incident_zip &lt;chr&gt;,</span></span></span>
 <span><span class="co">#&gt; <span style="color: #949494;">#   incident_address &lt;chr&gt;, street_name &lt;chr&gt;, cross_street_1 &lt;chr&gt;,</span></span></span>
-<span><span class="co">#&gt; <span style="color: #949494;">#   cross_street_2 &lt;chr&gt;, address_type &lt;chr&gt;, city &lt;chr&gt;, facility_type &lt;chr&gt;,</span></span></span>
-<span><span class="co">#&gt; <span style="color: #949494;">#   status &lt;chr&gt;, resolution_description &lt;chr&gt;,</span></span></span>
-<span><span class="co">#&gt; <span style="color: #949494;">#   resolution_action_updated_date &lt;chr&gt;, community_board &lt;chr&gt;,</span></span></span>
-<span><span class="co">#&gt; <span style="color: #949494;">#   police_precinct &lt;chr&gt;, borough &lt;chr&gt;, open_data_channel_type &lt;chr&gt;,</span></span></span>
-<span><span class="co">#&gt; <span style="color: #949494;">#   park_facility_name &lt;chr&gt;, park_borough &lt;chr&gt;, location_type &lt;chr&gt;, …</span></span></span>
+<span><span class="co">#&gt; <span style="color: #949494;">#   cross_street_2 &lt;chr&gt;, intersection_street_1 &lt;chr&gt;,</span></span></span>
+<span><span class="co">#&gt; <span style="color: #949494;">#   intersection_street_2 &lt;chr&gt;, address_type &lt;chr&gt;, city &lt;chr&gt;,</span></span></span>
+<span><span class="co">#&gt; <span style="color: #949494;">#   landmark &lt;chr&gt;, status &lt;chr&gt;, community_board &lt;chr&gt;,</span></span></span>
+<span><span class="co">#&gt; <span style="color: #949494;">#   council_district &lt;chr&gt;, police_precinct &lt;chr&gt;, bbl &lt;chr&gt;, borough &lt;chr&gt;,</span></span></span>
+<span><span class="co">#&gt; <span style="color: #949494;">#   x_coordinate_state_plane &lt;chr&gt;, y_coordinate_state_plane &lt;chr&gt;, …</span></span></span>
 <span></span>
 <span><span class="co"># Checking to see the filtering worked</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/unique.html" class="external-link">unique</a></span><span class="op">(</span><span class="va">brooklyn_311</span><span class="op">$</span><span class="va">borough</span><span class="op">)</span></span>
@@ -179,16 +180,16 @@ Police Department in Brooklyn.</p>
 <span></span>
 <span><span class="co"># Calling head of our new dataset</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="va">brooklyn_nypd</span><span class="op">)</span></span>
-<span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 6 × 36</span></span></span>
+<span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 6 × 37</span></span></span>
 <span><span class="co">#&gt;   unique_key created_date           agency agency_name complaint_type descriptor</span></span>
 <span><span class="co">#&gt;   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                  <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>       <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>          <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>     </span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">1</span> 67831232   2026-02-03T02:04:35.0… NYPD   New York C… Noise - Resid… Loud Musi…</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">2</span> 67820574   2026-02-03T02:01:58.0… NYPD   New York C… Illegal Parki… Blocked C…</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">3</span> 67829429   2026-02-03T02:00:49.0… NYPD   New York C… Illegal Parki… Blocked H…</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">4</span> 67827576   2026-02-03T01:59:53.0… NYPD   New York C… Illegal Parki… Blocked H…</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">5</span> 67822079   2026-02-03T01:59:00.0… NYPD   New York C… Noise - Resid… Banging/P…</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">6</span> 67822097   2026-02-03T01:54:10.0… NYPD   New York C… Noise - Resid… Loud Tele…</span></span>
-<span><span class="co">#&gt; <span style="color: #949494;"># ℹ 30 more variables: location_type &lt;chr&gt;, incident_zip &lt;chr&gt;,</span></span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">1</span> 67857232   2026-02-05T02:05:21.0… NYPD   New York C… Illegal Parki… Blocked H…</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">2</span> 67852510   2026-02-05T01:51:52.0… NYPD   New York C… Illegal Parki… Double Pa…</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">3</span> 67855641   2026-02-05T01:47:07.0… NYPD   New York C… Noise - Resid… Loud Musi…</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">4</span> 67850938   2026-02-05T01:47:07.0… NYPD   New York C… Illegal Parki… Blocked H…</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">5</span> 67847860   2026-02-05T01:44:09.0… NYPD   New York C… Noise - Stree… Loud Musi…</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">6</span> 67846270   2026-02-05T01:43:29.0… NYPD   New York C… Illegal Parki… Double Pa…</span></span>
+<span><span class="co">#&gt; <span style="color: #949494;"># ℹ 31 more variables: location_type &lt;chr&gt;, incident_zip &lt;chr&gt;,</span></span></span>
 <span><span class="co">#&gt; <span style="color: #949494;">#   incident_address &lt;chr&gt;, street_name &lt;chr&gt;, cross_street_1 &lt;chr&gt;,</span></span></span>
 <span><span class="co">#&gt; <span style="color: #949494;">#   cross_street_2 &lt;chr&gt;, intersection_street_1 &lt;chr&gt;,</span></span></span>
 <span><span class="co">#&gt; <span style="color: #949494;">#   intersection_street_2 &lt;chr&gt;, address_type &lt;chr&gt;, city &lt;chr&gt;,</span></span></span>
@@ -252,7 +253,7 @@ visualization.</p>
 <p>If you use this package for research or educational purposes, please
 cite it as follows:</p>
 <p>Martinez C (2026). nycOpenData: Convenient Access to NYC Open Data
-API Endpoints. R package version 0.1.4, <a href="https://martinezc1.github.io/nycOpenData/" class="uri">https://martinezc1.github.io/nycOpenData/</a>.</p>
+API Endpoints. R package version 0.1.5, <a href="https://martinezc1.github.io/nycOpenData/" class="uri">https://martinezc1.github.io/nycOpenData/</a>.</p>
 </div>
   </main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>
     </nav></aside>
