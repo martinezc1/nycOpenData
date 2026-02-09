@@ -9,6 +9,10 @@ articles:
       - Using-Local-Law18-Pay-Report
       - analyzing-nyc-borough-population
       - Analyzing-the-Local-Law-97-of-2021-Pets-in-Shelter-Report
+      - analyzing-nyc_events_sealevel
+      - analyzing-nyc_wetlands
+      - analyzing-nyc-shooting-incidents
+      - nyc_ha_violations
 reference:
   - title: "Getting started"
     desc: "Core helpers"

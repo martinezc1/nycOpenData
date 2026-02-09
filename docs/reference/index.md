@@ -145,10 +145,14 @@ Other NYC Open Data wrappers
   : NYC DOP Juvenile Case Count By Type
 - [`nyc_dop_juvenile_rearrest_rate()`](https://martinezc1.github.io/nycOpenData/reference/nyc_dop_juvenile_rearrest_rate.md)
   : NYC DOP Juvenile Rearrest Rate (Monthly Average)
+- [`nyc_events_sealevel()`](https://martinezc1.github.io/nycOpenData/reference/nyc_events_sealevel.md)
+  : NYC Climate Projections: Extreme Events and Sea Level Rise
 - [`nyc_film_permits()`](https://martinezc1.github.io/nycOpenData/reference/nyc_film_permits.md)
   : Film Permits
 - [`nyc_for_hire_vehicles()`](https://martinezc1.github.io/nycOpenData/reference/nyc_for_hire_vehicles.md)
   : NYC For-Hire Vehicles (FHV) - Active
+- [`nyc_ha_violations()`](https://martinezc1.github.io/nycOpenData/reference/nyc_ha_violations.md)
+  : Housing Maintenance Code Violations NYCHA properties
 - [`nyc_homeless_drop_in_centers()`](https://martinezc1.github.io/nycOpenData/reference/nyc_homeless_drop_in_centers.md)
   : NYC Homeless Drop- In Centers
 - [`nyc_homeless_population_by_year()`](https://martinezc1.github.io/nycOpenData/reference/nyc_homeless_population_by_year.md)
@@ -185,6 +189,8 @@ Other NYC Open Data wrappers
   : 2013-2015 School Closure Discharge Reporting
 - [`nyc_school_discharge_report_2015_2018()`](https://martinezc1.github.io/nycOpenData/reference/nyc_school_discharge_report_2015_2018.md)
   : 2015-2018 School Closure Discharge Reporting
+- [`nyc_shooting_incidents()`](https://martinezc1.github.io/nycOpenData/reference/nyc_shooting_incidents.md)
+  : NYPD Shooting Incident Data (Year To Date)
 - [`nyc_street_hail_livery_active()`](https://martinezc1.github.io/nycOpenData/reference/nyc_street_hail_livery_active.md)
   : Street Hail Livery (SHL) Drivers - Active
 - [`nyc_tlc_new_driver_app_status()`](https://martinezc1.github.io/nycOpenData/reference/nyc_tlc_new_driver_app_status.md)
@@ -195,3 +201,5 @@ Other NYC Open Data wrappers
   : NYC Urban Park Ranger Animal Condition Response
 - [`nyc_violent_disruptive_school_incidents()`](https://martinezc1.github.io/nycOpenData/reference/nyc_violent_disruptive_school_incidents.md)
   : NYC Violent and Disruptive Incidents
+- [`nyc_wetlands()`](https://martinezc1.github.io/nycOpenData/reference/nyc_wetlands.md)
+  : NYC Wetlands

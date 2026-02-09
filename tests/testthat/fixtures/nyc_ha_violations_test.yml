@@ -1,0 +1,30 @@
+http_interactions:
+- request:
+    method: GET
+    uri: https://data.cityofnewyork.us/resource/im9z-53hg.json?%24limit=2&%24order=insp_dt+DESC
+  response:
+    status: 200
+    headers:
+      server: nginx
+      date: Mon, 09 Feb 2026 15:26:45 GMT
+      content-type: application/json;charset=utf-8
+      transfer-encoding: chunked
+      connection: keep-alive
+      access-control-allow-origin: '*'
+      etag: '"aW5kaWEuMTA3ODQ5XzRfMjE5SFgtTVQtVUtDTGl1ekRrQlJYRE5PYkpTME9F---gzip1DNmsW37CKYRKXXj3D8Qi7AeSgA--gzip--gzip"'
+      x-soda2-fields: '["viol_seq_no","bldg_id","boro","boro_nm","phn","low_hus_no","high_hus_no","str_nm","zip","development_name","tds_no","stairhall_no","sctn_boro","sctn_boro_nm","sctn_hus_no","sctn_str_nm","sctn_zip","actl_unit_insp","actl_stry","blk","lot","viol_desc","hzrd_clas","insp_dt","viol_appr_dt","viol_typ_ordr_no","issued_in_err","latitude","longitude","community_board","council_district","bin","bbl","census_tract","nta"]'
+      x-soda2-types: '["number","number","number","text","text","text","text","text","text","text","number","text","number","text","text","text","text","text","text","text","text","text","text","floating_timestamp","floating_timestamp","text","text","number","number","number","number","number","number","number","text"]'
+      x-soda2-data-out-of-date: 'false'
+      x-soda2-truth-last-modified: Mon, 09 Feb 2026 14:00:38 GMT
+      x-soda2-secondary-last-modified: Mon, 09 Feb 2026 14:00:38 GMT
+      last-modified: Mon, 09 Feb 2026 14:00:38 GMT
+      vary: Accept-Encoding
+      content-encoding: gzip
+      strict-transport-security: max-age=31536000; includeSubDomains
+      x-socrata-requestid: 9561eeb7ac74a09f1e6d8dd5348278ff
+    body:
+      string: |
+        [{"viol_seq_no":"18622939","bldg_id":"810254","boro":"4","boro_nm":"QUEENS","phn":"27-25","low_hus_no":"27-25","high_hus_no":"27-25","str_nm":"1 STREET","zip":"11102","development_name":"ASTORIA","tds_no":"26","stairhall_no":"11","sctn_boro":"4","sctn_boro_nm":"QUEENS","sctn_hus_no":"27-25","sctn_str_nm":"1ST STREET","sctn_zip":"11102","actl_unit_insp":"3G","actl_stry":"4","blk":"00490","lot":"0101","viol_desc":"§ 27-2005 ADM CODE  REPAIR THE BROKEN OR DEFECTIVE PLASTERED SURFACES AND PAINT IN A UNIFORM COLOR ALL WALLS   IN THE  BATHROOM  LOCATED AT APT 3G, 4th STORY, 1st APARTMENT FROM NORTH AT EAST","hzrd_clas":"B","insp_dt":"2026-02-06T00:00:00.000","viol_appr_dt":"2026-02-06T00:00:00.000","viol_typ_ordr_no":"508","issued_in_err":"N","latitude":"40.774993","longitude":"-73.936448","community_board":"401","council_district":"22","bin":"4430784","bbl":"4004900101","census_tract":"87","nta":"QN0102"}
+        ,{"viol_seq_no":"18622938","bldg_id":"810254","boro":"4","boro_nm":"QUEENS","phn":"27-25","low_hus_no":"27-25","high_hus_no":"27-25","str_nm":"1 STREET","zip":"11102","development_name":"ASTORIA","tds_no":"26","stairhall_no":"11","sctn_boro":"4","sctn_boro_nm":"QUEENS","sctn_hus_no":"27-25","sctn_str_nm":"1ST STREET","sctn_zip":"11102","actl_unit_insp":"3G","actl_stry":"4","blk":"00490","lot":"0101","viol_desc":"§ 27-2005 ADM CODE  REPAIR THE BROKEN OR DEFECTIVE PLASTERED SURFACES AND PAINT IN A UNIFORM COLOR ALL WALLS   IN THE  PRIVATE HALLWAY  LOCATED AT APT 3G, 4th STORY, 1st APARTMENT FROM NORTH AT EAST","hzrd_clas":"B","insp_dt":"2026-02-06T00:00:00.000","viol_appr_dt":"2026-02-06T00:00:00.000","viol_typ_ordr_no":"508","issued_in_err":"N","latitude":"40.774993","longitude":"-73.936448","community_board":"401","council_district":"22","bin":"4430784","bbl":"4004900101","census_tract":"87","nta":"QN0102"}]
+  recorded_at: 2026-02-09 15:26:45
+recorded_with: VCR-vcr/2.1.0

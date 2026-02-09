@@ -23,20 +23,21 @@ A tibble containing NYC Wetlands data.
 Downloads NYC Wetlands data from NYC Open Data.
 }
 \details{
-This dataset includes verified and unverified wetland features that exist in New York City and 
-their respective locations. The columns include the wetland class of each feature, the year it 
+This dataset includes verified and unverified wetland features that exist in New York City and
+their respective locations. The columns include the wetland class of each feature, the year it
 was verified (if applicable), and the feature's location, size, and shape using geospatial tools.
-This dataset would be particularly useful for researchers looking to visualize NYC's wetlands 
+This dataset would be particularly useful for researchers looking to visualize NYC's wetlands
 on a map, or to count the total number of features in each wetland class.
 }
 \examples{
-\donttest{
-if (curl::has_internet()) {
+# Examples that hit the live NYC Open Data API are guarded so CRAN checks
+# do not fail when the network is unavailable or slow.
+if (interactive() && curl::has_internet()) {
   # Quick example (fetch 2 rows)
   small_sample <- nyc_wetlands(limit = 2)
   small_sample
 
-  # nyc_wetlands(limit = 2, filters = list(ClassName = "Forested"))
-}
+  # Example with a filter (replace with real fields/values if desired)
+  # nyc_wetlands(limit = 2, filters = list(classname = "Forested"))
 }
 }

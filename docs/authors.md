@@ -2,14 +2,30 @@
 
 ## Authors
 
-- **Christian Martinez**. Author, maintainer.  
+- **Christian Martinez**. Author, maintainer.
+  [](https://orcid.org/0009-0005-6026-6454)  
   martinezc1
 
 - **Jonah Dratfield**. Contributor.  
   jdratfield38
 
+- **Joyce Escatel-Flores**. Contributor.  
+  JoyceEscatel
+
 - **Rob Hutto**. Contributor.  
   robhutto
+
+- **Shannon Joyce**. Contributor.  
+  shannonjoyce
+
+- **Crystal Na**. Contributor.  
+  crystalna20
+
+- **Laura Rose-Werner**. Contributor.  
+  laurarosewerner
+
+- **Emma Tupone**. Contributor.  
+  emmatup0205
 
 - **Xinru Wang**. Contributor.  
   xrwangxr
@@ -20,13 +36,13 @@ Source:
 [`DESCRIPTION`](https://github.com/martinezc1/nycOpenData/blob/HEAD/DESCRIPTION)
 
 Martinez C (2026). *nycOpenData: Convenient Access to NYC Open Data API
-Endpoints*. R package version 0.1.5,
+Endpoints*. R package version 0.1.6,
 <https://martinezc1.github.io/nycOpenData/>.
 
     @Manual{,
       title = {nycOpenData: Convenient Access to NYC Open Data API Endpoints},
       author = {Christian Martinez},
       year = {2026},
-      note = {R package version 0.1.5},
+      note = {R package version 0.1.6},
       url = {https://martinezc1.github.io/nycOpenData/},
     }

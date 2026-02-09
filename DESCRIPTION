@@ -1,7 +1,7 @@
 Package: nycOpenData
 Type: Package
 Title: Convenient Access to NYC Open Data API Endpoints
-Version: 0.1.5
+Version: 0.1.6
 Authors@R: 
     c(
       person("Christian", "Martinez", 
@@ -14,12 +14,28 @@ Authors@R:
       person("Jonah", "Dratfield", 
              role = "ctb",
              comment = c(GitHub = "jdratfield38")),
+      person("Joyce", "Escatel-Flores",
+             role = "ctb",
+             comment = c(GitHub = "JoyceEscatel")),
       person("Rob", "Hutto", 
              role = "ctb",
              comment = c(GitHub = "robhutto")),
+      person("Shannon", "Joyce",
+             role = "ctb",
+             comment = c(GitHub = "shannonjoyce")),
+      person("Crystal", "Na",
+             role = "ctb",
+             comment = c(GitHub = "crystalna20")),
+      person("Laura", "Rose-Werner",
+             role = "ctb",
+             comment = c(GitHub = "laurarosewerner")),
+      person("Emma", "Tupone",
+             role = "ctb",
+             comment = c(GitHub = "emmatup0205")),
       person("Xinru", "Wang",
              role = "ctb",
-             comment = c(GitHub = "xrwangxr")))
+             comment = c(GitHub = "xrwangxr"))
+    )
 Description: Provides a unified set of helper functions to access datasets 
     from the NYC Open Data platform <https://opendata.cityofnewyork.us/>. 
     Functions return results as tidy tibbles and support optional filtering, 

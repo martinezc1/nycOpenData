@@ -1,6 +1,7 @@
 ---
 title: "Analyzing the Local Law 97 of 2021-Pets in Shelter Report"
 output: html_document
+author: Xinru Wang
 vignette: >
   %\VignetteIndexEntry{Analyzing the Local Law 97 of 2021-Pets in Shelter Report}
   %\VignetteEngine{knitr::rmarkdown}
@@ -118,5 +119,5 @@ As demonstrated in this vignette, the package provides a seamless workflow for t
 ## How to Cite
 If you use this package for research or educational purposes, please cite it as follows:
 
-Martinez C (2026). nycOpenData: Convenient Access to NYC Open Data API Endpoints. R package version 0.1.5, https://martinezc1.github.io/nycOpenData/.
+Martinez C (2026). nycOpenData: Convenient Access to NYC Open Data API Endpoints. R package version 0.1.6, https://martinezc1.github.io/nycOpenData/.
 

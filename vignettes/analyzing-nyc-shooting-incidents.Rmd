@@ -1,8 +1,9 @@
 ---
 title: "Getting Started with nycOpenData: data set titled NYPD Shooting Incident Data"
 output: rmarkdown::html_vignette
+author: Joyce Escatel Flores
 vignette: >
-  %\VignetteIndexEntry{Working with NYPD Shooting Incident Data}
+  %\VignetteIndexEntry{Getting Started with nycOpenData: data set titled NYPD Shooting Incident Data}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---

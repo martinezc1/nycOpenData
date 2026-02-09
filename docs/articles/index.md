@@ -10,3 +10,12 @@
   2040](https://martinezc1.github.io/nycOpenData/articles/analyzing-nyc-borough-population.md):
 - [Analyzing the Local Law 97 of 2021-Pets in Shelter
   Report](https://martinezc1.github.io/nycOpenData/articles/Analyzing-the-Local-Law-97-of-2021-Pets-in-Shelter-Report.md):
+- [Analyzing NYC Climate Projections: Extreme Events and Sea Level
+  Rise](https://martinezc1.github.io/nycOpenData/articles/analyzing-nyc_events_sealevel.md):
+- [Working With NYC Wetlands
+  Data](https://martinezc1.github.io/nycOpenData/articles/analyzing-nyc_wetlands.md):
+- [Getting Started with nycOpenData: data set titled NYPD Shooting
+  Incident
+  Data](https://martinezc1.github.io/nycOpenData/articles/analyzing-nyc-shooting-incidents.md):
+- [Analyzing NYCHA Housing Maintenance Code
+  Violations](https://martinezc1.github.io/nycOpenData/articles/nyc_ha_violations.md):

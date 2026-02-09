@@ -1,24 +1,20 @@
 ---
 title: "Analyzing NYC Climate Projections: Extreme Events and Sea Level Rise"
 output: rmarkdown::html_vignette
+author: Emma Tupone
 vignette: >
-  %\VignetteIndexEntry{NYC Climate Extreme Events}
+  %\VignetteIndexEntry{Analyzing NYC Climate Projections: Extreme Events and Sea Level Rise}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
 
 ## Introduction
 
-This vignette demonstrates how to use the `nyc_events_sealevel` function to explore projected
-extreme climate events and sea level rise for New York City.
+This vignette demonstrates how to use the `nyc_events_sealevel` function to explore projected extreme climate events and sea level rise for New York City.
 
-The dataset provides projections under different climate scenarios, including:
-- Number of heatwaves per year
-- Cooling and heating degree days
-- Projected sea level rise
+The dataset provides projections under different climate scenarios, including: - Number of heatwaves per year - Cooling and heating degree days - Projected sea level rise
 
-Researchers, city planners, and policymakers can use this information to understand
-future climate risks, prepare for extreme weather events, and plan adaptation strategies.
+Researchers, city planners, and policymakers can use this information to understand future climate risks, prepare for extreme weather events, and plan adaptation strategies.
 
 ## Load the Package
 
@@ -26,6 +22,7 @@ future climate risks, prepare for extreme weather events, and plan adaptation st
 library(nycOpenData)
 library(dplyr)
 library(ggplot2)
+library(knitr)
 ```
 
 ## Retrive a Sample of Data
@@ -46,9 +43,9 @@ summary_table <- sample_data %>%
 summary_table
 ```
 
-* Period=climate period (e.g., "Baseline", "2030s")
-* number_of_heatwaves_year=projected heatwaves per year
-* cooling_degree_days/heating_degree_days=metrics of temperature extremes
+-   Period=climate period (e.g., "Baseline", "2030s")
+-   number_of_heatwaves_year=projected heatwaves per year
+-   cooling_degree_days/heating_degree_days=metrics of temperature extremes
 
 This table gives a quick overview of projected extreme events for different scenarios.
 
@@ -66,6 +63,3 @@ ggplot(sample_data, aes(x = period, y = as.numeric(number_of_heatwaves_year))) +
 ```
 
 This plot shows how the number of heatwaves is projected to change across scenarios. It helps visualize future climate risks at glance.
-
-
-

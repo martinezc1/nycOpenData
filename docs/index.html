@@ -16,8 +16,8 @@
 <script src="deps/bootstrap-5.3.1/bootstrap.bundle.min.js"></script><link href="deps/font-awesome-6.5.2/css/all.min.css" rel="stylesheet">
 <link href="deps/font-awesome-6.5.2/css/v4-shims.min.css" rel="stylesheet">
 <script src="deps/headroom-0.11.0/headroom.min.js"></script><script src="deps/headroom-0.11.0/jQuery.headroom.min.js"></script><script src="deps/bootstrap-toc-1.0.1/bootstrap-toc.min.js"></script><script src="deps/clipboard.js-2.0.11/clipboard.min.js"></script><script src="deps/search-1.0.0/autocomplete.jquery.min.js"></script><script src="deps/search-1.0.0/fuse.min.js"></script><script src="deps/search-1.0.0/mark.min.js"></script><!-- pkgdown --><script src="pkgdown.js"></script><meta property="og:title" content="Convenient Access to NYC Open Data API Endpoints">
-<meta name="description" content="Provides a unified set of helper functions to access datasets from the NYC Open Data platform &lt;https://opendata.cityofnewyork.us/&gt;. Functions return results as tidy tibbles and support optional filtering, sorting, and row limits via the Socrata API. The package includes endpoints for 311 service requests, DOB job applications, juvenile justice metrics, school safety, environmental data, event permitting, and additional citywide datasets. The package is utilized as a primary pedagogical tool for teaching data acquisition in Reproducible Research Using R.">
-<meta property="og:description" content="Provides a unified set of helper functions to access datasets from the NYC Open Data platform &lt;https://opendata.cityofnewyork.us/&gt;. Functions return results as tidy tibbles and support optional filtering, sorting, and row limits via the Socrata API. The package includes endpoints for 311 service requests, DOB job applications, juvenile justice metrics, school safety, environmental data, event permitting, and additional citywide datasets. The package is utilized as a primary pedagogical tool for teaching data acquisition in Reproducible Research Using R.">
+<meta name="description" content="Provides a unified set of helper functions to access datasets from the NYC Open Data platform &lt;https://opendata.cityofnewyork.us/&gt;. Functions return results as tidy tibbles and support optional filtering, sorting, and row limits via the Socrata API. The package includes endpoints for 311 service requests, DOB job applications, juvenile justice metrics, school safety, environmental data, event permitting, and additional citywide datasets.">
+<meta property="og:description" content="Provides a unified set of helper functions to access datasets from the NYC Open Data platform &lt;https://opendata.cityofnewyork.us/&gt;. Functions return results as tidy tibbles and support optional filtering, sorting, and row limits via the Socrata API. The package includes endpoints for 311 service requests, DOB job applications, juvenile justice metrics, school safety, environmental data, event permitting, and additional citywide datasets.">
 </head>
 <body>
     <a href="#main" class="visually-hidden-focusable">Skip to contents</a>
@@ -27,7 +27,7 @@
 
     <a class="navbar-brand me-2" href="index.html">nycOpenData</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.1.5</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.1.6</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -58,7 +58,7 @@
 <p><a href="https://CRAN.R-project.org/package=nycOpenData" class="external-link"><img src="https://www.r-pkg.org/badges/version/nycOpenData" alt="CRAN status"></a> <a href="https://r-pkg.org/pkg/nycOpenData" class="external-link"><img src="https://cranlogs.r-pkg.org/badges/grand-total/nycOpenData?color=blue" alt="CRAN downloads"></a> <a href="https://lifecycle.r-lib.org/articles/stages.html" class="external-link"><img src="https://img.shields.io/badge/lifecycle-stable-brightgreen.svg" alt="Lifecycle: stable"></a> <a href="https://www.repostatus.org/#active" class="external-link"><img src="https://www.repostatus.org/badges/latest/active.svg" alt="Project Status: Active"></a> <a href="https://app.codecov.io/gh/martinezc1/nycOpenData" class="external-link"><img src="https://codecov.io/gh/martinezc1/nycOpenData/branch/main/graph/badge.svg" alt="Codecov test coverage"></a> <a href="https://www.r-bloggers.com/2026/01/nycopendata-a-unified-r-interface-to-nyc-open-data-apis/" class="external-link"><img src="https://img.shields.io/badge/Featured%20on-R--bloggers-orange" alt="R-bloggers"></a> <a href="https://rweekly.org/#RintheRealWorld" class="external-link"><img src="https://img.shields.io/badge/Featured%20on-R%20Weekly-blue" alt="R Weekly"></a> <a href="https://github.com/martinezc1/nycOpenData/actions/workflows/R-CMD-check.yaml" class="external-link"><img src="https://github.com/martinezc1/nycOpenData/actions/workflows/R-CMD-check.yaml/badge.svg" alt="R-CMD-check"></a></p>
 <p><code>nycOpenData</code> provides simple, reproducible access to datasets from the<br><a href="https://opendata.cityofnewyork.us/" class="external-link">NYC Open Data</a> platform — directly from R,<br>
 with <strong>no API keys</strong> or manual downloads required. The package is available on <strong>CRAN</strong>.</p>
-<p>Version <strong>0.1.5</strong> now includes wrappers for <strong>30+ NYC Open Data APIs</strong>, covering:</p>
+<p>Version <strong>0.1.6</strong> now includes wrappers for <strong>40+ NYC Open Data APIs</strong>, covering:</p>
 <ul>
 <li>311 Service Requests<br>
 </li>
@@ -187,11 +187,21 @@ GitHub: <a href="https://github.com/martinezc1" class="external-link">@martinezc
 <p>Special thanks to the students of <strong>PSYC 7750G – Reproducible Psychological Research</strong> at Brooklyn College (CUNY) who have contributed functions and documentation:</p>
 <ul>
 <li>
+<strong>Crystal Adote</strong> (<a href="https://github.com/crystalna20" class="external-link">@crystalna20</a>) — Added support for the <strong>NYPD Hate Crimes</strong> dataset.</li>
+<li>
 <strong>Jonah Dratfield</strong> (<a href="https://github.com/jdratfield38" class="external-link">@jdratfield38</a>) — Added support for the <strong>Local Law 18 Pay and Demographics Report</strong>.</li>
 <li>
-<strong>Robert Hutto</strong> (<a href="https://github.com/robhutto" class="external-link">@robhutto</a>) — Added support for the <strong>New York City Population by Borough, 1950 - 2040 dataset</strong>.</li>
+<strong>Joyce Escatel-Flores</strong> (<a href="https://github.com/JoyceEscatel" class="external-link">@JoyceEscatel</a>) — Added support for <strong>NYPD Shooting Incident Data (Year To Date)</strong>.</li>
 <li>
-<strong>Xinru Wang</strong> (<a href="https://github.com/xrwangxr" class="external-link">@xrwangxr</a>) — Added support for the <strong>Local Law 97 of 2021 - Pets in Shelter Report</strong>.</li>
+<strong>Rob Hutto</strong> (<a href="https://github.com/robhutto" class="external-link">@robhutto</a>) — Added support for the <strong>New York City Population by Borough, 1950–2040</strong> dataset.</li>
+<li>
+<strong>Shannon Joyce</strong> (<a href="https://github.com/shannonjoyce" class="external-link">@shannonjoyce</a>) — Added support for the <strong>NYC Wetlands</strong> dataset, including tests and vignette.</li>
+<li>
+<strong>Laura Rose-Werner</strong> (<a href="https://github.com/laurarosewerner" class="external-link">@laurarosewerner</a>) — Added support for the <strong>NYCHA Violations</strong> dataset.</li>
+<li>
+<strong>Emma Tupone</strong> (<a href="https://github.com/emmatup0205" class="external-link">@emmatup0205</a>) — Added support for <strong>NYC Climate Projections: Extreme Events and Sea Level Rise</strong>.</li>
+<li>
+<strong>Xinru Wang</strong> (<a href="https://github.com/xrwangxr" class="external-link">@xrwangxr</a>) — Added support for the <strong>Local Law 97 of 2021 – Pets in Shelter Report</strong>.</li>
 </ul>
 <hr>
 </div>
@@ -237,7 +247,7 @@ GitHub: <a href="https://github.com/martinezc1" class="external-link">@martinezc
 <div class="developers">
 <h2 data-toc-skip>Developers</h2>
 <ul class="list-unstyled">
-<li>Christian Martinez <br><small class="roles"> Author, maintainer </small>   </li>
+<li>Christian Martinez <br><small class="roles"> Author, maintainer </small> <a href="https://orcid.org/0009-0005-6026-6454" target="orcid.widget" aria-label="ORCID" class="external-link"><span class="fab fa-orcid orcid" aria-hidden="true"></span></a>  </li>
 <li><a href="authors.html">More about authors...</a></li>
 </ul>
 </div>

@@ -1,0 +1,33 @@
+http_interactions:
+- request:
+    method: GET
+    uri: https://data.cityofnewyork.us/resource/38ps-fnsg.json?%24limit=5
+  response:
+    status: 200
+    headers:
+      server: nginx
+      date: Mon, 09 Feb 2026 15:26:44 GMT
+      content-type: application/json;charset=utf-8
+      transfer-encoding: chunked
+      connection: keep-alive
+      access-control-allow-origin: '*'
+      etag: '"aW5kaWEuMzA5ODlfMV8yMTktRzJzSllrMEdBY1FuOXVfbzE4aENwN3BTMA---gzirfTtl6tPBbSr3MsrBCqF4zdG6SL--gzip--gzip"'
+      x-soda2-fields: '["period","sea_lelel_rise","number_of_days_year_with","number_of_days_year_with_1","number_of_days_year_with_2","number_of_days_year_with_3","number_of_heatwaves_year","average_lenth_of_heat_waves","number_of_days_year_with_4","number_of_days_year_with_5","cooling_degree_days","number_of_days_year_with_6","heating_degree_days","number_of_days_year_with_7","number_of_days_year_with_8","number_of_days_year_with_9"]'
+      x-soda2-types: '["text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text"]'
+      x-soda2-data-out-of-date: 'false'
+      x-soda2-truth-last-modified: Thu, 22 Feb 2024 14:00:45 GMT
+      x-soda2-secondary-last-modified: Thu, 22 Feb 2024 14:00:45 GMT
+      last-modified: Thu, 22 Feb 2024 14:00:45 GMT
+      vary: Accept-Encoding
+      content-encoding: gzip
+      strict-transport-security: max-age=31536000; includeSubDomains
+      x-socrata-requestid: 6aee33538a50d9c889294160bc47db85
+    body:
+      string: |
+        [{"period":"Baseline (1981-2010)","sea_lelel_rise":"n/a","number_of_days_year_with":"69","number_of_days_year_with_1":"17","number_of_days_year_with_2":"4","number_of_days_year_with_3":"0.7","number_of_heatwaves_year":"2","average_lenth_of_heat_waves":"4","number_of_days_year_with_4":"38","number_of_days_year_with_5":"6","cooling_degree_days":"1156","number_of_days_year_with_6":"70","heating_degree_days":"4659","number_of_days_year_with_7":"14","number_of_days_year_with_8":"3","number_of_days_year_with_9":"0.2"}
+        ,{"period":"2030s (10th Percentile)","sea_lelel_rise":"6 in","number_of_days_year_with":"85","number_of_days_year_with_1":"27","number_of_days_year_with_2":"8","number_of_days_year_with_3":"2","number_of_heatwaves_year":"3","average_lenth_of_heat_waves":"5","number_of_days_year_with_4":"57","number_of_days_year_with_5":"17","cooling_degree_days":"1397","number_of_days_year_with_6":"34","heating_degree_days":"3589","number_of_days_year_with_7":"14","number_of_days_year_with_8":"3","number_of_days_year_with_9":"0.2"}
+        ,{"period":"2030s (25th Percentile)","sea_lelel_rise":"7 in","number_of_days_year_with":"85","number_of_days_year_with_1":"27","number_of_days_year_with_2":"8","number_of_days_year_with_3":"2","number_of_heatwaves_year":"3","average_lenth_of_heat_waves":"5","number_of_days_year_with_4":"61","number_of_days_year_with_5":"18","cooling_degree_days":"1471","number_of_days_year_with_6":"39","heating_degree_days":"3766","number_of_days_year_with_7":"14","number_of_days_year_with_8":"3","number_of_days_year_with_9":"0.3"}
+        ,{"period":"2030s (75th Percentile)","sea_lelel_rise":"11 in","number_of_days_year_with":"99","number_of_days_year_with_1":"46","number_of_days_year_with_2":"17","number_of_days_year_with_3":"3","number_of_heatwaves_year":"6","average_lenth_of_heat_waves":"5","number_of_days_year_with_4":"74","number_of_days_year_with_5":"29","cooling_degree_days":"1757","number_of_days_year_with_6":"52","heating_degree_days":"4049","number_of_days_year_with_7":"16","number_of_days_year_with_8":"4","number_of_days_year_with_9":"0.4"}
+        ,{"period":"2030s (90th Percentile)","sea_lelel_rise":"13 in","number_of_days_year_with":"104","number_of_days_year_with_1":"54","number_of_days_year_with_2":"27","number_of_days_year_with_3":"9","number_of_heatwaves_year":"7","average_lenth_of_heat_waves":"6","number_of_days_year_with_4":"84","number_of_days_year_with_5":"37","cooling_degree_days":"1903","number_of_days_year_with_6":"58","heating_degree_days":"4240","number_of_days_year_with_7":"17","number_of_days_year_with_8":"5","number_of_days_year_with_9":"0.4"}]
+  recorded_at: 2026-02-09 15:26:44
+recorded_with: VCR-vcr/2.1.0

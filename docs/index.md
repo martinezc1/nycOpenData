@@ -22,7 +22,7 @@ from R,
 with **no API keys** or manual downloads required. The package is
 available on **CRAN**.
 
-Version **0.1.5** now includes wrappers for **30+ NYC Open Data APIs**,
+Version **0.1.6** now includes wrappers for **40+ NYC Open Data APIs**,
 covering:
 
 - 311 Service Requests  
@@ -152,13 +152,27 @@ Special thanks to the students of **PSYC 7750G – Reproducible
 Psychological Research** at Brooklyn College (CUNY) who have contributed
 functions and documentation:
 
+- **Crystal Adote** ([@crystalna20](https://github.com/crystalna20)) —
+  Added support for the **NYPD Hate Crimes** dataset.
 - **Jonah Dratfield** ([@jdratfield38](https://github.com/jdratfield38))
   — Added support for the **Local Law 18 Pay and Demographics Report**.
-- **Robert Hutto** ([@robhutto](https://github.com/robhutto)) — Added
-  support for the **New York City Population by Borough, 1950 - 2040
-  dataset**.
+- **Joyce Escatel-Flores**
+  ([@JoyceEscatel](https://github.com/JoyceEscatel)) — Added support for
+  **NYPD Shooting Incident Data (Year To Date)**.
+- **Rob Hutto** ([@robhutto](https://github.com/robhutto)) — Added
+  support for the **New York City Population by Borough, 1950–2040**
+  dataset.
+- **Shannon Joyce** ([@shannonjoyce](https://github.com/shannonjoyce)) —
+  Added support for the **NYC Wetlands** dataset, including tests and
+  vignette.
+- **Laura Rose-Werner**
+  ([@laurarosewerner](https://github.com/laurarosewerner)) — Added
+  support for the **NYCHA Violations** dataset.
+- **Emma Tupone** ([@emmatup0205](https://github.com/emmatup0205)) —
+  Added support for **NYC Climate Projections: Extreme Events and Sea
+  Level Rise**.
 - **Xinru Wang** ([@xrwangxr](https://github.com/xrwangxr)) — Added
-  support for the **Local Law 97 of 2021 - Pets in Shelter Report**.
+  support for the **Local Law 97 of 2021 – Pets in Shelter Report**.
 
 ------------------------------------------------------------------------
 

@@ -20,21 +20,24 @@ nyc_events_sealevel(limit = 10000, filters = list(), timeout_sec = 30)
 A tibble containing climate projection extreme events and sea level rise data.
 }
 \description{
-Downloads NYC Climate Projections data on extreme events (heatwaves, degree days) 
+Downloads NYC Climate Projections data on extreme events (heatwaves, degree days)
 and sea level rise.
 }
 \details{
-This dataset reports projected extreme climate events and sea level rise for New York City. 
-Each row corresponds to a climate period (e.g., "Baseline", "2030s (10th Percentile)") 
-and includes metrics such as number of heatwaves per year, cooling/heating degree days, 
-and projected sea level rise. Researchers can use this data to analyze future climate 
+This dataset reports projected extreme climate events and sea level rise for New York City.
+Each row corresponds to a climate period (e.g., "Baseline", "2030s (10th Percentile)")
+and includes metrics such as number of heatwaves per year, cooling/heating degree days,
+and projected sea level rise. Researchers can use this data to analyze future climate
 risks and trends in NYC.
 }
 \examples{
-\donttest{
-if (curl::has_internet()) {
+# Examples that hit the live NYC Open Data API are guarded so CRAN checks
+# do not fail when the network is unavailable or slow.
+if (interactive() && curl::has_internet()) {
   small_sample <- nyc_events_sealevel(limit = 5)
   small_sample
-}
+
+ # Example with a filter (replace with real fields/values if desired)
+ # nyc_events_sealevel(limit = 2, filters = list(sea_lelel_rise = "6 in"))
 }
 }

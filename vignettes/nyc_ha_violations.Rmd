@@ -1,0 +1,50 @@
+---
+title: "Analyzing NYCHA Housing Maintenance Code Violations"
+output: rmarkdown::html_vignette
+author: Laura Werner
+vignette: >
+  %\VignetteIndexEntry{Analyzing NYCHA Housing Maintenance Code Violations}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r setup, include = FALSE}
+library(nycOpenData)
+library(dplyr)
+library(ggplot2)
+```
+
+## Introduction
+
+The NYCHA Housing Maintenance Code Violations dataset provides information about maintenance violations in public housing developments across New York City.
+
+This dataset is important because it helps researchers, policymakers, and residents understand housing conditions and identify patterns in maintenance issues.
+
+## data
+
+```{r}
+data <- nyc_ha_violations()
+
+head(data)
+```
+
+## Count violations by borough
+
+```{r}
+data %>%
+  count(boro_nm)
+```
+
+## Visual
+
+```{r}
+data %>%
+  count(boro_nm) %>%
+  ggplot(aes(x = boro_nm, y = n)) +
+  geom_col() +
+  labs(
+    title = "Number of NYCHA Violations by Borough",
+    x = "Borough",
+    y = "Number of Violations"
+  )
+```

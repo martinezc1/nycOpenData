@@ -1,0 +1,56 @@
+# Housing Maintenance Code Violations NYCHA properties
+
+Downloads Housing Maintenance Code Violations NYCHA properties data from
+NYC Open Data.
+
+## Usage
+
+``` r
+nyc_ha_violations(limit = 10000, filters = list(), timeout_sec = 30)
+```
+
+## Source
+
+NYC Open Data:
+\<https://data.cityofnewyork.us/Housing-Development/Housing-Maintenance-Code-Violations-NYCHA-properti/im9z-53hg/about_data\>
+
+## Arguments
+
+- limit:
+
+  Number of rows to retrieve (default = 10,000).
+
+- filters:
+
+  Optional list of field-value pairs to filter results.
+
+- timeout_sec:
+
+  Request timeout in seconds (default = 30).
+
+## Value
+
+A tibble containing Housing Maintenance Code Violations NYCHA properties
+data.
+
+## Details
+
+This dataset displays violations of the New York City Housing
+Maintenance Code or New York State Multiple Dwelling Law issued by
+Housing Inspectors pursuant to inspections of NYCHA buildings at the
+request of the NYC Housing Court.
+
+## Examples
+
+``` r
+# Examples that hit the live NYC Open Data API are guarded so CRAN checks
+# do not fail when the network is unavailable or slow.
+if (interactive() && curl::has_internet()) {
+  # Quick example (fetch 2 rows)
+  small_sample <- nyc_ha_violations(limit = 2)
+  small_sample
+
+  # Example with a filter (replace with a real field/value if desired)
+  nyc_ha_violations(limit = 2, filters = list(boro_nm = "BROOKLYN"))
+}
+```
