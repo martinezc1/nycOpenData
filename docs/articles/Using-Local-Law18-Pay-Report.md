@@ -28,7 +28,7 @@ The `nycOpenData` package provides a streamlined interface for accessing
 New York City’s vast open data resources. It connects directly to the
 NYC Open Data Portal. It is currently utilized as a primary tool for
 teaching data acquisition in [Reproducible Research Using
-R](https://martinezc1-textbook--reproducible-research-using-r.share.connect.posit.cloud),
+R](https://martinezc1-reproducible-research-using-r.share.connect.posit.cloud/),
 helping students bridge the gap between raw city APIs and tidy data
 analysis.
 

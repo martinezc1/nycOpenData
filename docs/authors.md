@@ -6,6 +6,9 @@
   [](https://orcid.org/0009-0005-6026-6454)  
   martinezc1
 
+- **Crystal Adote**. Contributor.  
+  crystalna20
+
 - **Jonah Dratfield**. Contributor.  
   jdratfield38
 
@@ -15,11 +18,11 @@
 - **Rob Hutto**. Contributor.  
   robhutto
 
+- **Isley Jean-Pierre**. Contributor.  
+  ijpier
+
 - **Shannon Joyce**. Contributor.  
   shannonjoyce
-
-- **Crystal Na**. Contributor.  
-  crystalna20
 
 - **Laura Rose-Werner**. Contributor.  
   laurarosewerner

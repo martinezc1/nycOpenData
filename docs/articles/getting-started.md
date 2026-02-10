@@ -19,7 +19,7 @@ The `nycOpenData` package provides a streamlined interface for accessing
 New York City’s vast open data resources. It connects directly to the
 NYC Open Data Portal. It is currently utilized as a primary tool for
 teaching data acquisition in [Reproducible Research Using
-R](https://martinezc1-textbook--reproducible-research-using-r.share.connect.posit.cloud),
+R](https://martinezc1-reproducible-research-using-r.share.connect.posit.cloud/),
 helping students bridge the gap between raw city APIs and tidy data
 analysis.
 
@@ -89,9 +89,9 @@ brooklyn_311
 #> # A tibble: 3 × 32
 #>   unique_key created_date           agency agency_name complaint_type descriptor
 #>   <chr>      <chr>                  <chr>  <chr>       <chr>          <chr>     
-#> 1 67892247   2026-02-08T02:02:31.0… NYPD   New York C… Noise - Comme… Loud Musi…
-#> 2 67888131   2026-02-08T02:02:07.0… NYPD   New York C… Noise - Resid… Loud Musi…
-#> 3 67892256   2026-02-08T02:01:12.0… NYPD   New York C… Noise - Resid… Loud Musi…
+#> 1 67904910   2026-02-09T02:04:58.0… NYPD   New York C… Blocked Drive… No Access 
+#> 2 67903232   2026-02-09T02:03:09.0… NYPD   New York C… Noise - Resid… Loud Musi…
+#> 3 67903202   2026-02-09T02:01:06.0… NYPD   New York C… Illegal Parki… Blocked H…
 #> # ℹ 26 more variables: location_type <chr>, incident_zip <chr>,
 #> #   incident_address <chr>, street_name <chr>, cross_street_1 <chr>,
 #> #   cross_street_2 <chr>, intersection_street_1 <chr>,
@@ -121,16 +121,16 @@ brooklyn_nypd <- nyc_311(limit = 50, filters = list(agency = "NYPD", borough = "
 
 # Calling head of our new dataset
 head(brooklyn_nypd)
-#> # A tibble: 6 × 38
+#> # A tibble: 6 × 36
 #>   unique_key created_date           agency agency_name complaint_type descriptor
 #>   <chr>      <chr>                  <chr>  <chr>       <chr>          <chr>     
-#> 1 67892247   2026-02-08T02:02:31.0… NYPD   New York C… Noise - Comme… Loud Musi…
-#> 2 67888131   2026-02-08T02:02:07.0… NYPD   New York C… Noise - Resid… Loud Musi…
-#> 3 67892256   2026-02-08T02:01:12.0… NYPD   New York C… Noise - Resid… Loud Musi…
-#> 4 67883841   2026-02-08T02:00:14.0… NYPD   New York C… Blocked Drive… No Access 
-#> 5 67889527   2026-02-08T01:57:07.0… NYPD   New York C… Noise - Resid… Loud Tele…
-#> 6 67885316   2026-02-08T01:56:13.0… NYPD   New York C… Noise - Resid… Loud Musi…
-#> # ℹ 32 more variables: location_type <chr>, incident_zip <chr>,
+#> 1 67904910   2026-02-09T02:04:58.0… NYPD   New York C… Blocked Drive… No Access 
+#> 2 67903232   2026-02-09T02:03:09.0… NYPD   New York C… Noise - Resid… Loud Musi…
+#> 3 67903202   2026-02-09T02:01:06.0… NYPD   New York C… Illegal Parki… Blocked H…
+#> 4 67899589   2026-02-09T01:59:15.0… NYPD   New York C… Blocked Drive… No Access 
+#> 5 67901438   2026-02-09T01:58:14.0… NYPD   New York C… Illegal Parki… Posted Pa…
+#> 6 67894104   2026-02-09T01:57:21.0… NYPD   New York C… Noise - Resid… Loud Musi…
+#> # ℹ 30 more variables: location_type <chr>, incident_zip <chr>,
 #> #   incident_address <chr>, street_name <chr>, cross_street_1 <chr>,
 #> #   cross_street_2 <chr>, intersection_street_1 <chr>,
 #> #   intersection_street_2 <chr>, address_type <chr>, city <chr>,

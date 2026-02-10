@@ -19,3 +19,5 @@
   Data](https://martinezc1.github.io/nycOpenData/articles/analyzing-nyc-shooting-incidents.md):
 - [Analyzing NYCHA Housing Maintenance Code
   Violations](https://martinezc1.github.io/nycOpenData/articles/nyc_ha_violations.md):
+- [Investigating Inmate
+  Incidents](https://martinezc1.github.io/nycOpenData/articles/investigating-inmate-incidents.md):

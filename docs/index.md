@@ -162,6 +162,8 @@ functions and documentation:
 - **Rob Hutto** ([@robhutto](https://github.com/robhutto)) — Added
   support for the **New York City Population by Borough, 1950–2040**
   dataset.
+- **Isley Jean-Pierre** ([@ijpier](https://github.com/ijpier)) — Added
+  support for **Inmate Incidents – Slashing and Stabbing**.
 - **Shannon Joyce** ([@shannonjoyce](https://github.com/shannonjoyce)) —
   Added support for the **NYC Wetlands** dataset, including tests and
   vignette.

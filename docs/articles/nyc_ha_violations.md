@@ -19,14 +19,14 @@ head(data)
 ```
 
     ## # A tibble: 6 × 35
-    ##   viol_seq_no bldg_id boro  boro_nm phn   low_hus_no high_hus_no str_nm   zip  
-    ##   <chr>       <chr>   <chr> <chr>   <chr> <chr>      <chr>       <chr>    <chr>
-    ## 1 18622939    810254  4     QUEENS  27-25 27-25      27-25       1 STREET 11102
-    ## 2 18622938    810254  4     QUEENS  27-25 27-25      27-25       1 STREET 11102
-    ## 3 18622932    810254  4     QUEENS  27-25 27-25      27-25       1 STREET 11102
-    ## 4 18622929    810254  4     QUEENS  27-25 27-25      27-25       1 STREET 11102
-    ## 5 18622926    810254  4     QUEENS  27-25 27-25      27-25       1 STREET 11102
-    ## 6 18622925    810254  4     QUEENS  27-25 27-25      27-25       1 STREET 11102
+    ##   viol_seq_no bldg_id boro  boro_nm   phn   low_hus_no high_hus_no str_nm  zip  
+    ##   <chr>       <chr>   <chr> <chr>     <chr> <chr>      <chr>       <chr>   <chr>
+    ## 1 18629669    805002  1     MANHATTAN 1829  1829       1839        LEXING… 10029
+    ## 2 18629670    805002  1     MANHATTAN 1829  1829       1839        LEXING… 10029
+    ## 3 18629671    805002  1     MANHATTAN 1829  1829       1839        LEXING… 10029
+    ## 4 18629672    805002  1     MANHATTAN 1829  1829       1839        LEXING… 10029
+    ## 5 18629673    805002  1     MANHATTAN 1829  1829       1839        LEXING… 10029
+    ## 6 18629674    805002  1     MANHATTAN 1829  1829       1839        LEXING… 10029
     ## # ℹ 26 more variables: development_name <chr>, tds_no <chr>,
     ## #   stairhall_no <chr>, sctn_boro <chr>, sctn_boro_nm <chr>, sctn_hus_no <chr>,
     ## #   sctn_str_nm <chr>, sctn_zip <chr>, actl_unit_insp <chr>, actl_stry <chr>,
@@ -46,8 +46,8 @@ data %>%
     ##   boro_nm           n
     ##   <chr>         <int>
     ## 1 BRONX           237
-    ## 2 BROOKLYN        700
-    ## 3 MANHATTAN       901
+    ## 2 BROOKLYN        701
+    ## 3 MANHATTAN       909
     ## 4 QUEENS          196
     ## 5 STATEN ISLAND    24
 

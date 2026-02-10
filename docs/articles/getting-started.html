@@ -83,7 +83,7 @@ this data directly.</p>
 <p>The <code>nycOpenData</code> package provides a streamlined interface
 for accessing New York City’s vast open data resources. It connects
 directly to the NYC Open Data Portal. It is currently utilized as a
-primary tool for teaching data acquisition in <a href="https://martinezc1-textbook--reproducible-research-using-r.share.connect.posit.cloud" class="external-link">Reproducible
+primary tool for teaching data acquisition in <a href="https://martinezc1-reproducible-research-using-r.share.connect.posit.cloud/" class="external-link">Reproducible
 Research Using R</a>, helping students bridge the gap between raw city
 APIs and tidy data analysis.</p>
 <p>By using the <code><a href="../reference/nyc_311.html">nyc_311()</a></code> function, we can gather the most
@@ -145,9 +145,9 @@ is a column called “borough” which we can use to accomplish this.</p>
 <span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 3 × 32</span></span></span>
 <span><span class="co">#&gt;   unique_key created_date           agency agency_name complaint_type descriptor</span></span>
 <span><span class="co">#&gt;   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                  <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>       <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>          <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>     </span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">1</span> 67892247   2026-02-08T02:02:31.0… NYPD   New York C… Noise - Comme… Loud Musi…</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">2</span> 67888131   2026-02-08T02:02:07.0… NYPD   New York C… Noise - Resid… Loud Musi…</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">3</span> 67892256   2026-02-08T02:01:12.0… NYPD   New York C… Noise - Resid… Loud Musi…</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">1</span> 67904910   2026-02-09T02:04:58.0… NYPD   New York C… Blocked Drive… No Access </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">2</span> 67903232   2026-02-09T02:03:09.0… NYPD   New York C… Noise - Resid… Loud Musi…</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">3</span> 67903202   2026-02-09T02:01:06.0… NYPD   New York C… Illegal Parki… Blocked H…</span></span>
 <span><span class="co">#&gt; <span style="color: #949494;"># ℹ 26 more variables: location_type &lt;chr&gt;, incident_zip &lt;chr&gt;,</span></span></span>
 <span><span class="co">#&gt; <span style="color: #949494;">#   incident_address &lt;chr&gt;, street_name &lt;chr&gt;, cross_street_1 &lt;chr&gt;,</span></span></span>
 <span><span class="co">#&gt; <span style="color: #949494;">#   cross_street_2 &lt;chr&gt;, intersection_street_1 &lt;chr&gt;,</span></span></span>
@@ -172,16 +172,16 @@ Police Department in Brooklyn.</p>
 <span></span>
 <span><span class="co"># Calling head of our new dataset</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="va">brooklyn_nypd</span><span class="op">)</span></span>
-<span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 6 × 38</span></span></span>
+<span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 6 × 36</span></span></span>
 <span><span class="co">#&gt;   unique_key created_date           agency agency_name complaint_type descriptor</span></span>
 <span><span class="co">#&gt;   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                  <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>       <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>          <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>     </span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">1</span> 67892247   2026-02-08T02:02:31.0… NYPD   New York C… Noise - Comme… Loud Musi…</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">2</span> 67888131   2026-02-08T02:02:07.0… NYPD   New York C… Noise - Resid… Loud Musi…</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">3</span> 67892256   2026-02-08T02:01:12.0… NYPD   New York C… Noise - Resid… Loud Musi…</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">4</span> 67883841   2026-02-08T02:00:14.0… NYPD   New York C… Blocked Drive… No Access </span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">5</span> 67889527   2026-02-08T01:57:07.0… NYPD   New York C… Noise - Resid… Loud Tele…</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">6</span> 67885316   2026-02-08T01:56:13.0… NYPD   New York C… Noise - Resid… Loud Musi…</span></span>
-<span><span class="co">#&gt; <span style="color: #949494;"># ℹ 32 more variables: location_type &lt;chr&gt;, incident_zip &lt;chr&gt;,</span></span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">1</span> 67904910   2026-02-09T02:04:58.0… NYPD   New York C… Blocked Drive… No Access </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">2</span> 67903232   2026-02-09T02:03:09.0… NYPD   New York C… Noise - Resid… Loud Musi…</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">3</span> 67903202   2026-02-09T02:01:06.0… NYPD   New York C… Illegal Parki… Blocked H…</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">4</span> 67899589   2026-02-09T01:59:15.0… NYPD   New York C… Blocked Drive… No Access </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">5</span> 67901438   2026-02-09T01:58:14.0… NYPD   New York C… Illegal Parki… Posted Pa…</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">6</span> 67894104   2026-02-09T01:57:21.0… NYPD   New York C… Noise - Resid… Loud Musi…</span></span>
+<span><span class="co">#&gt; <span style="color: #949494;"># ℹ 30 more variables: location_type &lt;chr&gt;, incident_zip &lt;chr&gt;,</span></span></span>
 <span><span class="co">#&gt; <span style="color: #949494;">#   incident_address &lt;chr&gt;, street_name &lt;chr&gt;, cross_street_1 &lt;chr&gt;,</span></span></span>
 <span><span class="co">#&gt; <span style="color: #949494;">#   cross_street_2 &lt;chr&gt;, intersection_street_1 &lt;chr&gt;,</span></span></span>
 <span><span class="co">#&gt; <span style="color: #949494;">#   intersection_street_2 &lt;chr&gt;, address_type &lt;chr&gt;, city &lt;chr&gt;,</span></span></span>
