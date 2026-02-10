@@ -2,7 +2,7 @@
 % Please edit documentation in R/nyc_slash_stab.R
 \name{nyc_slash_stab}
 \alias{nyc_slash_stab}
-\title{[Inmate Incidents - Slashing and Stabbing]}
+\title{Inmate Incidents - Slashing and Stabbing}
 \source{
 NYC Open Data: <https://data.cityofnewyork.us/Public-Safety/Inmate-Incidents-Slashing-and-Stabbing/gakf-suji/about_data>
 }
@@ -17,10 +17,10 @@ nyc_slash_stab(limit = 10000, filters = list(), timeout_sec = 30)
 \item{timeout_sec}{Request timeout in seconds (default = 30).}
 }
 \value{
-A tibble containing [Inmate Incidents - Slashing and Stabbing] data.
+A tibble containing Inmate Incidents - Slashing and Stabbing data.
 }
 \description{
-Downloads [Inmate Incidents - Slashing and Stabbing] data from NYC Open Data.
+Downloads Inmate Incidents - Slashing and Stabbing data from NYC Open Data.
 }
 \details{
 This dataset contains information about the kind of violent incident that happens among inmates

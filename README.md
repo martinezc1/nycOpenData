@@ -144,6 +144,7 @@ Special thanks to the students of **PSYC 7750G – Reproducible Psychological Re
 * **Jonah Dratfield** ([@jdratfield38](https://github.com/jdratfield38)) — Added support for the **Local Law 18 Pay and Demographics Report**.
 * **Joyce Escatel-Flores** ([@JoyceEscatel](https://github.com/JoyceEscatel)) — Added support for **NYPD Shooting Incident Data (Year To Date)**.
 * **Rob Hutto** ([@robhutto](https://github.com/robhutto)) — Added support for the **New York City Population by Borough, 1950–2040** dataset.
+* **Isley Jean-Pierre** ([@ijpier](https://github.com/ijpier)) — Added support for **Inmate Incidents – Slashing and Stabbing**.
 * **Shannon Joyce** ([@shannonjoyce](https://github.com/shannonjoyce)) — Added support for the **NYC Wetlands** dataset, including tests and vignette.
 * **Laura Rose-Werner** ([@laurarosewerner](https://github.com/laurarosewerner)) — Added support for the **NYCHA Violations** dataset.
 * **Emma Tupone** ([@emmatup0205](https://github.com/emmatup0205)) — Added support for **NYC Climate Projections: Extreme Events and Sea Level Rise**.

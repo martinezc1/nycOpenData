@@ -1,11 +1,11 @@
-#' [Inmate Incidents - Slashing and Stabbing]
+#' Inmate Incidents - Slashing and Stabbing
 #'
-#' Downloads [Inmate Incidents - Slashing and Stabbing] data from NYC Open Data.
+#' Downloads Inmate Incidents - Slashing and Stabbing data from NYC Open Data.
 #'
 #' @param limit Number of rows to retrieve (default = 10,000).
 #' @param filters Optional list of field-value pairs to filter results.
 #' @param timeout_sec Request timeout in seconds (default = 30).
-#' @return A tibble containing [Inmate Incidents - Slashing and Stabbing] data.
+#' @return A tibble containing Inmate Incidents - Slashing and Stabbing data.
 #'
 #' @details
 #' This dataset contains information about the kind of violent incident that happens among inmates

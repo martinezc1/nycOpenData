@@ -13,6 +13,7 @@ articles:
       - analyzing-nyc_wetlands
       - analyzing-nyc-shooting-incidents
       - nyc_ha_violations
+      - investigating-inmate-incidents
 reference:
   - title: "Getting started"
     desc: "Core helpers"

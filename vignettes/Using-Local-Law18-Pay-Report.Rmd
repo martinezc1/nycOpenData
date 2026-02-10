@@ -1,4 +1,3 @@
-
 ---
 title: "Using Local Law 18 Pay Report Data"
 output: rmarkdown::html_vignette
