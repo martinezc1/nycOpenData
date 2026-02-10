@@ -26,7 +26,7 @@ library(knitr)
 ## Introduction
 New York City is home to many wetland features. In an effort to grow awareness of their existence and multitude, [this dataset](https://data.cityofnewyork.us/dataset/NYC-Wetlands/p48c-iqtu/about_data) containing the geographic locations and descriptions of wetland features was created. In R, the `nycOpenData` package can be used to pull this data directly.
 
-The `nycOpenData` package provides a streamlined interface for accessing New York City's vast open data resources. It connects directly to the NYC Open Data Portal. It is currently utilized as a primary tool for teaching data acquisition in [Reproducible Research Using R](https://martinezc1-textbook--reproducible-research-using-r.share.connect.posit.cloud), helping students bridge the gap between raw city APIs and tidy data analysis.
+The `nycOpenData` package provides a streamlined interface for accessing New York City's vast open data resources. It connects directly to the NYC Open Data Portal. It is currently utilized as a primary tool for teaching data acquisition in [Reproducible Research Using R](https://martinezc1-reproducible-research-using-r.share.connect.posit.cloud/), helping students bridge the gap between raw city APIs and tidy data analysis.
 
 By using the `nyc_wetlands()` function, we can gather the most recently listed wetland features in New York City, and filter based upon any of the columns inside the dataset. 
 

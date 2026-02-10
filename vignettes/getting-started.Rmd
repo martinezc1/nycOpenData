@@ -24,7 +24,7 @@ library(ggplot2)
 ## Introduction
 NYC has a population of almost 8.5 million people. By calling 311, residents are able to make comments, inquiries, complaints, and requests to the city agencies. All 311 service requests are contained in the dataset, [found here](https://data.cityofnewyork.us/Social-Services/311-Service-Requests-from-2020-to-Present/erm2-nwe9/about_data). In R, the `nycOpenData` package can be used to pull this data directly.
 
-The `nycOpenData` package provides a streamlined interface for accessing New York City's vast open data resources. It connects directly to the NYC Open Data Portal. It is currently utilized as a primary tool for teaching data acquisition in [Reproducible Research Using R](https://martinezc1-textbook--reproducible-research-using-r.share.connect.posit.cloud), helping students bridge the gap between raw city APIs and tidy data analysis.
+The `nycOpenData` package provides a streamlined interface for accessing New York City's vast open data resources. It connects directly to the NYC Open Data Portal. It is currently utilized as a primary tool for teaching data acquisition in [Reproducible Research Using R](https://martinezc1-reproducible-research-using-r.share.connect.posit.cloud/), helping students bridge the gap between raw city APIs and tidy data analysis.
 
 By using the `nyc_311()` function, we can gather the most recent 311 calls in New York City, and filter based upon any of the columns inside the dataset. 
 

@@ -28,7 +28,7 @@ Local Law 18 of 2019 (LL18) requires the Department of Citywide Administrative
 Services (DCAS) to collect data about the city's municipal workforce each year. 
 This information is then made available to the Office of Data Analytics (ODA) [found here](https://data.cityofnewyork.us/resource/423i-ukqr.json). In R, the `nycOpenData` package can be used to pull this data directly.
 
-The `nycOpenData` package provides a streamlined interface for accessing New York City's vast open data resources. It connects directly to the NYC Open Data Portal. It is currently utilized as a primary tool for teaching data acquisition in [Reproducible Research Using R](https://martinezc1-textbook--reproducible-research-using-r.share.connect.posit.cloud), helping students bridge the gap between raw city APIs and tidy data analysis.
+The `nycOpenData` package provides a streamlined interface for accessing New York City's vast open data resources. It connects directly to the NYC Open Data Portal. It is currently utilized as a primary tool for teaching data acquisition in [Reproducible Research Using R](https://martinezc1-reproducible-research-using-r.share.connect.posit.cloud/), helping students bridge the gap between raw city APIs and tidy data analysis.
 
 By using the `nyc_locallaw18_payreport` function, we can gather the most recent statistics from Local Law 18 and filter based upon any of the columns inside the dataset. 
 
