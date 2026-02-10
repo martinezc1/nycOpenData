@@ -1,0 +1,145 @@
+---
+title: "Investigating Inmate Incidents"
+output: rmardown::html_vignette
+author: "Isley Jean-Pierre"
+vignette: >
+  %\VignetteIndexEntry{Investigating Inmate Incidents}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(nycOpenData)
+library(tidyverse)
+library(ggplot2)
+library(jsonlite)
+library(httr)
+library(dplyr)
+```
+
+## Introduction
+
+This dataset contains information about the kind of violent incident that happens among inmates 
+in prison. There is row that provide the incidents' ID, the data they were reported, the kind
+of incident they were, and in what facilities those incidents occurred.A researcher might
+want to use this dataset to investigate the kind of crimes inmates commit while they are
+incarcerated.
+
+The `nycOpenData` package provides a streamlined interface for accessing New York City's vast open data resources. It connects directly to the NYC Open Data Portal. It is currently utilized as a primary tool for teaching data acquisition in [Reproducible Research Using R](https://martinezc1-textbook--reproducible-research-using-r.share.connect.posit.cloud), helping students bridge the gap between raw city APIs and tidy data analysis.
+
+By using the `nyc_slash_stab` function, we can investigate the most recent violent incidents that occurred among incarcerated individuals to understand their nature and fatality.
+
+
+## Let's take a look at the dataset.
+
+To start, let's pull a small sample to see what the data looks like. By default, the function pulls in the *10,000 most recent* requests, however, let's change that to only see the latest 3 requests. To do this, we can set `limit = 3`.
+
+```{r small-sample}
+small_sample <- nyc_slash_stab(limit = 3)
+small_sample
+
+# Seeing what columns are in the dataset
+colnames(small_sample)
+```
+
+
+The `nyc_slash_stab()` function can filter based off any of the columns in the dataset. To filter, we add `filters = list()` and put whatever filters we would like inside. From our `colnames` call before, we know that there is a column called "incident_type" which we can use to accomplish this.
+
+```{r filter-incident}
+
+incident_slash_stab <- nyc_slash_stab(limit = 3, filters = list(incident = "incident_type"))
+incident_slash_stab
+
+# Checking to see the filtering worked
+unique(incident_slash_stab$incident)
+```
+
+## Note.
+
+The previous sections were riddled with errors in my console! The next step would be to investigate the "facility" column and potentially run correlational analysis and plot the
+results between "incident_type" and "facility".
+
+## Further investigation.
+
+This section was meant to look into the most recurring incident types among inmates and take 
+note of their severity. But for future inquiries:
+
+
+```{r slashing and stabbing}
+# Creating the datasets
+slash <- nyc_slash_stab(limit = 50, filters = list(facility = "AMKC", incident = "slashing"))
+stab <- nyc_slash_stab(limit = 50, filters = list(facility = "AMKC", incident = "stabbing"))
+
+# Calling head of our new dataset
+head(slash)
+head(stab)
+
+# Quick check to make sure our filtering worked
+nrow(slash)
+nrow((stab))
+unique(slash$facility)
+unique(stab$facility)
+```
+
+This code should allow us to see how slashing and stabbing incidents vary by facilities.
+
+## Mini analysis
+
+I would want to try something like this.
+
+```{r fig.cap="This figure shows incident types by facility."}
+data <- nyc_slash_stab() %>%
+  select(facility, slashing, stabbing) %>%
+  pivot_longer(cols = c(slashing, stabbing), names_to = "type", values_to = "count")
+
+ggplot(data, aes(x = type, y = count, fill = facility)) +
+  geom_col(position = "dodge") +
+  theme_minimal() +
+  labs(
+    title = "Investigating Violent Incidents Among Inmates",
+    x = "Type of Incident",
+    y = "Number of Incidents",
+    fill = "Facility"
+  )
+```
+
+
+## Summary
+The `nycOpenData` package serves as a robust interface for the NYC Open Data portal, streamlining the path from raw city APIs to actionable insights. By abstracting the complexities of data acquisition—such as pagination, type-casting, and complex filtering—it allows users to focus on analysis rather than data engineering.
+
+If certain codes had worked as intneded in this vignette, one could see how the package provides a seamless workflow for targeted data retrieval, automated filtering, and rapid visualization. Importantly, It's worth noting that some sections need to be improved as soon as possible.
+
+## How to Cite
+If you use this package for research or educational purposes, please cite it as follows:
+
+Martinez C (2026). nycOpenData: Convenient Access to NYC Open Data API Endpoints. R package version 0.1.5, https://martinezc1.github.io/nycOpenData/.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
