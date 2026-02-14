@@ -85,14 +85,14 @@ maintenance issues.</p>
 <span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="va">data</span><span class="op">)</span></span></code></pre></div>
 <pre><code><span><span class="co">## <span style="color: #949494;"># A tibble: 6 × 35</span></span></span>
-<span><span class="co">##   viol_seq_no bldg_id boro  boro_nm   phn   low_hus_no high_hus_no str_nm  zip  </span></span>
-<span><span class="co">##   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>       <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>       <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span></span></span>
-<span><span class="co">## <span style="color: #BCBCBC;">1</span> 18629669    805002  1     MANHATTAN 1829  1829       1839        LEXING… 10029</span></span>
-<span><span class="co">## <span style="color: #BCBCBC;">2</span> 18629670    805002  1     MANHATTAN 1829  1829       1839        LEXING… 10029</span></span>
-<span><span class="co">## <span style="color: #BCBCBC;">3</span> 18629671    805002  1     MANHATTAN 1829  1829       1839        LEXING… 10029</span></span>
-<span><span class="co">## <span style="color: #BCBCBC;">4</span> 18629672    805002  1     MANHATTAN 1829  1829       1839        LEXING… 10029</span></span>
-<span><span class="co">## <span style="color: #BCBCBC;">5</span> 18629673    805002  1     MANHATTAN 1829  1829       1839        LEXING… 10029</span></span>
-<span><span class="co">## <span style="color: #BCBCBC;">6</span> 18629674    805002  1     MANHATTAN 1829  1829       1839        LEXING… 10029</span></span>
+<span><span class="co">##   viol_seq_no bldg_id boro  boro_nm  phn   low_hus_no high_hus_no str_nm   zip  </span></span>
+<span><span class="co">##   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>       <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>       <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span></span></span>
+<span><span class="co">## <span style="color: #BCBCBC;">1</span> 18641047    671394  4     QUEENS   69-01 69-01      69-15       KISSENA… 11367</span></span>
+<span><span class="co">## <span style="color: #BCBCBC;">2</span> 18641048    671394  4     QUEENS   69-01 69-01      69-15       KISSENA… 11367</span></span>
+<span><span class="co">## <span style="color: #BCBCBC;">3</span> 18641286    807996  3     BROOKLYN 35    35         53          DWIGHT … 11231</span></span>
+<span><span class="co">## <span style="color: #BCBCBC;">4</span> 18641287    807996  3     BROOKLYN 35    35         53          DWIGHT … 11231</span></span>
+<span><span class="co">## <span style="color: #BCBCBC;">5</span> 18641288    807996  3     BROOKLYN 35    35         53          DWIGHT … 11231</span></span>
+<span><span class="co">## <span style="color: #BCBCBC;">6</span> 18641289    807996  3     BROOKLYN 35    35         53          DWIGHT … 11231</span></span>
 <span><span class="co">## <span style="color: #949494;"># ℹ 26 more variables: development_name &lt;chr&gt;, tds_no &lt;chr&gt;,</span></span></span>
 <span><span class="co">## <span style="color: #949494;">#   stairhall_no &lt;chr&gt;, sctn_boro &lt;chr&gt;, sctn_boro_nm &lt;chr&gt;, sctn_hus_no &lt;chr&gt;,</span></span></span>
 <span><span class="co">## <span style="color: #949494;">#   sctn_str_nm &lt;chr&gt;, sctn_zip &lt;chr&gt;, actl_unit_insp &lt;chr&gt;, actl_stry &lt;chr&gt;,</span></span></span>
@@ -110,10 +110,10 @@ maintenance issues.</p>
 <pre><code><span><span class="co">## <span style="color: #949494;"># A tibble: 5 × 2</span></span></span>
 <span><span class="co">##   boro_nm           n</span></span>
 <span><span class="co">##   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>         <span style="color: #949494; font-style: italic;">&lt;int&gt;</span></span></span>
-<span><span class="co">## <span style="color: #BCBCBC;">1</span> BRONX           237</span></span>
-<span><span class="co">## <span style="color: #BCBCBC;">2</span> BROOKLYN        701</span></span>
-<span><span class="co">## <span style="color: #BCBCBC;">3</span> MANHATTAN       909</span></span>
-<span><span class="co">## <span style="color: #BCBCBC;">4</span> QUEENS          196</span></span>
+<span><span class="co">## <span style="color: #BCBCBC;">1</span> BRONX           244</span></span>
+<span><span class="co">## <span style="color: #BCBCBC;">2</span> BROOKLYN        721</span></span>
+<span><span class="co">## <span style="color: #BCBCBC;">3</span> MANHATTAN       941</span></span>
+<span><span class="co">## <span style="color: #BCBCBC;">4</span> QUEENS          225</span></span>
 <span><span class="co">## <span style="color: #BCBCBC;">5</span> STATEN ISLAND    24</span></span></code></pre>
 </div>
 <div class="section level2">

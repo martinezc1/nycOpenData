@@ -1,7 +1,6 @@
-# NYPD Shooting Incident Data (Year To Date)
+# NYPD Shootings
 
-Downloads NYPD Shooting Incident Data (Year to Date) data from NYC Open
-Data.
+Downloads NYPD Shooting Incident data from NYC Open Data.
 
 ## Usage
 
@@ -12,7 +11,7 @@ nyc_shooting_incidents(limit = 10000, filters = list(), timeout_sec = 30)
 ## Source
 
 NYC Open Data:
-\<https://data.cityofnewyork.us/Public-Safety/NYPD-Shooting-Incident-Data-Year-To-Date-/5ucz-vwe8/about_data\>
+\<https://data.cityofnewyork.us/Public-Safety/NYPD-Shootings/98wc-x49t/about_data\>
 
 ## Arguments
 
@@ -34,12 +33,8 @@ A tibble containing NYPD Shooting Incident Data (Year to Date) data.
 
 ## Details
 
-This is a data set that will show you every shooting incident that has
-occurred in New York City. It will show you the exact occur date, time,
-borough in which the shooting took place, location of the incident and
-much more. Researchers would use this dataset to find what time of day
-does the most shooting incidents take place or which location has the
-most shootings.
+This is a dataset identifies of every shooting incident that occurred in
+NYC since 2006.
 
 ## Examples
 
@@ -51,7 +46,6 @@ if (interactive() && curl::has_internet()) {
   small_sample <- nyc_shooting_incidents(limit = 2)
   small_sample
 
-  # Example with a filter (replace with real fields/values if desired)
-  # nyc_shooting_incidents(limit = 2, filters = list(boro = "BROOKLYN"))
+  nyc_shooting_incidents(limit = 2, filters = list(boro = "BROOKLYN"))
 }
 ```

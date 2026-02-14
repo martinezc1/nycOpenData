@@ -17,16 +17,14 @@
 #'
 #' @source NYC Open Data: <https://data.cityofnewyork.us/Public-Safety/Inmate-Incidents-Slashing-and-Stabbing/gakf-suji/about_data>
 #'
-#' @examples
-#' \donttest{
-#' if (curl::has_internet()) {
-#'   # Quick example (fetch 2 rows)
+##' @examples
+#' # Examples that hit the live NYC Open Data API are guarded so CRAN checks
+#' # do not fail when the network is unavailable or slow.
+#' if (interactive() && curl::has_internet()) {
 #'   small_sample <- nyc_slash_stab(limit = 2)
 #'   small_sample
 #'
-#'   # Example with a filter (Change 'column_name' and 'value' to real fields)
-#'   # nyc_slash_stab(limit = 2, filters = list(column_name = "value"))
-#' }
+#'  nyc_slash_stab(limit = 2, filters = list(incident_type = "Slashing"))
 #' }
 #' @export
 nyc_slash_stab <- function(limit = 10000, filters = list(), timeout_sec = 30) {

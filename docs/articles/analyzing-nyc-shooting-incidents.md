@@ -1,4 +1,4 @@
-# Getting Started with nycOpenData: data set titled NYPD Shooting Incident Data
+# Getting Started with nycOpenData: data set titled NYPD Shootings Data
 
 ``` r
 knitr::opts_chunk$set(warning = FALSE, message = FALSE)
@@ -15,9 +15,9 @@ might be curious as to what crime or what type of crime might occur in
 our beautiful city. NYC now has data to show you about every shooting
 incident that has occurred in NYC. Information that is included is the
 date of the incident, the time it occurred, what borough it occurred,
-the statistic of if a murder occurred, and so much more. If you want to
-know more information, you can find the dataset
-[here](https://data.cityofnewyork.us/Public-Safety/NYPD-Shooting-Incident-Data-Year-To-Date-/5ucz-vwe8/about_data)
+and so much more. If you want to know more information, you can find the
+dataset
+[here](https://data.cityofnewyork.us/Public-Safety/NYPD-Shootings/98wc-x49t/about_data)
 If you want to explore this data set more, in R, the `nycOpenData`
 package can be used to pull this data directly.
 
@@ -33,45 +33,29 @@ however, let’s change that to only see the latest 3 requests. To do
 this, we can set `limit = 3`.
 
 ``` r
-small_sample <- nyc_shooting_incidents(limit = 10)
+small_sample <- nyc_shooting_incidents(limit = 3)
 small_sample
-#> # A tibble: 10 × 22
-#>    incident_key occur_date           occur_time boro  loc_of_occur_desc precinct
-#>    <chr>        <chr>                <chr>      <chr> <chr>             <chr>   
-#>  1 313716449    2025-09-30T00:00:00… 17:56:00   BRONX OUTSIDE           48      
-#>  2 313716449    2025-09-30T00:00:00… 17:56:00   BRONX OUTSIDE           48      
-#>  3 313635117    2025-09-29T00:00:00… 04:17:00   QUEE… OUTSIDE           102     
-#>  4 313612569    2025-09-28T00:00:00… 21:43:00   BRONX OUTSIDE           44      
-#>  5 313612567    2025-09-28T00:00:00… 19:30:00   QUEE… OUTSIDE           112     
-#>  6 313612998    2025-09-28T00:00:00… 20:53:00   BRONX OUTSIDE           40      
-#>  7 313570970    2025-09-28T00:00:00… 01:12:00   BRONX OUTSIDE           43      
-#>  8 313570970    2025-09-28T00:00:00… 01:12:00   BRONX OUTSIDE           43      
-#>  9 313583874    2025-09-28T00:00:00… 10:45:00   BROO… OUTSIDE           69      
-#> 10 313570970    2025-09-28T00:00:00… 01:12:00   BRONX OUTSIDE           43      
-#> # ℹ 16 more variables: jurisdiction_code <chr>, loc_classfctn_desc <chr>,
-#> #   location_desc <chr>, statistical_murder_flag <chr>, perp_age_group <chr>,
-#> #   perp_sex <chr>, perp_race <chr>, vic_age_group <chr>, vic_sex <chr>,
-#> #   vic_race <chr>, x_coord_cd <chr>, y_coord_cd <chr>, latitude <chr>,
-#> #   longitude <chr>, geocoded_column.type <chr>,
-#> #   geocoded_column.coordinates <list>
+#> # A tibble: 3 × 13
+#>   incident_key occur_date            occur_time boro  loc_of_occur_desc precinct
+#>   <chr>        <chr>                 <chr>      <chr> <chr>             <chr>   
+#> 1 318207675    2025-12-31T00:00:00.… 23:44:00   MANH… OUTSIDE           23      
+#> 2 318203589    2025-12-31T00:00:00.… 18:40:00   MANH… INSIDE            32      
+#> 3 318139227    2025-12-30T00:00:00.… 03:30:00   BROO… INSIDE            77      
+#> # ℹ 7 more variables: jurisdiction_code <chr>, loc_classfctn_desc <chr>,
+#> #   location_desc <chr>, x_coord_cd <chr>, y_coord_cd <chr>, latitude <chr>,
+#> #   longitude <chr>
 
 # Seeing what columns are in the data set
 colnames(small_sample)
-#>  [1] "incident_key"                "occur_date"                 
-#>  [3] "occur_time"                  "boro"                       
-#>  [5] "loc_of_occur_desc"           "precinct"                   
-#>  [7] "jurisdiction_code"           "loc_classfctn_desc"         
-#>  [9] "location_desc"               "statistical_murder_flag"    
-#> [11] "perp_age_group"              "perp_sex"                   
-#> [13] "perp_race"                   "vic_age_group"              
-#> [15] "vic_sex"                     "vic_race"                   
-#> [17] "x_coord_cd"                  "y_coord_cd"                 
-#> [19] "latitude"                    "longitude"                  
-#> [21] "geocoded_column.type"        "geocoded_column.coordinates"
+#>  [1] "incident_key"       "occur_date"         "occur_time"        
+#>  [4] "boro"               "loc_of_occur_desc"  "precinct"          
+#>  [7] "jurisdiction_code"  "loc_classfctn_desc" "location_desc"     
+#> [10] "x_coord_cd"         "y_coord_cd"         "latitude"          
+#> [13] "longitude"
 ```
 
-We have successfully pulled NYPD Shooting Incident Data (Year to Date)
-from the NYC Open Data Portal.
+We have successfully pulled NYPD Shooting Incident Data from the NYC
+Open Data Portal.
 
 ## Mini analysis
 

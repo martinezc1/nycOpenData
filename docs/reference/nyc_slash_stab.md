@@ -44,19 +44,12 @@ commit while they are incarcerated.
 ## Examples
 
 ``` r
-# \donttest{
-if (curl::has_internet()) {
-  # Quick example (fetch 2 rows)
+# Examples that hit the live NYC Open Data API are guarded so CRAN checks
+# do not fail when the network is unavailable or slow.
+if (interactive() && curl::has_internet()) {
   small_sample <- nyc_slash_stab(limit = 2)
   small_sample
 
-  # Example with a filter (Change 'column_name' and 'value' to real fields)
-  # nyc_slash_stab(limit = 2, filters = list(column_name = "value"))
+ nyc_slash_stab(limit = 2, filters = list(incident_type = "Slashing"))
 }
-#> # A tibble: 2 × 4
-#>   incident_id reported_dt             incident_type facility
-#>   <chr>       <chr>                   <chr>         <chr>   
-#> 1 227264      2026-01-24T21:10:00.000 Stabbing      GRVC    
-#> 2 226926      2026-01-17T19:58:00.000 Stabbing      OBCC    
-# }
 ```

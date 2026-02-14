@@ -35,7 +35,6 @@ if (interactive() && curl::has_internet()) {
   small_sample <- nyc_ha_violations(limit = 2)
   small_sample
 
-  # Example with a filter (replace with a real field/value if desired)
   nyc_ha_violations(limit = 2, filters = list(boro_nm = "BROOKLYN"))
 }
 

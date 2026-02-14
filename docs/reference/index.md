@@ -190,7 +190,7 @@ Other NYC Open Data wrappers
 - [`nyc_school_discharge_report_2015_2018()`](https://martinezc1.github.io/nycOpenData/reference/nyc_school_discharge_report_2015_2018.md)
   : 2015-2018 School Closure Discharge Reporting
 - [`nyc_shooting_incidents()`](https://martinezc1.github.io/nycOpenData/reference/nyc_shooting_incidents.md)
-  : NYPD Shooting Incident Data (Year To Date)
+  : NYPD Shootings
 - [`nyc_slash_stab()`](https://martinezc1.github.io/nycOpenData/reference/nyc_slash_stab.md)
   : Inmate Incidents - Slashing and Stabbing
 - [`nyc_street_hail_livery_active()`](https://martinezc1.github.io/nycOpenData/reference/nyc_street_hail_livery_active.md)

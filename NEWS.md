@@ -1,26 +1,27 @@
-# nycOpenData 0.1.5
+# nycOpenData 0.1.6
 
 ## New features and documentation
 
-- Added a new vignette, *“Working with NYC 311 Data”*, demonstrating an end-to-end,
-  reproducible workflow for accessing, filtering, and visualizing NYC 311 service
-  requests using `nyc_311()`. The vignette is available on the package website and
-  via `vignette("nyc-311", package = "nycOpenData")`.
+This release marks the first contributor-powered expansion of nycOpenData, with new dataset functions, tests, and documentation added by student contributors.
 
-- Updated `nyc_311()` to explicitly target the NYC 311 Service Requests dataset
-  covering **2020–present**, aligning the function with the current primary NYC
-  Open Data endpoint.
+- Added support for the NYPD Hate Crimes dataset (Crystal Adote, @crystalna20).
+- Added support for the Local Law 18 Pay and Demographics Report dataset (Jonah Dratfield, @jdratfield38).
+- Added support for NYPD Shooting Incident Data (Year To Date) (Joyce Escatel-Flores, @JoyceEscatel).
+- Added support for New York City Population by Borough, 1950–2040 (Rob Hutto, @robhutto).
+- Added support for Inmate Incidents – Slashing and Stabbing (Isley Jean-Pierre, @ijpier).
+- Added support for the NYC Wetlands dataset, including tests and vignette (Shannon Joyce, @shannonjoyce).
+- Added support for the NYCHA Violations dataset (Laura Rose-Werner, @laurarosewerner).
+- Added support for NYC Climate Projections: Extreme Events and Sea Level Rise (Emma Tupone, @emmatup0205).
+- Added support for Local Law 97 of 2021 – Pets in Shelter Report (Xinru Wang, @xrwangxr).
 
-- Added a new function, `nyc_311_2010_2019()`, providing access to historical NYC
-  311 service request data from **2010–2019**, which is maintained as a separate
-  dataset on the NYC Open Data platform.
+Each new dataset function follows the nyc_*() interface design, includes documentation, and integrates with the package’s internal request handling system.
 
-## Bug fixes and maintenance
+## Documentation and vignettes
 
-- Continued improvements to internal request handling for reliability and
-  consistency when interacting with live NYC Open Data APIs.
+- Expanded vignettes and examples accompanying new dataset functions.
+- Continued improvements to reproducible workflow demonstrations across datasets.
 
-- Updated documentation and examples to ensure robust behavior during CRAN checks
-  while preserving reproducible workflows for interactive use.
+## Maintenance
 
+- Ongoing improvements to internal request handling and API reliability.
 - No breaking changes to existing function interfaces.

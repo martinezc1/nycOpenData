@@ -41,34 +41,41 @@ however, let’s change that to only see the latest 3 requests. To do
 this, we can set `limit = 3`.
 
 ``` r
-small_sample <- nyc_shooting_incidents(limit = 3)
+small_sample <- nyc_311(limit = 3)
 small_sample
-#> # A tibble: 3 × 22
-#>   incident_key occur_date            occur_time boro  loc_of_occur_desc precinct
-#>   <chr>        <chr>                 <chr>      <chr> <chr>             <chr>   
-#> 1 313716449    2025-09-30T00:00:00.… 17:56:00   BRONX OUTSIDE           48      
-#> 2 313716449    2025-09-30T00:00:00.… 17:56:00   BRONX OUTSIDE           48      
-#> 3 313635117    2025-09-29T00:00:00.… 04:17:00   QUEE… OUTSIDE           102     
-#> # ℹ 16 more variables: jurisdiction_code <chr>, loc_classfctn_desc <chr>,
-#> #   location_desc <chr>, statistical_murder_flag <chr>, perp_age_group <chr>,
-#> #   perp_sex <chr>, perp_race <chr>, vic_age_group <chr>, vic_sex <chr>,
-#> #   vic_race <chr>, x_coord_cd <chr>, y_coord_cd <chr>, latitude <chr>,
-#> #   longitude <chr>, geocoded_column.type <chr>,
-#> #   geocoded_column.coordinates <list>
+#> # A tibble: 3 × 33
+#>   unique_key created_date           agency agency_name complaint_type descriptor
+#>   <chr>      <chr>                  <chr>  <chr>       <chr>          <chr>     
+#> 1 67976911   2026-02-13T02:05:17.0… NYPD   New York C… Illegal Parki… Blocked H…
+#> 2 67975725   2026-02-13T02:04:00.0… DOHMH  Department… Rodent         Condition…
+#> 3 67969953   2026-02-13T02:03:59.0… DOHMH  Department… Rodent         Rat Sight…
+#> # ℹ 27 more variables: location_type <chr>, incident_zip <chr>,
+#> #   incident_address <chr>, street_name <chr>, cross_street_1 <chr>,
+#> #   cross_street_2 <chr>, intersection_street_1 <chr>,
+#> #   intersection_street_2 <chr>, address_type <chr>, city <chr>,
+#> #   landmark <chr>, status <chr>, community_board <chr>,
+#> #   council_district <chr>, police_precinct <chr>, borough <chr>,
+#> #   x_coordinate_state_plane <chr>, y_coordinate_state_plane <chr>, …
 
 # Seeing what columns are in the dataset
 colnames(small_sample)
-#>  [1] "incident_key"                "occur_date"                 
-#>  [3] "occur_time"                  "boro"                       
-#>  [5] "loc_of_occur_desc"           "precinct"                   
-#>  [7] "jurisdiction_code"           "loc_classfctn_desc"         
-#>  [9] "location_desc"               "statistical_murder_flag"    
-#> [11] "perp_age_group"              "perp_sex"                   
-#> [13] "perp_race"                   "vic_age_group"              
-#> [15] "vic_sex"                     "vic_race"                   
-#> [17] "x_coord_cd"                  "y_coord_cd"                 
-#> [19] "latitude"                    "longitude"                  
-#> [21] "geocoded_column.type"        "geocoded_column.coordinates"
+#>  [1] "unique_key"               "created_date"            
+#>  [3] "agency"                   "agency_name"             
+#>  [5] "complaint_type"           "descriptor"              
+#>  [7] "location_type"            "incident_zip"            
+#>  [9] "incident_address"         "street_name"             
+#> [11] "cross_street_1"           "cross_street_2"          
+#> [13] "intersection_street_1"    "intersection_street_2"   
+#> [15] "address_type"             "city"                    
+#> [17] "landmark"                 "status"                  
+#> [19] "community_board"          "council_district"        
+#> [21] "police_precinct"          "borough"                 
+#> [23] "x_coordinate_state_plane" "y_coordinate_state_plane"
+#> [25] "open_data_channel_type"   "park_facility_name"      
+#> [27] "park_borough"             "latitude"                
+#> [29] "longitude"                "descriptor_2"            
+#> [31] "bbl"                      "location.type"           
+#> [33] "location.coordinates"
 ```
 
 Fantastic! We successfully pulled 311 data from the NYC Open Data
@@ -86,15 +93,15 @@ called “borough” which we can use to accomplish this.
 
 brooklyn_311 <- nyc_311(limit = 3, filters = list(borough = "BROOKLYN"))
 brooklyn_311
-#> # A tibble: 3 × 32
+#> # A tibble: 3 × 33
 #>   unique_key created_date           agency agency_name complaint_type descriptor
 #>   <chr>      <chr>                  <chr>  <chr>       <chr>          <chr>     
-#> 1 67904910   2026-02-09T02:04:58.0… NYPD   New York C… Blocked Drive… No Access 
-#> 2 67903232   2026-02-09T02:03:09.0… NYPD   New York C… Noise - Resid… Loud Musi…
-#> 3 67903202   2026-02-09T02:01:06.0… NYPD   New York C… Illegal Parki… Blocked H…
-#> # ℹ 26 more variables: location_type <chr>, incident_zip <chr>,
-#> #   incident_address <chr>, street_name <chr>, cross_street_1 <chr>,
-#> #   cross_street_2 <chr>, intersection_street_1 <chr>,
+#> 1 67975725   2026-02-13T02:04:00.0… DOHMH  Department… Rodent         Condition…
+#> 2 67969706   2026-02-13T02:03:34.0… NYPD   New York C… Noise - Resid… Banging/P…
+#> 3 67975470   2026-02-13T02:02:46.0… NYPD   New York C… Illegal Parki… Blocked S…
+#> # ℹ 27 more variables: descriptor_2 <chr>, location_type <chr>,
+#> #   incident_zip <chr>, incident_address <chr>, street_name <chr>,
+#> #   cross_street_1 <chr>, cross_street_2 <chr>, intersection_street_1 <chr>,
 #> #   intersection_street_2 <chr>, address_type <chr>, city <chr>,
 #> #   landmark <chr>, status <chr>, community_board <chr>,
 #> #   council_district <chr>, police_precinct <chr>, bbl <chr>, borough <chr>,
@@ -121,16 +128,16 @@ brooklyn_nypd <- nyc_311(limit = 50, filters = list(agency = "NYPD", borough = "
 
 # Calling head of our new dataset
 head(brooklyn_nypd)
-#> # A tibble: 6 × 36
+#> # A tibble: 6 × 37
 #>   unique_key created_date           agency agency_name complaint_type descriptor
 #>   <chr>      <chr>                  <chr>  <chr>       <chr>          <chr>     
-#> 1 67904910   2026-02-09T02:04:58.0… NYPD   New York C… Blocked Drive… No Access 
-#> 2 67903232   2026-02-09T02:03:09.0… NYPD   New York C… Noise - Resid… Loud Musi…
-#> 3 67903202   2026-02-09T02:01:06.0… NYPD   New York C… Illegal Parki… Blocked H…
-#> 4 67899589   2026-02-09T01:59:15.0… NYPD   New York C… Blocked Drive… No Access 
-#> 5 67901438   2026-02-09T01:58:14.0… NYPD   New York C… Illegal Parki… Posted Pa…
-#> 6 67894104   2026-02-09T01:57:21.0… NYPD   New York C… Noise - Resid… Loud Musi…
-#> # ℹ 30 more variables: location_type <chr>, incident_zip <chr>,
+#> 1 67969706   2026-02-13T02:03:34.0… NYPD   New York C… Noise - Resid… Banging/P…
+#> 2 67975470   2026-02-13T02:02:46.0… NYPD   New York C… Illegal Parki… Blocked S…
+#> 3 67971119   2026-02-13T02:00:31.0… NYPD   New York C… Illegal Parki… Blocked H…
+#> 4 67972570   2026-02-13T01:58:37.0… NYPD   New York C… Noise - Comme… Loud Musi…
+#> 5 67978314   2026-02-13T01:55:47.0… NYPD   New York C… Blocked Drive… Partial A…
+#> 6 67978376   2026-02-13T01:55:29.0… NYPD   New York C… Illegal Parki… Blocked H…
+#> # ℹ 31 more variables: location_type <chr>, incident_zip <chr>,
 #> #   incident_address <chr>, street_name <chr>, cross_street_1 <chr>,
 #> #   cross_street_2 <chr>, intersection_street_1 <chr>,
 #> #   intersection_street_2 <chr>, address_type <chr>, city <chr>,

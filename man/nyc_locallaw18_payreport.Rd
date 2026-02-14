@@ -37,7 +37,6 @@ if (interactive() && curl::has_internet()) {
   small_sample <- nyc_locallaw18_payreport(limit = 2)
   small_sample
 
-  # Example with a filter (replace with real fields/values if desired)
-  # nyc_locallaw18_payreport(limit = 2, filters = list(race = "White"))
+  nyc_locallaw18_payreport(limit = 2, filters = list(race = "White"))
 }
 }

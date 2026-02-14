@@ -51,7 +51,6 @@ if (interactive() && curl::has_internet()) {
   small_sample <- nyc_wetlands(limit = 2)
   small_sample
 
-  # Example with a filter (replace with real fields/values if desired)
-  # nyc_wetlands(limit = 2, filters = list(classname = "Forested"))
+  nyc_wetlands(limit = 2, filters = list(classname = "Forested"))
 }
 ```

@@ -24,8 +24,7 @@
 #'   small_sample <- nyc_wetlands(limit = 2)
 #'   small_sample
 #'
-#'   # Example with a filter (replace with real fields/values if desired)
-#'   # nyc_wetlands(limit = 2, filters = list(classname = "Forested"))
+#'   nyc_wetlands(limit = 2, filters = list(classname = "Forested"))
 #' }
 #' @export
 nyc_wetlands <- function(limit = 10000, filters = list(), timeout_sec = 30) {

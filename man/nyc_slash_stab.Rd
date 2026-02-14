@@ -30,14 +30,12 @@ want to use this dataset to investigate the kind of crimes inmates commit while 
 incarcerated.
 }
 \examples{
-\donttest{
-if (curl::has_internet()) {
-  # Quick example (fetch 2 rows)
+# Examples that hit the live NYC Open Data API are guarded so CRAN checks
+# do not fail when the network is unavailable or slow.
+if (interactive() && curl::has_internet()) {
   small_sample <- nyc_slash_stab(limit = 2)
   small_sample
 
-  # Example with a filter (Change 'column_name' and 'value' to real fields)
-  # nyc_slash_stab(limit = 2, filters = list(column_name = "value"))
-}
+ nyc_slash_stab(limit = 2, filters = list(incident_type = "Slashing"))
 }
 }

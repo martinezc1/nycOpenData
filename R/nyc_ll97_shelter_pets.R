@@ -24,8 +24,7 @@
 #'   small_sample <- nyc_locallaw97_shelter_pets(limit = 2)
 #'   small_sample
 #'
-#'   # Example with a filter (replace with real fields/values if desired)
-#'   # nyc_locallaw97_shelter_pets(limit = 2, filters = list(date_quarter = "Qtr 1"))
+#'   nyc_locallaw97_shelter_pets(limit = 2, filters = list(date_quarter = "Qtr 1"))
 #' }
 #' @export
 nyc_locallaw97_shelter_pets <- function(limit = 10000, filters = list(), timeout_sec = 30) {

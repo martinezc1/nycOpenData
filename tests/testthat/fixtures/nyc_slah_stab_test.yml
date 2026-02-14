@@ -1,0 +1,30 @@
+http_interactions:
+- request:
+    method: GET
+    uri: https://data.cityofnewyork.us/resource/gakf-suji.json?%24limit=2&%24order=incident_type+DESC
+  response:
+    status: 200
+    headers:
+      server: nginx
+      date: Sat, 14 Feb 2026 15:17:43 GMT
+      content-type: application/json;charset=utf-8
+      transfer-encoding: chunked
+      connection: keep-alive
+      access-control-allow-origin: '*'
+      etag: '"Zm94dHJvdC40NTcyMV8zXzE0N1FnVTZON2hiU0g5VjhMcTEweGNkc2JQOWRGOA---gziqYmVqeHYzpDSMeUb3ynLyklHbOP--gzip--gzip"'
+      x-soda2-fields: '["incident_id","reported_dt","incident_type","facility"]'
+      x-soda2-types: '["text","floating_timestamp","text","text"]'
+      x-soda2-data-out-of-date: 'false'
+      x-soda2-truth-last-modified: Sun, 01 Feb 2026 20:33:27 GMT
+      x-soda2-secondary-last-modified: Sun, 01 Feb 2026 20:33:27 GMT
+      last-modified: Sun, 01 Feb 2026 20:33:27 GMT
+      vary: Accept-Encoding
+      content-encoding: gzip
+      strict-transport-security: max-age=31536000; includeSubDomains
+      x-socrata-requestid: 8ae0223a548df8f6b348da761b46be81
+    body:
+      string: |
+        [{"incident_id":"227264","reported_dt":"2026-01-24T21:10:00.000","incident_type":"Stabbing","facility":"GRVC"}
+        ,{"incident_id":"226926","reported_dt":"2026-01-17T19:58:00.000","incident_type":"Stabbing","facility":"OBCC"}]
+  recorded_at: 2026-02-14 15:17:43
+recorded_with: VCR-vcr/2.1.0

@@ -19,14 +19,14 @@ head(data)
 ```
 
     ## # A tibble: 6 × 35
-    ##   viol_seq_no bldg_id boro  boro_nm   phn   low_hus_no high_hus_no str_nm  zip  
-    ##   <chr>       <chr>   <chr> <chr>     <chr> <chr>      <chr>       <chr>   <chr>
-    ## 1 18629669    805002  1     MANHATTAN 1829  1829       1839        LEXING… 10029
-    ## 2 18629670    805002  1     MANHATTAN 1829  1829       1839        LEXING… 10029
-    ## 3 18629671    805002  1     MANHATTAN 1829  1829       1839        LEXING… 10029
-    ## 4 18629672    805002  1     MANHATTAN 1829  1829       1839        LEXING… 10029
-    ## 5 18629673    805002  1     MANHATTAN 1829  1829       1839        LEXING… 10029
-    ## 6 18629674    805002  1     MANHATTAN 1829  1829       1839        LEXING… 10029
+    ##   viol_seq_no bldg_id boro  boro_nm  phn   low_hus_no high_hus_no str_nm   zip  
+    ##   <chr>       <chr>   <chr> <chr>    <chr> <chr>      <chr>       <chr>    <chr>
+    ## 1 18641047    671394  4     QUEENS   69-01 69-01      69-15       KISSENA… 11367
+    ## 2 18641048    671394  4     QUEENS   69-01 69-01      69-15       KISSENA… 11367
+    ## 3 18641286    807996  3     BROOKLYN 35    35         53          DWIGHT … 11231
+    ## 4 18641287    807996  3     BROOKLYN 35    35         53          DWIGHT … 11231
+    ## 5 18641288    807996  3     BROOKLYN 35    35         53          DWIGHT … 11231
+    ## 6 18641289    807996  3     BROOKLYN 35    35         53          DWIGHT … 11231
     ## # ℹ 26 more variables: development_name <chr>, tds_no <chr>,
     ## #   stairhall_no <chr>, sctn_boro <chr>, sctn_boro_nm <chr>, sctn_hus_no <chr>,
     ## #   sctn_str_nm <chr>, sctn_zip <chr>, actl_unit_insp <chr>, actl_stry <chr>,
@@ -45,10 +45,10 @@ data %>%
     ## # A tibble: 5 × 2
     ##   boro_nm           n
     ##   <chr>         <int>
-    ## 1 BRONX           237
-    ## 2 BROOKLYN        701
-    ## 3 MANHATTAN       909
-    ## 4 QUEENS          196
+    ## 1 BRONX           244
+    ## 2 BROOKLYN        721
+    ## 3 MANHATTAN       941
+    ## 4 QUEENS          225
     ## 5 STATEN ISLAND    24
 
 ## Visual

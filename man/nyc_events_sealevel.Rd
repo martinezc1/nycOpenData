@@ -34,10 +34,9 @@ risks and trends in NYC.
 # Examples that hit the live NYC Open Data API are guarded so CRAN checks
 # do not fail when the network is unavailable or slow.
 if (interactive() && curl::has_internet()) {
-  small_sample <- nyc_events_sealevel(limit = 5)
+  small_sample <- nyc_events_sealevel(limit = )
   small_sample
 
- # Example with a filter (replace with real fields/values if desired)
- # nyc_events_sealevel(limit = 2, filters = list(sea_lelel_rise = "6 in"))
+ nyc_events_sealevel(limit = 2, filters = list(sea_lelel_rise = "6 in"))
 }
 }

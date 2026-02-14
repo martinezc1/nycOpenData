@@ -14,8 +14,7 @@
   Rise](https://martinezc1.github.io/nycOpenData/articles/analyzing-nyc_events_sealevel.md):
 - [Working With NYC Wetlands
   Data](https://martinezc1.github.io/nycOpenData/articles/analyzing-nyc_wetlands.md):
-- [Getting Started with nycOpenData: data set titled NYPD Shooting
-  Incident
+- [Getting Started with nycOpenData: data set titled NYPD Shootings
   Data](https://martinezc1.github.io/nycOpenData/articles/analyzing-nyc-shooting-incidents.md):
 - [Analyzing NYCHA Housing Maintenance Code
   Violations](https://martinezc1.github.io/nycOpenData/articles/nyc_ha_violations.md):

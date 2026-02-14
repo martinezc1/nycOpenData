@@ -1,30 +1,30 @@
 http_interactions:
 - request:
     method: GET
-    uri: https://data.cityofnewyork.us/resource/5ucz-vwe8.json?%24limit=2&%24order=occur_date+DESC
+    uri: https://data.cityofnewyork.us/resource/98wc-x49t.json?%24limit=2&%24order=occur_date+DESC
   response:
     status: 200
     headers:
       server: nginx
-      date: Mon, 09 Feb 2026 15:26:48 GMT
+      date: Sat, 14 Feb 2026 15:17:43 GMT
       content-type: application/json;charset=utf-8
       transfer-encoding: chunked
       connection: keep-alive
       access-control-allow-origin: '*'
-      etag: '"Z29sZi4xNTUyM18zXzk3UFRxemlhNkhFekg3QzNxNXBOVkNDYzVOc0dv---gzipdBO4FuUHHeFECW4gdV_7gVyEVRU--gzip--gzip"'
-      x-soda2-fields: '["incident_key","occur_date","occur_time","boro","loc_of_occur_desc","precinct","jurisdiction_code","loc_classfctn_desc","location_desc","statistical_murder_flag","perp_age_group","perp_sex","perp_race","vic_age_group","vic_sex","vic_race","x_coord_cd","y_coord_cd","latitude","longitude","geocoded_column"]'
-      x-soda2-types: '["text","floating_timestamp","text","text","text","number","number","text","text","text","text","text","text","text","text","text","number","number","number","number","point"]'
+      etag: '"anVsaWV0dC4xNjMyMjlfMV8xN1loM0hiOFhkLVJyMlpQZFVQNTZZVHhHYTNhTQ---gziqDbNvEkq-w98FPkm-v-OnM7iRiI--gzip--gzip"'
+      x-soda2-fields: '["incident_key","occur_date","occur_time","boro","loc_of_occur_desc","precinct","jurisdiction_code","loc_classfctn_desc","location_desc","x_coord_cd","y_coord_cd","latitude","longitude"]'
+      x-soda2-types: '["number","floating_timestamp","text","text","text","number","number","text","text","number","number","number","number"]'
       x-soda2-data-out-of-date: 'false'
-      x-soda2-truth-last-modified: Mon, 27 Oct 2025 16:55:15 GMT
-      x-soda2-secondary-last-modified: Mon, 27 Oct 2025 16:55:15 GMT
-      last-modified: Mon, 27 Oct 2025 16:55:15 GMT
+      x-soda2-truth-last-modified: Tue, 10 Feb 2026 15:51:05 GMT
+      x-soda2-secondary-last-modified: Tue, 10 Feb 2026 15:51:05 GMT
+      last-modified: Tue, 10 Feb 2026 15:51:05 GMT
       vary: Accept-Encoding
       content-encoding: gzip
       strict-transport-security: max-age=31536000; includeSubDomains
-      x-socrata-requestid: fe10f68101770010340b4553e93fbb7b
+      x-socrata-requestid: db4ebb1c5c8ec358ea844d1b8c0c26f4
     body:
       string: |
-        [{"incident_key":"313716449","occur_date":"2025-09-30T00:00:00.000","occur_time":"17:56:00","boro":"BRONX","loc_of_occur_desc":"OUTSIDE","precinct":"48","jurisdiction_code":"0","loc_classfctn_desc":"STREET","location_desc":"(null)","statistical_murder_flag":"N","perp_age_group":"(null)","perp_sex":"(null)","perp_race":"(null)","vic_age_group":"25-44","vic_sex":"F","vic_race":"BLACK","x_coord_cd":"1013404","y_coord_cd":"251800","latitude":"40.85777","longitude":"-73.894607","geocoded_column":{"type":"Point","coordinates":[-73.894607,40.85777]}}
-        ,{"incident_key":"313716449","occur_date":"2025-09-30T00:00:00.000","occur_time":"17:56:00","boro":"BRONX","loc_of_occur_desc":"OUTSIDE","precinct":"48","jurisdiction_code":"0","loc_classfctn_desc":"STREET","location_desc":"(null)","statistical_murder_flag":"N","perp_age_group":"(null)","perp_sex":"(null)","perp_race":"(null)","vic_age_group":"25-44","vic_sex":"M","vic_race":"BLACK","x_coord_cd":"1013404","y_coord_cd":"251800","latitude":"40.85777","longitude":"-73.894607","geocoded_column":{"type":"Point","coordinates":[-73.894607,40.85777]}}]
-  recorded_at: 2026-02-09 15:26:48
+        [{"incident_key":"318207675","occur_date":"2025-12-31T00:00:00.000","occur_time":"23:44:00","boro":"MANHATTAN","loc_of_occur_desc":"OUTSIDE","precinct":"23","jurisdiction_code":"2","loc_classfctn_desc":"HOUSING","location_desc":"MULTI DWELL - PUBLIC HOUS","x_coord_cd":"999686","y_coord_cd":"226679","latitude":"40.788854","longitude":"-73.944257"}
+        ,{"incident_key":"318203589","occur_date":"2025-12-31T00:00:00.000","occur_time":"18:40:00","boro":"MANHATTAN","loc_of_occur_desc":"INSIDE","precinct":"32","jurisdiction_code":"2","loc_classfctn_desc":"HOUSING","location_desc":"MULTI DWELL - PUBLIC HOUS","x_coord_cd":"1000457","y_coord_cd":"238373","latitude":"40.82095","longitude":"-73.941445"}]
+  recorded_at: 2026-02-14 15:17:43
 recorded_with: VCR-vcr/2.1.0
