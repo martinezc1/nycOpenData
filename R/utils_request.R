@@ -9,14 +9,37 @@
   stop(msg, call. = FALSE)
 }
 
-# r16: enforce snake_case output column names
+# consistent snake_case column names
 .nyc_clean_names <- function(df) {
+  # janitor::clean_names() returns syntactic, snake_case names
   janitor::clean_names(df)
 }
 
-# r17: light, safe type coercion (numeric/logical + ISO datetime when obvious)
+# light, safe type coercion (numeric/logical + ISO datetime when obvious)
 .nyc_coerce_types <- function(df) {
   if (!inherits(df, "data.frame") || nrow(df) == 0) return(df)
+
+  is_iso_datetime <- function(x) {
+    # Strict-ish ISO datetime:
+    # 2025-02-18T12:34:56
+    # 2025-02-18T12:34:56.123
+    # optional trailing Z or timezone offset
+    grepl(
+      "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(\\.\\d+)?(Z|[+-]\\d{2}:?\\d{2})?$",
+      x
+    )
+  }
+
+  parse_iso_datetime_safe <- function(x) {
+    # Normalize common endings so base::strptime doesn't choke on Z / offsets
+    x3 <- sub("Z$", "", x)
+    x3 <- sub("([+-]\\d{2}:?\\d{2})$", "", x3)
+
+    tryCatch(
+      as.POSIXct(x3, tz = "UTC", format = "%Y-%m-%dT%H:%M:%OS"),
+      error = function(e) rep(as.POSIXct(NA), length(x3))
+    )
+  }
 
   for (nm in names(df)) {
     x <- df[[nm]]
@@ -32,30 +55,31 @@
       next
     }
 
-    # Numeric / Integer (only if all non-missing parse cleanly)
+    # Numeric (always numeric; never integer to avoid overflow warnings)
     xn <- gsub(",", "", x2, fixed = TRUE)
     ok_num <- grepl("^[-+]?(\\d+\\.?\\d*|\\d*\\.?\\d+)$", xn) | is.na(xn)
     if (all(ok_num)) {
       num <- suppressWarnings(as.numeric(xn))
       if (all(is.na(xn) | !is.na(num))) {
-        if (all(is.na(num) | abs(num - round(num)) < .Machine$double.eps^0.5)) {
-          df[[nm]] <- as.integer(round(num))
-        } else {
-          df[[nm]] <- num
-        }
+        df[[nm]] <- num
         next
       }
     }
 
-    # ISO-ish datetime: 2025-02-18T12:34:56(.mmm)(Z)
-    looks_dt <- grepl("^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:", x2) | is.na(x2)
-    if (any(looks_dt, na.rm = TRUE)) {
-      parsed <- suppressWarnings(as.POSIXct(x2, tz = "UTC", format = "%Y-%m-%dT%H:%M:%OS"))
-      non_missing <- sum(!is.na(x2))
-      parsed_ok <- sum(!is.na(parsed))
-      if (non_missing > 0 && parsed_ok / non_missing >= 0.95) {
-        df[[nm]] <- parsed
-        next
+    # ISO-ish datetime (only if it REALLY matches + is short enough)
+    non_na <- x2[!is.na(x2)]
+    if (length(non_na) > 0) {
+      # If strings are huge, do not attempt datetime parsing
+      if (max(nchar(non_na), na.rm = TRUE) <= 64) {
+        dt_ok <- is_iso_datetime(non_na)
+        if (sum(dt_ok) / length(non_na) >= 0.95) {
+          parsed <- parse_iso_datetime_safe(x2)
+          # Only apply if parsing succeeded for most non-missing
+          if (sum(!is.na(parsed[!is.na(x2)])) / length(non_na) >= 0.95) {
+            df[[nm]] <- parsed
+            next
+          }
+        }
       }
     }
   }
@@ -64,15 +88,10 @@
 }
 
 .nyc_validate_limit <- function(limit) {
-  if (length(limit) != 1 || is.na(limit)) {
-    .nyc_abort("`limit` must be a single, non-missing numeric value.")
-  }
-  if (!is.numeric(limit)) {
-    .nyc_abort("`limit` must be a single numeric value.")
-  }
-  if (limit < 0) {
-    .nyc_abort("`limit` must be between 0 and Inf.")
-  }
+  if (length(limit) != 1 || is.na(limit)) .nyc_abort("`limit` must be a single, non-missing numeric value.")
+  if (!is.numeric(limit)) .nyc_abort("`limit` must be a single numeric value.")
+  if (limit < 0) .nyc_abort("`limit` must be between 0 and Inf.")
+  if (limit != floor(limit)) .nyc_abort("`limit` must be an integer (whole number).")
   as.integer(limit)
 }
 
@@ -240,7 +259,7 @@
 
   data <- .nyc_get_json(endpoint, query_list, timeout_sec = timeout_sec)
 
-  out <- tibble::as_tibble(data)
+  out <- tibble::as_tibble(data, .name_repair = "minimal")
 
   # r16: snake_case output names
   out <- .nyc_clean_names(out)

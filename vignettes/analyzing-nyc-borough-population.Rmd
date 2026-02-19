@@ -80,10 +80,10 @@ borough_data <- population_data |>
 
 # Reshape from wide to long format
 pop_long <- borough_data |>
-  select(borough, `_1950`, `_1960`, `_1970`, `_1980`, `_1990`, `_2000`, `_2010`, `_2020`, `_2030`, `_2040`) |>
-  pivot_longer(cols = starts_with("_"), names_to = "year", values_to = "population") |>
+  select(borough, `x1950`, `x1960`, `x1970`, `x1980`, `x1990`, `x2000`, `x2010`, `x2020`, `x2030`, `x2040`) |>
+  pivot_longer(cols = starts_with("x"), names_to = "year", values_to = "population") |>
   mutate(
-    year = as.numeric(gsub("_", "", year)),
+    year = as.numeric(gsub("x", "", year)),
     population = as.numeric(population)
   )
 
