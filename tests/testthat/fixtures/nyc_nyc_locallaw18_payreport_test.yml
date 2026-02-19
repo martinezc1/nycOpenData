@@ -6,7 +6,7 @@ http_interactions:
     status: 200
     headers:
       server: nginx
-      date: Tue, 03 Feb 2026 18:24:53 GMT
+      date: Thu, 19 Feb 2026 20:49:57 GMT
       content-type: application/json;charset=utf-8
       transfer-encoding: chunked
       connection: keep-alive
@@ -21,10 +21,10 @@ http_interactions:
       vary: Accept-Encoding
       content-encoding: gzip
       strict-transport-security: max-age=31536000; includeSubDomains
-      x-socrata-requestid: b1f66bf7b8d928e47870ad26be796bc6
+      x-socrata-requestid: 162a106fa8257ddbeed55266548b2d93
     body:
       string: |
         [{"data_year":"2022","agency_name":"TECHNOLOGY & INNOVATION","eeo_4_job_category":"TECHNICIANS","pay_band":"95000-99999","lower_pay_band_bound":"95000","upper_pay_band_bound":"99999","employee_status":"Full-Time","race":"White","ethnicity":"Non-Hispanic or Latino","gender":"Female","number_of_employees":"<5"}
         ,{"data_year":"2022","agency_name":"TECHNOLOGY & INNOVATION","eeo_4_job_category":"TECHNICIANS","pay_band":"85000-89999","lower_pay_band_bound":"85000","upper_pay_band_bound":"89999","employee_status":"Full-Time","race":"White","ethnicity":"Hispanic or Latino","gender":"Female","number_of_employees":"<5"}]
-  recorded_at: 2026-02-03 18:24:53
+  recorded_at: 2026-02-19 20:49:57
 recorded_with: VCR-vcr/2.1.0

@@ -6,27 +6,25 @@ http_interactions:
     status: 200
     headers:
       server: nginx
-      date: Tue, 27 Jan 2026 20:20:00 GMT
+      date: Thu, 19 Feb 2026 20:49:52 GMT
       content-type: application/json;charset=utf-8
       transfer-encoding: chunked
       connection: keep-alive
       access-control-allow-origin: '*'
-      etag: '"Zm94dHJvdC4xNTY2OF81XzM5NDg1WDR6dnRQNE9aWTYyUl90NnRMQXc4TmRDMnM---gzioXkgFuCFxwXkveNyb1D2Ry4_5UCg--gzip--gzip"'
+      etag: '"Zm94dHJvdC4xNTY2OF81XzM5NjI1WDR6dnRQNE9aWTYyUl90NnRMQXc4TmRDMnM---gzioXkgFuCFxwXkveNyb1D2Ry4_5UCg--gzip--gzip"'
       x-soda2-fields: '["borough","bin__","house__","street_name","job__","job_doc___","job_type","self_cert","block","lot","community_board","zip_code","bldg_type","residential","special_district_1","special_district_2","work_type","permit_status","filing_status","permit_type","permit_sequence__","permit_subtype","oil_gas","site_fill","filing_date","issuance_date","expiration_date","job_start_date","permittee_s_first_name","permittee_s_last_name","permittee_s_business_name","permittee_s_phone__","permittee_s_license_type","permittee_s_license__","act_as_superintendent","permittee_s_other_title","hic_license","site_safety_mgr_s_first_name","site_safety_mgr_s_last_name","site_safety_mgr_business_name","superintendent_first___last_name","superintendent_business_name","owner_s_business_type","non_profit","owner_s_business_name","owner_s_first_name","owner_s_last_name","owner_s_house__","owner_s_house_street_name","city","state","owner_s_zip_code","owner_s_phone__","dobrundate","permit_si_no","gis_latitude","gis_longitude","gis_council_district","gis_census_tract","gis_nta_name"]'
       x-soda2-types: '["text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text"]'
       x-soda2-data-out-of-date: 'false'
-      x-soda2-truth-last-modified: Sat, 24 Jan 2026 21:01:15 GMT
-      x-soda2-secondary-last-modified: Sat, 24 Jan 2026 21:01:15 GMT
-      last-modified: Sat, 24 Jan 2026 21:01:15 GMT
+      x-soda2-truth-last-modified: Wed, 18 Feb 2026 21:07:59 GMT
+      x-soda2-secondary-last-modified: Wed, 18 Feb 2026 21:07:59 GMT
+      last-modified: Wed, 18 Feb 2026 21:07:59 GMT
       vary: Accept-Encoding
       content-encoding: gzip
-      age: '0'
-      x-socrata-region: aws-us-east-1-fedramp-prod
       strict-transport-security: max-age=31536000; includeSubDomains
-      x-socrata-requestid: 0cc8eff7da0865e9be5a1b434810c692
+      x-socrata-requestid: a631a1a547d3ce7e60d79a4cc229663d
     body:
       string: |
         [{"borough":"BRONX","bin__":"2115632","house__":"1072","street_name":"INTERVALE AVENUE","job__":"200996627","job_doc___":"01","job_type":"NB","self_cert":"Y","block":"02705","lot":"00022","community_board":"202","zip_code":"10459","bldg_type":"1","residential":"YES","permit_status":"ISSUED","filing_status":"RENEWAL","permit_type":"NB","permit_sequence__":"03","site_fill":"ON-SITE","issuance_date":"11/08/2018","expiration_date":"08/29/2019","job_start_date":"10/28/2005","permittee_s_first_name":"SHMUEL","permittee_s_last_name":"SILBER","permittee_s_business_name":"QUAD CONSTRUCTION NEW YOR","permittee_s_phone__":"7184759108","permittee_s_license_type":"GC","permittee_s_license__":"0608101","owner_s_business_type":"CORPORATION","non_profit":"N","owner_s_business_name":"1072 INTERVALE LLC","owner_s_first_name":"AARON","owner_s_last_name":"JACOBS","owner_s_phone__":"7183900311","dobrundate":"05/09/2022 00:00:00","permit_si_no":"3636656","gis_latitude":"40.825171","gis_longitude":"-73.896835","gis_council_district":"17","gis_census_tract":"131","gis_nta_name":"Longwood"}
         ,{"borough":"STATEN ISLAND","bin__":"5106239","house__":"280","street_name":"PARK HILL AVENUE","job__":"520368263","job_doc___":"01","job_type":"A2","self_cert":"N","block":"02922","lot":"00001","community_board":"501","zip_code":"10304","bldg_type":"2","residential":"YES","work_type":"MH","permit_status":"ISSUED","filing_status":"RENEWAL","permit_type":"EW","permit_sequence__":"03","permit_subtype":"MH","site_fill":"NOT APPLICABLE","filing_date":"2020-06-05 ","issuance_date":"2020-06-05 ","expiration_date":"2021-04-03","job_start_date":"2019-02-01","permittee_s_first_name":"NICHOLAS","permittee_s_last_name":"LEONE","permittee_s_business_name":"L.E.C.INC","permittee_s_phone__":"7183514606","permittee_s_license_type":"GC","permittee_s_license__":"0038763","owner_s_business_type":"PARTNERSHIP","non_profit":"N","owner_s_business_name":"SR. REAL ESTATE AND CONSTRUCTION","owner_s_first_name":"MICHAEL","owner_s_last_name":"TOTA","owner_s_house__":"ONE","owner_s_house_street_name":"AT&T WAY","city":"BEDMINISTER","state":"NJ","owner_s_zip_code":"07921","owner_s_phone__":"9082343934","dobrundate":"2020-06-06 ","permit_si_no":"3761682","gis_latitude":"40.612466","gis_longitude":"-74.083175","gis_council_district":"49","gis_census_tract":"40","gis_nta_name":"Grymes Hill-Clifton-Fox Hills"}]
-  recorded_at: 2026-01-27 20:20:00
+  recorded_at: 2026-02-19 20:49:52
 recorded_with: VCR-vcr/2.1.0

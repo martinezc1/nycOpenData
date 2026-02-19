@@ -19,11 +19,12 @@ knitr::opts_chunk$set(
 knitr::opts_chunk$set(warning = FALSE, message = FALSE)
 library(nycOpenData)
 library(ggplot2)
+library(dplyr)
 ```
 
 ## Introduction
 
-If you have lived or live in NYC before, you know how populated it is. A beautiful city with many things to do. But we unfortunately know that a very populated city can lead to us hearing about crimes that occur or we might be curious as to what crime or what type of crime might occur in our beautiful city. NYC now has data to show you about every shooting incident that has occurred in NYC. Information that is included is the date of the incident, the time it occurred, what borough it occurred, and so much more. If you want to know more information, you can find the dataset [here](https://data.cityofnewyork.us/Public-Safety/NYPD-Shootings/98wc-x49t/about_data) If you want to explore this data set more, in R, the `nycOpenData` package can be used to pull this data directly.
+If you have lived or live in NYC before, you know how populated it is. A beautiful city with many things to do. But we unfortunately know that a very populated city can lead to us hearing about crimes that occur or we might be curious as to what crime or what type of crime might occur in our beautiful city. NYC now has data to show you about every shooting incident that has occurred in NYC. Information that is included is the date of the incident, the time it occurred, what borough it occurred, and so much more. If you want to know more information, you can find the dataset [here](https://data.cityofnewyork.us/Public-Safety/NYPD-Shootings/98wc-x49t/about_data). If you want to explore this dataset more, in R, the `nycOpenData` package can be used to pull this data directly.
 
 By using the `nyc_shooting_incidents()` function, we can gather the most recent shooting incidents in NYC!
 
@@ -35,21 +36,21 @@ small_sample <- nyc_shooting_incidents(limit = 3)
 small_sample
 
 # Seeing what columns are in the data set
-colnames(small_sample)
+names(small_sample)
 ```
 
 We have successfully pulled NYPD Shooting Incident Data from the NYC Open Data Portal. 
 
 ## Mini analysis
 
-Since we have successfully pulled the data, lets do a quick analysis to see the location (name of column: LOC_OF_OCCUR_DESC, Either:Outside or inside) of shooting incidents in each borough (name of column: BORO).
+Since we have successfully pulled the data, let's do a quick analysis to see the location (name of column: LOC_OF_OCCUR_DESC, Either:Outside or inside) of shooting incidents in each borough (name of column: BORO).
 
 To do this, we will create a cluster bar graph.
 
 ```{r shooting incidents per borough location typegraph, fig.alt="Cluster bar graph showing the number of shooting incidents per borough with the amount of shootings that took place either outside or inside", fig.cap="Cluster bar graph showing shooting incidents per borough based on the location of shooting."}
-shooting_data<-nyc_shooting_incidents(limit=1000)
+shooting_data<-nyc_shooting_incidents(limit = 1000)
 
-ggplot(shooting_data, aes(boro, fill = loc_of_occur_desc)) +
+ggplot(shooting_data, aes(x = boro, fill = loc_of_occur_desc)) +
   geom_bar(position = "dodge") +
   geom_text(
     stat = "count",
@@ -64,6 +65,4 @@ ggplot(shooting_data, aes(boro, fill = loc_of_occur_desc)) +
   )+
   theme_minimal()
 ```
-This graphs shows us the counts of shooting incidents that took place in each borough based on the location of the incident (inside or outside)
-
-
+This graph shows us the counts of shooting incidents that took place in each borough based on the location of the incident (inside or outside)

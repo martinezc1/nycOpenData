@@ -27,15 +27,11 @@
 #' }
 #' @export
 nyc_medallion_drivers_authorized <- function(limit = 10000, filters = list(), timeout_sec = 30) {
-  endpoint <- .nyc_endpoint("rhe8-mgbb")
-
-  query_list <- list(
-    "$limit" = limit,
-    "$order" = "last_updated_date DESC"
+  .nyc_dataset_request(
+    dataset_id = "rhe8-mgbb",
+    limit = limit,
+    filters = filters,
+    order = "last_updated_date DESC",
+    timeout_sec = timeout_sec
   )
-
-  query_list <- .nyc_add_filters(query_list, filters)
-
-  data <- .nyc_get_json(endpoint, query_list, timeout_sec = timeout_sec)
-  tibble::as_tibble(data)
 }

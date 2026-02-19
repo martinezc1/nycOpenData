@@ -6,27 +6,25 @@ http_interactions:
     status: 200
     headers:
       server: nginx
-      date: Tue, 27 Jan 2026 20:20:05 GMT
+      date: Thu, 19 Feb 2026 20:49:55 GMT
       content-type: application/json;charset=utf-8
       transfer-encoding: chunked
       connection: keep-alive
       access-control-allow-origin: '*'
-      etag: '"Zm94dHJvdC4zNjUwNV82NjlfNjUxM182VVZjT3p4SmFlcmZsc01XZS0zWlhXU3JhSQ---gziunGxAhRpUq1E5daN6F1jfaw1q7N--gzip--gzip"'
+      etag: '"Zm94dHJvdC4zNjUwNV82NjlfNjUzNTJySzBoZVl3a0lvOVNiN1V3b3ZobXRJbC1saw---gziunGxAhRpUq1E5daN6F1jfaw1q7N--gzip--gzip"'
       x-soda2-fields: '["active","vehicle_license_number","name","license_type","expiration_date","permit_license_number","dmv_license_plate_number","vehicle_vin_number","wheelchair_accessible","certification_date","hack_up_date","vehicle_year","base_number","base_name","base_type","veh","base_telephone_number","website","base_address","reason","order_date","last_date_updated","last_time_updated"]'
       x-soda2-types: '["text","text","text","text","floating_timestamp","text","text","text","text","floating_timestamp","floating_timestamp","number","text","text","text","text","text","text","text","text","floating_timestamp","floating_timestamp","text"]'
       x-soda2-data-out-of-date: 'false'
-      x-soda2-truth-last-modified: Tue, 27 Jan 2026 19:51:10 GMT
-      x-soda2-secondary-last-modified: Tue, 27 Jan 2026 19:51:10 GMT
-      last-modified: Tue, 27 Jan 2026 19:51:10 GMT
+      x-soda2-truth-last-modified: Thu, 19 Feb 2026 20:17:15 GMT
+      x-soda2-secondary-last-modified: Thu, 19 Feb 2026 20:17:15 GMT
+      last-modified: Thu, 19 Feb 2026 20:17:15 GMT
       vary: Accept-Encoding
       content-encoding: gzip
-      age: '0'
-      x-socrata-region: aws-us-east-1-fedramp-prod
       strict-transport-security: max-age=31536000; includeSubDomains
-      x-socrata-requestid: f3574b1d885a5a2e67b9444fa83aa83e
+      x-socrata-requestid: 007bf605459201331b9ef0f73bc0f1e9
     body:
       string: |
-        [{"active":"YES","vehicle_license_number":"6032728","name":"UPPAL, ARSHDEEP","license_type":"FOR HIRE VEHICLE","expiration_date":"2026-06-30T00:00:00.000","permit_license_number":"AA005","dmv_license_plate_number":"T117661C","vehicle_vin_number":"KMHLM4AJ2NU023825","wheelchair_accessible":"PILOT","vehicle_year":"2022","base_number":"B03152","base_name":"EXIT LUXURY INC.","base_type":"BLACK-CAR","veh":"HYB","base_telephone_number":"(718)472-9800","base_address":"29 - 10   36 AVENUE LONGISLAND CITY NY 11106","reason":"G","last_date_updated":"2026-01-27T00:00:00.000","last_time_updated":"13:25"}
-        ,{"active":"YES","vehicle_license_number":"5953896","name":"ELIHORI,ASIM,SALIH","license_type":"FOR HIRE VEHICLE","expiration_date":"2027-11-07T00:00:00.000","permit_license_number":"AA006","dmv_license_plate_number":"T790912C","vehicle_vin_number":"4T4BF1FK4FR457564","certification_date":"2019-11-07T00:00:00.000","hack_up_date":"2019-11-07T00:00:00.000","vehicle_year":"2015","base_number":"B03036","base_name":"ZYNC INC","base_type":"BLACK-CAR","base_telephone_number":"(718)482-1818","base_address":"12-04   44 AVENUE LIC NY 11101","reason":"G","last_date_updated":"2026-01-27T00:00:00.000","last_time_updated":"13:25"}]
-  recorded_at: 2026-01-27 20:20:06
+        [{"active":"YES","vehicle_license_number":"6032728","name":"UPPAL, ARSHDEEP","license_type":"For Hire Vehicle","expiration_date":"2026-06-30T00:00:00.000","permit_license_number":"AA005","dmv_license_plate_number":"T117661C","vehicle_vin_number":"KMHLM4AJ2NU023825","wheelchair_accessible":"PILOT","vehicle_year":"2022","base_number":"B03152","base_name":"EXIT LUXURY INC.","base_type":"BLACK CAR","veh":"HYB","base_telephone_number":"(718) 472-9800","website":"EXITLUXURYINC@GMAIL.COM","base_address":"29 - 10   36 AVENUE LONGISLAND CITY NY 11106","reason":"G","last_date_updated":"2026-02-19T00:00:00.000","last_time_updated":"14:01"}
+        ,{"active":"YES","vehicle_license_number":"5953896","name":"ELIHORI,ASIM,SALIH","license_type":"For Hire Vehicle","expiration_date":"2027-11-07T00:00:00.000","permit_license_number":"AA006","dmv_license_plate_number":"T790912C","vehicle_vin_number":"4T4BF1FK4FR457564","certification_date":"2019-11-07T00:00:00.000","hack_up_date":"2019-11-07T00:00:00.000","vehicle_year":"2015","base_number":"B03036","base_name":"ZYNC INC","base_type":"BLACK CAR","base_telephone_number":"(718) 482-1818","website":"INFO@ZYNC.NYC","base_address":"12-04   44 AVENUE LIC NY 11101","reason":"G","last_date_updated":"2026-02-19T00:00:00.000","last_time_updated":"14:01"}]
+  recorded_at: 2026-02-19 20:49:55
 recorded_with: VCR-vcr/2.1.0

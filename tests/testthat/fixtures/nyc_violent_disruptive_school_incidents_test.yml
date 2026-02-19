@@ -6,7 +6,7 @@ http_interactions:
     status: 200
     headers:
       server: nginx
-      date: Tue, 27 Jan 2026 20:20:29 GMT
+      date: Thu, 19 Feb 2026 20:50:08 GMT
       content-type: application/json;charset=utf-8
       transfer-encoding: chunked
       connection: keep-alive
@@ -20,13 +20,11 @@ http_interactions:
       last-modified: Thu, 10 Jul 2025 19:10:03 GMT
       vary: Accept-Encoding
       content-encoding: gzip
-      age: '2'
-      x-socrata-region: aws-us-east-1-fedramp-prod
       strict-transport-security: max-age=31536000; includeSubDomains
-      x-socrata-requestid: 4058cae40b06c072f68a2856447e59d9
+      x-socrata-requestid: 63c022b46a60fdcaa552027b3f70415c
     body:
       string: |
         [{"school_year":"2014-2015","beds_code":"353100010075","school_name":"Is 75 Frank D Paulo","district_name":"New York City Geographic District #31","school_type":"Public","enrollment":"1357","homicide_with_weapon_s":"0","homicide_without_weapon_s":"0","forcible_sex_offenses_with":"0","forcible_sex_offenses_without":"0","other_sex_offenses_with_weapon":"0","other_sex_offenses_without":"2","robbery_with_weapon_s":"0","robbery_without_weapon_s":"0","assault_with_serious_physical":"0","assault_with_serious_physical_1":"0","arson_with_weapon_s":"0","kidnapping_with_weapon_s":"0","kidnapping_without_weapon":"0","assault_with_physical_injury":"2","assault_with_physical_injury_1":"2","reckless_endangerment_with":"1","reckless_endangerment_without":"3","minor_altercations_with_weapon":"1","minor_altercations_without":"9","intimidation_harassment":"0","intimidation_harassment_1":"3","burglary_with_weapon_s":"0","burglary_without_weapon_s":"0","criminal_mischief_with_weapon":"0","criminal_mischief_without":"0","larceny_or_other_theft_with":"0","larceny_or_other_theft_without":"0","bomb_threat":"0","false_alarm":"1","riot_with_weapon_s":"0","riot_without_weapon_s":"0","weapon_possessionthrough":"0","weapon_possession_under_other":"1","drug_possession":"1","alcohol_possession":"0","other_disruptive":"5","county":"Richmond","need_resource_category":"New York City","grade_organization":"Middle"}
         ,{"school_year":"2014-2015","beds_code":"353100010063","school_name":"Marsh Avenue School For Expeditionary Learning","district_name":"New York City Geographic District #31","school_type":"Public","enrollment":"443","homicide_with_weapon_s":"0","homicide_without_weapon_s":"0","forcible_sex_offenses_with":"0","forcible_sex_offenses_without":"0","other_sex_offenses_with_weapon":"0","other_sex_offenses_without":"1","robbery_with_weapon_s":"0","robbery_without_weapon_s":"0","assault_with_serious_physical":"0","assault_with_serious_physical_1":"0","arson_with_weapon_s":"0","kidnapping_with_weapon_s":"0","kidnapping_without_weapon":"0","assault_with_physical_injury":"1","assault_with_physical_injury_1":"1","reckless_endangerment_with":"1","reckless_endangerment_without":"0","minor_altercations_with_weapon":"0","minor_altercations_without":"3","intimidation_harassment":"0","intimidation_harassment_1":"0","burglary_with_weapon_s":"0","burglary_without_weapon_s":"0","criminal_mischief_with_weapon":"0","criminal_mischief_without":"0","larceny_or_other_theft_with":"0","larceny_or_other_theft_without":"0","bomb_threat":"0","false_alarm":"0","riot_with_weapon_s":"0","riot_without_weapon_s":"0","weapon_possessionthrough":"0","weapon_possession_under_other":"1","drug_possession":"0","alcohol_possession":"0","other_disruptive":"1","county":"Richmond","need_resource_category":"New York City","grade_organization":"Middle"}]
-  recorded_at: 2026-01-27 20:20:29
+  recorded_at: 2026-02-19 20:50:08
 recorded_with: VCR-vcr/2.1.0

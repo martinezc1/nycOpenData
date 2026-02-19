@@ -6,27 +6,25 @@ http_interactions:
     status: 200
     headers:
       server: nginx
-      date: Tue, 27 Jan 2026 20:19:56 GMT
+      date: Thu, 19 Feb 2026 20:49:50 GMT
       content-type: application/json;charset=utf-8
       transfer-encoding: chunked
       connection: keep-alive
       access-control-allow-origin: '*'
-      etag: '"Zm94dHJvdC42MDY0Ml8xMDY4XzE1MTIxY2QyMmVPbzJNYXFKOWFHMG1vdnI4dVpVQ05V---gzipMx8php5e4B9c2Pqj1n1JBIYRB9Y--gzip--gzip"'
+      etag: '"Zm94dHJvdC42MDY0Ml8xMDY4XzE1MTM2Y2QyMmVPbzJNYXFKOWFHMG1vdnI4dVpVQ05V---gzipMx8php5e4B9c2Pqj1n1JBIYRB9Y--gzip--gzip"'
       x-soda2-fields: '["exam_no","list_no","first_name","mi","last_name","adj_fa","list_title_code","list_title_desc","group_no","list_agency_code","list_agency_desc","list_div_code","published_date","established_date","anniversary_date","extension_date","veteran_credit","parent_lgy_credit","sibling_lgy_credit","residency_credit"]'
       x-soda2-types: '["text","number","text","text","text","number","text","text","text","text","text","text","floating_timestamp","floating_timestamp","floating_timestamp","floating_timestamp","text","text","text","text"]'
       x-soda2-data-out-of-date: 'false'
-      x-soda2-truth-last-modified: Tue, 27 Jan 2026 14:02:41 GMT
-      x-soda2-secondary-last-modified: Tue, 27 Jan 2026 14:02:41 GMT
-      last-modified: Tue, 27 Jan 2026 14:02:41 GMT
+      x-soda2-truth-last-modified: Thu, 19 Feb 2026 14:04:27 GMT
+      x-soda2-secondary-last-modified: Thu, 19 Feb 2026 14:04:27 GMT
+      last-modified: Thu, 19 Feb 2026 14:04:27 GMT
       vary: Accept-Encoding
       content-encoding: gzip
-      age: '0'
-      x-socrata-region: aws-us-east-1-fedramp-prod
       strict-transport-security: max-age=31536000; includeSubDomains
-      x-socrata-requestid: d042a123a04c3d3d734a28ac16fb5fe9
+      x-socrata-requestid: 709674d435f111f8c7e6055eeb82bce4
     body:
       string: |
-        [{"exam_no":"5307","list_no":"208","first_name":"CLAUDEMAR","mi":"I","last_name":"SENEUS","adj_fa":"91","list_title_code":"71012","list_title_desc":"POLICE COMMUNICATIONS TECHNICIAN","group_no":"000","list_agency_code":"000","list_agency_desc":"OPEN COMPETITIVE","established_date":"2025-07-30T00:00:00.000","anniversary_date":"2029-07-30T00:00:00.000","veteran_credit":"Veteran's Credit"}
-        ,{"exam_no":"8703","list_no":"384","first_name":"FREDERICK","mi":"M","last_name":"LESEROWITZ","adj_fa":"73","list_title_code":"91231","list_title_desc":"TRAIN SERVICE SUPERVISOR","group_no":"001","list_agency_code":"998","list_agency_desc":"N.Y.C. TRANSIT AUTHORITY","established_date":"2020-02-05T00:00:00.000","anniversary_date":"2024-02-05T00:00:00.000","extension_date":"2026-02-05T00:00:00.000"}]
-  recorded_at: 2026-01-27 20:19:56
+        [{"exam_no":"4615","list_no":"118","first_name":"OTIS","mi":"S","last_name":"SAYLEE","adj_fa":"87","list_title_code":"91203","list_title_desc":"BUS OPERATOR","group_no":"000","list_agency_code":"000","list_agency_desc":"OPEN COMPETITIVE","established_date":"2026-01-14T00:00:00.000","anniversary_date":"2030-01-14T00:00:00.000"}
+        ,{"exam_no":"3116","list_no":"2643","first_name":"BRITTNEY","mi":"N","last_name":"RUSSO","adj_fa":"71","list_title_code":"12626","list_title_desc":"STAFF ANALYST","group_no":"000","list_agency_code":"000","list_agency_desc":"OPEN COMPETITIVE","established_date":"2024-12-11T00:00:00.000","anniversary_date":"2028-12-11T00:00:00.000"}]
+  recorded_at: 2026-02-19 20:49:50
 recorded_with: VCR-vcr/2.1.0

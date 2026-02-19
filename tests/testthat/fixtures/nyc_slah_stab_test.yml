@@ -6,7 +6,7 @@ http_interactions:
     status: 200
     headers:
       server: nginx
-      date: Sat, 14 Feb 2026 15:17:43 GMT
+      date: Thu, 19 Feb 2026 20:50:05 GMT
       content-type: application/json;charset=utf-8
       transfer-encoding: chunked
       connection: keep-alive
@@ -21,10 +21,10 @@ http_interactions:
       vary: Accept-Encoding
       content-encoding: gzip
       strict-transport-security: max-age=31536000; includeSubDomains
-      x-socrata-requestid: 8ae0223a548df8f6b348da761b46be81
+      x-socrata-requestid: 5da8f9875133a0ae6dc83515b50d4875
     body:
       string: |
         [{"incident_id":"227264","reported_dt":"2026-01-24T21:10:00.000","incident_type":"Stabbing","facility":"GRVC"}
         ,{"incident_id":"226926","reported_dt":"2026-01-17T19:58:00.000","incident_type":"Stabbing","facility":"OBCC"}]
-  recorded_at: 2026-02-14 15:17:43
+  recorded_at: 2026-02-19 20:50:05
 recorded_with: VCR-vcr/2.1.0

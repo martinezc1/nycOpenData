@@ -6,7 +6,7 @@ http_interactions:
     status: 200
     headers:
       server: nginx
-      date: Tue, 27 Jan 2026 20:19:57 GMT
+      date: Thu, 19 Feb 2026 20:49:51 GMT
       content-type: application/json;charset=utf-8
       transfer-encoding: chunked
       connection: keep-alive
@@ -20,13 +20,11 @@ http_interactions:
       last-modified: Wed, 11 Sep 2019 13:54:05 GMT
       vary: Accept-Encoding
       content-encoding: gzip
-      age: '2'
-      x-socrata-region: aws-us-east-1-fedramp-prod
       strict-transport-security: max-age=31536000; includeSubDomains
-      x-socrata-requestid: 81903db8c1b4442e5356c9c3e53eb6af
+      x-socrata-requestid: cd5179cfd424eb85741f2ec85e929fde
     body:
       string: |
         [{"school_dbn":"79X695","date":"20190626","enrolled":"216","absent":"27","present":"68","released":"121"}
         ,{"school_dbn":"31R030","date":"20190626","enrolled":"838","absent":"53","present":"785","released":"0"}]
-  recorded_at: 2026-01-27 20:19:57
+  recorded_at: 2026-02-19 20:49:51
 recorded_with: VCR-vcr/2.1.0

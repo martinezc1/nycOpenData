@@ -6,7 +6,7 @@ http_interactions:
     status: 200
     headers:
       server: nginx
-      date: Wed, 04 Feb 2026 22:38:08 GMT
+      date: Thu, 19 Feb 2026 20:49:49 GMT
       content-type: application/json;charset=utf-8
       transfer-encoding: chunked
       connection: keep-alive
@@ -21,10 +21,10 @@ http_interactions:
       vary: Accept-Encoding
       content-encoding: gzip
       strict-transport-security: max-age=31536000; includeSubDomains
-      x-socrata-requestid: 72e0e205a7ca79a3dcaca359a1093565
+      x-socrata-requestid: fbca4a959f6acc8ad330a89ea4ca40ce
     body:
       string: |
         [{"age_group":"Total Population","borough":"NYC Total","_1950":"7891957","_1950_boro_share_of_nyc_total":"100.00","_1960":"7781984","_1960_boro_share_of_nyc_total":"100.00","_1970":"7894862","_1970_boro_share_of_nyc_total":"100.00","_1980":"7071639","_1980_boro_share_of_nyc_total":"100.00","_1990":"7322564","_1990_boro_share_of_nyc_total":"100.00","_2000":"8008278","_2000_boro_share_of_nyc_total":"100.00","_2010":"8242624","_2010_boro_share_of_nyc_total":"100.00","_2020":"8550971","_2020_boro_share_of_nyc_total":"100.00","_2030":"8821027","_2030_boro_share_of_nyc_total":"100.00","_2040":"9025145","_2040_boro_share_of_nyc_total":"100.00"}
         ,{"age_group":"Total Population","borough":"   Bronx","_1950":"1451277","_1950_boro_share_of_nyc_total":"18.39","_1960":"1424815","_1960_boro_share_of_nyc_total":"18.31","_1970":"1471701","_1970_boro_share_of_nyc_total":"18.64","_1980":"1168972","_1980_boro_share_of_nyc_total":"16.53","_1990":"1203789","_1990_boro_share_of_nyc_total":"16.44","_2000":"1332650","_2000_boro_share_of_nyc_total":"16.64","_2010":"1385108","_2010_boro_share_of_nyc_total":"16.80","_2020":"1446788","_2020_boro_share_of_nyc_total":"16.92","_2030":"1518998","_2030_boro_share_of_nyc_total":"17.22","_2040":"1579245","_2040_boro_share_of_nyc_total":"17.50"}]
-  recorded_at: 2026-02-04 22:38:07
+  recorded_at: 2026-02-19 20:49:49
 recorded_with: VCR-vcr/2.1.0

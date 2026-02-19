@@ -6,7 +6,7 @@ http_interactions:
     status: 200
     headers:
       server: nginx
-      date: Tue, 27 Jan 2026 20:20:24 GMT
+      date: Thu, 19 Feb 2026 20:50:03 GMT
       content-type: application/json;charset=utf-8
       transfer-encoding: chunked
       connection: keep-alive
@@ -20,13 +20,11 @@ http_interactions:
       last-modified: Wed, 13 Aug 2025 19:12:17 GMT
       vary: Accept-Encoding
       content-encoding: gzip
-      age: '0'
-      x-socrata-region: aws-us-east-1-fedramp-prod
       strict-transport-security: max-age=31536000; includeSubDomains
-      x-socrata-requestid: 81e4bcf9fb49f2251f839af415053bbb
+      x-socrata-requestid: 6e6ce2a0e77ebd3f2e434cb529c3cc53
     body:
       string: |
         [{"school_year":"2017-2018","geography":"School","report_category":"SWD","report_subcategory":"Not SWD","dbn":"08X519","category_group":"Credit Recovery","category_subgroup":"No Credit Recovery","value":"s","value_percentage":"s"}
         ,{"school_year":"2017-2018","geography":"School","report_category":"SWD","report_subcategory":"Not SWD","dbn":"09X325","category_group":"Credit Recovery","category_subgroup":"No Credit Recovery","value":"s","value_percentage":"s"}]
-  recorded_at: 2026-01-27 20:20:24
+  recorded_at: 2026-02-19 20:50:04
 recorded_with: VCR-vcr/2.1.0

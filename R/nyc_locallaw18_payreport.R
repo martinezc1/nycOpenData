@@ -27,15 +27,13 @@
 #' }
 #' @export
 nyc_locallaw18_payreport <- function(limit = 10000, filters = list(), timeout_sec = 30) {
-  endpoint <- .nyc_endpoint("423i-ukqr")
-
-  query_list <- list(
-    "$limit" = limit,
-    "$order" = "data_year DESC"
+  .nyc_dataset_request(
+    dataset_id = "423i-ukqr",
+    limit = limit,
+    filters = filters,
+    order = "data_year DESC",
+    timeout_sec = timeout_sec
   )
-
-  query_list <- .nyc_add_filters(query_list, filters)
-
-  data <- .nyc_get_json(endpoint, query_list, timeout_sec = timeout_sec)
-  tibble::as_tibble(data)
 }
+
+

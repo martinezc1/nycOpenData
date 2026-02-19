@@ -6,27 +6,25 @@ http_interactions:
     status: 200
     headers:
       server: nginx
-      date: Tue, 27 Jan 2026 20:20:09 GMT
+      date: Thu, 19 Feb 2026 20:49:59 GMT
       content-type: application/json;charset=utf-8
       transfer-encoding: chunked
       connection: keep-alive
       access-control-allow-origin: '*'
-      etag: '"Zm94dHJvdC4xNTY3NV80MzNfODA3MTJuQWxHSldaaEN6V08xRmxldDJyTFluZGtYTG8---gzipT3BrcA-xomp7H6cOMQcMq0yx9AQ--gzip--gzip"'
+      etag: '"Zm94dHJvdC4xNTY3NV80MzNfODA3NDVuQWxHSldaaEN6V08xRmxldDJyTFluZGtYTG8---gzipT3BrcA-xomp7H6cOMQcMq0yx9AQ--gzip--gzip"'
       x-soda2-fields: '["crash_date","crash_time","borough","zip_code","latitude","longitude","location","on_street_name","off_street_name","cross_street_name","number_of_persons_injured","number_of_persons_killed","number_of_pedestrians_injured","number_of_pedestrians_killed","number_of_cyclist_injured","number_of_cyclist_killed","number_of_motorist_injured","number_of_motorist_killed","contributing_factor_vehicle_1","contributing_factor_vehicle_2","contributing_factor_vehicle_3","contributing_factor_vehicle_4","contributing_factor_vehicle_5","collision_id","vehicle_type_code1","vehicle_type_code2","vehicle_type_code_3","vehicle_type_code_4","vehicle_type_code_5"]'
       x-soda2-types: '["floating_timestamp","text","text","text","number","number","location","text","text","text","number","number","number","number","number","number","number","number","text","text","text","text","text","number","text","text","text","text","text"]'
       x-soda2-data-out-of-date: 'false'
-      x-soda2-truth-last-modified: Mon, 26 Jan 2026 23:53:32 GMT
-      x-soda2-secondary-last-modified: Mon, 26 Jan 2026 23:53:32 GMT
-      last-modified: Mon, 26 Jan 2026 23:53:32 GMT
+      x-soda2-truth-last-modified: Wed, 18 Feb 2026 23:54:37 GMT
+      x-soda2-secondary-last-modified: Wed, 18 Feb 2026 23:54:37 GMT
+      last-modified: Wed, 18 Feb 2026 23:54:37 GMT
       vary: Accept-Encoding
       content-encoding: gzip
-      age: '0'
-      x-socrata-region: aws-us-east-1-fedramp-prod
       strict-transport-security: max-age=31536000; includeSubDomains
-      x-socrata-requestid: 0655fddea292f89371afa48e86b2218b
+      x-socrata-requestid: 35ae13e139058f7d8e6081626362bf50
     body:
       string: |
-        [{"crash_date":"2026-01-23T00:00:00.000","crash_time":"5:05","borough":"BROOKLYN","zip_code":"11233","latitude":"40.677288","longitude":"-73.92823","location":{"latitude":"40.677288","longitude":"-73.92823","human_address":"{\"address\": \"\", \"city\": \"\", \"state\": \"\", \"zip\": \"\"}"},"on_street_name":"ATLANTIC AVE","off_street_name":"HUNTERFLY PL","number_of_persons_injured":"0","number_of_persons_killed":"0","number_of_pedestrians_injured":"0","number_of_pedestrians_killed":"0","number_of_cyclist_injured":"0","number_of_cyclist_killed":"0","number_of_motorist_injured":"0","number_of_motorist_killed":"0","contributing_factor_vehicle_1":"Unsafe Speed","contributing_factor_vehicle_2":"Unspecified","collision_id":"4873473","vehicle_type_code1":"Sedan","vehicle_type_code2":"Pick-up Truck"}
-        ,{"crash_date":"2026-01-23T00:00:00.000","crash_time":"16:20","borough":"BROOKLYN","zip_code":"11213","latitude":"40.669125","longitude":"-73.9299","location":{"latitude":"40.669125","longitude":"-73.9299","human_address":"{\"address\": \"\", \"city\": \"\", \"state\": \"\", \"zip\": \"\"}"},"cross_street_name":"1159      EASTERN PKWY","number_of_persons_injured":"0","number_of_persons_killed":"0","number_of_pedestrians_injured":"0","number_of_pedestrians_killed":"0","number_of_cyclist_injured":"0","number_of_cyclist_killed":"0","number_of_motorist_injured":"0","number_of_motorist_killed":"0","contributing_factor_vehicle_1":"Driver Inattention/Distraction","collision_id":"4873735","vehicle_type_code1":"Sedan"}]
-  recorded_at: 2026-01-27 20:20:09
+        [{"crash_date":"2026-02-15T00:00:00.000","crash_time":"19:38","borough":"BRONX","zip_code":"10456","latitude":"40.822716","longitude":"-73.90314","location":{"latitude":"40.822716","longitude":"-73.90314","human_address":"{\"address\": \"\", \"city\": \"\", \"state\": \"\", \"zip\": \"\"}"},"on_street_name":"E 163 ST","off_street_name":"TINTON AVE","number_of_persons_injured":"1","number_of_persons_killed":"0","number_of_pedestrians_injured":"0","number_of_pedestrians_killed":"0","number_of_cyclist_injured":"1","number_of_cyclist_killed":"0","number_of_motorist_injured":"0","number_of_motorist_killed":"0","contributing_factor_vehicle_1":"Pedestrian/Bicyclist/Other Pedestrian Error/Confusion","contributing_factor_vehicle_2":"Traffic Control Disregarded","collision_id":"4879453","vehicle_type_code1":"Sedan","vehicle_type_code2":"Bike"}
+        ,{"crash_date":"2026-02-15T00:00:00.000","crash_time":"15:25","latitude":"40.666073","longitude":"-73.84158","location":{"latitude":"40.666073","longitude":"-73.84158","human_address":"{\"address\": \"\", \"city\": \"\", \"state\": \"\", \"zip\": \"\"}"},"on_street_name":"CROSS BAY BOULEVARD","off_street_name":"BELT PARKWAY","number_of_persons_injured":"0","number_of_persons_killed":"0","number_of_pedestrians_injured":"0","number_of_pedestrians_killed":"0","number_of_cyclist_injured":"0","number_of_cyclist_killed":"0","number_of_motorist_injured":"0","number_of_motorist_killed":"0","contributing_factor_vehicle_1":"Driver Inattention/Distraction","contributing_factor_vehicle_2":"Unspecified","collision_id":"4879406","vehicle_type_code1":"Sedan"}]
+  recorded_at: 2026-02-19 20:49:59
 recorded_with: VCR-vcr/2.1.0

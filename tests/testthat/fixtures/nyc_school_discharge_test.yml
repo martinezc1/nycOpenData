@@ -6,7 +6,7 @@ http_interactions:
     status: 200
     headers:
       server: nginx
-      date: Tue, 27 Jan 2026 20:20:25 GMT
+      date: Thu, 19 Feb 2026 20:50:04 GMT
       content-type: application/json;charset=utf-8
       transfer-encoding: chunked
       connection: keep-alive
@@ -20,13 +20,11 @@ http_interactions:
       last-modified: Fri, 03 Oct 2025 13:50:20 GMT
       vary: Accept-Encoding
       content-encoding: gzip
-      age: '2'
-      x-socrata-region: aws-us-east-1-fedramp-prod
       strict-transport-security: max-age=31536000; includeSubDomains
-      x-socrata-requestid: 660172cb370f007401e06b648ebf0862
+      x-socrata-requestid: 47d267ec25587e2ef63af627f8a568f7
     body:
       string: |
         [{"year":"2022-2023","report_category":"School","school_level":"Middle School","geographic_unit":"32K562","school_name":"EVERGREEN MS FOR URBAN EXPLORATION","student_category":"Male","discharge_category":"Drop Out","count_of_students":"s","total_enrolled_students":"180"}
         ,{"year":"2022-2023","report_category":"School","school_level":"Middle School","geographic_unit":"75K036","school_name":"PS 36","student_category":"Female","discharge_category":"Discharge out of NYC School","count_of_students":"s","total_enrolled_students":"22"}]
-  recorded_at: 2026-01-27 20:20:25
+  recorded_at: 2026-02-19 20:50:04
 recorded_with: VCR-vcr/2.1.0

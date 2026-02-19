@@ -7,12 +7,25 @@
 NYC Open Data: <https://data.cityofnewyork.us/Social-Services/311-Service-Requests-from-2020-to-Present/erm2-nwe9/about_data>
 }
 \usage{
-nyc_311(limit = 10000, filters = list(), timeout_sec = 30)
+nyc_311(
+  limit = 10000,
+  filters = list(),
+  date = NULL,
+  from = NULL,
+  to = NULL,
+  timeout_sec = 30
+)
 }
 \arguments{
 \item{limit}{Number of rows to retrieve (default = 10,000).}
 
-\item{filters}{Optional list of field-value pairs to filter results.}
+\item{filters}{Optional list of field-value pairs to filter results (e.g., `list(agency = "NYPD")`).}
+
+\item{date}{Optional single date for `created_date` (matches all times on that day). Can be a Date or "YYYY-MM-DD" string.}
+
+\item{from}{Optional start date for `created_date` (inclusive). Can be a Date or "YYYY-MM-DD" string.}
+
+\item{to}{Optional end date for `created_date` (exclusive). Can be a Date or "YYYY-MM-DD" string.}
 
 \item{timeout_sec}{Request timeout in seconds (default = 30).}
 }
@@ -23,8 +36,11 @@ A tibble containing 311 Service Request data.
 Downloads NYC 311 Service Request data from NYC Open Data.
 }
 \details{
-This dataset contains all service requests made to NYC 311 since 2012.
+This dataset contains all service requests made to NYC 311 since 2020.
 Data is updated daily and includes agency, complaint type, location, and resolution.
+
+Use `from`/`to` to filter by date **on the server** (Socrata), which allows you to
+retrieve older time periods without needing to download the most recent rows first.
 }
 \examples{
 # Examples that hit the live NYC Open Data API are guarded so CRAN checks
@@ -34,6 +50,10 @@ if (interactive() && curl::has_internet()) {
   small_sample <- nyc_311(limit = 2)
   small_sample
 
+  # Filter by simple fields
   nyc_311(limit = 2, filters = list(agency = "NYPD", city = "BROOKLYN"))
+
+  # Pull a specific month (server-side date filtering)
+  nyc_311(from = "2025-03-01", to = "2025-04-01", limit = 2)
 }
 }

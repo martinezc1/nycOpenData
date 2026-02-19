@@ -70,7 +70,7 @@ This package uses the `vcr` package to mock API responses, ensuring tests are fa
 
 1. **Write a test** in `tests/testthat/` using a `vcr::use_cassette()` block.
 2. **Record the response:** Run the test with an active internet connection to create the initial YAML 'cassette'.
-3. **Verify the fixture:** Ensure the `.yml` file is created in `tests/testthat/_vcr/`.
+3. **Verify the fixture:** Ensure the `.yml` file is created in `tests/testthat/fixtures/`.
 4. **No Secrets:** Ensure you do not record any sensitive API keys or tokens in the cassettes.
 
 ### Documentation

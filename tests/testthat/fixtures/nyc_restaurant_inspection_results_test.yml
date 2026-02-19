@@ -6,27 +6,25 @@ http_interactions:
     status: 200
     headers:
       server: nginx
-      date: Tue, 27 Jan 2026 20:20:16 GMT
+      date: Thu, 19 Feb 2026 20:50:02 GMT
       content-type: application/json;charset=utf-8
       transfer-encoding: chunked
       connection: keep-alive
       access-control-allow-origin: '*'
-      etag: '"Zm94dHJvdC4xNTY0OV84XzMxNDk5UUlwd3hydFZMMjRjXzN6RXJNWU5JTktCMWE0---gzipw-W2n21OdP5rB2t6rFuBqUSkA98--gzip--gzip"'
+      etag: '"Zm94dHJvdC4xNTY0OV84XzMyMDA5UUlwd3hydFZMMjRjXzN6RXJNWU5JTktCMWE0---gzipw-W2n21OdP5rB2t6rFuBqUSkA98--gzip--gzip"'
       x-soda2-fields: '["camis","dba","boro","building","street","zipcode","phone","cuisine_description","inspection_date","action","violation_code","violation_description","critical_flag","score","grade","grade_date","record_date","inspection_type","latitude","longitude","community_board","council_district","census_tract","bin","bbl","nta","location"]'
       x-soda2-types: '["text","text","text","text","text","text","text","text","floating_timestamp","text","text","text","text","number","text","floating_timestamp","floating_timestamp","text","number","number","text","text","text","text","text","text","point"]'
       x-soda2-data-out-of-date: 'false'
-      x-soda2-truth-last-modified: Mon, 26 Jan 2026 23:13:20 GMT
-      x-soda2-secondary-last-modified: Mon, 26 Jan 2026 23:13:20 GMT
-      last-modified: Mon, 26 Jan 2026 23:13:20 GMT
+      x-soda2-truth-last-modified: Wed, 18 Feb 2026 23:10:22 GMT
+      x-soda2-secondary-last-modified: Wed, 18 Feb 2026 23:10:22 GMT
+      last-modified: Wed, 18 Feb 2026 23:10:22 GMT
       vary: Accept-Encoding
       content-encoding: gzip
-      age: '2'
-      x-socrata-region: aws-us-east-1-fedramp-prod
       strict-transport-security: max-age=31536000; includeSubDomains
-      x-socrata-requestid: 89ad8104aaad848209adf76f80a16ed2
+      x-socrata-requestid: 686452bc1dddb0ec2742b492ecceb116
     body:
       string: |
-        [{"camis":"50067257","dba":"SAJHOMA RESTAURANT","boro":"Brooklyn","building":"408","street":"NEW LOTS AVENUE","zipcode":"11207","phone":"3476737555","cuisine_description":"Caribbean","inspection_date":"2026-01-24T00:00:00.000","action":"Violations were cited in the following area(s).","violation_code":"10B","violation_description":"Anti-siphonage or back-flow prevention device not provided where required; equipment or floor not properly drained; sewage disposal system in disrepair or not functioning properly. Condensation or liquid waste improperly disposed of.","critical_flag":"Not Critical","score":"13","grade":"A","grade_date":"2026-01-24T00:00:00.000","record_date":"2026-01-26T06:00:14.000","inspection_type":"Cycle Inspection / Re-inspection","latitude":"40.662080382875","longitude":"-73.892513132159","community_board":"305","council_district":"42","census_tract":"112800","bin":"3096441","bbl":"3042990008","nta":"BK85","location":{"type":"Point","coordinates":[-73.892513132159,40.662080382875]}}
-        ,{"camis":"50067257","dba":"SAJHOMA RESTAURANT","boro":"Brooklyn","building":"408","street":"NEW LOTS AVENUE","zipcode":"11207","phone":"3476737555","cuisine_description":"Caribbean","inspection_date":"2026-01-24T00:00:00.000","action":"Violations were cited in the following area(s).","violation_code":"10F","violation_description":"Non-food contact surface or equipment made of unacceptable material, not kept clean, or not properly sealed, raised, spaced or movable to allow accessibility for cleaning on all sides, above and underneath the unit.","critical_flag":"Not Critical","score":"13","grade":"A","grade_date":"2026-01-24T00:00:00.000","record_date":"2026-01-26T06:00:14.000","inspection_type":"Cycle Inspection / Re-inspection","latitude":"40.662080382875","longitude":"-73.892513132159","community_board":"305","council_district":"42","census_tract":"112800","bin":"3096441","bbl":"3042990008","nta":"BK85","location":{"type":"Point","coordinates":[-73.892513132159,40.662080382875]}}]
-  recorded_at: 2026-01-27 20:20:16
+        [{"camis":"50171997","dba":"CURRENT COFFEE","boro":"Manhattan","building":"217","street":"EAST   29 STREET","zipcode":"10016","phone":"6468586236","cuisine_description":"Coffee/Tea","inspection_date":"2026-02-17T00:00:00.000","action":"Establishment re-opened by DOHMH.","violation_code":"10B","violation_description":"Anti-siphonage or back-flow prevention device not provided where required; equipment or floor not properly drained; sewage disposal system in disrepair or not functioning properly. Condensation or liquid waste improperly disposed of.","critical_flag":"Not Critical","score":"2","record_date":"2026-02-18T06:00:12.000","inspection_type":"Pre-permit (Operational) / Reopening Inspection","latitude":"40.742339460156","longitude":"-73.97981259817","community_board":"106","council_district":"02","census_tract":"007000","bin":"1019922","bbl":"1009100013","nta":"MN20","location":{"type":"Point","coordinates":[-73.97981259817,40.742339460156]}}
+        ,{"camis":"50105653","dba":"BKLYN CREPE","boro":"Brooklyn","building":"214","street":"FLATBUSH AVENUE","zipcode":"11217","phone":"7186381023","cuisine_description":"Juice, Smoothies, Fruit Salads","inspection_date":"2026-02-14T00:00:00.000","action":"Violations were cited in the following area(s).","violation_code":"06D","violation_description":"Food contact surface not properly washed, rinsed and sanitized after each use and following any activity when contamination may have occurred.","critical_flag":"Critical","score":"16","grade":"Z","grade_date":"2026-02-14T00:00:00.000","record_date":"2026-02-18T06:00:12.000","inspection_type":"Cycle Inspection / Re-inspection","latitude":"40.681171411654","longitude":"-73.975378471823","community_board":"306","council_district":"39","census_tract":"012902","bin":"3018494","bbl":"3009310025","nta":"BK37","location":{"type":"Point","coordinates":[-73.975378471823,40.681171411654]}}]
+  recorded_at: 2026-02-19 20:50:02
 recorded_with: VCR-vcr/2.1.0

@@ -6,7 +6,7 @@ http_interactions:
     status: 200
     headers:
       server: nginx
-      date: Tue, 27 Jan 2026 20:20:02 GMT
+      date: Thu, 19 Feb 2026 20:49:53 GMT
       content-type: application/json;charset=utf-8
       transfer-encoding: chunked
       connection: keep-alive
@@ -20,13 +20,11 @@ http_interactions:
       last-modified: Tue, 13 May 2025 19:28:06 GMT
       vary: Accept-Encoding
       content-encoding: gzip
-      age: '2'
-      x-socrata-region: aws-us-east-1-fedramp-prod
       strict-transport-security: max-age=31536000; includeSubDomains
-      x-socrata-requestid: 2ef6c1fcec08e3a58fb9fc5869b05389
+      x-socrata-requestid: 112fffad4690b2886a0aa38a9908e418
     body:
       string: |
         [{"year":"2024","category":"FJC_Client_Visits","bronx":"10844","brooklyn":"12860","manhattan":"11003","queens":"13421","staten_island":"9528","citywide":"57,656"}
         ,{"year":"2024","category":"FJC_Unique_Clients","bronx":"3007","brooklyn":"4247","manhattan":"2688","queens":"3472","staten_island":"1793","citywide":"15,207"}]
-  recorded_at: 2026-01-27 20:20:02
+  recorded_at: 2026-02-19 20:49:53
 recorded_with: VCR-vcr/2.1.0

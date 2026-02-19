@@ -6,27 +6,25 @@ http_interactions:
     status: 200
     headers:
       server: nginx
-      date: Tue, 27 Jan 2026 20:20:09 GMT
+      date: Thu, 19 Feb 2026 20:49:58 GMT
       content-type: application/json;charset=utf-8
       transfer-encoding: chunked
       connection: keep-alive
       access-control-allow-origin: '*'
-      etag: '"Zm94dHJvdC4zMzkxMl84MTBfNTUwNk4tSjVZLXlUcWxHVkI0cWNraDlQSlc0enkwNA---gzin0xmVD0NiDDy_zVyWmx8A87Adwi--gzip--gzip"'
+      etag: '"Zm94dHJvdC4zMzkxMl84MTFfNTUzNzljM1VYUXh2UTNlcjdMZVhNTWJTTzM3T0JUcw---gzin0xmVD0NiDDy_zVyWmx8A87Adwi--gzip--gzip"'
       x-soda2-fields: '["license_number","name","type","current_status","dmv_license_plate_number","vehicle_vin_number","vehicle_type","model_year","medallion_type","agent_number","agent_name","agent_telephone_number","agent_website_address","agent_address","last_updated_date","last_updated_time"]'
-      x-soda2-types: '["text","text","text","text","text","text","text","text","text","text","text","text","text","text","floating_timestamp","text"]'
+      x-soda2-types: '["text","text","floating_timestamp","text","text","text","text","text","text","text","text","text","text","text","floating_timestamp","text"]'
       x-soda2-data-out-of-date: 'false'
-      x-soda2-truth-last-modified: Tue, 27 Jan 2026 20:00:26 GMT
-      x-soda2-secondary-last-modified: Tue, 27 Jan 2026 20:00:26 GMT
-      last-modified: Tue, 27 Jan 2026 20:00:26 GMT
+      x-soda2-truth-last-modified: Thu, 19 Feb 2026 20:15:45 GMT
+      x-soda2-secondary-last-modified: Thu, 19 Feb 2026 20:15:45 GMT
+      last-modified: Thu, 19 Feb 2026 20:15:45 GMT
       vary: Accept-Encoding
       content-encoding: gzip
-      age: '2'
-      x-socrata-region: aws-us-east-1-fedramp-prod
       strict-transport-security: max-age=31536000; includeSubDomains
-      x-socrata-requestid: 05ca13de35b33278c05bad19e57b1a77
+      x-socrata-requestid: 8a09822ccef7fcc44b51c85d31cd2027
     body:
       string: |
-        [{"license_number":"4C97","name":"HADIA LLC","type":"05/31/2027","current_status":"CUR","dmv_license_plate_number":"Y101758C","vehicle_vin_number":"4T1B31HK1KU513292","vehicle_type":"HYB","model_year":"2019","medallion_type":"OWNER MUST DRIVE","last_updated_date":"2026-01-27T00:00:00.000","last_updated_time":"13:20"}
-        ,{"license_number":"2M40","name":"MIGALOO LLC","type":"05/31/2026","current_status":"CUR","dmv_license_plate_number":"Y201452C","vehicle_vin_number":"3N8CM0JT4GK699778","vehicle_type":"WAV","model_year":"2016","medallion_type":"NAMED DRIVER","agent_number":"340","agent_name":"ALL TAXI NY LLC","agent_telephone_number":"(718)361-0033","agent_address":"36-01   43 AVENUE LIC NY 11101","last_updated_date":"2026-01-27T00:00:00.000","last_updated_time":"13:20"}]
-  recorded_at: 2026-01-27 20:20:09
+        [{"license_number":"7B76","name":"SHOPNER NIR INC.","type":"2026-05-31T00:00:00.000","current_status":"CUR","dmv_license_plate_number":"Y206449C","vehicle_vin_number":"4T3RWRFVXPU095511","model_year":"2023","medallion_type":"OWNER MUST DRIVE","agent_telephone_number":"(347) 282-4700","agent_address":"84-55  159 STREET JAMAICA NY 11432","last_updated_date":"2026-02-19T00:00:00.000","last_updated_time":"14:01"}
+        ,{"license_number":"7N27","name":"CALAFATE LLC","type":"2027-05-31T00:00:00.000","current_status":"CUR","dmv_license_plate_number":"Y207996C","vehicle_vin_number":"JTMRJREV3JD176922","model_year":"2018","medallion_type":"NAMED DRIVER","agent_number":"340","agent_name":"ALL TAXI NY LLC","agent_telephone_number":"(718) 361-0033","agent_address":"41-25   36 STREET LIC NY 11101","last_updated_date":"2026-02-19T00:00:00.000","last_updated_time":"14:01"}]
+  recorded_at: 2026-02-19 20:49:58
 recorded_with: VCR-vcr/2.1.0

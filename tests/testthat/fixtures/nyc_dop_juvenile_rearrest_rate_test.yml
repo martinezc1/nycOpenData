@@ -6,27 +6,25 @@ http_interactions:
     status: 200
     headers:
       server: nginx
-      date: Tue, 27 Jan 2026 20:20:04 GMT
+      date: Thu, 19 Feb 2026 20:49:53 GMT
       content-type: application/json;charset=utf-8
       transfer-encoding: chunked
       connection: keep-alive
       access-control-allow-origin: '*'
-      etag: '"Zm94dHJvdC41MjYyMV8xXzEyMlk0VlhST2NFWGFYMXNMaXlWZWI3LU5CaHpfYw---gzipanW_OafJmkfs67We5uo7zZBoR7--gzip--gzip"'
+      etag: '"Zm94dHJvdC41MjYyMV8xXzEyM1k0VlhST2NFWGFYMXNMaXlWZWI3LU5CaHpfYw---gzipanW_OafJmkfs67We5uo7zZBoR7--gzip--gzip"'
       x-soda2-fields: '["borough","month","year","rate"]'
       x-soda2-types: '["text","text","number","number"]'
       x-soda2-data-out-of-date: 'false'
-      x-soda2-truth-last-modified: Wed, 07 Jan 2026 20:22:42 GMT
-      x-soda2-secondary-last-modified: Wed, 07 Jan 2026 20:22:42 GMT
-      last-modified: Wed, 07 Jan 2026 20:22:42 GMT
+      x-soda2-truth-last-modified: Fri, 30 Jan 2026 20:37:50 GMT
+      x-soda2-secondary-last-modified: Fri, 30 Jan 2026 20:37:50 GMT
+      last-modified: Fri, 30 Jan 2026 20:37:50 GMT
       vary: Accept-Encoding
       content-encoding: gzip
-      age: '2'
-      x-socrata-region: aws-us-east-1-fedramp-prod
       strict-transport-security: max-age=31536000; includeSubDomains
-      x-socrata-requestid: 20008b1e5e5f2f93eecc023acb355915
+      x-socrata-requestid: 0dd7cbb406359faccd43ce65530fa01b
     body:
       string: |
-        [{"borough":"Citywide","month":"November","year":"2025","rate":"4.5"}
-        ,{"borough":"Citywide","month":"October","year":"2025","rate":"4.7"}]
-  recorded_at: 2026-01-27 20:20:04
+        [{"borough":"Citywide","month":"September","year":"2025","rate":"4.5"}
+        ,{"borough":"Citywide","month":"December","year":"2025","rate":"4.4"}]
+  recorded_at: 2026-02-19 20:49:54
 recorded_with: VCR-vcr/2.1.0

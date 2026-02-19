@@ -6,7 +6,7 @@ http_interactions:
     status: 200
     headers:
       server: nginx
-      date: Tue, 27 Jan 2026 20:20:27 GMT
+      date: Thu, 19 Feb 2026 20:50:07 GMT
       content-type: application/json;charset=utf-8
       transfer-encoding: chunked
       connection: keep-alive
@@ -20,13 +20,11 @@ http_interactions:
       last-modified: Thu, 13 Sep 2018 14:58:58 GMT
       vary: Accept-Encoding
       content-encoding: gzip
-      age: '2'
-      x-socrata-region: aws-us-east-1-fedramp-prod
       strict-transport-security: max-age=31536000; includeSubDomains
-      x-socrata-requestid: 5b476aba3dc76843b33582007deb0085
+      x-socrata-requestid: 1c257a75c2e1024f0b4a6790e05cdbf2
     body:
       string: |
         [{"tree_id":"722693","block_id":"999999","created_at":"2016-10-05T00:00:00.000","tree_dbh":"3","stump_diam":"0","curb_loc":"OnCurb","status":"Alive","health":"Good","spc_latin":"Tilia cordata","spc_common":"littleleaf linden","steward":"None","guards":"None","sidewalk":"NoDamage","user_type":"NYC Parks Staff","problems":"None","root_stone":"No","root_grate":"No","root_other":"No","trunk_wire":"No","trnk_light":"No","trnk_other":"No","brch_light":"No","brch_shoe":"No","brch_other":"No","address":"1202 EAST 105 STREET","zipcode":"11236","zip_city":"Brooklyn","cb_num":"318","borocode":"3","boroname":"Brooklyn","cncldist":"46","st_assem":"58","st_senate":"19","nta":"BK50","nta_name":"Canarsie","boro_ct":"3101400","state":"New York","latitude":"40.64234833","longitude":"-73.88902119","x_sp":"1015048.9","y_sp":"173320.7066","council_district":"46","census_tract":"1014","bin":"3233180","bbl":"3082690046"}
         ,{"tree_id":"722688","block_id":"217025","created_at":"2016-10-05T00:00:00.000","tree_dbh":"6","stump_diam":"0","curb_loc":"OnCurb","status":"Alive","health":"Poor","spc_latin":"Tilia americana","spc_common":"American linden","steward":"None","guards":"None","sidewalk":"NoDamage","user_type":"NYC Parks Staff","problems":"RootOther","root_stone":"No","root_grate":"No","root_other":"Yes","trunk_wire":"No","trnk_light":"No","trnk_other":"No","brch_light":"No","brch_shoe":"No","brch_other":"No","address":"108 MONTROSE AVENUE","zipcode":"11206","zip_city":"Brooklyn","cb_num":"301","borocode":"3","boroname":"Brooklyn","cncldist":"34","st_assem":"53","st_senate":"18","nta":"BK90","nta_name":"East Williamsburg","boro_ct":"3050500","state":"New York","latitude":"40.70706693","longitude":"-73.94519664","x_sp":"999444.3088","y_sp":"196884.7841","council_district":"34","census_tract":"505","bin":"3071199","bbl":"3030600001"}]
-  recorded_at: 2026-01-27 20:20:27
+  recorded_at: 2026-02-19 20:50:07
 recorded_with: VCR-vcr/2.1.0

@@ -27,15 +27,11 @@
 #' }
 #' @export
 nyc_city_record <- function(limit = 10000, filters = list(), timeout_sec = 30) {
-  endpoint <- .nyc_endpoint("dg92-zbpx")
-
-  query_list <- list(
-    "$limit" = limit,
-    "$order" = "start_date DESC"
+  .nyc_dataset_request(
+    dataset_id = "dg92-zbpx",
+    limit = limit,
+    filters = filters,
+    order = "start_date DESC",
+    timeout_sec = timeout_sec
   )
-
-  query_list <- .nyc_add_filters(query_list, filters)
-
-  data <- .nyc_get_json(endpoint, query_list, timeout_sec = timeout_sec)
-  tibble::as_tibble(data)
 }

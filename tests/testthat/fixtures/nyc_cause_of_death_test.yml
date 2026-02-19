@@ -6,12 +6,12 @@ http_interactions:
     status: 200
     headers:
       server: nginx
-      date: Tue, 27 Jan 2026 20:19:54 GMT
+      date: Thu, 19 Feb 2026 20:49:49 GMT
       content-type: application/json;charset=utf-8
       transfer-encoding: chunked
       connection: keep-alive
       access-control-allow-origin: '*'
-      etag: '"Zm94dHJvdC4xNjMxMl8zXzcxd3FvVVRKb1M4OEJNSXlsQXIyaXQ0bTNXYUpn---gzipF4tiaFSUT8YwyQYcDXOQdFi_-pI--gzip--gzip"'
+      etag: '"Zm94dHJvdC4xNjMxMl8zXzcxOWM0WU9YZ29zekVxZmxaVXlFdkhuRk51SXdR---gzipF4tiaFSUT8YwyQYcDXOQdFi_-pI--gzip--gzip"'
       x-soda2-fields: '["year","leading_cause","sex","race_ethnicity","deaths","death_rate","age_adjusted_death_rate"]'
       x-soda2-types: '["text","text","text","text","text","text","text"]'
       x-soda2-data-out-of-date: 'false'
@@ -20,13 +20,11 @@ http_interactions:
       last-modified: Tue, 27 Jan 2026 19:52:17 GMT
       vary: Accept-Encoding
       content-encoding: gzip
-      age: '0'
-      x-socrata-region: aws-us-east-1-fedramp-prod
       strict-transport-security: max-age=31536000; includeSubDomains
-      x-socrata-requestid: 436351a52618ee3bc2cf0edc43defb8b
+      x-socrata-requestid: 1e860566e1cd7189c46e477e26adf73e
     body:
       string: |
         [{"year":"2021","leading_cause":"All Other Causes","sex":"Female","race_ethnicity":"Not Stated/Unknown","deaths":"102"}
         ,{"year":"2021","leading_cause":"Alzheimer's Disease (G30)","sex":"Female","race_ethnicity":"Not Stated/Unknown","deaths":"7"}]
-  recorded_at: 2026-01-27 20:19:55
+  recorded_at: 2026-02-19 20:49:49
 recorded_with: VCR-vcr/2.1.0

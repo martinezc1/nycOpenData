@@ -1,0 +1,12 @@
+citHeader("To cite nycOpenData in publications use:")
+
+bibentry(
+  bibtype = "Manual",
+  title   = "nycOpenData: Accessing and Analyzing NYC Open Data in R",
+  author  = person("Christian", "Martinez",
+                   email = "c.martinez0@outlook.com",
+                   comment = c(ORCID = "0009-0005-6026-6454")),
+  year    = format(Sys.Date(), "%Y"),
+  note    = paste0("R package version ", utils::packageVersion("nycOpenData")),
+  url     = "https://github.com/martinezc1/nycOpenData"
+)

@@ -28,15 +28,13 @@
 #' }
 #' @export
 nyc_runaway_and_homeless_youth_daily_census <- function(limit = 10000, filters = list(), timeout_sec = 30) {
-  endpoint <- .nyc_endpoint("5rw7-99k7")
-
-  query_list <- list(
-    "$limit" = limit,
-    "$order" = "date DESC"
+  .nyc_dataset_request(
+    dataset_id = "5rw7-99k7",
+    limit = limit,
+    filters = filters,
+    order = "date DESC",
+    timeout_sec = timeout_sec
   )
-
-  query_list <- .nyc_add_filters(query_list, filters)
-
-  data <- .nyc_get_json(endpoint, query_list, timeout_sec = timeout_sec)
-  tibble::as_tibble(data)
 }
+
+

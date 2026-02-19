@@ -26,15 +26,11 @@
 #' }
 #' @export
 nyc_tree_census_2015 <- function(limit = 10000, filters = list(), timeout_sec = 30) {
-  endpoint <- .nyc_endpoint("uvpi-gqnh")
-
-  query_list <- list(
-    "$limit" = limit,
-    "$order" = "created_at DESC"
+  .nyc_dataset_request(
+    dataset_id = "uvpi-gqnh",
+    limit = limit,
+    filters = filters,
+    order = "created_at DESC",
+    timeout_sec = timeout_sec
   )
-
-  query_list <- .nyc_add_filters(query_list, filters)
-
-  data <- .nyc_get_json(endpoint, query_list, timeout_sec = timeout_sec)
-  tibble::as_tibble(data)
 }

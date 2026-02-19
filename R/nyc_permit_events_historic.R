@@ -37,15 +37,11 @@
 #'
 #' @export
 nyc_permit_events_historic <- function(limit = 10000, filters = list(), timeout_sec = 60) {
-  endpoint <- .nyc_endpoint("bkfu-528j")
-
-  query_list <- list(
-    "$limit" = limit,
-    "$order" = "start_date_time DESC"
+  .nyc_dataset_request(
+    dataset_id = "bkfu-528j",
+    limit = limit,
+    filters = filters,
+    order = "start_date_time DESC",
+    timeout_sec = timeout_sec
   )
-
-  query_list <- .nyc_add_filters(query_list, filters)
-
-  data <- .nyc_get_json(endpoint, query_list, timeout_sec = timeout_sec)
-  tibble::as_tibble(data)
 }

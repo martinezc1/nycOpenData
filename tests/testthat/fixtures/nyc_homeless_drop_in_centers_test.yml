@@ -6,7 +6,7 @@ http_interactions:
     status: 200
     headers:
       server: nginx
-      date: Tue, 27 Jan 2026 20:20:06 GMT
+      date: Thu, 19 Feb 2026 20:49:57 GMT
       content-type: application/json;charset=utf-8
       transfer-encoding: chunked
       connection: keep-alive
@@ -20,13 +20,11 @@ http_interactions:
       last-modified: Tue, 29 Jul 2025 19:45:01 GMT
       vary: Accept-Encoding
       content-encoding: gzip
-      age: '0'
-      x-socrata-region: aws-us-east-1-fedramp-prod
       strict-transport-security: max-age=31536000; includeSubDomains
-      x-socrata-requestid: 3d4dcfe5c0677b51db52096f4de195f7
+      x-socrata-requestid: 3d5b3a85964ad083e6284d34a2c6c577
     body:
       string: |
         [{"center_name":"Living Room","borough":"Bronx","address":"800 Barretto Street; Bronx, NY 10474","comments":"Open 24 hours","postcode":"10474","latitude":"40.816615","longitude":"-73.889883","community_board":"202","council_district":"17","census_tract":"93","bin":"2006002","bbl":"2027400100","nta":"Hunts Point"}
         ,{"center_name":"Main chance","borough":"Manhattan","address":"120 E. 32nd Street; New York, NY 10016","comments":"Open 24 hours, including holidays","postcode":"1016","latitude":"40.745377","longitude":"-73.981306","community_board":"105","council_district":"2","census_tract":"72","bin":"1018469","bbl":"1008870087","nta":"Murray Hill-Kips Bay"}]
-  recorded_at: 2026-01-27 20:20:07
+  recorded_at: 2026-02-19 20:49:57
 recorded_with: VCR-vcr/2.1.0

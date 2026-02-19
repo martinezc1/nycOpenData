@@ -6,27 +6,25 @@ http_interactions:
     status: 200
     headers:
       server: nginx
-      date: Tue, 27 Jan 2026 20:20:08 GMT
+      date: Thu, 19 Feb 2026 20:49:58 GMT
       content-type: application/json;charset=utf-8
       transfer-encoding: chunked
       connection: keep-alive
       access-control-allow-origin: '*'
-      etag: '"Zm94dHJvdC4xNTY3OV84MzhfODEyODk0TGphWmF3anBkRmhUWmhDOWc4VjNpdFVnSQ---gziutiu6mKglBHxWfzlPnrFKRAmVhI--gzip--gzip"'
+      etag: '"Zm94dHJvdC4xNTY3OV84MzhfODE1MDk0TGphWmF3anBkRmhUWmhDOWc4VjNpdFVnSQ---gziutiu6mKglBHxWfzlPnrFKRAmVhI--gzip--gzip"'
       x-soda2-fields: '["license_number","name","type","expiration_date","last_updated_date","last_updated_time"]'
       x-soda2-types: '["text","text","text","floating_timestamp","floating_timestamp","text"]'
       x-soda2-data-out-of-date: 'false'
-      x-soda2-truth-last-modified: Tue, 27 Jan 2026 19:46:12 GMT
-      x-soda2-secondary-last-modified: Tue, 27 Jan 2026 19:46:12 GMT
-      last-modified: Tue, 27 Jan 2026 19:46:12 GMT
+      x-soda2-truth-last-modified: Thu, 19 Feb 2026 20:16:43 GMT
+      x-soda2-secondary-last-modified: Thu, 19 Feb 2026 20:16:43 GMT
+      last-modified: Thu, 19 Feb 2026 20:16:43 GMT
       vary: Accept-Encoding
       content-encoding: gzip
-      age: '0'
-      x-socrata-region: aws-us-east-1-fedramp-prod
       strict-transport-security: max-age=31536000; includeSubDomains
-      x-socrata-requestid: eeb43a27199f40f029f323fb6890bc35
+      x-socrata-requestid: d24d179a15cef9785e91623e22065f5e
     body:
       string: |
-        [{"license_number":"5434338","name":"ZHAGUI,TRANSITO,C","type":"MEDALLION TAXI DRIVER","expiration_date":"2026-05-08T00:00:00.000","last_updated_date":"2026-01-27T00:00:00.000","last_updated_time":"13:20"}
-        ,{"license_number":"6110901","name":"HOSSAIN,MOHAMMED,EMAM","type":"MEDALLION TAXI DRIVER","expiration_date":"2028-08-15T00:00:00.000","last_updated_date":"2026-01-27T00:00:00.000","last_updated_time":"13:20"}]
-  recorded_at: 2026-01-27 20:20:08
+        [{"license_number":"5946483","name":"BANA,SKERDJAN","type":"MEDALLION TAXI DRIVER","expiration_date":"2028-10-10T00:00:00.000","last_updated_date":"2026-02-19T00:00:00.000","last_updated_time":"14:01"}
+        ,{"license_number":"5726530","name":"JACOBS,RICHARD,ALBERT","type":"MEDALLION TAXI DRIVER","expiration_date":"2028-10-26T00:00:00.000","last_updated_date":"2026-02-19T00:00:00.000","last_updated_time":"14:01"}]
+  recorded_at: 2026-02-19 20:49:58
 recorded_with: VCR-vcr/2.1.0

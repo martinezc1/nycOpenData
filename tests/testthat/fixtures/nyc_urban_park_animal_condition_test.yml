@@ -6,27 +6,25 @@ http_interactions:
     status: 200
     headers:
       server: nginx
-      date: Tue, 27 Jan 2026 20:20:28 GMT
+      date: Thu, 19 Feb 2026 20:50:08 GMT
       content-type: application/json;charset=utf-8
       transfer-encoding: chunked
       connection: keep-alive
       access-control-allow-origin: '*'
-      etag: '"Z29sZi4yNjY4OV8xXzMyaUVId0pvMVMxMXpMMmtmU0x0MmhHd0JnMkdJ---gzipl1FFth144mkgcw-iVARKI9I9aWU--gzip--gzip"'
+      etag: '"Z29sZi4yNjY4OV8xXzM3aUVId0pvMVMxMXpMMmtmU0x0MmhHd0JnMkdJ---gzipl1FFth144mkgcw-iVARKI9I9aWU--gzip--gzip"'
       x-soda2-fields: '["date_and_time_of_initial","date_and_time_of_ranger","borough","property","location","species_description","call_source","species_status","animal_condition","duration_of_response","age","animal_class","_311sr_number","final_ranger_action","of_animals","pep_response","animal_monitored","rehabilitator","hours_spent_monitoring","police_response","esu_response","acc_intake_number"]'
       x-soda2-types: '["floating_timestamp","floating_timestamp","text","text","text","text","text","text","text","number","text","text","text","text","number","boolean","boolean","text","number","boolean","boolean","text"]'
       x-soda2-data-out-of-date: 'false'
-      x-soda2-truth-last-modified: Mon, 24 Nov 2025 16:57:32 GMT
-      x-soda2-secondary-last-modified: Mon, 24 Nov 2025 16:57:32 GMT
-      last-modified: Mon, 24 Nov 2025 16:57:32 GMT
+      x-soda2-truth-last-modified: Thu, 05 Feb 2026 22:04:34 GMT
+      x-soda2-secondary-last-modified: Thu, 05 Feb 2026 22:04:34 GMT
+      last-modified: Thu, 05 Feb 2026 22:04:34 GMT
       vary: Accept-Encoding
       content-encoding: gzip
-      age: '2'
-      x-socrata-region: aws-us-east-1-fedramp-prod
       strict-transport-security: max-age=31536000; includeSubDomains
-      x-socrata-requestid: 2132a75af02df794f198a01eeb0a5986
+      x-socrata-requestid: bd6849a91754cf6d1c4bc10a4817da72
     body:
       string: |
-        [{"date_and_time_of_initial":"2025-06-30T18:30:00.000","date_and_time_of_ranger":"2025-06-30T18:38:00.000","borough":"Brooklyn","property":"Coney Island Beach &amp; Boardwalk","location":"Brighton Beach Bay 3","species_description":"Diamondback Terrapin","call_source":"Employee","species_status":"Native","animal_condition":"Injured","duration_of_response":"5","age":"[\"Adult\"]","animal_class":"[\"Terrestrial Reptile or Amphibian\"]","_311sr_number":"311-23494279","final_ranger_action":"Rehabilitator","of_animals":"1","pep_response":false,"animal_monitored":false,"rehabilitator":"Wild Bird Fund","police_response":false,"esu_response":false}
-        ,{"date_and_time_of_initial":"2025-06-30T16:00:00.000","date_and_time_of_ranger":"2025-06-30T16:00:00.000","borough":"Queens","property":"Rockaway Beach and Boardwalk","location":"Beach 122nd St on shoreline","species_description":"Double-Crested Cormorant","call_source":"Employee","species_status":"Native","animal_condition":"Injured","duration_of_response":"2.5","age":"[\"Adult\"]","animal_class":"[\"Birds\"]","_311sr_number":"311-23481091","final_ranger_action":"Rehabilitator","of_animals":"1","pep_response":false,"animal_monitored":false,"rehabilitator":"Wild Bird Fund","police_response":false,"esu_response":false}]
-  recorded_at: 2026-01-27 20:20:28
+        [{"date_and_time_of_initial":"2026-01-06T15:00:00.000","date_and_time_of_ranger":"2026-01-06T15:30:00.000","borough":"Manhattan","property":"Central Park","location":"79th street 5th ave entrance near orange cone","species_description":"Red-tailed Hawk","call_source":"Public","species_status":"Native","animal_condition":"N/A","duration_of_response":"1.0","age":"Adult","animal_class":"Raptors","final_ranger_action":"Unfounded","of_animals":"0.0","pep_response":false,"animal_monitored":false,"police_response":false,"esu_response":false}
+        ,{"date_and_time_of_initial":"2026-01-06T14:00:00.000","date_and_time_of_ranger":"2026-01-06T14:15:00.000","borough":"Staten Island","property":"Bradys Pond Park","location":"In pond and next to trail","species_description":"Canada Goose","call_source":"Employee","species_status":"Native","animal_condition":"DOA","duration_of_response":"2.5","age":"Adult","animal_class":"Birds","_311sr_number":"311-25841451","final_ranger_action":"Submitted for DEC Testing","of_animals":"4.0","pep_response":false,"animal_monitored":false,"police_response":false,"esu_response":false}]
+  recorded_at: 2026-02-19 20:50:08
 recorded_with: VCR-vcr/2.1.0

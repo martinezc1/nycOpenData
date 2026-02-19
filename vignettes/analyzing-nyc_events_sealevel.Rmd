@@ -1,45 +1,55 @@
 ---
 title: "Analyzing NYC Climate Projections: Extreme Events and Sea Level Rise"
 output: rmarkdown::html_vignette
-author: Emma Tupone
+author: "Emma Tupone"
 vignette: >
   %\VignetteIndexEntry{Analyzing NYC Climate Projections: Extreme Events and Sea Level Rise}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
 
-## Introduction
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
 
-This vignette demonstrates how to use the `nyc_events_sealevel` function to explore projected extreme climate events and sea level rise for New York City.
-
-The dataset provides projections under different climate scenarios, including: - Number of heatwaves per year - Cooling and heating degree days - Projected sea level rise
-
-Researchers, city planners, and policymakers can use this information to understand future climate risks, prepare for extreme weather events, and plan adaptation strategies.
-
-## Load the Package
-
-```{r setup}
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(warning = FALSE, message = FALSE)
 library(nycOpenData)
 library(dplyr)
 library(ggplot2)
-library(knitr)
 ```
 
-## Retrive a Sample of Data
+## Introduction
+
+This vignette demonstrates how to use the nyc_events_sealevel() function to explore projected extreme climate events and sea level rise for New York City using the [New York City Climate Projections: Extreme Events and Sea Level Rise](https://data.cityofnewyork.us/Environment/New-York-City-Climate-Projections-Extreme-Events-a/38ps-fnsg/about_data) dataset on the NYC Open Data portal.
+
+The dataset provides projections under different climate scenarios, including:
+
+- Number of heatwaves per year
+- Cooling and heating degree days
+- Projected sea level rise
+
+Researchers, city planners, and policymakers can use this information to understand future climate risks, prepare for extreme weather events, and plan adaptation strategies.
+
+## Retrieve a Sample of Data
 
 ```{r retrieve-sample}
 sample_data <- nyc_events_sealevel(limit = 10)
+
 sample_data
 ```
 
-This code retrieves 10 rows of data from NYC Open Data endpoint for extreme events and sea level rise projections.
+This code retrieves 10 rows of data from the NYC Open Data endpoint for extreme events and sea level rise projections.
 
 ## Summarize Key Metrics
 
 ```{r key-metrics}
-summary_table <- sample_data %>%
-  select(period, number_of_heatwaves_year, cooling_degree_days, heating_degree_days) %>%
-  head(10)
+summary_table <- sample_data |>
+  select(period, number_of_heatwaves_year, cooling_degree_days, heating_degree_days) |> dplyr::slice_head(n = 10)
+
 summary_table
 ```
 
@@ -52,14 +62,18 @@ This table gives a quick overview of projected extreme events for different scen
 ## Visualization
 
 ```{r visualization}
-ggplot(sample_data, aes(x = period, y = as.numeric(number_of_heatwaves_year))) +
+plot_data <- sample_data |>
+  mutate(number_of_heatwaves_year = as.numeric(number_of_heatwaves_year))
+
+ggplot(plot_data, aes(x = period, y = number_of_heatwaves_year)) +
   geom_col() +
   labs(
-    title = "Projected Number of Heatwaves by Scenario",
-    x = "Climate Scenario",
-    y = "Number of Heatwaves"
+    title = "Projected Number of Heatwaves by Climate Period",
+    x = "Climate Period",
+    y = "Projected Heatwaves per Year"
   ) +
+  theme_minimal() +
   theme(axis.text.x = element_text(angle = 45, hjust = 1))
 ```
 
-This plot shows how the number of heatwaves is projected to change across scenarios. It helps visualize future climate risks at glance.
+This plot shows how the number of heatwaves is projected to change across scenarios. It helps visualize future climate risks at a glance.

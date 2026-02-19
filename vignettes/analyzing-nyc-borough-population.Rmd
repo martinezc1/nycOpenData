@@ -15,7 +15,7 @@ knitr::opts_chunk$set(
 )
 ```
 
-```{r setup}
+```{r setup, include = FALSE}
 knitr::opts_chunk$set(warning = FALSE, message = FALSE)
 library(nycOpenData)
 library(ggplot2)
@@ -24,56 +24,64 @@ library(tidyr)
 ```
 
 ## Introduction
-New York City is made up of five boroughs: the Bronx, Brooklyn, Manhattan, Queens, and Staten Island. The population of each of these boroughs has varied throughout the past century. 
 
-The `nyc_borough_population()` function provides access to historical census data and population projections from 1950 to 2040, allowing one to analyze demographic trends across Brooklyn, Bronx, Manhattan, Queens, and Staten Island. 
+New York City is made up of five boroughs: the Bronx, Brooklyn, Manhattan, Queens, and Staten Island. The population of each of these boroughs has varied throughout the past century. On the NYC Open Data portal, the [New York City Population by Borough, 1950 - 2040](https://data.cityofnewyork.us/City-Government/New-York-City-Population-by-Borough-1940-2040/xywu-7bv9) dataset hosts population estimates and projections.
+
+The `nyc_borough_population()` function provides access to historical census data and population projections from 1950 to 2040, allowing one to analyze demographic trends across Brooklyn, Bronx, Manhattan, Queens, and Staten Island.
 
 The `nycOpenData` package provides a streamlined interface for accessing New York City's vast open data resources. It connects directly to the NYC Open Data Portal. It is currently utilized as a primary tool for teaching data acquisition in [Reproducible Research Using R](https://martinezc1-reproducible-research-using-r.share.connect.posit.cloud/), helping students bridge the gap between raw city APIs and tidy data analysis.
 
 ## Pulling a Small Sample
+
 Let's start by pulling a small sample to see the structure:
+
 ```{r small-sample}
 small_sample <- nyc_borough_population(limit = 5)
 small_sample
 
 # Seeing what columns are in the dataset
-colnames(small_sample)
+names(small_sample)
 ```
 
 ## Pulling Full Dataset
+
 Now let's pull the complete dataset to work with:
+
 ```{r full-data}
 population_data <- nyc_borough_population()
-head(population_data)
+
+population_data |>
+  slice_head(n = 6)
 ```
 
 ## Filtering by Borough
 
 We can filter for a specific borough. Let's look at Brooklyn's population over time:
+
 ```{r filter-brooklyn}
-brooklyn_pop <- nyc_borough_population(filters = list(borough = "   Brooklyn"))
+brooklyn_pop <- nyc_borough_population(filters = list(borough = "Brooklyn"))
+
 brooklyn_pop
 ```
 
 ## Mini analysis
-Let's visualize population trends across boroughs. First, we need to reshape the data from wide to long format:
-## Mini analysis
 
-Let's visualize population trends across boroughs. First, we need to reshape the data from wide to long format:
+Let's visualize population trends across boroughs. First, we need to reshape the data from wide to long format.
+
 ```{r population-trends, fig.alt="Line chart showing population trends for NYC's five boroughs from 1950 to 2040.", fig.cap="Population trends for NYC's five boroughs from 1950 to 2040, including historical data and projections.", fig.height=6, fig.width=8}
 
 # Get full dataset and filter for Total Population rows only
 population_data <- nyc_borough_population()
 
 # Clean borough names and filter to get individual boroughs (exclude NYC Total)
-borough_data <- population_data %>%
-  mutate(borough = trimws(borough)) %>%  # Remove leading/trailing spaces
+borough_data <- population_data |>
+  mutate(borough = trimws(borough)) |>  # Remove leading/trailing spaces
   filter(age_group == "Total Population", borough != "NYC Total")
 
 # Reshape from wide to long format
-pop_long <- borough_data %>%
-  select(borough, `_1950`, `_1960`, `_1970`, `_1980`, `_1990`, `_2000`, `_2010`, `_2020`, `_2030`, `_2040`) %>%
-  pivot_longer(cols = starts_with("_"), names_to = "year", values_to = "population") %>%
+pop_long <- borough_data |>
+  select(borough, `_1950`, `_1960`, `_1970`, `_1980`, `_1990`, `_2000`, `_2010`, `_2020`, `_2030`, `_2040`) |>
+  pivot_longer(cols = starts_with("_"), names_to = "year", values_to = "population") |>
   mutate(
     year = as.numeric(gsub("_", "", year)),
     population = as.numeric(population)
@@ -96,12 +104,15 @@ ggplot(pop_long, aes(x = year, y = population, color = borough)) +
 ```
 
 We can also look at which borough is projected to have the largest population in 2040:
+
 ```{r summary-2040}
-pop_long %>%
-  filter(year == 2040) %>%
+pop_long |>
+  filter(year == 2040) |>
   arrange(desc(population))
 ```
+
 ## Summary
+
 The `nyc_borough_population()` function provides easy access to demographic data for New York City spanning from 1950-2040. This enables analysis of long-term population trends, comparisons across boroughs, and exploration of projected future changes.
 
 The `nycOpenData` package serves as a robust interface for the NYC Open Data portal, streamlining the path from raw city APIs to actionable insights. By abstracting the complexities of data acquisition—such as pagination, type-casting, and complex filtering—it allows users to focus on analysis rather than data engineering.
@@ -109,7 +120,7 @@ The `nycOpenData` package serves as a robust interface for the NYC Open Data por
 As demonstrated in this vignette, the package provides a seamless workflow for targeted data retrieval, automated filtering, and rapid visualization.
 
 ## How to Cite
+
 If you use this package for research or educational purposes, please cite it as follows:
 
-Martinez C (2026). nycOpenData: Convenient Access to NYC Open Data API Endpoints. R package version 0.1.6, https://martinezc1.github.io/nycOpenData/.
-
+Martinez C (2026). nycOpenData: Convenient Access to NYC Open Data API Endpoints. R package version 0.1.6, <https://martinezc1.github.io/nycOpenData/>.

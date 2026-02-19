@@ -2,22 +2,35 @@
 % Please edit documentation in R/nyc_311_2010_2019.R
 \name{nyc_311_2010_2019}
 \alias{nyc_311_2010_2019}
-\title{NYC 311 Service Requests}
+\title{NYC 311 Service Requests 2010 to 2019}
 \source{
 NYC Open Data: <https://data.cityofnewyork.us/Social-Services/311-Service-Requests-from-2010-to-2019/76ig-c548/about_data>
 }
 \usage{
-nyc_311_2010_2019(limit = 10000, filters = list(), timeout_sec = 30)
+nyc_311_2010_2019(
+  limit = 10000,
+  filters = list(),
+  date = NULL,
+  from = NULL,
+  to = NULL,
+  timeout_sec = 30
+)
 }
 \arguments{
 \item{limit}{Number of rows to retrieve (default = 10,000).}
 
-\item{filters}{Optional list of field-value pairs to filter results.}
+\item{filters}{Optional list of field-value pairs to filter results (e.g., `list(agency = "NYPD")`).}
+
+\item{date}{Optional single date for `created_date` (matches all times on that day). Can be a Date or "YYYY-MM-DD" string.}
+
+\item{from}{Optional start date for `created_date` (inclusive). Can be a Date or "YYYY-MM-DD" string.}
+
+\item{to}{Optional end date for `created_date` (exclusive). Can be a Date or "YYYY-MM-DD" string.}
 
 \item{timeout_sec}{Request timeout in seconds (default = 30).}
 }
 \value{
-A tibble containing 311 Service Request data.
+A tibble containing 311 Service Request 2010 to 2019 data.
 }
 \description{
 Downloads NYC 311 Service Request from 2010 to 2019 data from NYC Open Data.

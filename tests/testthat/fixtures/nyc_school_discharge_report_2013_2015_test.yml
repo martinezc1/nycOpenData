@@ -6,7 +6,7 @@ http_interactions:
     status: 200
     headers:
       server: nginx
-      date: Tue, 27 Jan 2026 20:20:23 GMT
+      date: Thu, 19 Feb 2026 20:50:03 GMT
       content-type: application/json;charset=utf-8
       transfer-encoding: chunked
       connection: keep-alive
@@ -20,13 +20,11 @@ http_interactions:
       last-modified: Wed, 13 Aug 2025 20:02:41 GMT
       vary: Accept-Encoding
       content-encoding: gzip
-      age: '0'
-      x-socrata-region: aws-us-east-1-fedramp-prod
       strict-transport-security: max-age=31536000; includeSubDomains
-      x-socrata-requestid: 3980a0ab3143ce490945949b20402a2e
+      x-socrata-requestid: 67edf3971410377fd96e8493e7e35480
     body:
       string: |
         [{"school_year":"2014-2015","geography":"School","report_category":"Attendance Rate","school_dbn":"31R014","school_name":"P.S. 014 Cornelius Vanderbilt","by_group":"Gender by Attendance Rate","group_demographic":"Female","group_metrics":"61-80% Attendance Rate","value":"19","percentage_within_demographic":"0.1508","total_number_within":"126"}
         ,{"school_year":"2014-2015","geography":"School","report_category":"Attendance Rate","school_dbn":"31R014","school_name":"P.S. 014 Cornelius Vanderbilt","by_group":"Gender by Attendance Rate","group_demographic":"Female","group_metrics":"81-100% Attendance Rate","value":"104","percentage_within_demographic":"0.8254","total_number_within":"126"}]
-  recorded_at: 2026-01-27 20:20:23
+  recorded_at: 2026-02-19 20:50:03
 recorded_with: VCR-vcr/2.1.0

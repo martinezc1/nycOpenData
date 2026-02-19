@@ -6,7 +6,7 @@ http_interactions:
     status: 200
     headers:
       server: nginx
-      date: Tue, 27 Jan 2026 20:20:14 GMT
+      date: Thu, 19 Feb 2026 20:50:02 GMT
       content-type: application/json;charset=utf-8
       transfer-encoding: chunked
       connection: keep-alive
@@ -20,13 +20,11 @@ http_interactions:
       last-modified: Mon, 01 Dec 2025 20:26:04 GMT
       vary: Accept-Encoding
       content-encoding: gzip
-      age: '2'
-      x-socrata-region: aws-us-east-1-fedramp-prod
       strict-transport-security: max-age=31536000; includeSubDomains
-      x-socrata-requestid: 5fc542f35015de5cb430498018f50a0d
+      x-socrata-requestid: e6b090633bea6c086c77801b02a9c604
     body:
       string: |
         [{"event_agency":"43, "}
         ,{"event_agency":"43, "}]
-  recorded_at: 2026-01-27 20:20:14
+  recorded_at: 2026-02-19 20:50:02
 recorded_with: VCR-vcr/2.1.0

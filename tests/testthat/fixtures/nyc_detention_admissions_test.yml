@@ -6,7 +6,7 @@ http_interactions:
     status: 200
     headers:
       server: nginx
-      date: Tue, 27 Jan 2026 20:19:58 GMT
+      date: Thu, 19 Feb 2026 20:49:51 GMT
       content-type: application/json;charset=utf-8
       transfer-encoding: chunked
       connection: keep-alive
@@ -20,13 +20,11 @@ http_interactions:
       last-modified: Fri, 14 Feb 2025 16:45:28 GMT
       vary: Accept-Encoding
       content-encoding: gzip
-      age: '2'
-      x-socrata-region: aws-us-east-1-fedramp-prod
       strict-transport-security: max-age=31536000; includeSubDomains
-      x-socrata-requestid: e1120af10c56d40024f8c83a82befc34
+      x-socrata-requestid: fc95de4361d02881779ba32109d1c24b
     body:
       string: |
         [{"calendar_year":"2024","borough":"BRONX","borough_cd":"BX01 Mott Haven/Melrose","number_admitted":"72"}
         ,{"calendar_year":"2024","borough":"BRONX","borough_cd":"BX02 Hunts Point/Longwood","number_admitted":"30"}]
-  recorded_at: 2026-01-27 20:19:58
+  recorded_at: 2026-02-19 20:49:52
 recorded_with: VCR-vcr/2.1.0

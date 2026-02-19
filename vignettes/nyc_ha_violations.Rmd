@@ -1,14 +1,22 @@
 ---
 title: "Analyzing NYCHA Housing Maintenance Code Violations"
 output: rmarkdown::html_vignette
-author: Laura Werner
+author: "Laura Werner"
 vignette: >
   %\VignetteIndexEntry{Analyzing NYCHA Housing Maintenance Code Violations}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
 
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
 ```{r setup, include = FALSE}
+knitr::opts_chunk$set(warning = FALSE, message = FALSE)
 library(nycOpenData)
 library(dplyr)
 library(ggplot2)
@@ -16,35 +24,49 @@ library(ggplot2)
 
 ## Introduction
 
-The NYCHA Housing Maintenance Code Violations dataset provides information about maintenance violations in public housing developments across New York City.
+The [NYCHA Housing Maintenance Code Violations dataset](https://data.cityofnewyork.us/Housing-Development/Housing-Maintenance-Code-Violations/wvxf-dwi5/about_data), available through NYC Open Data, provides detailed information about maintenance violations in public housing developments across New York City.
 
-This dataset is important because it helps researchers, policymakers, and residents understand housing conditions and identify patterns in maintenance issues.
+This dataset includes information such as the borough, development name, violation type, inspection dates, and status. Researchers, policymakers, and residents can use this data to better understand housing conditions, identify recurring maintenance issues, and explore patterns across boroughs.
 
-## data
+## Data
+
+We begin by retrieving the dataset using the nycOpenData package:
 
 ```{r}
-data <- nyc_ha_violations()
+violations <- nyc_ha_violations()
 
-head(data)
+violations |>
+  dplyr::slice_head(n = 6)
 ```
+
+The `glimpse()` function allows us to quickly inspect the structure of the dataset, including available variables and their data types.
 
 ## Count violations by borough
 
+Next, we summarize the number of violations recorded in each borough:
+
 ```{r}
-data %>%
-  count(boro_nm)
+borough_counts <- violations |>
+  count(boro_nm, sort = TRUE)
+
+borough_counts
 ```
 
 ## Visual
 
+To better understand the distribution, we create a bar chart:
+
 ```{r}
-data %>%
-  count(boro_nm) %>%
-  ggplot(aes(x = boro_nm, y = n)) +
-  geom_col() +
+borough_counts |>
+  ggplot(aes(x = reorder(boro_nm, n), y = n)) +
+  geom_col(fill = "steelblue") +
+  coord_flip() +
   labs(
-    title = "Number of NYCHA Violations by Borough",
+    title = "Number of NYCHA Housing Maintenance Violations by Borough",
     x = "Borough",
     y = "Number of Violations"
-  )
+  ) +
+  theme_minimal()
 ```
+
+This visualization highlights which boroughs have the highest number of recorded maintenance violations. Differences across boroughs may reflect variation in the number of developments, building age, reporting practices, or underlying housing conditions. Further analysis could investigate violation types, severity levels, or trends over time.

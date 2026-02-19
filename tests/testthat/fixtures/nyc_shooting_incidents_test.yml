@@ -6,7 +6,7 @@ http_interactions:
     status: 200
     headers:
       server: nginx
-      date: Sat, 14 Feb 2026 15:17:43 GMT
+      date: Thu, 19 Feb 2026 20:50:05 GMT
       content-type: application/json;charset=utf-8
       transfer-encoding: chunked
       connection: keep-alive
@@ -21,10 +21,10 @@ http_interactions:
       vary: Accept-Encoding
       content-encoding: gzip
       strict-transport-security: max-age=31536000; includeSubDomains
-      x-socrata-requestid: db4ebb1c5c8ec358ea844d1b8c0c26f4
+      x-socrata-requestid: 79dfd0c7e692a59ecc9e347a7e8c36d3
     body:
       string: |
         [{"incident_key":"318207675","occur_date":"2025-12-31T00:00:00.000","occur_time":"23:44:00","boro":"MANHATTAN","loc_of_occur_desc":"OUTSIDE","precinct":"23","jurisdiction_code":"2","loc_classfctn_desc":"HOUSING","location_desc":"MULTI DWELL - PUBLIC HOUS","x_coord_cd":"999686","y_coord_cd":"226679","latitude":"40.788854","longitude":"-73.944257"}
         ,{"incident_key":"318203589","occur_date":"2025-12-31T00:00:00.000","occur_time":"18:40:00","boro":"MANHATTAN","loc_of_occur_desc":"INSIDE","precinct":"32","jurisdiction_code":"2","loc_classfctn_desc":"HOUSING","location_desc":"MULTI DWELL - PUBLIC HOUS","x_coord_cd":"1000457","y_coord_cd":"238373","latitude":"40.82095","longitude":"-73.941445"}]
-  recorded_at: 2026-02-14 15:17:43
+  recorded_at: 2026-02-19 20:50:05
 recorded_with: VCR-vcr/2.1.0

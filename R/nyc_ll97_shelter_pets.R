@@ -27,16 +27,14 @@
 #'   nyc_locallaw97_shelter_pets(limit = 2, filters = list(date_quarter = "Qtr 1"))
 #' }
 #' @export
-nyc_locallaw97_shelter_pets <- function(limit = 10000, filters = list(), timeout_sec = 30) {
-  endpoint <- .nyc_endpoint("5nux-zfmw")
-
-  query_list <- list(
-    "$limit" = limit,
-    "$order" = "date_year DESC, date_quarter DESC"
+nyc_locallaw97_shelter_pets <- function(limit = 10000,
+                                        filters = list(),
+                                        timeout_sec = 30) {
+  .nyc_dataset_request(
+    dataset_id = "5nux-zfmw",
+    limit = limit,
+    filters = filters,
+    order = "date_year DESC, date_quarter DESC",
+    timeout_sec = timeout_sec
   )
-
-  query_list <- .nyc_add_filters(query_list, filters)
-
-  data <- .nyc_get_json(endpoint, query_list, timeout_sec = timeout_sec)
-  tibble::as_tibble(data)
 }

@@ -1,7 +1,7 @@
 Package: nycOpenData
 Type: Package
 Title: Convenient Access to NYC Open Data API Endpoints
-Version: 0.1.6
+Version: 0.1.7
 Authors@R: 
     c(
       person("Christian", "Martinez", 
@@ -52,6 +52,7 @@ Imports:
     httr,
     jsonlite,
     tibble,
+    janitor,
     curl
 Suggests: 
     dplyr,

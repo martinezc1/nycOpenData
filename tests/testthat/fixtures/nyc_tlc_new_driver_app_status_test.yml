@@ -6,27 +6,25 @@ http_interactions:
     status: 200
     headers:
       server: nginx
-      date: Tue, 27 Jan 2026 20:20:26 GMT
+      date: Thu, 19 Feb 2026 20:50:06 GMT
       content-type: application/json;charset=utf-8
       transfer-encoding: chunked
       connection: keep-alive
       access-control-allow-origin: '*'
-      etag: '"Zm94dHJvdC40OTI4NF8zXzEyMzkyc2RJdTVuSWFlTklNbUJlUzFwQUliQkNHUHdZ---gzipXdQKgk3WLxICPimnoCdQrET0Mw4--gzip--gzip"'
+      etag: '"Zm94dHJvdC40OTI4NF8zXzEyNDg0c2RJdTVuSWFlTklNbUJlUzFwQUliQkNHUHdZ---gzipXdQKgk3WLxICPimnoCdQrET0Mw4--gzip--gzip"'
       x-soda2-fields: '["app_no","type","app_date","status","fru_interview_scheduled","drug_test","wav_course","defensive_driving","driver_exam","medical_clearance_form","other_requirements","lastupdate"]'
       x-soda2-types: '["number","text","floating_timestamp","text","text","text","text","text","text","text","text","floating_timestamp"]'
       x-soda2-data-out-of-date: 'false'
-      x-soda2-truth-last-modified: Tue, 27 Jan 2026 17:13:35 GMT
-      x-soda2-secondary-last-modified: Tue, 27 Jan 2026 17:13:35 GMT
-      last-modified: Tue, 27 Jan 2026 17:13:35 GMT
+      x-soda2-truth-last-modified: Thu, 19 Feb 2026 17:03:49 GMT
+      x-soda2-secondary-last-modified: Thu, 19 Feb 2026 17:03:49 GMT
+      last-modified: Thu, 19 Feb 2026 17:03:49 GMT
       vary: Accept-Encoding
       content-encoding: gzip
-      age: '0'
-      x-socrata-region: aws-us-east-1-fedramp-prod
       strict-transport-security: max-age=31536000; includeSubDomains
-      x-socrata-requestid: 948de877341513105d1a57fd3bbf3f47
+      x-socrata-requestid: 11595f7bf2523c0d9aa0ca1f0a03c2b6
     body:
       string: |
-        [{"app_no":"6131333","type":"HDR","app_date":"2026-01-27T00:00:00.000","status":"Incomplete","fru_interview_scheduled":"Not Applicable","drug_test":"Needed","wav_course":"Needed","defensive_driving":"Needed","driver_exam":"Needed","medical_clearance_form":"Needed","other_requirements":"Fingerprints needed; Copy of DMV license needed","lastupdate":"2026-01-27T11:00:01.000"}
-        ,{"app_no":"6131335","type":"HDR","app_date":"2026-01-27T00:00:00.000","status":"Incomplete","fru_interview_scheduled":"Not Applicable","drug_test":"Needed","wav_course":"Needed","defensive_driving":"Needed","driver_exam":"Needed","medical_clearance_form":"Needed","other_requirements":"Fingerprints needed; Copy of DMV license needed","lastupdate":"2026-01-27T11:00:01.000"}]
-  recorded_at: 2026-01-27 20:20:26
+        [{"app_no":"6133093","type":"HDR","app_date":"2026-02-19T00:00:00.000","status":"Incomplete","fru_interview_scheduled":"Not Applicable","drug_test":"Needed","wav_course":"Needed","defensive_driving":"Needed","driver_exam":"Needed","medical_clearance_form":"Needed","other_requirements":"Fingerprints needed; Copy of DMV license needed","lastupdate":"2026-02-19T11:00:06.000"}
+        ,{"app_no":"6133084","type":"HDR","app_date":"2026-02-19T00:00:00.000","status":"Incomplete","fru_interview_scheduled":"Not Applicable","drug_test":"Needed","wav_course":"Needed","defensive_driving":"Needed","driver_exam":"Needed","medical_clearance_form":"Needed","other_requirements":"Fingerprints needed; Copy of DMV license needed","lastupdate":"2026-02-19T11:00:06.000"}]
+  recorded_at: 2026-02-19 20:50:06
 recorded_with: VCR-vcr/2.1.0

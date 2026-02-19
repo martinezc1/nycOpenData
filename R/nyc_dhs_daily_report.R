@@ -25,16 +25,12 @@
 #' }
 #' @export
 nyc_dhs_daily_report <- function(limit = 10000, filters = list(), timeout_sec = 30) {
-  endpoint <- .nyc_endpoint("k46n-sa2m")
-
-  query_list <- list(
-    "$limit" = limit,
-    "$order" = "date_of_census DESC"
+  .nyc_dataset_request(
+    dataset_id = "k46n-sa2m",
+    limit = limit,
+    filters = filters,
+    order = "date_of_census DESC",
+    timeout_sec = timeout_sec
   )
-
-  query_list <- .nyc_add_filters(query_list, filters)
-
-  data <- .nyc_get_json(endpoint, query_list, timeout_sec = timeout_sec)
-  tibble::as_tibble(data)
 }
 

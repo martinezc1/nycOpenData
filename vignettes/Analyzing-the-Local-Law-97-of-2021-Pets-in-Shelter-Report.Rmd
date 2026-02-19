@@ -1,7 +1,7 @@
 ---
 title: "Analyzing the Local Law 97 of 2021-Pets in Shelter Report"
-output: html_document
-author: Xinru Wang
+output: rmarkdown::html_vignette
+author: "Xinru Wang"
 vignette: >
   %\VignetteIndexEntry{Analyzing the Local Law 97 of 2021-Pets in Shelter Report}
   %\VignetteEngine{knitr::rmarkdown}
@@ -15,7 +15,7 @@ knitr::opts_chunk$set(
 )
 ```
 
-```{r setup}
+```{r setup, include = FALSE}
 knitr::opts_chunk$set(warning = FALSE, message = FALSE)
 library(nycOpenData)
 library(ggplot2)
@@ -24,9 +24,9 @@ library(dplyr)
 
 ## Introduction
 
-New York City serves a large and diverse population, including individuals and families who experience housing instability and may rely on homeless shelters for temporary support. Pets serve many important role in people’s lives, and understanding pet ownership among shelter entrants helps inform shelter policy, access to services, and resource planning.
+New York City serves a large and diverse population, including individuals and families who experience housing instability and may rely on homeless shelters for temporary support. Pets serve many important roles in people’s lives, and understanding pet ownership among shelter entrants helps inform shelter policy, access to services, and resource planning.
 
-The **Local Law 97 of 2021 – Pets in Shelter Report** provides quarterly survey data on the types of pets owned by people entering New York City homeless shelters.This dataset was recently added to NYC Open Data and made publicly available on October 14, 2025. These data are published through NYC Open Data and are available [here](https://data.cityofnewyork.us/Social-Services/Local-Law-97-of-2021-Pets-in-Shelter-Report/5nux-zfmw/about_data).
+The **Local Law 97 of 2021 – Pets in Shelter Report** provides quarterly survey data on the types of pets owned by people entering New York City homeless shelters. This dataset was recently added to NYC Open Data and made publicly available on October 14, 2025. These data are published through NYC Open Data and are available [here](https://data.cityofnewyork.us/Social-Services/Local-Law-97-of-2021-Pets-in-Shelter-Report/5nux-zfmw/about_data).
 
 The `nycOpenData` package provides a streamlined interface for accessing New York City’s open data resources directly in R. By using the `nyc_locallaw97_shelter_pets()` function, we can retrieve the most recent quarterly shelter pet data and explore trends in pet ownership across time using familiar data analysis tools.
 
@@ -36,10 +36,9 @@ To start, we’ll pull a small sample of the data to get a sense of what it look
 
 ```{r small-sample}
 small_sample <- nyc_locallaw97_shelter_pets(limit = 3)
-small_sample
 
 # Seeing what columns are in the dataset
-colnames(small_sample)
+names(small_sample)
 ```
 
 Fantastic! We successfully pulled the `Local Law 97 of 2021-Pets in Shelter Report` data from the NYC Open Data Portal using the `nyc_locallaw97_shelter_pets()` function.
@@ -55,10 +54,11 @@ recent_quarters <- nyc_locallaw97_shelter_pets(
 recent_quarters
 
 # Checking to see the filtering worked
-unique(recent_quarters$date_year)
+recent_quarters |>
+  distinct(date_year)
 ```
 
-Success! From calling the filtered dataset, we see that only three rows of data are returned, and the `unique()` check confirms that all observations come from the specified year.
+Success! From calling the filtered dataset, we see that only three rows of data are returned, and the `distinct()` check confirms that all observations come from the specified year.
 
 One of the strongest qualities of this function is its ability to filter based on multiple columns at once. Let’s put everything together and create a dataset containing all available quarterly records for a selected year where shelter entrants reported having pets.
 
@@ -67,19 +67,25 @@ One of the strongest qualities of this function is its ability to filter based o
 pets_filtered <- nyc_locallaw97_shelter_pets(
   limit = 20,
   filters = list(
-    date_year = 2024,
-    had_pet = 1))
+    date_year = "2024",
+    number_of_birds = 0))
 
 # Calling head of our new dataset
-head(pets_filtered)
+pets_filtered |>
+  slice_head(n = 2)
 
 # Quick check to make sure our filtering worked
-nrow(pets_filtered)
-unique(pets_filtered$date_year)
-unique(pets_filtered$had_pet)
+pets_filtered |>
+  summarize(rows = n())
+
+pets_filtered |>
+  distinct(date_year)
+
+pets_filtered |>
+  distinct(number_of_birds)
 ```
 
-We successfully created a dataset containing the most recent quarterly records for a selected year in which shelter entrants reported having pets.
+We successfully created a dataset containing the most recent quarterly records for a selected year in which shelter entrants reported having no birds.
 
 ## Mini analysis
 
@@ -90,11 +96,12 @@ To do this, we’ll create a simple bar chart showing the number of applicants w
 ```{r had-pet-year-graph, fig.alt="Bar chart showing the number of shelter applicants with pets by year.", fig.cap="Bar chart showing the number of shelter applicants with pets by year.", fig.height=5, fig.width=7}
 
 pets <- nyc_locallaw97_shelter_pets(limit = 100)
-pets$had_pet <- as.numeric(pets$had_pet)
+pets <- pets |>
+  mutate(had_pet = as.numeric(had_pet))
 
-# Summarize by year
-pet_by_year <- pets %>%
-  group_by(date_year) %>%
+# summarize by year
+pet_by_year <- pets |>
+  group_by(date_year) |>
   summarize(applicants_with_pets = sum(had_pet, na.rm = TRUE))
 
 # Plot

@@ -40,7 +40,7 @@ small_sample <- nyc_wetlands(limit = 3)
 small_sample
 
 # Seeing what columns are in the dataset
-colnames(small_sample)
+names(small_sample)
 ```
 
 Fantastic! We successfully pulled wetlands data from the NYC Open Data Portal. 
@@ -52,24 +52,29 @@ Let's now pull the complete dataset to work with:
 wetlands_data <- nyc_wetlands(limit = 100)
 
 # Let's take a look at what our full dataset looks like
-head(wetlands_data)
+wetlands_data |>
+  slice_head(n = 6)
 ```
 
 In our small sample data, the first few rows' verification status were `Unverified`. Let's see what the other values in that column are:
 
 ```{r ver-status}
-unique(wetlands_data$verificationstatus)
+wetlands_data |>
+  distinct(verificationstatus)
 ```
 
 Now that we see the different values in the `verificationstatus` column, let's filter *out* all of the unverified wetland features:
 
 ```{r filter-brooklyn-nypd}
 # Creating the dataset
-verified_wetlands <- wetlands_data %>% filter(verificationstatus != "Unverified")
+verified_wetlands <- wetlands_data |> filter(verificationstatus != "Unverified")
 
 # Quick check to make sure our filtering worked
-nrow(verified_wetlands)
-unique(verified_wetlands$verificationstatus)
+verified_wetlands |>
+  slice_head(n = 6)
+
+verified_wetlands |>
+  distinct(verificationstatus)
 ```
 
 Success! Now that we have our full list of verified wetland features in NYC, let's take a look at some of its descriptive stats.
@@ -79,11 +84,11 @@ Success! Now that we have our full list of verified wetland features in NYC, let
 Let's create a summary table showing how many wetland features were verified each year:
 
 ```{r year-summary}
-verified_per_year <- verified_wetlands %>% 
-  group_by(verificationstatusyear) %>% 
+verified_per_year <- verified_wetlands |> 
+  group_by(verificationstatusyear) |> 
   count(verificationstatusyear)
 
-verified_per_year %>% kable(caption = "Verified Wetland Features Per Year")
+verified_per_year |> kable(caption = "Verified Wetland Features Per Year")
 ```
 
 Let's create a bar graph to see how many wetlands of each classification are verified!

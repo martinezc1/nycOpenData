@@ -6,7 +6,7 @@ http_interactions:
     status: 200
     headers:
       server: nginx
-      date: Tue, 27 Jan 2026 20:20:22 GMT
+      date: Thu, 19 Feb 2026 20:50:03 GMT
       content-type: application/json;charset=utf-8
       transfer-encoding: chunked
       connection: keep-alive
@@ -20,13 +20,11 @@ http_interactions:
       last-modified: Mon, 20 Oct 2025 14:11:46 GMT
       vary: Accept-Encoding
       content-encoding: gzip
-      age: '0'
-      x-socrata-region: aws-us-east-1-fedramp-prod
       strict-transport-security: max-age=31536000; includeSubDomains
-      x-socrata-requestid: dfcef0eb0148dac45b2b1ec7feed5138
+      x-socrata-requestid: ea6f3aa3f6dad528b08de1a0eb0eec95
     body:
       string: |
         [{"date":"2025-06-30T00:00:00.000","program_type":"Crisis Shelters","vacancies_per_day":"40","beds_per_day":"258","vacant_per_day":"0.16"}
         ,{"date":"2025-06-30T00:00:00.000","program_type":"Crisis Shelters (HYA)","vacancies_per_day":"0","beds_per_day":"35","vacant_per_day":"0"}]
-  recorded_at: 2026-01-27 20:20:22
+  recorded_at: 2026-02-19 20:50:03
 recorded_with: VCR-vcr/2.1.0

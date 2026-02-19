@@ -6,27 +6,25 @@ http_interactions:
     status: 200
     headers:
       server: nginx
-      date: Tue, 27 Jan 2026 20:20:25 GMT
+      date: Thu, 19 Feb 2026 20:50:06 GMT
       content-type: application/json;charset=utf-8
       transfer-encoding: chunked
       connection: keep-alive
       access-control-allow-origin: '*'
-      etag: '"Zm94dHJvdC4xNTY2NF8xODAzXzEyODYyOWVEcHBiYTRTNUlRTE5GVDBUVFlHVEdqUUVR---gzipjQN8pWmx_4csZ0o3jvkCW8DVaLA--gzip--gzip"'
+      etag: '"Zm94dHJvdC4xNTY2NF8xODAzXzEyODg2OWVEcHBiYTRTNUlRTE5GVDBUVFlHVEdqUUVR---gzipjQN8pWmx_4csZ0o3jvkCW8DVaLA--gzip--gzip"'
       x-soda2-fields: '["license_number","name","status_code","status_description","expiration_date","last_update_date","last_update_time"]'
       x-soda2-types: '["text","text","number","text","floating_timestamp","floating_timestamp","text"]'
       x-soda2-data-out-of-date: 'false'
-      x-soda2-truth-last-modified: Tue, 27 Jan 2026 20:02:29 GMT
-      x-soda2-secondary-last-modified: Tue, 27 Jan 2026 20:02:29 GMT
-      last-modified: Tue, 27 Jan 2026 20:02:29 GMT
+      x-soda2-truth-last-modified: Thu, 19 Feb 2026 20:16:27 GMT
+      x-soda2-secondary-last-modified: Thu, 19 Feb 2026 20:16:27 GMT
+      last-modified: Thu, 19 Feb 2026 20:16:27 GMT
       vary: Accept-Encoding
       content-encoding: gzip
-      age: '0'
-      x-socrata-region: aws-us-east-1-fedramp-prod
       strict-transport-security: max-age=31536000; includeSubDomains
-      x-socrata-requestid: 6fcd4510d9842700d4d879e83446d004
+      x-socrata-requestid: 2b78b8864fea87011b8e251be9176fcf
     body:
       string: |
-        [{"license_number":"5947911","name":"MEJIA,ISAAC,G","status_code":"1","status_description":"SHL UNRESTRICTED","expiration_date":"2028-09-26T00:00:00.000","last_update_date":"2026-01-27T00:00:00.000","last_update_time":"13:20"}
-        ,{"license_number":"5964957","name":"TAVERAS,SANCHEZ,HICLLIFF","status_code":"1","status_description":"SHL UNRESTRICTED","expiration_date":"2026-12-02T00:00:00.000","last_update_date":"2026-01-27T00:00:00.000","last_update_time":"13:20"}]
-  recorded_at: 2026-01-27 20:20:25
+        [{"license_number":"5535836","name":"WANGYAL,TUMDIN","status_code":"1","status_description":"SHL UNRESTRICTED","expiration_date":"2026-06-19T00:00:00.000","last_update_date":"2026-02-19T00:00:00.000","last_update_time":"14:01"}
+        ,{"license_number":"5800295","name":"SATTOROV,SHUKHRATJON","status_code":"1","status_description":"SHL UNRESTRICTED","expiration_date":"2026-07-17T00:00:00.000","last_update_date":"2026-02-19T00:00:00.000","last_update_time":"14:01"}]
+  recorded_at: 2026-02-19 20:50:06
 recorded_with: VCR-vcr/2.1.0

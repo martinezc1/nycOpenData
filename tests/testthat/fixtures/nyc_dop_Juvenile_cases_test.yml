@@ -6,7 +6,7 @@ http_interactions:
     status: 200
     headers:
       server: nginx
-      date: Wed, 04 Feb 2026 06:04:45 GMT
+      date: Thu, 19 Feb 2026 20:49:53 GMT
       content-type: application/json;charset=utf-8
       transfer-encoding: chunked
       connection: keep-alive
@@ -21,10 +21,10 @@ http_interactions:
       vary: Accept-Encoding
       content-encoding: gzip
       strict-transport-security: max-age=31536000; includeSubDomains
-      x-socrata-requestid: 4a671c59dd445e2c7be531c63ab672cf
+      x-socrata-requestid: cf2026b53655da14c1b41089759a0fe4
     body:
       string: |
         [{"borough":"Citywide","supervision_caseload_type":"Juvenile Justice Initiative","month":"December","year":"2025","supervision_caseload_count":"126"}
         ,{"borough":"Citywide","supervision_caseload_type":"Advocate Intervene Mentor","month":"December","year":"2025","supervision_caseload_count":"37"}]
-  recorded_at: 2026-02-04 06:04:45
+  recorded_at: 2026-02-19 20:49:53
 recorded_with: VCR-vcr/2.1.0

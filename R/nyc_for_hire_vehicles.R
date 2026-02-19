@@ -26,15 +26,11 @@
 #' }
 #' @export
 nyc_for_hire_vehicles <- function(limit = 10000, filters = list(), timeout_sec = 30) {
-  endpoint <- .nyc_endpoint("8wbx-tsch")
-
-  query_list <- list(
-    "$limit" = limit,
-    "$order" = "last_date_updated DESC"
+  .nyc_dataset_request(
+    dataset_id = "8wbx-tsch",
+    limit = limit,
+    filters = filters,
+    order = "last_date_updated DESC",
+    timeout_sec = timeout_sec
   )
-
-  query_list <- .nyc_add_filters(query_list, filters)
-
-  data <- .nyc_get_json(endpoint, query_list, timeout_sec = timeout_sec)
-  tibble::as_tibble(data)
 }

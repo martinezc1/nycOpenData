@@ -24,15 +24,11 @@
 #' }
 #' @export
 nyc_open_parking_camera_violations <- function(limit = 10000, filters = list(), timeout_sec = 30) {
-  endpoint <- .nyc_endpoint("nc67-uf89")
-
-  query_list <- list(
-    "$limit" = limit,
-    "$order" = "issue_date DESC"
+  .nyc_dataset_request(
+    dataset_id = "nc67-uf89",
+    limit = limit,
+    filters = filters,
+    order = "issue_date DESC",
+    timeout_sec = timeout_sec
   )
-
-  query_list <- .nyc_add_filters(query_list, filters)
-
-  data <- .nyc_get_json(endpoint, query_list, timeout_sec = timeout_sec)
-  tibble::as_tibble(data)
 }

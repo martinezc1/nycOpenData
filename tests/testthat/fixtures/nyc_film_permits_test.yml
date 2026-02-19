@@ -6,27 +6,25 @@ http_interactions:
     status: 200
     headers:
       server: nginx
-      date: Tue, 27 Jan 2026 20:20:05 GMT
+      date: Thu, 19 Feb 2026 20:49:54 GMT
       content-type: application/json;charset=utf-8
       transfer-encoding: chunked
       connection: keep-alive
       access-control-allow-origin: '*'
-      etag: '"Zm94dHJvdC4zNjgxN18zXzI5MzhXYUZKVmkzVWZjWUQ3M3IxUXhtLVpMQS1rT3c---gziqBzXLumJgnrscnB6seA7B2LLR8TA--gzip--gzip"'
+      etag: '"Zm94dHJvdC4zNjgxN18zXzI5NTZXYUZKVmkzVWZjWUQ3M3IxUXhtLVpMQS1rT3c---gziqBzXLumJgnrscnB6seA7B2LLR8TA--gzip--gzip"'
       x-soda2-fields: '["eventid","eventtype","startdatetime","enddatetime","enteredon","eventagency","parkingheld","borough","communityboard_s","policeprecinct_s","category","subcategoryname","country","zipcode_s"]'
       x-soda2-types: '["number","text","floating_timestamp","floating_timestamp","floating_timestamp","text","text","text","text","text","text","text","text","text"]'
       x-soda2-data-out-of-date: 'false'
-      x-soda2-truth-last-modified: Mon, 26 Jan 2026 20:30:18 GMT
-      x-soda2-secondary-last-modified: Mon, 26 Jan 2026 20:30:18 GMT
-      last-modified: Mon, 26 Jan 2026 20:30:18 GMT
+      x-soda2-truth-last-modified: Thu, 19 Feb 2026 20:30:32 GMT
+      x-soda2-secondary-last-modified: Thu, 19 Feb 2026 20:30:32 GMT
+      last-modified: Thu, 19 Feb 2026 20:30:32 GMT
       vary: Accept-Encoding
       content-encoding: gzip
-      age: '2'
-      x-socrata-region: aws-us-east-1-fedramp-prod
       strict-transport-security: max-age=31536000; includeSubDomains
-      x-socrata-requestid: 1e65f26bcd4febf0da230c54a0e97ec4
+      x-socrata-requestid: ae13454095642b6ddc2732b508e6c5dd
     body:
       string: |
-        [{"eventid":"896782","eventtype":"Shooting Permit","startdatetime":"2025-10-27T08:00:00.000","enddatetime":"2025-10-27T23:59:00.000","eventagency":"Mayor's Office of Media & Entertainment","parkingheld":"EAST   69 STREET between LEXINGTON AVENUE and PARK AVENUE,  PARK AVENUE between EAST   69 STREET and EAST   70 STREET","borough":"Manhattan","communityboard_s":"8,","policeprecinct_s":"19,","category":"Film","subcategoryname":"Feature","country":"United States of America","zipcode_s":"10021,"}
-        ,{"eventid":"895096","eventtype":"Theater Load in and Load Outs","startdatetime":"2025-10-27T12:01:00.000","enddatetime":"2025-10-27T23:59:00.000","eventagency":"Mayor's Office of Media & Entertainment","parkingheld":"7 AVENUE between WEST   57 STREET and WEST   56 STREET","borough":"Manhattan","communityboard_s":"5,","policeprecinct_s":"18,","category":"Theater","subcategoryname":"Theater","country":"United States of America","zipcode_s":"10019, 10106,"}]
-  recorded_at: 2026-01-27 20:20:05
+        [{"eventid":"900641","eventtype":"Theater Load in and Load Outs","startdatetime":"2025-11-20T05:15:00.000","enddatetime":"2025-11-21T05:00:00.000","eventagency":"Mayor's Office of Media & Entertainment","parkingheld":"AMSTERDAM AVENUE between WEST   73 STREET and WEST   75 STREET,  WEST   74 STREET between AMSTERDAM AVENUE and BROADWAY,  WEST   75 STREET between AMSTERDAM AVENUE and BROADWAY,  BROADWAY between WEST   74 STREET and WEST   75 STREET","borough":"Manhattan","communityboard_s":"7,","policeprecinct_s":"20,","category":"Theater","subcategoryname":"Theater","country":"United States of America","zipcode_s":"10023,"}
+        ,{"eventid":"900600","eventtype":"Shooting Permit","startdatetime":"2025-11-20T07:00:00.000","enddatetime":"2025-11-20T22:00:00.000","eventagency":"Mayor's Office of Media & Entertainment","parkingheld":"15 AVENUE between 138 STREET and 143 STREET","borough":"Queens","communityboard_s":"7,","policeprecinct_s":"109,","category":"Television","subcategoryname":"Episodic series","country":"United States of America","zipcode_s":"11357,"}]
+  recorded_at: 2026-02-19 20:49:55
 recorded_with: VCR-vcr/2.1.0

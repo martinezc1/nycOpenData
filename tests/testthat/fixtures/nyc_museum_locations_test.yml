@@ -6,7 +6,7 @@ http_interactions:
     status: 200
     headers:
       server: nginx
-      date: Tue, 27 Jan 2026 20:20:10 GMT
+      date: Thu, 19 Feb 2026 20:50:00 GMT
       content-type: application/json;charset=utf-8
       transfer-encoding: chunked
       connection: keep-alive
@@ -20,13 +20,11 @@ http_interactions:
       last-modified: Tue, 22 Dec 2015 02:59:31 GMT
       vary: Accept-Encoding
       content-encoding: gzip
-      age: '0'
-      x-socrata-region: aws-us-east-1-fedramp-prod
       strict-transport-security: max-age=31536000; includeSubDomains
-      x-socrata-requestid: 895071a12316769657c97dde004c44c2
+      x-socrata-requestid: 6c03a5aa624e12441bacc44adb4d1d7b
     body:
       string: |
         [{"the_geom":{"type":"Point","coordinates":[-74.01375579519738,40.703816216918035]},"name":"Alexander Hamilton U.S. Custom House","tel":"(212) 514-3700","url":"http://www.oldnycustomhouse.gov/","adress1":"1 Bowling Grn","address2":"","city":"New York","zip":"10004.0"}
         ,{"the_geom":{"type":"Point","coordinates":[-74.06303178855111,40.615120837755356]},"name":"Alice Austen House Museum","tel":"(718) 816-4506","url":"http://www.aliceausten.org/","adress1":"2 Hylan Blvd","address2":"","city":"Staten Island","zip":"10305.0"}]
-  recorded_at: 2026-01-27 20:20:10
+  recorded_at: 2026-02-19 20:50:00
 recorded_with: VCR-vcr/2.1.0

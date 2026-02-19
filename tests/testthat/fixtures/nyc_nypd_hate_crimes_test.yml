@@ -6,27 +6,25 @@ http_interactions:
     status: 200
     headers:
       server: nginx
-      date: Tue, 27 Jan 2026 20:20:11 GMT
+      date: Thu, 19 Feb 2026 20:50:00 GMT
       content-type: application/json;charset=utf-8
       transfer-encoding: chunked
       connection: keep-alive
       access-control-allow-origin: '*'
-      etag: '"aG90ZWwuNDY4MjdfM180NU1kXzlnMXY3TTJtajk1am1xTHRWdHJJTmFQaw---gzirjs0HAKE4Yu2EwL6aImwIkyAmBg--gzip--gzip"'
+      etag: '"aG90ZWwuNDY4MjdfM180Nk1kXzlnMXY3TTJtajk1am1xTHRWdHJJTmFQaw---gzirjs0HAKE4Yu2EwL6aImwIkyAmBg--gzip--gzip"'
       x-soda2-fields: '["full_complaint_id","complaint_year_number","month_number","record_create_date","complaint_precinct_code","patrol_borough_name","county","law_code_category_description","offense_description","pd_code_description","bias_motive_description","offense_category","arrest_date","arrest_id"]'
       x-soda2-types: '["text","text","number","floating_timestamp","text","text","text","text","text","text","text","text","floating_timestamp","text"]'
       x-soda2-data-out-of-date: 'false'
-      x-soda2-truth-last-modified: Mon, 27 Oct 2025 16:42:32 GMT
-      x-soda2-secondary-last-modified: Mon, 27 Oct 2025 16:42:32 GMT
-      last-modified: Mon, 27 Oct 2025 16:42:32 GMT
+      x-soda2-truth-last-modified: Fri, 06 Feb 2026 16:35:45 GMT
+      x-soda2-secondary-last-modified: Fri, 06 Feb 2026 16:35:45 GMT
+      last-modified: Fri, 06 Feb 2026 16:35:45 GMT
       vary: Accept-Encoding
       content-encoding: gzip
-      age: '0'
-      x-socrata-region: aws-us-east-1-fedramp-prod
       strict-transport-security: max-age=31536000; includeSubDomains
-      x-socrata-requestid: bcd3c6d2c1f5e78715f7ffe5bd65dfa3
+      x-socrata-requestid: 02857f68ea01802618b0b029c3f53c48
     body:
       string: |
-        [{"full_complaint_id":"202500612565517","complaint_year_number":"2025","month_number":"9","record_create_date":"2025-09-30T00:00:00.000","complaint_precinct_code":"6","patrol_borough_name":"PATROL BORO MAN SOUTH","county":"NEW YORK","law_code_category_description":"FELONY","offense_description":"MISCELLANEOUS PENAL LAW","pd_code_description":"AGGRAVATED HARASSMENT 1","bias_motive_description":"ANTI-JEWISH","offense_category":"Religion/Religious Practice"}
-        ,{"full_complaint_id":"202509412490517","complaint_year_number":"2025","month_number":"9","record_create_date":"2025-09-30T00:00:00.000","complaint_precinct_code":"94","patrol_borough_name":"PATROL BORO BKLYN NORTH","county":"KINGS","law_code_category_description":"MISDEMEANOR","offense_description":"ASSAULT 3 & RELATED OFFENSES","pd_code_description":"ASSAULT 3","bias_motive_description":"ANTI-BLACK","offense_category":"Race/Color"}]
-  recorded_at: 2026-01-27 20:20:11
+        [{"full_complaint_id":"202501813300417","complaint_year_number":"2025","month_number":"12","record_create_date":"2025-12-16T00:00:00.000","complaint_precinct_code":"18","patrol_borough_name":"PATROL BORO MAN SOUTH","county":"NEW YORK","law_code_category_description":"MISDEMEANOR","offense_description":"OFF. AGNST PUB ORD SENSBLTY &","pd_code_description":"AGGRAVATED HARASSMENT 2","bias_motive_description":"ANTI-JEWISH","offense_category":"Religion/Religious Practice"}
+        ,{"full_complaint_id":"202510212893117","complaint_year_number":"2025","month_number":"12","record_create_date":"2025-12-15T00:00:00.000","complaint_precinct_code":"102","patrol_borough_name":"PATROL BORO QUEENS SOUTH","county":"QUEENS","law_code_category_description":"FELONY","offense_description":"CRIMINAL MISCHIEF & RELATED OF","pd_code_description":"MISCHIEF,CRIMINAL,    UNCL 2ND","bias_motive_description":"ANTI-JEWISH","offense_category":"Religion/Religious Practice"}]
+  recorded_at: 2026-02-19 20:50:00
 recorded_with: VCR-vcr/2.1.0

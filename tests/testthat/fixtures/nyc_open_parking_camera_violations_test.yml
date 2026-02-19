@@ -6,27 +6,25 @@ http_interactions:
     status: 200
     headers:
       server: nginx
-      date: Tue, 27 Jan 2026 20:21:16 GMT
+      date: Thu, 19 Feb 2026 20:50:00 GMT
       content-type: application/json;charset=utf-8
       transfer-encoding: chunked
       connection: keep-alive
       access-control-allow-origin: '*'
-      etag: '"Zm94dHJvdC40MjcwN18xMl8zODEyZkxRR1FRUmxrUFQxdHhCXzd2N2g5dWwxY2Jr---gzipOGfc2TiuQ5RjPEC7I__KO77VpAk--gzip--gzip"'
+      etag: '"Zm94dHJvdC40MjcwN18xMl8zODI4ZkxRR1FRUmxrUFQxdHhCXzd2N2g5dWwxY2Jr---gzipOGfc2TiuQ5RjPEC7I__KO77VpAk--gzip--gzip"'
       x-soda2-fields: '["plate","state","license_type","summons_number","issue_date","violation_time","violation","judgment_entry_date","fine_amount","penalty_amount","interest_amount","reduction_amount","payment_amount","amount_due","precinct","county","issuing_agency","violation_status","summons_image"]'
       x-soda2-types: '["text","text","text","number","text","text","text","text","number","number","number","number","number","number","text","text","text","text","url"]'
       x-soda2-data-out-of-date: 'false'
-      x-soda2-truth-last-modified: Tue, 27 Jan 2026 10:19:46 GMT
-      x-soda2-secondary-last-modified: Tue, 27 Jan 2026 10:19:46 GMT
-      last-modified: Tue, 27 Jan 2026 10:19:46 GMT
+      x-soda2-truth-last-modified: Sat, 14 Feb 2026 10:20:25 GMT
+      x-soda2-secondary-last-modified: Sat, 14 Feb 2026 10:20:25 GMT
+      last-modified: Sat, 14 Feb 2026 10:20:25 GMT
       vary: Accept-Encoding
       content-encoding: gzip
-      age: '0'
-      x-socrata-region: aws-us-east-1-fedramp-prod
       strict-transport-security: max-age=31536000; includeSubDomains
-      x-socrata-requestid: a863eaba62ffe5d5e6104bc8f36a6e57
+      x-socrata-requestid: 974c241f934b17c167eae6dc3c36bd21
     body:
       string: |
-        [{"plate":"HPK2083","state":"NY","license_type":"PAS","summons_number":"1420103131","violation_time":"00:00A","violation":"INSP. STICKER-EXPIRED/MISSING","fine_amount":"65","penalty_amount":"0","interest_amount":"0","reduction_amount":"65","payment_amount":"0","amount_due":"0","precinct":"025","issuing_agency":"POLICE DEPARTMENT","summons_image":{"url":"http://nycserv.nyc.gov/NYCServWeb/ShowImage?searchID=VFZSUmVVMUVSWGROZWtWNlRWRTlQUT09&locationName=_____________________","description":"View Summons"}}
-        ,{"plate":"FFZ7198","state":"NY","license_type":"PAS","summons_number":"1405797526","violation_time":"06:49A","violation":"OBSTRUCTING DRIVEWAY","fine_amount":"95","penalty_amount":"0","interest_amount":"0","reduction_amount":"95","payment_amount":"0","amount_due":"0","precinct":"000","county":"Q","issuing_agency":"POLICE DEPARTMENT","violation_status":"HEARING HELD-NOT GUILTY","summons_image":{"url":"http://nycserv.nyc.gov/NYCServWeb/ShowImage?searchID=VFZSUmQwNVVZelZPZWxWNVRtYzlQUT09&locationName=_____________________","description":"View Summons"}}]
-  recorded_at: 2026-01-27 20:21:16
+        [{"plate":"BLANKPLATE","state":"99","license_type":"999","summons_number":"1502665414","violation":"MISCELLANEOUS","fine_amount":"0","penalty_amount":"0","interest_amount":"0","reduction_amount":"0","payment_amount":"0","amount_due":"0","precinct":"000","issuing_agency":"NYS PARKS POLICE","summons_image":{"url":"http://nycserv.nyc.gov/NYCServWeb/ShowImage?searchID=VFZSVmQwMXFXVEpPVkZGNFRrRTlQUT09&locationName=_____________________","description":"View Summons"}}
+        ,{"plate":"HPK2083","state":"NY","license_type":"PAS","summons_number":"1420103131","violation_time":"00:00A","violation":"INSP. STICKER-EXPIRED/MISSING","fine_amount":"65","penalty_amount":"0","interest_amount":"0","reduction_amount":"65","payment_amount":"0","amount_due":"0","precinct":"025","issuing_agency":"POLICE DEPARTMENT","summons_image":{"url":"http://nycserv.nyc.gov/NYCServWeb/ShowImage?searchID=VFZSUmVVMUVSWGROZWtWNlRWRTlQUT09&locationName=_____________________","description":"View Summons"}}]
+  recorded_at: 2026-02-19 20:50:01
 recorded_with: VCR-vcr/2.1.0

@@ -21,21 +21,17 @@
 #' # Examples that hit the live NYC Open Data API are guarded so CRAN checks
 #' # do not fail when the network is unavailable or slow.
 #' if (interactive() && curl::has_internet()) {
-#'   small_sample <- nyc_events_sealevel(limit = )
+#'   small_sample <- nyc_events_sealevel(limit = 2)
 #'   small_sample
 #'
-#'  nyc_events_sealevel(limit = 2, filters = list(sea_lelel_rise = "6 in"))
+#'  nyc_events_sealevel(limit = 2, filters = list(sea_level_rise = "6 in"))
 #' }
 #' @export
 nyc_events_sealevel <- function(limit = 10000, filters = list(), timeout_sec = 30) {
-  endpoint <- .nyc_endpoint("38ps-fnsg")
-
-  query_list <- list(
-    "$limit" = limit
+  .nyc_dataset_request(
+    dataset_id = "38ps-fnsg",
+    limit = limit,
+    filters = filters,
+    timeout_sec = timeout_sec
   )
-
-  query_list <- .nyc_add_filters(query_list, filters)
-
-  data <- .nyc_get_json(endpoint, query_list, timeout_sec = timeout_sec)
-  tibble::as_tibble(data)
 }

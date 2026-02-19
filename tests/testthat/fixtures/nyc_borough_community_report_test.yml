@@ -6,7 +6,7 @@ http_interactions:
     status: 200
     headers:
       server: nginx
-      date: Tue, 27 Jan 2026 20:19:54 GMT
+      date: Thu, 19 Feb 2026 20:49:48 GMT
       content-type: application/json;charset=utf-8
       transfer-encoding: chunked
       connection: keep-alive
@@ -20,13 +20,11 @@ http_interactions:
       last-modified: Thu, 15 Jan 2026 15:20:50 GMT
       vary: Accept-Encoding
       content-encoding: gzip
-      age: '2'
-      x-socrata-region: aws-us-east-1-fedramp-prod
       strict-transport-security: max-age=31536000; includeSubDomains
-      x-socrata-requestid: 3dba7ad6c5c86df939a8998164a01e11
+      x-socrata-requestid: 7661221464a30a6adf26b12890e7a72a
     body:
       string: |
         [{"month":"2025-12-01T00:00:00.000","borough":"Staten_Island","community_district":"S03","bc_snap_recipients":"14183","bc_snap_households":"8839","bc_ca_recipients":"3462","bc_ca_cases":"1993","bc_ma_only_enrollees":"7279","bc_total_ma_enrollees":"13308"}
         ,{"month":"2025-12-01T00:00:00.000","borough":"Staten_Island","community_district":"S02","bc_snap_recipients":"19167","bc_snap_households":"10942","bc_ca_recipients":"4595","bc_ca_cases":"2567","bc_ma_only_enrollees":"9197","bc_total_ma_enrollees":"17692"}]
-  recorded_at: 2026-01-27 20:19:54
+  recorded_at: 2026-02-19 20:49:48
 recorded_with: VCR-vcr/2.1.0

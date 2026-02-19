@@ -28,17 +28,12 @@
 #' }
 #' @export
 nyc_slash_stab <- function(limit = 10000, filters = list(), timeout_sec = 30) {
-  # Get the JSON endpoint from the 'API' button on NYC Open Data
-  endpoint <- .nyc_endpoint("gakf-suji")
-
-  query_list <- list(
-    "$limit" = limit,
-    "$order" = "incident_type DESC" # Choose a date column to sort by
+  .nyc_dataset_request(
+    dataset_id = "gakf-suji",
+    limit = limit,
+    filters = filters,
+    order = "incident_type DESC",
+    timeout_sec = timeout_sec
   )
-
-  query_list <- .nyc_add_filters(query_list, filters)
-
-  data <- .nyc_get_json(endpoint, query_list, timeout_sec = timeout_sec)
-  tibble::as_tibble(data)
 }
 
