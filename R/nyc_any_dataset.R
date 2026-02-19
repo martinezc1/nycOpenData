@@ -5,7 +5,7 @@
 #' @param json_link A Socrata dataset JSON endpoint URL (e.g., "https://data.cityofnewyork.us/resource/abcd-1234.json").
 #' @param limit Number of rows to retrieve (default = 10,000).
 #' @param timeout_sec Request timeout in seconds (default = 30).
-#' @return A tibble containing the requested dataset.
+#' @return A tibble containing the requested dataset. Column names are returned in snake_case.
 #'
 #' @examples
 #' # Examples that hit the live NYC Open Data API are guarded so CRAN checks
@@ -26,8 +26,16 @@ nyc_any_dataset <- function(json_link, limit = 10000, timeout_sec = 30) {
     stop("`json_link` must be a Socrata JSON endpoint ending in .json.", call. = FALSE)
   }
 
-  query_list <- list("$limit" = as.integer(limit))
+  limit <- .nyc_validate_limit(limit)
+  timeout_sec <- .nyc_validate_timeout(timeout_sec)
+
+  query_list <- list("$limit" = limit)
 
   data <- .nyc_get_json(json_link, query_list, timeout_sec = timeout_sec)
-  tibble::as_tibble(data)
+
+  out <- tibble::as_tibble(data, .name_repair = "minimal")
+  out <- .nyc_clean_names(out)   # r16
+  out <- .nyc_coerce_types(out)  # r17
+
+  out
 }
