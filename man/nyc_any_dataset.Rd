@@ -14,7 +14,7 @@ nyc_any_dataset(json_link, limit = 10000, timeout_sec = 30)
 \item{timeout_sec}{Request timeout in seconds (default = 30).}
 }
 \value{
-A tibble containing the requested dataset.
+A tibble containing the requested dataset. Column names are returned in snake_case.
 }
 \description{
 Downloads any NYC Open Data dataset given its Socrata JSON endpoint.

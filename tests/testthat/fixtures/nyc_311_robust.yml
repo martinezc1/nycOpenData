@@ -1,0 +1,198 @@
+http_interactions:
+- request:
+    method: GET
+    uri: https://data.cityofnewyork.us/resource/erm2-nwe9.json?%24limit=2&%24order=created_date+DESC
+  response:
+    status: 200
+    headers:
+      server: nginx
+      date: Fri, 20 Feb 2026 01:36:05 GMT
+      content-type: application/json;charset=utf-8
+      transfer-encoding: chunked
+      connection: keep-alive
+      access-control-allow-origin: '*'
+      etag: '"Zm94dHJvdC4xNTY1NV8xODNfMTkwNDMxN3c2RWlucUctVW1zd2NwTUdpQWJkUV9qa01B---gzipmYa-MBhLqecD9gdL2GVEirBnWME--gzip--gzip"'
+      x-soda2-fields: '["unique_key","created_date","closed_date","agency","agency_name","complaint_type","descriptor","descriptor_2","location_type","incident_zip","incident_address","street_name","cross_street_1","cross_street_2","intersection_street_1","intersection_street_2","address_type","city","landmark","facility_type","status","due_date","resolution_description","resolution_action_updated_date","community_board","council_district","police_precinct","bbl","borough","x_coordinate_state_plane","y_coordinate_state_plane","open_data_channel_type","park_facility_name","park_borough","vehicle_type","taxi_company_borough","taxi_pick_up_location","bridge_highway_name","bridge_highway_direction","road_ramp","bridge_highway_segment","latitude","longitude","location"]'
+      x-soda2-types: '["text","floating_timestamp","floating_timestamp","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","floating_timestamp","text","floating_timestamp","text","text","text","text","text","number","number","text","text","text","text","text","text","text","text","text","text","number","number","point"]'
+      x-soda2-data-out-of-date: 'false'
+      x-soda2-truth-last-modified: Thu, 19 Feb 2026 02:39:36 GMT
+      x-soda2-secondary-last-modified: Thu, 19 Feb 2026 02:39:36 GMT
+      last-modified: Thu, 19 Feb 2026 02:39:36 GMT
+      vary: Accept-Encoding
+      content-encoding: gzip
+      strict-transport-security: max-age=31536000; includeSubDomains
+      x-socrata-requestid: 51e3e36da6822395ac5caa44c82e25be
+    body:
+      string: |
+        [{"unique_key":"68021786","created_date":"2026-02-18T02:25:16.000","closed_date":"2026-02-18T02:25:16.000","agency":"DOT","agency_name":"Department of Transportation","complaint_type":"Street Condition","descriptor":"Pothole","incident_zip":"11415","intersection_street_1":"83 AVENUE","intersection_street_2":"QUEENS BOULEVARD","address_type":"INTERSECTION","city":"QUEENS","facility_type":"N/A","status":"Closed","resolution_description":"The Department of Transportation determined that this complaint is a duplicate of a previously filed complaint. The original complaint is being addressed.","resolution_action_updated_date":"2026-02-18T02:25:16.000","community_board":"09 QUEENS","council_district":"29","police_precinct":"Precinct 102","borough":"QUEENS","x_coordinate_state_plane":"1032639","y_coordinate_state_plane":"198726","open_data_channel_type":"UNKNOWN","park_facility_name":"Unspecified","park_borough":"QUEENS","latitude":"40.71200138828801","longitude":"-73.82545585702933","location":{"type":"Point","coordinates":[-73.825455857029,40.712001388288]}}
+        ,{"unique_key":"68022342","created_date":"2026-02-18T02:24:06.000","agency":"DOT","agency_name":"Department of Transportation","complaint_type":"Street Condition","descriptor":"Pothole","incident_zip":"11415","intersection_street_1":"85 AVENUE","intersection_street_2":"LEFFERTS BOULEVARD","address_type":"INTERSECTION","city":"QUEENS","facility_type":"N/A","status":"Open","resolution_description":"The Department of Transportation referred this complaint to the appropriate Maintenance Unit for repair.","resolution_action_updated_date":"2026-02-18T02:24:06.000","community_board":"09 QUEENS","council_district":"29","police_precinct":"Precinct 102","borough":"QUEENS","x_coordinate_state_plane":"1030795","y_coordinate_state_plane":"195368","open_data_channel_type":"UNKNOWN","park_facility_name":"Unspecified","park_borough":"QUEENS","latitude":"40.70279438166465","longitude":"-73.83213055212143","location":{"type":"Point","coordinates":[-73.832130552121,40.702794381665]}}]
+  recorded_at: 2026-02-20 01:36:05
+- request:
+    method: GET
+    uri: https://data.cityofnewyork.us/resource/erm2-nwe9.json?%24limit=2&%24order=created_date+DESC&%24where=created_date+%3E%3D+%272025-03-01T00%3A00%3A00.000%27+AND+created_date+%3C+%272025-03-02T00%3A00%3A00.000%27
+  response:
+    status: 200
+    headers:
+      server: nginx
+      date: Fri, 20 Feb 2026 01:36:05 GMT
+      content-type: application/json;charset=utf-8
+      transfer-encoding: chunked
+      connection: keep-alive
+      access-control-allow-origin: '*'
+      etag: '"Zm94dHJvdC4xNTY1NV8xODNfMTkwNDMxMndvWjhaVWdsY0twaFM3SnotTkFhWDNiZTdR---gzipePWkgf0y1ibd2gVJvBye4GGoN2Q--gzip--gzip"'
+      x-soda2-fields: '["unique_key","created_date","closed_date","agency","agency_name","complaint_type","descriptor","descriptor_2","location_type","incident_zip","incident_address","street_name","cross_street_1","cross_street_2","intersection_street_1","intersection_street_2","address_type","city","landmark","facility_type","status","due_date","resolution_description","resolution_action_updated_date","community_board","council_district","police_precinct","bbl","borough","x_coordinate_state_plane","y_coordinate_state_plane","open_data_channel_type","park_facility_name","park_borough","vehicle_type","taxi_company_borough","taxi_pick_up_location","bridge_highway_name","bridge_highway_direction","road_ramp","bridge_highway_segment","latitude","longitude","location"]'
+      x-soda2-types: '["text","floating_timestamp","floating_timestamp","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","floating_timestamp","text","floating_timestamp","text","text","text","text","text","number","number","text","text","text","text","text","text","text","text","text","text","number","number","point"]'
+      x-soda2-data-out-of-date: 'false'
+      x-soda2-truth-last-modified: Thu, 19 Feb 2026 02:39:36 GMT
+      x-soda2-secondary-last-modified: Thu, 19 Feb 2026 02:39:36 GMT
+      last-modified: Thu, 19 Feb 2026 02:39:36 GMT
+      vary: Accept-Encoding
+      content-encoding: gzip
+      strict-transport-security: max-age=31536000; includeSubDomains
+      x-socrata-requestid: 0d7014107a3974e576c79af9b70c7c61
+    body:
+      string: |
+        [{"unique_key":"64228480","created_date":"2025-03-01T23:59:57.000","closed_date":"2025-03-02T01:23:19.000","agency":"NYPD","agency_name":"New York City Police Department","complaint_type":"Noise - Commercial","descriptor":"Loud Music/Party","location_type":"Store/Commercial","incident_zip":"11385","incident_address":"64-18 FRESH POND ROAD","street_name":"FRESH POND ROAD","cross_street_1":"GROVE STREET","cross_street_2":"LINDEN STREET","intersection_street_1":"GROVE STREET","intersection_street_2":"LINDEN STREET","address_type":"ADDRESS","city":"RIDGEWOOD","landmark":"FRESH POND ROAD","status":"Closed","resolution_description":"The Police Department responded to the complaint and took action to fix the condition.","resolution_action_updated_date":"2025-03-02T01:23:22.000","community_board":"05 QUEENS","council_district":"30","police_precinct":"Precinct 104","bbl":"4035250050","borough":"QUEENS","x_coordinate_state_plane":"1012184","y_coordinate_state_plane":"198016","open_data_channel_type":"MOBILE","park_facility_name":"Unspecified","park_borough":"QUEENS","latitude":"40.71014083456102","longitude":"-73.89924202097941","location":{"type":"Point","coordinates":[-73.899242020979,40.710140834561]}}
+        ,{"unique_key":"64226914","created_date":"2025-03-01T23:59:32.000","closed_date":"2025-03-02T00:42:37.000","agency":"NYPD","agency_name":"New York City Police Department","complaint_type":"Noise - Residential","descriptor":"Loud Music/Party","location_type":"Residential Building/House","incident_zip":"11206","incident_address":"361 STOCKTON STREET","street_name":"STOCKTON STREET","cross_street_1":"LEWIS AVENUE","cross_street_2":"BROADWAY","intersection_street_1":"LEWIS AVENUE","intersection_street_2":"BROADWAY","address_type":"ADDRESS","city":"BROOKLYN","landmark":"STOCKTON STREET","status":"Closed","resolution_description":"The Police Department responded to the complaint and took action to fix the condition.","resolution_action_updated_date":"2025-03-02T00:42:44.000","community_board":"03 BROOKLYN","council_district":"36","police_precinct":"Precinct 81","bbl":"3015820015","borough":"BROOKLYN","x_coordinate_state_plane":"1001683","y_coordinate_state_plane":"193413","open_data_channel_type":"MOBILE","park_facility_name":"Unspecified","park_borough":"BROOKLYN","latitude":"40.69753360633801","longitude":"-73.93713104254387","location":{"type":"Point","coordinates":[-73.937131042544,40.697533606338]}}]
+  recorded_at: 2026-02-20 01:36:05
+- request:
+    method: GET
+    uri: https://data.cityofnewyork.us/resource/erm2-nwe9.json?%24limit=2&%24order=created_date+DESC&%24where=created_date+%3E%3D+%272025-03-01T00%3A00%3A00.000%27+AND+created_date+%3C+%272025-03-02T00%3A00%3A00.000%27
+  response:
+    status: 200
+    headers:
+      server: nginx
+      date: Fri, 20 Feb 2026 01:36:05 GMT
+      content-type: application/json;charset=utf-8
+      transfer-encoding: chunked
+      connection: keep-alive
+      access-control-allow-origin: '*'
+      etag: '"Zm94dHJvdC4xNTY1NV8xODNfMTkwNDMxMndvWjhaVWdsY0twaFM3SnotTkFhWDNiZTdR---gzipePWkgf0y1ibd2gVJvBye4GGoN2Q--gzip--gzip"'
+      x-soda2-fields: '["unique_key","created_date","closed_date","agency","agency_name","complaint_type","descriptor","descriptor_2","location_type","incident_zip","incident_address","street_name","cross_street_1","cross_street_2","intersection_street_1","intersection_street_2","address_type","city","landmark","facility_type","status","due_date","resolution_description","resolution_action_updated_date","community_board","council_district","police_precinct","bbl","borough","x_coordinate_state_plane","y_coordinate_state_plane","open_data_channel_type","park_facility_name","park_borough","vehicle_type","taxi_company_borough","taxi_pick_up_location","bridge_highway_name","bridge_highway_direction","road_ramp","bridge_highway_segment","latitude","longitude","location"]'
+      x-soda2-types: '["text","floating_timestamp","floating_timestamp","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","floating_timestamp","text","floating_timestamp","text","text","text","text","text","number","number","text","text","text","text","text","text","text","text","text","text","number","number","point"]'
+      x-soda2-data-out-of-date: 'false'
+      x-soda2-truth-last-modified: Thu, 19 Feb 2026 02:39:36 GMT
+      x-soda2-secondary-last-modified: Thu, 19 Feb 2026 02:39:36 GMT
+      last-modified: Thu, 19 Feb 2026 02:39:36 GMT
+      vary: Accept-Encoding
+      content-encoding: gzip
+      strict-transport-security: max-age=31536000; includeSubDomains
+      x-socrata-requestid: 76577fe302d45ec73c6c294ef355ef04
+    body:
+      string: |
+        [{"unique_key":"64228480","created_date":"2025-03-01T23:59:57.000","closed_date":"2025-03-02T01:23:19.000","agency":"NYPD","agency_name":"New York City Police Department","complaint_type":"Noise - Commercial","descriptor":"Loud Music/Party","location_type":"Store/Commercial","incident_zip":"11385","incident_address":"64-18 FRESH POND ROAD","street_name":"FRESH POND ROAD","cross_street_1":"GROVE STREET","cross_street_2":"LINDEN STREET","intersection_street_1":"GROVE STREET","intersection_street_2":"LINDEN STREET","address_type":"ADDRESS","city":"RIDGEWOOD","landmark":"FRESH POND ROAD","status":"Closed","resolution_description":"The Police Department responded to the complaint and took action to fix the condition.","resolution_action_updated_date":"2025-03-02T01:23:22.000","community_board":"05 QUEENS","council_district":"30","police_precinct":"Precinct 104","bbl":"4035250050","borough":"QUEENS","x_coordinate_state_plane":"1012184","y_coordinate_state_plane":"198016","open_data_channel_type":"MOBILE","park_facility_name":"Unspecified","park_borough":"QUEENS","latitude":"40.71014083456102","longitude":"-73.89924202097941","location":{"type":"Point","coordinates":[-73.899242020979,40.710140834561]}}
+        ,{"unique_key":"64226914","created_date":"2025-03-01T23:59:32.000","closed_date":"2025-03-02T00:42:37.000","agency":"NYPD","agency_name":"New York City Police Department","complaint_type":"Noise - Residential","descriptor":"Loud Music/Party","location_type":"Residential Building/House","incident_zip":"11206","incident_address":"361 STOCKTON STREET","street_name":"STOCKTON STREET","cross_street_1":"LEWIS AVENUE","cross_street_2":"BROADWAY","intersection_street_1":"LEWIS AVENUE","intersection_street_2":"BROADWAY","address_type":"ADDRESS","city":"BROOKLYN","landmark":"STOCKTON STREET","status":"Closed","resolution_description":"The Police Department responded to the complaint and took action to fix the condition.","resolution_action_updated_date":"2025-03-02T00:42:44.000","community_board":"03 BROOKLYN","council_district":"36","police_precinct":"Precinct 81","bbl":"3015820015","borough":"BROOKLYN","x_coordinate_state_plane":"1001683","y_coordinate_state_plane":"193413","open_data_channel_type":"MOBILE","park_facility_name":"Unspecified","park_borough":"BROOKLYN","latitude":"40.69753360633801","longitude":"-73.93713104254387","location":{"type":"Point","coordinates":[-73.937131042544,40.697533606338]}}]
+  recorded_at: 2026-02-20 01:36:06
+- request:
+    method: GET
+    uri: https://data.cityofnewyork.us/resource/erm2-nwe9.json?%24limit=2&%24order=created_date+DESC&%24where=created_date+%3E%3D+%272025-03-01T00%3A00%3A00.000%27
+  response:
+    status: 200
+    headers:
+      server: nginx
+      date: Fri, 20 Feb 2026 01:36:06 GMT
+      content-type: application/json;charset=utf-8
+      transfer-encoding: chunked
+      connection: keep-alive
+      access-control-allow-origin: '*'
+      etag: '"Zm94dHJvdC4xNTY1NV8xODNfMTkwNDMxcjhZTG9UMXJpWWtteUtuUjVSTXFXUGNLM1l3---gzipqmpMJ9rk8j-LCzp7ZfLueYlsumE--gzip--gzip"'
+      x-soda2-fields: '["unique_key","created_date","closed_date","agency","agency_name","complaint_type","descriptor","descriptor_2","location_type","incident_zip","incident_address","street_name","cross_street_1","cross_street_2","intersection_street_1","intersection_street_2","address_type","city","landmark","facility_type","status","due_date","resolution_description","resolution_action_updated_date","community_board","council_district","police_precinct","bbl","borough","x_coordinate_state_plane","y_coordinate_state_plane","open_data_channel_type","park_facility_name","park_borough","vehicle_type","taxi_company_borough","taxi_pick_up_location","bridge_highway_name","bridge_highway_direction","road_ramp","bridge_highway_segment","latitude","longitude","location"]'
+      x-soda2-types: '["text","floating_timestamp","floating_timestamp","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","floating_timestamp","text","floating_timestamp","text","text","text","text","text","number","number","text","text","text","text","text","text","text","text","text","text","number","number","point"]'
+      x-soda2-data-out-of-date: 'false'
+      x-soda2-truth-last-modified: Thu, 19 Feb 2026 02:39:36 GMT
+      x-soda2-secondary-last-modified: Thu, 19 Feb 2026 02:39:36 GMT
+      last-modified: Thu, 19 Feb 2026 02:39:36 GMT
+      vary: Accept-Encoding
+      content-encoding: gzip
+      strict-transport-security: max-age=31536000; includeSubDomains
+      x-socrata-requestid: a01508ea20947b92939a1e0db9f0b51f
+    body:
+      string: |
+        [{"unique_key":"68021786","created_date":"2026-02-18T02:25:16.000","closed_date":"2026-02-18T02:25:16.000","agency":"DOT","agency_name":"Department of Transportation","complaint_type":"Street Condition","descriptor":"Pothole","incident_zip":"11415","intersection_street_1":"83 AVENUE","intersection_street_2":"QUEENS BOULEVARD","address_type":"INTERSECTION","city":"QUEENS","facility_type":"N/A","status":"Closed","resolution_description":"The Department of Transportation determined that this complaint is a duplicate of a previously filed complaint. The original complaint is being addressed.","resolution_action_updated_date":"2026-02-18T02:25:16.000","community_board":"09 QUEENS","council_district":"29","police_precinct":"Precinct 102","borough":"QUEENS","x_coordinate_state_plane":"1032639","y_coordinate_state_plane":"198726","open_data_channel_type":"UNKNOWN","park_facility_name":"Unspecified","park_borough":"QUEENS","latitude":"40.71200138828801","longitude":"-73.82545585702933","location":{"type":"Point","coordinates":[-73.825455857029,40.712001388288]}}
+        ,{"unique_key":"68022342","created_date":"2026-02-18T02:24:06.000","agency":"DOT","agency_name":"Department of Transportation","complaint_type":"Street Condition","descriptor":"Pothole","incident_zip":"11415","intersection_street_1":"85 AVENUE","intersection_street_2":"LEFFERTS BOULEVARD","address_type":"INTERSECTION","city":"QUEENS","facility_type":"N/A","status":"Open","resolution_description":"The Department of Transportation referred this complaint to the appropriate Maintenance Unit for repair.","resolution_action_updated_date":"2026-02-18T02:24:06.000","community_board":"09 QUEENS","council_district":"29","police_precinct":"Precinct 102","borough":"QUEENS","x_coordinate_state_plane":"1030795","y_coordinate_state_plane":"195368","open_data_channel_type":"UNKNOWN","park_facility_name":"Unspecified","park_borough":"QUEENS","latitude":"40.70279438166465","longitude":"-73.83213055212143","location":{"type":"Point","coordinates":[-73.832130552121,40.702794381665]}}]
+  recorded_at: 2026-02-20 01:36:06
+- request:
+    method: GET
+    uri: https://data.cityofnewyork.us/resource/erm2-nwe9.json?%24limit=2&%24order=created_date+DESC&%24where=created_date+%3C+%272025-03-02T00%3A00%3A00.000%27
+  response:
+    status: 200
+    headers:
+      server: nginx
+      date: Fri, 20 Feb 2026 01:36:06 GMT
+      content-type: application/json;charset=utf-8
+      transfer-encoding: chunked
+      connection: keep-alive
+      access-control-allow-origin: '*'
+      etag: '"Zm94dHJvdC4xNTY1NV8xODNfMTkwNDMxV0F5ZXl2VWQyX0xGQ1Z1RzJaTXZxTGhGOW5J---gzippu9uMHV-7Yz75esGajUSZJwVSY0--gzip--gzip"'
+      x-soda2-fields: '["unique_key","created_date","closed_date","agency","agency_name","complaint_type","descriptor","descriptor_2","location_type","incident_zip","incident_address","street_name","cross_street_1","cross_street_2","intersection_street_1","intersection_street_2","address_type","city","landmark","facility_type","status","due_date","resolution_description","resolution_action_updated_date","community_board","council_district","police_precinct","bbl","borough","x_coordinate_state_plane","y_coordinate_state_plane","open_data_channel_type","park_facility_name","park_borough","vehicle_type","taxi_company_borough","taxi_pick_up_location","bridge_highway_name","bridge_highway_direction","road_ramp","bridge_highway_segment","latitude","longitude","location"]'
+      x-soda2-types: '["text","floating_timestamp","floating_timestamp","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","floating_timestamp","text","floating_timestamp","text","text","text","text","text","number","number","text","text","text","text","text","text","text","text","text","text","number","number","point"]'
+      x-soda2-data-out-of-date: 'false'
+      x-soda2-truth-last-modified: Thu, 19 Feb 2026 02:39:36 GMT
+      x-soda2-secondary-last-modified: Thu, 19 Feb 2026 02:39:36 GMT
+      last-modified: Thu, 19 Feb 2026 02:39:36 GMT
+      vary: Accept-Encoding
+      content-encoding: gzip
+      strict-transport-security: max-age=31536000; includeSubDomains
+      x-socrata-requestid: 169dbfda5778723daabd41fbefc9096c
+    body:
+      string: |
+        [{"unique_key":"64228480","created_date":"2025-03-01T23:59:57.000","closed_date":"2025-03-02T01:23:19.000","agency":"NYPD","agency_name":"New York City Police Department","complaint_type":"Noise - Commercial","descriptor":"Loud Music/Party","location_type":"Store/Commercial","incident_zip":"11385","incident_address":"64-18 FRESH POND ROAD","street_name":"FRESH POND ROAD","cross_street_1":"GROVE STREET","cross_street_2":"LINDEN STREET","intersection_street_1":"GROVE STREET","intersection_street_2":"LINDEN STREET","address_type":"ADDRESS","city":"RIDGEWOOD","landmark":"FRESH POND ROAD","status":"Closed","resolution_description":"The Police Department responded to the complaint and took action to fix the condition.","resolution_action_updated_date":"2025-03-02T01:23:22.000","community_board":"05 QUEENS","council_district":"30","police_precinct":"Precinct 104","bbl":"4035250050","borough":"QUEENS","x_coordinate_state_plane":"1012184","y_coordinate_state_plane":"198016","open_data_channel_type":"MOBILE","park_facility_name":"Unspecified","park_borough":"QUEENS","latitude":"40.71014083456102","longitude":"-73.89924202097941","location":{"type":"Point","coordinates":[-73.899242020979,40.710140834561]}}
+        ,{"unique_key":"64226914","created_date":"2025-03-01T23:59:32.000","closed_date":"2025-03-02T00:42:37.000","agency":"NYPD","agency_name":"New York City Police Department","complaint_type":"Noise - Residential","descriptor":"Loud Music/Party","location_type":"Residential Building/House","incident_zip":"11206","incident_address":"361 STOCKTON STREET","street_name":"STOCKTON STREET","cross_street_1":"LEWIS AVENUE","cross_street_2":"BROADWAY","intersection_street_1":"LEWIS AVENUE","intersection_street_2":"BROADWAY","address_type":"ADDRESS","city":"BROOKLYN","landmark":"STOCKTON STREET","status":"Closed","resolution_description":"The Police Department responded to the complaint and took action to fix the condition.","resolution_action_updated_date":"2025-03-02T00:42:44.000","community_board":"03 BROOKLYN","council_district":"36","police_precinct":"Precinct 81","bbl":"3015820015","borough":"BROOKLYN","x_coordinate_state_plane":"1001683","y_coordinate_state_plane":"193413","open_data_channel_type":"MOBILE","park_facility_name":"Unspecified","park_borough":"BROOKLYN","latitude":"40.69753360633801","longitude":"-73.93713104254387","location":{"type":"Point","coordinates":[-73.937131042544,40.697533606338]}}]
+  recorded_at: 2026-02-20 01:36:06
+- request:
+    method: GET
+    uri: https://data.cityofnewyork.us/resource/erm2-nwe9.json?%24limit=2&%24order=created_date+DESC&%24where=TRIM%28agency%29+%3D+%27NYPD%27
+  response:
+    status: 200
+    headers:
+      server: nginx
+      date: Fri, 20 Feb 2026 01:36:06 GMT
+      content-type: application/json;charset=utf-8
+      transfer-encoding: chunked
+      connection: keep-alive
+      access-control-allow-origin: '*'
+      etag: '"Zm94dHJvdC4xNTY1NV8xODNfMTkwNDMxcFNMY19ORjdlU19wbEhmaERDR3R0YWNaWHFz---gzipOUSBFri2Allp2G0Pgb06hWm1k28--gzip--gzip"'
+      x-soda2-fields: '["unique_key","created_date","closed_date","agency","agency_name","complaint_type","descriptor","descriptor_2","location_type","incident_zip","incident_address","street_name","cross_street_1","cross_street_2","intersection_street_1","intersection_street_2","address_type","city","landmark","facility_type","status","due_date","resolution_description","resolution_action_updated_date","community_board","council_district","police_precinct","bbl","borough","x_coordinate_state_plane","y_coordinate_state_plane","open_data_channel_type","park_facility_name","park_borough","vehicle_type","taxi_company_borough","taxi_pick_up_location","bridge_highway_name","bridge_highway_direction","road_ramp","bridge_highway_segment","latitude","longitude","location"]'
+      x-soda2-types: '["text","floating_timestamp","floating_timestamp","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","floating_timestamp","text","floating_timestamp","text","text","text","text","text","number","number","text","text","text","text","text","text","text","text","text","text","number","number","point"]'
+      x-soda2-data-out-of-date: 'false'
+      x-soda2-truth-last-modified: Thu, 19 Feb 2026 02:39:36 GMT
+      x-soda2-secondary-last-modified: Thu, 19 Feb 2026 02:39:36 GMT
+      last-modified: Thu, 19 Feb 2026 02:39:36 GMT
+      vary: Accept-Encoding
+      content-encoding: gzip
+      strict-transport-security: max-age=31536000; includeSubDomains
+      x-socrata-requestid: e7f89949bed34b1dd3f21cd07dd1e19f
+    body:
+      string: |
+        [{"unique_key":"68023868","created_date":"2026-02-18T02:06:30.000","agency":"NYPD","agency_name":"New York City Police Department","complaint_type":"Noise - Commercial","descriptor":"Banging/Pounding","location_type":"Store/Commercial","status":"Unspecified","community_board":"0 Unspecified","police_precinct":"Unspecified","borough":"Unspecified","open_data_channel_type":"MOBILE","park_facility_name":"Unspecified","park_borough":"Unspecified"}
+        ,{"unique_key":"68021066","created_date":"2026-02-18T02:05:27.000","agency":"NYPD","agency_name":"New York City Police Department","complaint_type":"Blocked Driveway","descriptor":"Partial Access","location_type":"Street/Sidewalk","incident_zip":"10465","incident_address":"2838 BARKLEY AVENUE","street_name":"BARKLEY AVENUE","cross_street_1":"QUINCY AVENUE","cross_street_2":"CALHOUN AVENUE","intersection_street_1":"QUINCY AVENUE","intersection_street_2":"CALHOUN AVENUE","address_type":"ADDRESS","city":"BRONX","landmark":"BARKLEY AVENUE","status":"In Progress","community_board":"10 BRONX","council_district":"13","police_precinct":"Precinct 45","bbl":"2055330086","borough":"BRONX","x_coordinate_state_plane":"1031727","y_coordinate_state_plane":"241733","open_data_channel_type":"ONLINE","park_facility_name":"Unspecified","park_borough":"BRONX","latitude":"40.830049081706356","longitude":"-73.8284417056153","location":{"type":"Point","coordinates":[-73.828441705615,40.830049081706]}}]
+  recorded_at: 2026-02-20 01:36:06
+- request:
+    method: GET
+    uri: https://data.cityofnewyork.us/resource/erm2-nwe9.json?%24limit=2&%24order=created_date+DESC&%24where=TRIM%28agency%29+IN+%28%27NYPD%27%2C+%27DOT%27%29
+  response:
+    status: 200
+    headers:
+      server: nginx
+      date: Fri, 20 Feb 2026 01:36:06 GMT
+      content-type: application/json;charset=utf-8
+      transfer-encoding: chunked
+      connection: keep-alive
+      access-control-allow-origin: '*'
+      etag: '"Zm94dHJvdC4xNTY1NV8xODNfMTkwNDMxaG9paVB6cG5GUVRpRmtXM2hYWm1wRlRFWmhV---gzipz9MmYZYn97ZkAIr_bW-tBXt_mEQ--gzip--gzip"'
+      x-soda2-fields: '["unique_key","created_date","closed_date","agency","agency_name","complaint_type","descriptor","descriptor_2","location_type","incident_zip","incident_address","street_name","cross_street_1","cross_street_2","intersection_street_1","intersection_street_2","address_type","city","landmark","facility_type","status","due_date","resolution_description","resolution_action_updated_date","community_board","council_district","police_precinct","bbl","borough","x_coordinate_state_plane","y_coordinate_state_plane","open_data_channel_type","park_facility_name","park_borough","vehicle_type","taxi_company_borough","taxi_pick_up_location","bridge_highway_name","bridge_highway_direction","road_ramp","bridge_highway_segment","latitude","longitude","location"]'
+      x-soda2-types: '["text","floating_timestamp","floating_timestamp","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","floating_timestamp","text","floating_timestamp","text","text","text","text","text","number","number","text","text","text","text","text","text","text","text","text","text","number","number","point"]'
+      x-soda2-data-out-of-date: 'false'
+      x-soda2-truth-last-modified: Thu, 19 Feb 2026 02:39:36 GMT
+      x-soda2-secondary-last-modified: Thu, 19 Feb 2026 02:39:36 GMT
+      last-modified: Thu, 19 Feb 2026 02:39:36 GMT
+      vary: Accept-Encoding
+      content-encoding: gzip
+      strict-transport-security: max-age=31536000; includeSubDomains
+      x-socrata-requestid: 612dc1bc40de1b519ea96e8c5d12549f
+    body:
+      string: |
+        [{"unique_key":"68021786","created_date":"2026-02-18T02:25:16.000","closed_date":"2026-02-18T02:25:16.000","agency":"DOT","agency_name":"Department of Transportation","complaint_type":"Street Condition","descriptor":"Pothole","incident_zip":"11415","intersection_street_1":"83 AVENUE","intersection_street_2":"QUEENS BOULEVARD","address_type":"INTERSECTION","city":"QUEENS","facility_type":"N/A","status":"Closed","resolution_description":"The Department of Transportation determined that this complaint is a duplicate of a previously filed complaint. The original complaint is being addressed.","resolution_action_updated_date":"2026-02-18T02:25:16.000","community_board":"09 QUEENS","council_district":"29","police_precinct":"Precinct 102","borough":"QUEENS","x_coordinate_state_plane":"1032639","y_coordinate_state_plane":"198726","open_data_channel_type":"UNKNOWN","park_facility_name":"Unspecified","park_borough":"QUEENS","latitude":"40.71200138828801","longitude":"-73.82545585702933","location":{"type":"Point","coordinates":[-73.825455857029,40.712001388288]}}
+        ,{"unique_key":"68022342","created_date":"2026-02-18T02:24:06.000","agency":"DOT","agency_name":"Department of Transportation","complaint_type":"Street Condition","descriptor":"Pothole","incident_zip":"11415","intersection_street_1":"85 AVENUE","intersection_street_2":"LEFFERTS BOULEVARD","address_type":"INTERSECTION","city":"QUEENS","facility_type":"N/A","status":"Open","resolution_description":"The Department of Transportation referred this complaint to the appropriate Maintenance Unit for repair.","resolution_action_updated_date":"2026-02-18T02:24:06.000","community_board":"09 QUEENS","council_district":"29","police_precinct":"Precinct 102","borough":"QUEENS","x_coordinate_state_plane":"1030795","y_coordinate_state_plane":"195368","open_data_channel_type":"UNKNOWN","park_facility_name":"Unspecified","park_borough":"QUEENS","latitude":"40.70279438166465","longitude":"-73.83213055212143","location":{"type":"Point","coordinates":[-73.832130552121,40.702794381665]}}]
+  recorded_at: 2026-02-20 01:36:06
+recorded_with: VCR-vcr/2.1.0

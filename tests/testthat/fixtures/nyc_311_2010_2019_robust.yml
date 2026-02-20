@@ -1,0 +1,195 @@
+http_interactions:
+- request:
+    method: GET
+    uri: https://data.cityofnewyork.us/resource/76ig-c548.json?%24limit=2&%24order=created_date+DESC
+  response:
+    status: 200
+    headers:
+      server: nginx
+      date: Fri, 20 Feb 2026 01:36:02 GMT
+      content-type: application/json;charset=utf-8
+      transfer-encoding: chunked
+      connection: keep-alive
+      access-control-allow-origin: '*'
+      etag: '"aW5kaWEuMTYzMTc0XzJfNTYyOG9HVUdSV2w3WER3WGI0THAzc3FIZE1DVnhvZw---gzipmGvjAYS6nnA_YHS9hlRIqwZ1jB--gzip--gzip"'
+      x-soda2-fields: '["unique_key","created_date","closed_date","agency","agency_name","complaint_type","descriptor","descriptor_2","location_type","incident_zip","incident_address","street_name","cross_street_1","cross_street_2","intersection_street_1","intersection_street_2","address_type","city","landmark","facility_type","status","due_date","resolution_description","resolution_action_updated_date","community_board","council_district","police_precinct","bbl","borough","x_coordinate_state_plane","y_coordinate_state_plane","open_data_channel_type","park_facility_name","park_borough","vehicle_type","taxi_company_borough","taxi_pick_up_location","bridge_highway_name","bridge_highway_direction","road_ramp","bridge_highway_segment","latitude","longitude","location"]'
+      x-soda2-types: '["text","floating_timestamp","floating_timestamp","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","floating_timestamp","text","floating_timestamp","text","text","text","text","text","number","number","text","text","text","text","text","text","text","text","text","text","number","number","point"]'
+      x-soda2-data-out-of-date: 'false'
+      x-soda2-truth-last-modified: Wed, 24 Dec 2025 20:34:02 GMT
+      x-soda2-secondary-last-modified: Wed, 24 Dec 2025 20:34:02 GMT
+      last-modified: Wed, 24 Dec 2025 20:34:02 GMT
+      vary: Accept-Encoding
+      content-encoding: gzip
+      strict-transport-security: max-age=31536000; includeSubDomains
+      x-socrata-requestid: f0ef8a240ef94a896931832d16ce6a7a
+    body:
+      string: |
+        [{"unique_key":"45278137","created_date":"2019-12-31T23:59:11.000","closed_date":"2020-01-01T03:07:18.000","agency":"NYPD","agency_name":"New York City Police Department","complaint_type":"Noise - Commercial","descriptor":"Banging/Pounding","location_type":"Club/Bar/Restaurant","incident_zip":"11229","incident_address":"3939 EMMONS AVENUE","street_name":"EMMONS AVENUE","cross_street_1":"PLUMB    3 STREET","cross_street_2":"BELT PARKWAY EXIT    9 WESTBOUND","intersection_street_1":"PLUMB    3 STREET","intersection_street_2":"BELT PARKWAY EXIT    9 WESTBOUND","city":"BROOKLYN","landmark":"EMMONS AVENUE","status":"Closed","resolution_description":"Your request can not be processed at this time because of insufficient contact information. Please create a new Service Request on NYC.gov and provide more detailed contact information.","resolution_action_updated_date":"2020-01-01T03:07:32.000","community_board":"15 BROOKLYN","council_district":"48","police_precinct":"Precinct 61","bbl":"3088440010","borough":"BROOKLYN","x_coordinate_state_plane":"1004321","y_coordinate_state_plane":"152444","open_data_channel_type":"ONLINE","park_facility_name":"Unspecified","park_borough":"BROOKLYN","latitude":"40.58507695307629","longitude":"-73.92773945669528","location":{"type":"Point","coordinates":[-73.927739456695,40.585076953076]}}
+        ,{"unique_key":"45281589","created_date":"2019-12-31T23:58:54.000","closed_date":"2020-01-01T05:37:03.000","agency":"NYPD","agency_name":"New York City Police Department","complaint_type":"Noise - Residential","descriptor":"Loud Music/Party","location_type":"Residential Building/House","incident_zip":"10025","incident_address":"865 COLUMBUS AVENUE","street_name":"COLUMBUS AVENUE","cross_street_1":"WEST  100 STREET","cross_street_2":"WEST  103 STREET","intersection_street_1":"WEST  100 STREET","intersection_street_2":"WEST  103 STREET","city":"NEW YORK","landmark":"COLUMBUS AVENUE","status":"Closed","resolution_description":"The Police Department responded to the complaint and with the information available observed no evidence of the violation at that time.","resolution_action_updated_date":"2020-01-01T05:37:11.000","community_board":"07 MANHATTAN","council_district":"07","police_precinct":"Precinct 24","bbl":"1018360001","borough":"MANHATTAN","x_coordinate_state_plane":"994065","y_coordinate_state_plane":"229622","open_data_channel_type":"PHONE","park_facility_name":"Unspecified","park_borough":"MANHATTAN","latitude":"40.79692992181987","longitude":"-73.96455113216999","location":{"type":"Point","coordinates":[-73.96455113217,40.79692992182]}}]
+  recorded_at: 2026-02-20 01:36:02
+- request:
+    method: GET
+    uri: https://data.cityofnewyork.us/resource/76ig-c548.json?%24limit=2&%24order=created_date+DESC&%24where=created_date+%3E%3D+%272025-03-01T00%3A00%3A00.000%27+AND+created_date+%3C+%272025-03-02T00%3A00%3A00.000%27
+  response:
+    status: 200
+    headers:
+      server: nginx
+      date: Fri, 20 Feb 2026 01:36:03 GMT
+      content-type: application/json;charset=utf-8
+      transfer-encoding: chunked
+      connection: keep-alive
+      access-control-allow-origin: '*'
+      etag: '"aW5kaWEuMTYzMTc0XzJfNTYyOFlaV04zTjVEei1FZV9DclhncEtjZVhIZ1JVNA---gzinj1pIH9MtYm3doFSbwcnuBhqDdk--gzip--gzip"'
+      x-soda2-fields: '["unique_key","created_date","closed_date","agency","agency_name","complaint_type","descriptor","descriptor_2","location_type","incident_zip","incident_address","street_name","cross_street_1","cross_street_2","intersection_street_1","intersection_street_2","address_type","city","landmark","facility_type","status","due_date","resolution_description","resolution_action_updated_date","community_board","council_district","police_precinct","bbl","borough","x_coordinate_state_plane","y_coordinate_state_plane","open_data_channel_type","park_facility_name","park_borough","vehicle_type","taxi_company_borough","taxi_pick_up_location","bridge_highway_name","bridge_highway_direction","road_ramp","bridge_highway_segment","latitude","longitude","location"]'
+      x-soda2-types: '["text","floating_timestamp","floating_timestamp","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","floating_timestamp","text","floating_timestamp","text","text","text","text","text","number","number","text","text","text","text","text","text","text","text","text","text","number","number","point"]'
+      x-soda2-data-out-of-date: 'false'
+      x-soda2-truth-last-modified: Wed, 24 Dec 2025 20:34:02 GMT
+      x-soda2-secondary-last-modified: Wed, 24 Dec 2025 20:34:02 GMT
+      last-modified: Wed, 24 Dec 2025 20:34:02 GMT
+      vary: Accept-Encoding
+      content-encoding: gzip
+      strict-transport-security: max-age=31536000; includeSubDomains
+      x-socrata-requestid: e4007c47c51419e2611c8eade3469e94
+    body:
+      string: |
+        []
+  recorded_at: 2026-02-20 01:36:03
+- request:
+    method: GET
+    uri: https://data.cityofnewyork.us/resource/76ig-c548.json?%24limit=2&%24order=created_date+DESC&%24where=created_date+%3E%3D+%272025-03-01T00%3A00%3A00.000%27+AND+created_date+%3C+%272025-03-02T00%3A00%3A00.000%27
+  response:
+    status: 200
+    headers:
+      server: nginx
+      date: Fri, 20 Feb 2026 01:36:03 GMT
+      content-type: application/json;charset=utf-8
+      transfer-encoding: chunked
+      connection: keep-alive
+      access-control-allow-origin: '*'
+      etag: '"aW5kaWEuMTYzMTc0XzJfNTYyOFlaV04zTjVEei1FZV9DclhncEtjZVhIZ1JVNA---gzinj1pIH9MtYm3doFSbwcnuBhqDdk--gzip--gzip"'
+      x-soda2-fields: '["unique_key","created_date","closed_date","agency","agency_name","complaint_type","descriptor","descriptor_2","location_type","incident_zip","incident_address","street_name","cross_street_1","cross_street_2","intersection_street_1","intersection_street_2","address_type","city","landmark","facility_type","status","due_date","resolution_description","resolution_action_updated_date","community_board","council_district","police_precinct","bbl","borough","x_coordinate_state_plane","y_coordinate_state_plane","open_data_channel_type","park_facility_name","park_borough","vehicle_type","taxi_company_borough","taxi_pick_up_location","bridge_highway_name","bridge_highway_direction","road_ramp","bridge_highway_segment","latitude","longitude","location"]'
+      x-soda2-types: '["text","floating_timestamp","floating_timestamp","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","floating_timestamp","text","floating_timestamp","text","text","text","text","text","number","number","text","text","text","text","text","text","text","text","text","text","number","number","point"]'
+      x-soda2-data-out-of-date: 'false'
+      x-soda2-truth-last-modified: Wed, 24 Dec 2025 20:34:02 GMT
+      x-soda2-secondary-last-modified: Wed, 24 Dec 2025 20:34:02 GMT
+      last-modified: Wed, 24 Dec 2025 20:34:02 GMT
+      vary: Accept-Encoding
+      content-encoding: gzip
+      strict-transport-security: max-age=31536000; includeSubDomains
+      x-socrata-requestid: 1732fdb1fac9117e57a12195a339ed91
+    body:
+      string: |
+        []
+  recorded_at: 2026-02-20 01:36:03
+- request:
+    method: GET
+    uri: https://data.cityofnewyork.us/resource/76ig-c548.json?%24limit=2&%24order=created_date+DESC&%24where=created_date+%3E%3D+%272025-03-01T00%3A00%3A00.000%27
+  response:
+    status: 200
+    headers:
+      server: nginx
+      date: Fri, 20 Feb 2026 01:36:04 GMT
+      content-type: application/json;charset=utf-8
+      transfer-encoding: chunked
+      connection: keep-alive
+      access-control-allow-origin: '*'
+      etag: '"aW5kaWEuMTYzMTc0XzJfNTYyOHNCeEhvSUJtYmNrUl9fS0lDS1VwS252TUxqdw---gziqpqTCfa5PI_iws6e2Xy7nmJbLph--gzip--gzip"'
+      x-soda2-fields: '["unique_key","created_date","closed_date","agency","agency_name","complaint_type","descriptor","descriptor_2","location_type","incident_zip","incident_address","street_name","cross_street_1","cross_street_2","intersection_street_1","intersection_street_2","address_type","city","landmark","facility_type","status","due_date","resolution_description","resolution_action_updated_date","community_board","council_district","police_precinct","bbl","borough","x_coordinate_state_plane","y_coordinate_state_plane","open_data_channel_type","park_facility_name","park_borough","vehicle_type","taxi_company_borough","taxi_pick_up_location","bridge_highway_name","bridge_highway_direction","road_ramp","bridge_highway_segment","latitude","longitude","location"]'
+      x-soda2-types: '["text","floating_timestamp","floating_timestamp","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","floating_timestamp","text","floating_timestamp","text","text","text","text","text","number","number","text","text","text","text","text","text","text","text","text","text","number","number","point"]'
+      x-soda2-data-out-of-date: 'false'
+      x-soda2-truth-last-modified: Wed, 24 Dec 2025 20:34:02 GMT
+      x-soda2-secondary-last-modified: Wed, 24 Dec 2025 20:34:02 GMT
+      last-modified: Wed, 24 Dec 2025 20:34:02 GMT
+      vary: Accept-Encoding
+      content-encoding: gzip
+      strict-transport-security: max-age=31536000; includeSubDomains
+      x-socrata-requestid: d322e2762ba6abc477b17093a202c687
+    body:
+      string: |
+        []
+  recorded_at: 2026-02-20 01:36:04
+- request:
+    method: GET
+    uri: https://data.cityofnewyork.us/resource/76ig-c548.json?%24limit=2&%24order=created_date+DESC&%24where=created_date+%3C+%272025-03-02T00%3A00%3A00.000%27
+  response:
+    status: 200
+    headers:
+      server: nginx
+      date: Fri, 20 Feb 2026 01:36:04 GMT
+      content-type: application/json;charset=utf-8
+      transfer-encoding: chunked
+      connection: keep-alive
+      access-control-allow-origin: '*'
+      etag: '"aW5kaWEuMTYzMTc0XzJfNTYyOFB3ZmRFVTlFNllOWE56by1JQm1DMXEwbnU4dw---gziqbvbjB1fu2M--XrBmo1EmScFUmN--gzip--gzip"'
+      x-soda2-fields: '["unique_key","created_date","closed_date","agency","agency_name","complaint_type","descriptor","descriptor_2","location_type","incident_zip","incident_address","street_name","cross_street_1","cross_street_2","intersection_street_1","intersection_street_2","address_type","city","landmark","facility_type","status","due_date","resolution_description","resolution_action_updated_date","community_board","council_district","police_precinct","bbl","borough","x_coordinate_state_plane","y_coordinate_state_plane","open_data_channel_type","park_facility_name","park_borough","vehicle_type","taxi_company_borough","taxi_pick_up_location","bridge_highway_name","bridge_highway_direction","road_ramp","bridge_highway_segment","latitude","longitude","location"]'
+      x-soda2-types: '["text","floating_timestamp","floating_timestamp","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","floating_timestamp","text","floating_timestamp","text","text","text","text","text","number","number","text","text","text","text","text","text","text","text","text","text","number","number","point"]'
+      x-soda2-data-out-of-date: 'false'
+      x-soda2-truth-last-modified: Wed, 24 Dec 2025 20:34:02 GMT
+      x-soda2-secondary-last-modified: Wed, 24 Dec 2025 20:34:02 GMT
+      last-modified: Wed, 24 Dec 2025 20:34:02 GMT
+      vary: Accept-Encoding
+      content-encoding: gzip
+      strict-transport-security: max-age=31536000; includeSubDomains
+      x-socrata-requestid: 527153f9724498372280d2f73514cfee
+    body:
+      string: |
+        [{"unique_key":"45278137","created_date":"2019-12-31T23:59:11.000","closed_date":"2020-01-01T03:07:18.000","agency":"NYPD","agency_name":"New York City Police Department","complaint_type":"Noise - Commercial","descriptor":"Banging/Pounding","location_type":"Club/Bar/Restaurant","incident_zip":"11229","incident_address":"3939 EMMONS AVENUE","street_name":"EMMONS AVENUE","cross_street_1":"PLUMB    3 STREET","cross_street_2":"BELT PARKWAY EXIT    9 WESTBOUND","intersection_street_1":"PLUMB    3 STREET","intersection_street_2":"BELT PARKWAY EXIT    9 WESTBOUND","city":"BROOKLYN","landmark":"EMMONS AVENUE","status":"Closed","resolution_description":"Your request can not be processed at this time because of insufficient contact information. Please create a new Service Request on NYC.gov and provide more detailed contact information.","resolution_action_updated_date":"2020-01-01T03:07:32.000","community_board":"15 BROOKLYN","council_district":"48","police_precinct":"Precinct 61","bbl":"3088440010","borough":"BROOKLYN","x_coordinate_state_plane":"1004321","y_coordinate_state_plane":"152444","open_data_channel_type":"ONLINE","park_facility_name":"Unspecified","park_borough":"BROOKLYN","latitude":"40.58507695307629","longitude":"-73.92773945669528","location":{"type":"Point","coordinates":[-73.927739456695,40.585076953076]}}
+        ,{"unique_key":"45281589","created_date":"2019-12-31T23:58:54.000","closed_date":"2020-01-01T05:37:03.000","agency":"NYPD","agency_name":"New York City Police Department","complaint_type":"Noise - Residential","descriptor":"Loud Music/Party","location_type":"Residential Building/House","incident_zip":"10025","incident_address":"865 COLUMBUS AVENUE","street_name":"COLUMBUS AVENUE","cross_street_1":"WEST  100 STREET","cross_street_2":"WEST  103 STREET","intersection_street_1":"WEST  100 STREET","intersection_street_2":"WEST  103 STREET","city":"NEW YORK","landmark":"COLUMBUS AVENUE","status":"Closed","resolution_description":"The Police Department responded to the complaint and with the information available observed no evidence of the violation at that time.","resolution_action_updated_date":"2020-01-01T05:37:11.000","community_board":"07 MANHATTAN","council_district":"07","police_precinct":"Precinct 24","bbl":"1018360001","borough":"MANHATTAN","x_coordinate_state_plane":"994065","y_coordinate_state_plane":"229622","open_data_channel_type":"PHONE","park_facility_name":"Unspecified","park_borough":"MANHATTAN","latitude":"40.79692992181987","longitude":"-73.96455113216999","location":{"type":"Point","coordinates":[-73.96455113217,40.79692992182]}}]
+  recorded_at: 2026-02-20 01:36:04
+- request:
+    method: GET
+    uri: https://data.cityofnewyork.us/resource/76ig-c548.json?%24limit=2&%24order=created_date+DESC&%24where=TRIM%28agency%29+%3D+%27NYPD%27
+  response:
+    status: 200
+    headers:
+      server: nginx
+      date: Fri, 20 Feb 2026 01:36:04 GMT
+      content-type: application/json;charset=utf-8
+      transfer-encoding: chunked
+      connection: keep-alive
+      access-control-allow-origin: '*'
+      etag: '"aW5kaWEuMTYzMTc0XzJfNTYyOFU3ZWxrSmo5Ylo0Z0xyR2dqbmJIV1M4ZVE0UQ---gzijlEgRa4tgJZadhtD4G9OoVptZNv--gzip--gzip"'
+      x-soda2-fields: '["unique_key","created_date","closed_date","agency","agency_name","complaint_type","descriptor","descriptor_2","location_type","incident_zip","incident_address","street_name","cross_street_1","cross_street_2","intersection_street_1","intersection_street_2","address_type","city","landmark","facility_type","status","due_date","resolution_description","resolution_action_updated_date","community_board","council_district","police_precinct","bbl","borough","x_coordinate_state_plane","y_coordinate_state_plane","open_data_channel_type","park_facility_name","park_borough","vehicle_type","taxi_company_borough","taxi_pick_up_location","bridge_highway_name","bridge_highway_direction","road_ramp","bridge_highway_segment","latitude","longitude","location"]'
+      x-soda2-types: '["text","floating_timestamp","floating_timestamp","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","floating_timestamp","text","floating_timestamp","text","text","text","text","text","number","number","text","text","text","text","text","text","text","text","text","text","number","number","point"]'
+      x-soda2-data-out-of-date: 'false'
+      x-soda2-truth-last-modified: Wed, 24 Dec 2025 20:34:02 GMT
+      x-soda2-secondary-last-modified: Wed, 24 Dec 2025 20:34:02 GMT
+      last-modified: Wed, 24 Dec 2025 20:34:02 GMT
+      vary: Accept-Encoding
+      content-encoding: gzip
+      strict-transport-security: max-age=31536000; includeSubDomains
+      x-socrata-requestid: 7c469febdbb8932a8387689a5e203eb2
+    body:
+      string: |
+        [{"unique_key":"45278137","created_date":"2019-12-31T23:59:11.000","closed_date":"2020-01-01T03:07:18.000","agency":"NYPD","agency_name":"New York City Police Department","complaint_type":"Noise - Commercial","descriptor":"Banging/Pounding","location_type":"Club/Bar/Restaurant","incident_zip":"11229","incident_address":"3939 EMMONS AVENUE","street_name":"EMMONS AVENUE","cross_street_1":"PLUMB    3 STREET","cross_street_2":"BELT PARKWAY EXIT    9 WESTBOUND","intersection_street_1":"PLUMB    3 STREET","intersection_street_2":"BELT PARKWAY EXIT    9 WESTBOUND","city":"BROOKLYN","landmark":"EMMONS AVENUE","status":"Closed","resolution_description":"Your request can not be processed at this time because of insufficient contact information. Please create a new Service Request on NYC.gov and provide more detailed contact information.","resolution_action_updated_date":"2020-01-01T03:07:32.000","community_board":"15 BROOKLYN","council_district":"48","police_precinct":"Precinct 61","bbl":"3088440010","borough":"BROOKLYN","x_coordinate_state_plane":"1004321","y_coordinate_state_plane":"152444","open_data_channel_type":"ONLINE","park_facility_name":"Unspecified","park_borough":"BROOKLYN","latitude":"40.58507695307629","longitude":"-73.92773945669528","location":{"type":"Point","coordinates":[-73.927739456695,40.585076953076]}}
+        ,{"unique_key":"45281589","created_date":"2019-12-31T23:58:54.000","closed_date":"2020-01-01T05:37:03.000","agency":"NYPD","agency_name":"New York City Police Department","complaint_type":"Noise - Residential","descriptor":"Loud Music/Party","location_type":"Residential Building/House","incident_zip":"10025","incident_address":"865 COLUMBUS AVENUE","street_name":"COLUMBUS AVENUE","cross_street_1":"WEST  100 STREET","cross_street_2":"WEST  103 STREET","intersection_street_1":"WEST  100 STREET","intersection_street_2":"WEST  103 STREET","city":"NEW YORK","landmark":"COLUMBUS AVENUE","status":"Closed","resolution_description":"The Police Department responded to the complaint and with the information available observed no evidence of the violation at that time.","resolution_action_updated_date":"2020-01-01T05:37:11.000","community_board":"07 MANHATTAN","council_district":"07","police_precinct":"Precinct 24","bbl":"1018360001","borough":"MANHATTAN","x_coordinate_state_plane":"994065","y_coordinate_state_plane":"229622","open_data_channel_type":"PHONE","park_facility_name":"Unspecified","park_borough":"MANHATTAN","latitude":"40.79692992181987","longitude":"-73.96455113216999","location":{"type":"Point","coordinates":[-73.96455113217,40.79692992182]}}]
+  recorded_at: 2026-02-20 01:36:04
+- request:
+    method: GET
+    uri: https://data.cityofnewyork.us/resource/76ig-c548.json?%24limit=2&%24order=created_date+DESC&%24where=TRIM%28agency%29+IN+%28%27NYPD%27%2C+%27DOT%27%29
+  response:
+    status: 200
+    headers:
+      server: nginx
+      date: Fri, 20 Feb 2026 01:36:05 GMT
+      content-type: application/json;charset=utf-8
+      transfer-encoding: chunked
+      connection: keep-alive
+      access-control-allow-origin: '*'
+      etag: '"aW5kaWEuMTYzMTc0XzJfNTYyOGlzSS1EVHZlcGRsUjVJdURLVFhFdDAxVGVxUQ---gzis_TJmGWJ_e2ZACK_21vrQV7f5hE--gzip--gzip"'
+      x-soda2-fields: '["unique_key","created_date","closed_date","agency","agency_name","complaint_type","descriptor","descriptor_2","location_type","incident_zip","incident_address","street_name","cross_street_1","cross_street_2","intersection_street_1","intersection_street_2","address_type","city","landmark","facility_type","status","due_date","resolution_description","resolution_action_updated_date","community_board","council_district","police_precinct","bbl","borough","x_coordinate_state_plane","y_coordinate_state_plane","open_data_channel_type","park_facility_name","park_borough","vehicle_type","taxi_company_borough","taxi_pick_up_location","bridge_highway_name","bridge_highway_direction","road_ramp","bridge_highway_segment","latitude","longitude","location"]'
+      x-soda2-types: '["text","floating_timestamp","floating_timestamp","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","floating_timestamp","text","floating_timestamp","text","text","text","text","text","number","number","text","text","text","text","text","text","text","text","text","text","number","number","point"]'
+      x-soda2-data-out-of-date: 'false'
+      x-soda2-truth-last-modified: Wed, 24 Dec 2025 20:34:02 GMT
+      x-soda2-secondary-last-modified: Wed, 24 Dec 2025 20:34:02 GMT
+      last-modified: Wed, 24 Dec 2025 20:34:02 GMT
+      vary: Accept-Encoding
+      content-encoding: gzip
+      strict-transport-security: max-age=31536000; includeSubDomains
+      x-socrata-requestid: 96912603d6ff1c9db1fc078b21c16bec
+    body:
+      string: |
+        [{"unique_key":"45278137","created_date":"2019-12-31T23:59:11.000","closed_date":"2020-01-01T03:07:18.000","agency":"NYPD","agency_name":"New York City Police Department","complaint_type":"Noise - Commercial","descriptor":"Banging/Pounding","location_type":"Club/Bar/Restaurant","incident_zip":"11229","incident_address":"3939 EMMONS AVENUE","street_name":"EMMONS AVENUE","cross_street_1":"PLUMB    3 STREET","cross_street_2":"BELT PARKWAY EXIT    9 WESTBOUND","intersection_street_1":"PLUMB    3 STREET","intersection_street_2":"BELT PARKWAY EXIT    9 WESTBOUND","city":"BROOKLYN","landmark":"EMMONS AVENUE","status":"Closed","resolution_description":"Your request can not be processed at this time because of insufficient contact information. Please create a new Service Request on NYC.gov and provide more detailed contact information.","resolution_action_updated_date":"2020-01-01T03:07:32.000","community_board":"15 BROOKLYN","council_district":"48","police_precinct":"Precinct 61","bbl":"3088440010","borough":"BROOKLYN","x_coordinate_state_plane":"1004321","y_coordinate_state_plane":"152444","open_data_channel_type":"ONLINE","park_facility_name":"Unspecified","park_borough":"BROOKLYN","latitude":"40.58507695307629","longitude":"-73.92773945669528","location":{"type":"Point","coordinates":[-73.927739456695,40.585076953076]}}
+        ,{"unique_key":"45281589","created_date":"2019-12-31T23:58:54.000","closed_date":"2020-01-01T05:37:03.000","agency":"NYPD","agency_name":"New York City Police Department","complaint_type":"Noise - Residential","descriptor":"Loud Music/Party","location_type":"Residential Building/House","incident_zip":"10025","incident_address":"865 COLUMBUS AVENUE","street_name":"COLUMBUS AVENUE","cross_street_1":"WEST  100 STREET","cross_street_2":"WEST  103 STREET","intersection_street_1":"WEST  100 STREET","intersection_street_2":"WEST  103 STREET","city":"NEW YORK","landmark":"COLUMBUS AVENUE","status":"Closed","resolution_description":"The Police Department responded to the complaint and with the information available observed no evidence of the violation at that time.","resolution_action_updated_date":"2020-01-01T05:37:11.000","community_board":"07 MANHATTAN","council_district":"07","police_precinct":"Precinct 24","bbl":"1018360001","borough":"MANHATTAN","x_coordinate_state_plane":"994065","y_coordinate_state_plane":"229622","open_data_channel_type":"PHONE","park_facility_name":"Unspecified","park_borough":"MANHATTAN","latitude":"40.79692992181987","longitude":"-73.96455113216999","location":{"type":"Point","coordinates":[-73.96455113217,40.79692992182]}}]
+  recorded_at: 2026-02-20 01:36:05
+recorded_with: VCR-vcr/2.1.0
