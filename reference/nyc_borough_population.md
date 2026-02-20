@@ -1,0 +1,55 @@
+# New York City Population by Borough, 1950 - 2040
+
+Downloads historical and projected NYC population data by borough from
+NYC Open Data.
+
+## Usage
+
+``` r
+nyc_borough_population(limit = 10000, filters = list(), timeout_sec = 30)
+```
+
+## Source
+
+NYC Open Data:
+\<https://data.cityofnewyork.us/City-Government/New-York-City-Population-by-Borough-1940-2040/xywu-7bv9\>
+
+## Arguments
+
+- limit:
+
+  Number of rows to retrieve (default = 10,000).
+
+- filters:
+
+  Optional list of field-value pairs to filter results.
+
+- timeout_sec:
+
+  Request timeout in seconds (default = 30).
+
+## Value
+
+A tibble containing City Record Online data.
+
+## Details
+
+This dataset contains population figures for New York City's five
+boroughs from 1940 to 2040. It includes both historical census data and
+population projections, allowing analysis of demographic trends across
+Brooklyn, Bronx, Manhattan, Queens, and Staten Island over a 90-year
+period.
+
+## Examples
+
+``` r
+# Examples that hit the live NYC Open Data API are guarded so CRAN checks
+# do not fail when the network is unavailable or slow.
+if (interactive() && curl::has_internet()) {
+  # Quick example (fetch 2 rows)
+  small_sample <- nyc_borough_population(limit = 2)
+  small_sample
+
+  nyc_borough_population(limit = 2, filters = list(borough = "Bronx"))
+}
+```
