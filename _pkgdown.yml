@@ -1,5 +1,7 @@
 url: https://martinezc1.github.io/nycOpenData/
 logo: man/figures/nycOpenData_hex.png
+development:
+  mode: auto
 template:
   bootstrap: 5
 articles:
