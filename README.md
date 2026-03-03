@@ -17,7 +17,7 @@ from R,
 with **no API keys** or manual downloads required. The package is
 available on **CRAN**.
 
-Version **0.1.6** now includes wrappers for **40+ NYC Open Data APIs**,
+Version **0.1.7** now includes wrappers for **40+ NYC Open Data APIs**,
 covering:
 
 - 311 Service Requests  
