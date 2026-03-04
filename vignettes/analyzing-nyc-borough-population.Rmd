@@ -36,7 +36,7 @@ The `nycOpenData` package provides a streamlined interface for accessing New Yor
 Let's start by pulling a small sample to see the structure:
 
 ```{r small-sample}
-small_sample <- nyc_borough_population(limit = 5)
+small_sample <- nyc_pull_dataset("nyc_borough_population", limit = 5)
 small_sample
 
 # Seeing what columns are in the dataset
@@ -48,7 +48,7 @@ names(small_sample)
 Now let's pull the complete dataset to work with:
 
 ```{r full-data}
-population_data <- nyc_borough_population()
+population_data <- nyc_pull_dataset("nyc_borough_population")
 
 population_data |>
   slice_head(n = 6)
@@ -59,7 +59,7 @@ population_data |>
 We can filter for a specific borough. Let's look at Brooklyn's population over time:
 
 ```{r filter-brooklyn}
-brooklyn_pop <- nyc_borough_population(filters = list(borough = "Brooklyn"))
+brooklyn_pop <- nyc_pull_dataset("nyc_borough_population", filters = list(borough = "Brooklyn"))
 
 brooklyn_pop
 ```
@@ -71,7 +71,7 @@ Let's visualize population trends across boroughs. First, we need to reshape the
 ```{r population-trends, fig.alt="Line chart showing population trends for NYC's five boroughs from 1950 to 2040.", fig.cap="Population trends for NYC's five boroughs from 1950 to 2040, including historical data and projections.", fig.height=6, fig.width=8}
 
 # Get full dataset and filter for Total Population rows only
-population_data <- nyc_borough_population()
+population_data <- nyc_pull_dataset("nyc_borough_population")
 
 # Clean borough names and filter to get individual boroughs (exclude NYC Total)
 borough_data <- population_data |>

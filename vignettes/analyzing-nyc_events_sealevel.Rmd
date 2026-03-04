@@ -37,7 +37,8 @@ Researchers, city planners, and policymakers can use this information to underst
 ## Retrieve a Sample of Data
 
 ```{r retrieve-sample}
-sample_data <- nyc_events_sealevel(limit = 10)
+sample_data <- nyc_pull_dataset("nyc_events_sealevel", limit = 10)
+nyc_list_datasets()
 
 sample_data
 ```

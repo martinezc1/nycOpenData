@@ -33,7 +33,7 @@ This dataset includes information such as the borough, development name, violati
 We begin by retrieving the dataset using the nycOpenData package:
 
 ```{r}
-violations <- nyc_ha_violations()
+violations <- nyc_pull_dataset("nyc_ha_violations")
 
 violations |>
   dplyr::slice_head(n = 6)

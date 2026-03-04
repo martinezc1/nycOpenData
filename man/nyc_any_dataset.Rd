@@ -4,7 +4,13 @@
 \alias{nyc_any_dataset}
 \title{Load Any NYC Open Data Dataset}
 \usage{
-nyc_any_dataset(json_link, limit = 10000, timeout_sec = 30)
+nyc_any_dataset(
+  json_link,
+  limit = 10000,
+  timeout_sec = 30,
+  clean_names = TRUE,
+  coerce_types = TRUE
+)
 }
 \arguments{
 \item{json_link}{A Socrata dataset JSON endpoint URL (e.g., "https://data.cityofnewyork.us/resource/abcd-1234.json").}
@@ -12,9 +18,13 @@ nyc_any_dataset(json_link, limit = 10000, timeout_sec = 30)
 \item{limit}{Number of rows to retrieve (default = 10,000).}
 
 \item{timeout_sec}{Request timeout in seconds (default = 30).}
+
+\item{clean_names}{Logical; if TRUE, convert column names to snake_case (default = TRUE).}
+
+\item{coerce_types}{Logical; if TRUE, attempt light type coercion (default = TRUE).}
 }
 \value{
-A tibble containing the requested dataset. Column names are returned in snake_case.
+A tibble containing the requested dataset.
 }
 \description{
 Downloads any NYC Open Data dataset given its Socrata JSON endpoint.

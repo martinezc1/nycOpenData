@@ -2,6 +2,8 @@
 # - .nyc_endpoint(): constructs the Socrata endpoint URL from a dataset id
 # - .nyc_add_filters(): adds equality filters (and IN() for multi-values) as a Socrata $where clause
 # - .nyc_add_where(): appends a raw SoQL WHERE expression (for ranges, >=, <, etc.)
+# - .nyc_validate_date_yyyy_mm_dd(): validates Date or "YYYY-MM-DD" inputs
+# - .nyc_build_date_where(): constructs server-side date filters using a dataset's default_date_field
 # - .nyc_get_json(): executes the request and returns parsed JSON (flattened)
 # - .nyc_dataset_request(): common pattern for dataset wrapper functions + input validation (r07/r08)
 
@@ -85,6 +87,20 @@
   }
 
   df
+}
+
+# optional, user-controlled "cleaning pipeline" (reviewer r16/r17)
+.nyc_postprocess <- function(df, clean_names = TRUE, coerce_types = TRUE) {
+  if (!inherits(df, "data.frame")) return(df)
+
+  if (isTRUE(clean_names)) {
+    df <- .nyc_clean_names(df)
+  }
+  if (isTRUE(coerce_types)) {
+    df <- .nyc_coerce_types(df)
+  }
+
+  tibble::as_tibble(df, .name_repair = "minimal")
 }
 
 .nyc_validate_limit <- function(limit) {
@@ -236,7 +252,9 @@
                                  filters = list(),
                                  order = NULL,
                                  where = NULL,
-                                 timeout_sec = 30) {
+                                 timeout_sec = 30,
+                                 clean_names = TRUE,
+                                 coerce_types = TRUE) {
 
   # Input validation (r08)
   limit <- .nyc_validate_limit(limit)
@@ -261,11 +279,51 @@
 
   out <- tibble::as_tibble(data, .name_repair = "minimal")
 
-  # r16: snake_case output names
-  out <- .nyc_clean_names(out)
-
-  # r17: helpful type coercion (safe defaults)
-  out <- .nyc_coerce_types(out)
+  # reviewer r16/r17: optional post-processing pipeline
+  out <- .nyc_postprocess(out, clean_names = clean_names, coerce_types = coerce_types)
 
   out
+}
+
+# Validate Date or "YYYY-MM-DD" string input and return normalized "YYYY-MM-DD"
+.nyc_validate_date_yyyy_mm_dd <- function(x, arg) {
+  if (is.null(x)) return(NULL)
+  if (inherits(x, "Date")) return(format(x, "%Y-%m-%d"))
+
+  if (!is.character(x) || length(x) != 1 || is.na(x) || !nzchar(x)) {
+    .nyc_abort(paste0("`", arg, "` must be a Date or a non-missing 'YYYY-MM-DD' string."))
+  }
+  if (!grepl("^\\d{4}-\\d{2}-\\d{2}$", x)) {
+    .nyc_abort(paste0("`", arg, "` must be in 'YYYY-MM-DD' format."))
+  }
+  x
+}
+
+# Build a SoQL WHERE clause for date filtering using the dataset's date field
+.nyc_build_date_where <- function(date_field, date = NULL, from = NULL, to = NULL) {
+  if (is.null(date_field) || is.na(date_field) || !nzchar(date_field)) return(NULL)
+
+  date <- .nyc_validate_date_yyyy_mm_dd(date, "date")
+  from <- .nyc_validate_date_yyyy_mm_dd(from, "from")
+  to   <- .nyc_validate_date_yyyy_mm_dd(to, "to")
+
+  if (!is.null(date) && (!is.null(from) || !is.null(to))) {
+    .nyc_abort("Use either `date` OR `from`/`to`, not both.")
+  }
+
+  to_float_ts <- function(d) paste0(d, "T00:00:00.000")
+
+  if (!is.null(date)) {
+    start <- to_float_ts(date)
+    end_date <- format(as.Date(date) + 1, "%Y-%m-%d")
+    end <- to_float_ts(end_date)
+    return(paste0(date_field, " >= '", start, "' AND ", date_field, " < '", end, "'"))
+  }
+
+  parts <- character(0)
+  if (!is.null(from)) parts <- c(parts, paste0(date_field, " >= '", to_float_ts(from), "'"))
+  if (!is.null(to))   parts <- c(parts, paste0(date_field, " < '", to_float_ts(to), "'"))
+  if (length(parts) == 0) return(NULL)
+
+  paste(parts, collapse = " AND ")
 }

@@ -5,7 +5,9 @@
 #' @param json_link A Socrata dataset JSON endpoint URL (e.g., "https://data.cityofnewyork.us/resource/abcd-1234.json").
 #' @param limit Number of rows to retrieve (default = 10,000).
 #' @param timeout_sec Request timeout in seconds (default = 30).
-#' @return A tibble containing the requested dataset. Column names are returned in snake_case.
+#' @param clean_names Logical; if TRUE, convert column names to snake_case (default = TRUE).
+#' @param coerce_types Logical; if TRUE, attempt light type coercion (default = TRUE).
+#' @return A tibble containing the requested dataset.
 #'
 #' @examples
 #' # Examples that hit the live NYC Open Data API are guarded so CRAN checks
@@ -18,7 +20,12 @@
 #'   }
 #' }
 #' @export
-nyc_any_dataset <- function(json_link, limit = 10000, timeout_sec = 30) {
+nyc_any_dataset <- function(json_link,
+                            limit = 10000,
+                            timeout_sec = 30,
+                            clean_names = TRUE,
+                            coerce_types = TRUE) {
+
   if (!is.character(json_link) || length(json_link) != 1 || is.na(json_link)) {
     stop("`json_link` must be a single, non-missing character URL.", call. = FALSE)
   }
@@ -34,8 +41,9 @@ nyc_any_dataset <- function(json_link, limit = 10000, timeout_sec = 30) {
   data <- .nyc_get_json(json_link, query_list, timeout_sec = timeout_sec)
 
   out <- tibble::as_tibble(data, .name_repair = "minimal")
-  out <- .nyc_clean_names(out)   # r16
-  out <- .nyc_coerce_types(out)  # r17
+
+  # reviewer r16/r17: optional post-processing pipeline
+  out <- .nyc_postprocess(out, clean_names = clean_names, coerce_types = coerce_types)
 
   out
 }

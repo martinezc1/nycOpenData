@@ -1,0 +1,58 @@
+http_interactions:
+- request:
+    method: GET
+    uri: https://data.cityofnewyork.us/resource/erm2-nwe9.json?%24limit=2
+  response:
+    status: 200
+    headers:
+      server: nginx
+      date: Wed, 04 Mar 2026 16:28:11 GMT
+      content-type: application/json;charset=utf-8
+      transfer-encoding: chunked
+      connection: keep-alive
+      access-control-allow-origin: '*'
+      etag: '"Zm94dHJvdC4xNTY1NV8xODNfMTkwNjQ3OTVobG5fTGhXQXVfNHU0VFJobmllWmtCLUh3---gziptJLR-gMf_Bsz_mD3dTS7JfWPHGU--gzip--gzip"'
+      x-soda2-fields: '["unique_key","created_date","closed_date","agency","agency_name","complaint_type","descriptor","descriptor_2","location_type","incident_zip","incident_address","street_name","cross_street_1","cross_street_2","intersection_street_1","intersection_street_2","address_type","city","landmark","facility_type","status","due_date","resolution_description","resolution_action_updated_date","community_board","council_district","police_precinct","bbl","borough","x_coordinate_state_plane","y_coordinate_state_plane","open_data_channel_type","park_facility_name","park_borough","vehicle_type","taxi_company_borough","taxi_pick_up_location","bridge_highway_name","bridge_highway_direction","road_ramp","bridge_highway_segment","latitude","longitude","location",":@computed_region_f5dn_yrer",":@computed_region_yeji_bk3q",":@computed_region_sbqj_enih",":@computed_region_92fq_4b7q"]'
+      x-soda2-types: '["text","floating_timestamp","floating_timestamp","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","floating_timestamp","text","floating_timestamp","text","text","text","text","text","number","number","text","text","text","text","text","text","text","text","text","text","number","number","point","number","number","number","number"]'
+      x-soda2-data-out-of-date: 'false'
+      x-soda2-truth-last-modified: Wed, 04 Mar 2026 02:33:48 GMT
+      x-soda2-secondary-last-modified: Wed, 04 Mar 2026 02:33:48 GMT
+      last-modified: Wed, 04 Mar 2026 02:33:48 GMT
+      vary: Accept-Encoding
+      content-encoding: gzip
+      strict-transport-security: max-age=31536000; includeSubDomains
+      x-socrata-requestid: 37480b5e80f3a0dcc013dbcc73aca147
+    body:
+      string: |
+        [{"unique_key":"68182862","created_date":"2026-03-03T02:06:07.000","agency":"NYPD","agency_name":"New York City Police Department","complaint_type":"Illegal Parking","descriptor":"Posted Parking Sign Violation","location_type":"Street/Sidewalk","incident_zip":"11385","incident_address":"601 ONDERDONK AVENUE","street_name":"ONDERDONK AVENUE","cross_street_1":"GROVE STREET","cross_street_2":"LINDEN STREET","intersection_street_1":"GROVE STREET","intersection_street_2":"LINDEN STREET","address_type":"ADDRESS","city":"RIDGEWOOD","landmark":"ONDERDONK AVENUE","status":"In Progress","community_board":"05 QUEENS","council_district":"34","police_precinct":"Precinct 104","bbl":"4034080012","borough":"QUEENS","x_coordinate_state_plane":"1009517","y_coordinate_state_plane":"196130","open_data_channel_type":"ONLINE","park_facility_name":"Unspecified","park_borough":"QUEENS","latitude":"40.7049722312723","longitude":"-73.90886896382558","location":{"type":"Point","coordinates":[-73.908868963826,40.704972231272]},":@computed_region_f5dn_yrer":"54",":@computed_region_yeji_bk3q":"3",":@computed_region_sbqj_enih":"62",":@computed_region_92fq_4b7q":"30"}
+        ,{"unique_key":"68185859","created_date":"2026-03-03T02:05:59.000","agency":"NYPD","agency_name":"New York City Police Department","complaint_type":"Illegal Parking","descriptor":"Posted Parking Sign Violation","location_type":"Street/Sidewalk","incident_zip":"11230","incident_address":"1866 OCEAN AVENUE","street_name":"OCEAN AVENUE","cross_street_1":"BAY AVENUE","cross_street_2":"AVENUE N","intersection_street_1":"BAY AVENUE","intersection_street_2":"AVENUE N","address_type":"ADDRESS","city":"BROOKLYN","landmark":"OCEAN AVENUE","status":"In Progress","community_board":"14 BROOKLYN","council_district":"44","police_precinct":"Precinct 70","bbl":"3067480045","borough":"BROOKLYN","x_coordinate_state_plane":"996839","y_coordinate_state_plane":"163873","open_data_channel_type":"MOBILE","park_facility_name":"Unspecified","park_borough":"BROOKLYN","latitude":"40.61646101871662","longitude":"-73.95465519330362","location":{"type":"Point","coordinates":[-73.954655193304,40.616461018717]},":@computed_region_f5dn_yrer":"60",":@computed_region_yeji_bk3q":"2",":@computed_region_sbqj_enih":"43",":@computed_region_92fq_4b7q":"15"}]
+  recorded_at: 2026-03-04 16:28:11
+- request:
+    method: GET
+    uri: https://data.cityofnewyork.us/resource/erm2-nwe9.json?%24limit=2
+  response:
+    status: 200
+    headers:
+      server: nginx
+      date: Wed, 04 Mar 2026 16:28:23 GMT
+      content-type: application/json;charset=utf-8
+      transfer-encoding: chunked
+      connection: keep-alive
+      access-control-allow-origin: '*'
+      etag: '"Zm94dHJvdC4xNTY1NV8xODNfMTkwNjQ3OTVobG5fTGhXQXVfNHU0VFJobmllWmtCLUh3---gziptJLR-gMf_Bsz_mD3dTS7JfWPHGU--gzip--gzip"'
+      x-soda2-fields: '["unique_key","created_date","closed_date","agency","agency_name","complaint_type","descriptor","descriptor_2","location_type","incident_zip","incident_address","street_name","cross_street_1","cross_street_2","intersection_street_1","intersection_street_2","address_type","city","landmark","facility_type","status","due_date","resolution_description","resolution_action_updated_date","community_board","council_district","police_precinct","bbl","borough","x_coordinate_state_plane","y_coordinate_state_plane","open_data_channel_type","park_facility_name","park_borough","vehicle_type","taxi_company_borough","taxi_pick_up_location","bridge_highway_name","bridge_highway_direction","road_ramp","bridge_highway_segment","latitude","longitude","location",":@computed_region_f5dn_yrer",":@computed_region_yeji_bk3q",":@computed_region_sbqj_enih",":@computed_region_92fq_4b7q"]'
+      x-soda2-types: '["text","floating_timestamp","floating_timestamp","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","floating_timestamp","text","floating_timestamp","text","text","text","text","text","number","number","text","text","text","text","text","text","text","text","text","text","number","number","point","number","number","number","number"]'
+      x-soda2-data-out-of-date: 'false'
+      x-soda2-truth-last-modified: Wed, 04 Mar 2026 02:33:48 GMT
+      x-soda2-secondary-last-modified: Wed, 04 Mar 2026 02:33:48 GMT
+      last-modified: Wed, 04 Mar 2026 02:33:48 GMT
+      vary: Accept-Encoding
+      content-encoding: gzip
+      strict-transport-security: max-age=31536000; includeSubDomains
+      x-socrata-requestid: 24a5e4a1e29eb0c40be518c1191f594b
+    body:
+      string: |
+        [{"unique_key":"68182862","created_date":"2026-03-03T02:06:07.000","agency":"NYPD","agency_name":"New York City Police Department","complaint_type":"Illegal Parking","descriptor":"Posted Parking Sign Violation","location_type":"Street/Sidewalk","incident_zip":"11385","incident_address":"601 ONDERDONK AVENUE","street_name":"ONDERDONK AVENUE","cross_street_1":"GROVE STREET","cross_street_2":"LINDEN STREET","intersection_street_1":"GROVE STREET","intersection_street_2":"LINDEN STREET","address_type":"ADDRESS","city":"RIDGEWOOD","landmark":"ONDERDONK AVENUE","status":"In Progress","community_board":"05 QUEENS","council_district":"34","police_precinct":"Precinct 104","bbl":"4034080012","borough":"QUEENS","x_coordinate_state_plane":"1009517","y_coordinate_state_plane":"196130","open_data_channel_type":"ONLINE","park_facility_name":"Unspecified","park_borough":"QUEENS","latitude":"40.7049722312723","longitude":"-73.90886896382558","location":{"type":"Point","coordinates":[-73.908868963826,40.704972231272]},":@computed_region_f5dn_yrer":"54",":@computed_region_yeji_bk3q":"3",":@computed_region_sbqj_enih":"62",":@computed_region_92fq_4b7q":"30"}
+        ,{"unique_key":"68185859","created_date":"2026-03-03T02:05:59.000","agency":"NYPD","agency_name":"New York City Police Department","complaint_type":"Illegal Parking","descriptor":"Posted Parking Sign Violation","location_type":"Street/Sidewalk","incident_zip":"11230","incident_address":"1866 OCEAN AVENUE","street_name":"OCEAN AVENUE","cross_street_1":"BAY AVENUE","cross_street_2":"AVENUE N","intersection_street_1":"BAY AVENUE","intersection_street_2":"AVENUE N","address_type":"ADDRESS","city":"BROOKLYN","landmark":"OCEAN AVENUE","status":"In Progress","community_board":"14 BROOKLYN","council_district":"44","police_precinct":"Precinct 70","bbl":"3067480045","borough":"BROOKLYN","x_coordinate_state_plane":"996839","y_coordinate_state_plane":"163873","open_data_channel_type":"MOBILE","park_facility_name":"Unspecified","park_borough":"BROOKLYN","latitude":"40.61646101871662","longitude":"-73.95465519330362","location":{"type":"Point","coordinates":[-73.954655193304,40.616461018717]},":@computed_region_f5dn_yrer":"60",":@computed_region_yeji_bk3q":"2",":@computed_region_sbqj_enih":"43",":@computed_region_92fq_4b7q":"15"}]
+  recorded_at: 2026-03-04 16:28:23
+recorded_with: VCR-vcr/2.1.0

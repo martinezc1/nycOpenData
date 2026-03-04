@@ -68,3 +68,5 @@ URL: https://martinezc1.github.io/nycOpenData/, https://github.com/martinezc1/ny
 BugReports: https://github.com/martinezc1/nycOpenData/issues
 VignetteBuilder: knitr
 Config/testthat/edition: 3
+Depends: 
+    R (>= 3.5)
