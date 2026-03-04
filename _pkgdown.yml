@@ -18,51 +18,8 @@ articles:
       - investigating-inmate-incidents
 reference:
   - title: "Getting started"
-    desc: "Core helpers"
+    desc: "Core functions"
     contents:
+      - nyc_list_datasets
+      - nyc_pull_dataset
       - nyc_any_dataset
-
-  - title: "311 and city services"
-    contents:
-      - nyc_311
-
-  - title: "Transportation and vehicles"
-    contents:
-      - matches("^nyc_(for_hire_vehicles|street_hail_livery|medallion|tlc_|motor_vehicle_collisions|open_parking_camera)")
-
-  - title: "Buildings and permits"
-    contents:
-      - matches("^nyc_dob_")
-
-  - title: "Education"
-    contents:
-      - matches("^nyc_(school_|violent_disruptive_school_incidents|daily_attendance|period_attendance)")
-
-  - title: "Justice and public safety"
-    contents:
-      - matches("^nyc_(dop_|detention_|nypd_hate_crimes|domestic_violence)")
-
-  - title: "Housing and homelessness"
-    contents:
-      - matches("^nyc_(dhs_|homeless_|runaway_)")
-
-  - title: "Civic records and administration"
-    contents:
-      - matches("^nyc_(city_record|civil_service_list|permit_events|borough_community_report)")
-
-  - title: "Health"
-    contents:
-      - matches("^nyc_(cause_of_death|restaurant_inspection)")
-
-  - title: "Environment and parks"
-    contents:
-      - matches("^nyc_(tree_census|urban_park_)")
-
-  - title: "Culture and recreation"
-    contents:
-      - matches("^nyc_(museum_locations|film_permits)")
-
-  - title: "Everything else"
-    desc: "Other NYC Open Data wrappers"
-    contents:
-      - matches("^nyc_")
