@@ -24,13 +24,63 @@ library(dplyr)
 
 ## Introduction
 
-NYC has a population of almost 8.5 million people. By calling 311, residents are able to make comments, inquiries, complaints, and requests to the city agencies. All 311 service requests are contained in the dataset, [found here](https://data.cityofnewyork.us/Social-Services/311-Service-Requests-from-2020-to-Present/erm2-nwe9/about_data). In R, the `nycOpenData` package can be used to pull this data directly.
+Welcome to the `nycOpenData` package, a R package dedicated to helping R users connect to the [NYC Open Data Portal](https://opendata.cityofnewyork.us/)!
 
-The `nycOpenData` package provides a streamlined interface for accessing New York City's vast open data resources. It connects directly to the NYC Open Data Portal. It is currently utilized as a primary tool for teaching data acquisition in [Reproducible Research Using R](https://martinezc1-reproducible-research-using-r.share.connect.posit.cloud/), helping students bridge the gap between raw city APIs and tidy data analysis.
+The `nycOpenData` package provides a streamlined interface for accessing New York City's vast open data resources. It connects directly to the NYC Open Data Portal, helping users bridge the gap between raw city APIs and tidy data analysis. It does this in two ways:
+
+### The `nyc_pull_dataset()` function
+
+The primary way to pull data in this package is the `nyc_pull_dataset()` function, which works in tandem with `nyc_list_datasets()`. You do not need to know anything about API keys or authentication.
+
+The first step would be to call the `nyc_list_datasets()` to see what datasets are in the list and available to use in the `nyc_pull_dataset()` function.
+
+```{r nyc-list-datasets}
+nyc_list_datasets()
+```
+
+The output includes columns such as the dataset title, description, and link to the source. The most important piece is the key, because the key is what's needed for the `nyc_pull_dataset()` function.
+
+```{r nyc-311-pull}
+nyc_311_data <- nyc_pull_dataset(key = "nyc_311", limit = 3)
+```
+
+Now, we have the 3 most recent 311 requests!
+
+### The `nyc_any_dataset()` function
+
+The easiest workflow is to use `nyc_list_datasets()` together with `nyc_pull_dataset()`. However, there are ample datasets on the portal, with new ones being added all the time, and so the list does not have all of the datasets.
+
+In the event that you have a particular dataset you want to use in R that is not in the list, you can use the `nyc_any_dataset()`. The only requirement is the dataset’s API endpoint (a URL provided by the NYC Open Data portal). Here are the steps to get it:
+
+1. On the NYC Open Data Portal, go to the dataset you want to work with.
+2. Click on "Export" (next to the actions button on the right hand side).
+3. Click on "API Endpoint".
+4. Click on "SODA2" for "Version".
+4. Copy the API Endpoint.
+
+Below is an example of how to use the `nyc_any_dataset()` once the API endpoint has been discovered, that will pull the same data as the `nyc_pull_dataset()` example:
+
+```{text}
+nyc_311_data <- nyc_any_dataset(json_link = "https://data.cityofnewyork.us/resource/erm2-nwe9.json", limit = 3)
+```
+
+### Rule of Thumb
+
+While both functions provide access to NYC Open Data, they serve slightly different purposes.
+
+In general:
+- Use `nyc_pull_dataset()` when the dataset is available in `nyc_list_datasets()`
+- Use `nyc_any_dataset()` when working with datasets outside the built-in catalog
+
+Together, these functions allow users to either quickly access curated datasets or flexibly query any dataset available on the NYC Open Data portal.
+
+## Real World Example
+
+NYC has a population of almost 8.5 million people. By calling 311, residents are able to make comments, inquiries, complaints, and requests to the city agencies. All 311 service requests are contained in the dataset, [found here](https://data.cityofnewyork.us/Social-Services/311-Service-Requests-from-2020-to-Present/erm2-nwe9/about_data). In R, the `nycOpenData` package can be used to pull this data directly.
 
 By using the `nyc_pull_dataset()` function, we can gather the most recent 311 calls in New York City, and filter based upon any of the columns inside the dataset.
 
-## Pulling a Small Sample
+### Pulling a Small Sample
 
 To start, let's pull a small sample to see what the data looks like. By default, the function pulls in the *10,000 most recent* requests, however, let's change that to only see the latest 3 requests. To do this, we can set `limit = 3`.
 
@@ -48,7 +98,7 @@ Let's now take an example of the last 3 requests from the borough Brooklyn. The 
 
 ```{r filter-brooklyn}
 
-brooklyn_311 <- nyc_pull_dataset("nyc_311",limit = 3, filters = list(borough = "BROOKLYN"))
+brooklyn_311 <- nyc_pull_dataset(key = "nyc_311",limit = 3, filters = list(borough = "BROOKLYN"))
 brooklyn_311
 
 # Checking to see the filtering worked
@@ -81,7 +131,7 @@ brooklyn_nypd |>
 
 We successfully created our dataset that contains the 50 most recent requests regarding the NYPD in the borough Brooklyn.
 
-## Mini analysis
+### Mini analysis
 
 Now that we have successfully pulled the data and have it in R, let's do a mini analysis on using the `complaint_type` column, to figure out what NYC residents in Brooklyn are complaining about to the NYPD.
 
@@ -117,4 +167,4 @@ As demonstrated in this vignette, the package provides a seamless workflow for t
 
 If you use this package for research or educational purposes, please cite it as follows:
 
-Martinez C (2026). nycOpenData: Convenient Access to NYC Open Data API Endpoints. R package version 0.1.6, <https://martinezc1.github.io/nycOpenData/>.
+Martinez C (2026). nycOpenData: Convenient Access to NYC Open Data API Endpoints. R package version 0.2.0, <https://martinezc1.github.io/nycOpenData/>.

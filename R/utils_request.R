@@ -11,12 +11,6 @@
   stop(msg, call. = FALSE)
 }
 
-# consistent snake_case column names
-.nyc_clean_names <- function(df) {
-  # janitor::clean_names() returns syntactic, snake_case names
-  janitor::clean_names(df)
-}
-
 # light, safe type coercion (numeric/logical + ISO datetime when obvious)
 .nyc_coerce_types <- function(df) {
   if (!inherits(df, "data.frame") || nrow(df) == 0) return(df)
@@ -89,18 +83,18 @@
   df
 }
 
-# optional, user-controlled "cleaning pipeline" (reviewer r16/r17)
 .nyc_postprocess <- function(df, clean_names = TRUE, coerce_types = TRUE) {
   if (!inherits(df, "data.frame")) return(df)
 
   if (isTRUE(clean_names)) {
-    df <- .nyc_clean_names(df)
+    df <- janitor::clean_names(df)
   }
+
   if (isTRUE(coerce_types)) {
     df <- .nyc_coerce_types(df)
   }
 
-  tibble::as_tibble(df, .name_repair = "minimal")
+  tibble::as_tibble(df)
 }
 
 .nyc_validate_limit <- function(limit) {
