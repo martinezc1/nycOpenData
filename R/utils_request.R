@@ -89,12 +89,11 @@
   if (isTRUE(clean_names)) {
     df <- janitor::clean_names(df)
   }
-
   if (isTRUE(coerce_types)) {
     df <- .nyc_coerce_types(df)
   }
 
-  tibble::as_tibble(df)
+  tibble::as_tibble(df, .name_repair = "minimal")
 }
 
 .nyc_validate_limit <- function(limit) {
