@@ -5,12 +5,13 @@
 \title{Pull a NYC Open Data dataset from the nycOpenData catalog}
 \usage{
 nyc_pull_dataset(
-  key,
+  dataset,
   limit = 10000,
   filters = list(),
   date = NULL,
   from = NULL,
   to = NULL,
+  date_field = NULL,
   where = NULL,
   order = NULL,
   timeout_sec = 30,
@@ -19,21 +20,23 @@ nyc_pull_dataset(
 )
 }
 \arguments{
-\item{key}{A dataset key from `nyc_list_datasets()` (e.g., "nyc_311_2010_2019").}
+\item{dataset}{A dataset key or UID from `nyc_list_datasets()`.}
 
 \item{limit}{Number of rows to retrieve (default = 10,000).}
 
 \item{filters}{Optional named list of filters. Supports vectors (translated to IN()).}
 
-\item{date}{Optional single date (matches all times that day) using the catalog `default_date_field`.}
+\item{date}{Optional single date (matches all times that day) using `date_field`.}
 
-\item{from}{Optional start date (inclusive) using the catalog `default_date_field`.}
+\item{from}{Optional start date (inclusive) using `date_field`.}
 
-\item{to}{Optional end date (exclusive) using the catalog `default_date_field`.}
+\item{to}{Optional end date (exclusive) using `date_field`.}
+
+\item{date_field}{Optional date/datetime column to use with `date`, `from`, or `to`.}
 
 \item{where}{Optional raw SoQL WHERE clause. If date/from/to are provided, they are AND-ed with this.}
 
-\item{order}{Optional SoQL order override. If NULL, uses catalog `default_order` if present.}
+\item{order}{Optional SoQL ORDER BY clause.}
 
 \item{timeout_sec}{Request timeout in seconds (default = 30).}
 
@@ -45,15 +48,27 @@ nyc_pull_dataset(
 A tibble.
 }
 \description{
-Uses a dataset `key` (from `nyc_list_datasets()`) to pull data from NYC Open Data
-with sensible defaults (dataset id, default ordering, optional default date field).
+Uses a dataset `key` or `uid` (from `nyc_list_datasets()`) to pull data
+from NYC Open Data.
 }
 \examples{
 if (interactive() && curl::has_internet()) {
   # Pull by key
-  nyc_pull_dataset("nyc_311_2010_2019", limit = 3)
+  nyc_pull_dataset("311_service_requests", limit = 3)
+
+  # Pull by UID
+  nyc_pull_dataset("erm2-nwe9", limit = 3)
 
   # Filters
-  nyc_pull_dataset("nyc_311_2010_2019", limit = 3, filters = list(borough = "QUEENS"))
+  nyc_pull_dataset("erm2-nwe9", limit = 3, filters = list(borough = "QUEENS"))
+
+  # Date filtering
+  nyc_pull_dataset(
+    "erm2-nwe9",
+    from = "2023-01-01",
+    to = "2024-01-01",
+    date_field = "created_date",
+    limit = 100
+  )
 }
 }

@@ -1,27 +1,29 @@
-# nycOpenData 0.1.6
+# nycOpenData 0.2.1
 
-## New features and documentation
+## Major improvements
+This release introduces a significant redesign of how datasets are accessed in nycOpenData, moving from a fixed set of wrapper functions to a dynamic, catalog-driven approach.
 
-This release marks the first contributor-powered expansion of nycOpenData, with new dataset functions, tests, and documentation added by student contributors.
+- Introduced `nyc_list_datasets()` to retrieve the live NYC Open Data catalog.
+- Introduced `nyc_pull_dataset()` as the primary interface for pulling datasets using either a generated key or dataset uid.
+- Dataset keys are now generated dynamically using `janitor::make_clean_names()` based on dataset names.
+- Users can now access a much broader set of datasets without requiring dedicated wrapper functions.
 
-- Added support for the NYPD Hate Crimes dataset (Crystal Adote, @crystalna20).
-- Added support for the Local Law 18 Pay and Demographics Report dataset (Jonah Dratfield, @jdratfield38).
-- Added support for NYPD Shooting Incident Data (Year To Date) (Joyce Escatel-Flores, @JoyceEscatel).
-- Added support for New York City Population by Borough, 1950–2040 (Rob Hutto, @robhutto).
-- Added support for Inmate Incidents – Slashing and Stabbing (Isley Jean-Pierre, @ijpier).
-- Added support for the NYC Wetlands dataset, including tests and vignette (Shannon Joyce, @shannonjoyce).
-- Added support for the NYCHA Violations dataset (Laura Rose-Werner, @laurarosewerner).
-- Added support for NYC Climate Projections: Extreme Events and Sea Level Rise (Emma Tupone, @emmatup0205).
-- Added support for Local Law 97 of 2021 – Pets in Shelter Report (Xinru Wang, @xrwangxr).
+## New features
+- Added support for flexible dataset selection using either:
+  - human-readable keys (e.g., "311_service_requests")
+  - or stable dataset UIDs (e.g., "erm2-nwe9")
+- Added explicit support for date filtering using `date`, `from`, and `to` arguments with user-specified `date_field`.
+- Improved filtering capabilities with support for vectorized filters (translated to `IN` clauses).
 
-Each new dataset function follows the nyc_*() interface design, includes documentation, and integrates with the package’s internal request handling system.
-
-## Documentation and vignettes
-
-- Expanded vignettes and examples accompanying new dataset functions.
-- Continued improvements to reproducible workflow demonstrations across datasets.
+## Documentation
+- Updated documentation to reflect the new catalog-driven workflow.
+- Clarified differences between dataset keys and UIDs, including stability considerations.
+- Improved examples demonstrating filtering and date-based queries.
+- Internal improvements
+- Refactored internal request handling to support dynamic catalog lookup.
+- Improved validation for inputs such as dataset identifiers and date filtering parameters.
+- Reduced reliance on individual dataset wrapper functions in favor of a unified interface.
 
 ## Maintenance
-
-- Ongoing improvements to internal request handling and API reliability.
-- No breaking changes to existing function interfaces.
+- No breaking changes to existing function signatures, though users are encouraged to adopt the new catalog-based workflow.
+- Continued improvements to API reliability and internal utilities.

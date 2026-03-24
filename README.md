@@ -10,11 +10,11 @@
 [![R Weekly](https://img.shields.io/badge/Featured%20on-R%20Weekly-blue)](https://rweekly.org/#RintheRealWorld)
 [![R-CMD-check](https://github.com/martinezc1/nycOpenData/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/martinezc1/nycOpenData/actions/workflows/R-CMD-check.yaml)
 
-Version **0.2.0** introduces a streamlined, catalog-driven interface for NYC Open Data.
+Version **0.2.1** introduces a streamlined, catalog-driven interface for NYC Open Data.
 
 Instead of maintaining dozens of individual dataset wrappers, the package now provides three core functions:
 
-- `nyc_list_datasets()` — Browse available datasets in the built-in catalog
+- `nyc_list_datasets()` — Browse available datasets from the live NYC Open Data catalog
 - `nyc_pull_dataset()` — Pull any cataloged dataset by key, with filtering, ordering, and optional date controls
 - `nyc_any_dataset()` — Pull any NYC Open Data dataset directly via its Socrata JSON endpoint 
 

@@ -18,11 +18,11 @@ output: github_document
 with **no API keys** or manual downloads required. The package is available on 
 **CRAN**.
 
-Version **0.2.0** introduces a streamlined, catalog-driven interface for NYC Open Data.
+Version **0.2.1** introduces a streamlined, catalog-driven interface for NYC Open Data.
 
 Instead of maintaining dozens of individual dataset wrappers, the package now provides three core functions:
 
-- `nyc_list_datasets()` — Browse available datasets in the built-in catalog
+- `nyc_list_datasets()` — Browse available datasets from the live NYC Open Data catalog
 - `nyc_pull_dataset()` — Pull any cataloged dataset by key, with filtering, ordering, and optional date controls
 - `nyc_any_dataset()` — Pull any NYC Open Data dataset directly via its Socrata JSON endpoint 
 

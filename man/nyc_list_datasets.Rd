@@ -10,8 +10,10 @@ nyc_list_datasets()
 A tibble of available datasets.
 }
 \description{
-Returns a catalog of datasets supported by this package.
+Returns a catalog of datasets available from NYC Open Data.
 }
 \examples{
-nyc_list_datasets()
+if (interactive() && curl::has_internet()) {
+  nyc_list_datasets()
+}
 }

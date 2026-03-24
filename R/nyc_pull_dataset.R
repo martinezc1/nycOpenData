@@ -1,16 +1,23 @@
-#' Pull a NYC Open Data dataset from the nycOpenData catalog
+#' Pull a NYC Open Data dataset from the NYC Open Data catalog
 #'
-#' Uses a dataset `key` (from `nyc_list_datasets()`) to pull data from NYC Open Data
-#' with sensible defaults (dataset id, default ordering, optional default date field).
+#' Uses a dataset `key` or `uid` from `nyc_list_datasets()` to pull data
+#' from NYC Open Data.
 #'
-#' @param key A dataset key from `nyc_list_datasets()` (e.g., "nyc_311_2010_2019").
+#' Dataset keys are generated from dataset names using
+#' `janitor::make_clean_names()`. Because keys are derived from live catalog
+#' metadata, dataset UIDs are the more stable option.
+#'
+#' @param dataset A dataset key or UID from `nyc_list_datasets()`.
 #' @param limit Number of rows to retrieve (default = 10,000).
 #' @param filters Optional named list of filters. Supports vectors (translated to IN()).
-#' @param date Optional single date (matches all times that day) using the catalog `default_date_field`.
-#' @param from Optional start date (inclusive) using the catalog `default_date_field`.
-#' @param to Optional end date (exclusive) using the catalog `default_date_field`.
-#' @param where Optional raw SoQL WHERE clause. If date/from/to are provided, they are AND-ed with this.
-#' @param order Optional SoQL order override. If NULL, uses catalog `default_order` if present.
+#' @param date Optional single date (matches all times that day) using `date_field`.
+#' @param from Optional start date (inclusive) using `date_field`.
+#' @param to Optional end date (exclusive) using `date_field`.
+#' @param date_field Optional date/datetime column to use with `date`, `from`, or `to`.
+#'   Must be supplied when `date`, `from`, or `to` are used.
+#' @param where Optional raw SoQL WHERE clause. If `date`, `from`, or `to` are
+#'   provided, their conditions are AND-ed with this.
+#' @param order Optional SoQL ORDER BY clause.
 #' @param timeout_sec Request timeout in seconds (default = 30).
 #' @param clean_names Logical; if TRUE, convert column names to snake_case (default = TRUE).
 #' @param coerce_types Logical; if TRUE, attempt light type coercion (default = TRUE).
@@ -19,73 +26,96 @@
 #' @examples
 #' if (interactive() && curl::has_internet()) {
 #'   # Pull by key
-#'   nyc_pull_dataset("nyc_311_2010_2019", limit = 3)
+#'   nyc_pull_dataset("311_service_requests", limit = 3)
+#'
+#'   # Pull by UID
+#'   nyc_pull_dataset("erm2-nwe9", limit = 3)
 #'
 #'   # Filters
-#'   nyc_pull_dataset("nyc_311_2010_2019", limit = 3, filters = list(borough = "QUEENS"))
+#'   nyc_pull_dataset("erm2-nwe9", limit = 3, filters = list(borough = "QUEENS"))
+#'
+#'   # Date filtering
+#'   nyc_pull_dataset(
+#'     "erm2-nwe9",
+#'     from = "2023-01-01",
+#'     to = "2024-01-01",
+#'     date_field = "created_date",
+#'     limit = 100
+#'   )
 #' }
 #' @export
-nyc_pull_dataset <- function(key,
+nyc_pull_dataset <- function(dataset,
                              limit = 10000,
                              filters = list(),
                              date = NULL,
                              from = NULL,
                              to = NULL,
+                             date_field = NULL,
                              where = NULL,
                              order = NULL,
                              timeout_sec = 30,
                              clean_names = TRUE,
                              coerce_types = TRUE) {
 
-  # key validation
-  if (!is.character(key) || length(key) != 1 || is.na(key) || !nzchar(key)) {
-    stop("`key` must be a single, non-missing character value.", call. = FALSE)
+  # dataset validation
+  if (!is.character(dataset) || length(dataset) != 1 || is.na(dataset) || !nzchar(dataset)) {
+    stop("`dataset` must be a single, non-missing character value.", call. = FALSE)
   }
 
-  cat_tbl <- tibble::as_tibble(.nyc_catalog)
+  cat_tbl <- .nyc_catalog_tbl()
 
   # sanity checks on required columns
-  req <- c("key", "dataset_id")
+  req <- c("key", "uid")
   missing_req <- setdiff(req, names(cat_tbl))
   if (length(missing_req) > 0) {
     stop(
-      paste0("Internal error: catalog missing required column(s): ",
-             paste(missing_req, collapse = ", "), "."),
-      call. = FALSE
-    )
-  }
-
-  row <- cat_tbl[cat_tbl$key == key, , drop = FALSE]
-  if (nrow(row) == 0) {
-    stop(
       paste0(
-        "Unknown `key`: '", key, "'. ",
-        "Use `nyc_list_datasets()` to see available keys."
+        "Internal error: catalog missing required column(s): ",
+        paste(missing_req, collapse = ", "),
+        "."
       ),
       call. = FALSE
     )
   }
+
+  row <- cat_tbl[cat_tbl$key == dataset | cat_tbl$uid == dataset, , drop = FALSE]
+
+  if (nrow(row) == 0) {
+    stop(
+      paste0(
+        "Unknown dataset: '", dataset, "'. ",
+        "Use `nyc_list_datasets()` to see available keys and UIDs."
+      ),
+      call. = FALSE
+    )
+  }
+
   if (nrow(row) > 1) {
-    stop(paste0("Internal error: duplicate catalog key: '", key, "'."), call. = FALSE)
+    stop(
+      paste0(
+        "Multiple catalog matches found for '", dataset, "'. ",
+        "Please use the dataset UID instead."
+      ),
+      call. = FALSE
+    )
   }
 
-  dataset_id <- row$dataset_id[[1]]
+  uid <- row$uid[[1]]
 
-  # order: user override > catalog default_order > NULL
-  order_final <- order
-  if (is.null(order_final) && "default_order" %in% names(row)) {
-    oo <- row$default_order[[1]]
-    if (!is.na(oo) && nzchar(oo)) order_final <- oo
+  # require date_field if user supplies date filters
+  if ((!is.null(date) || !is.null(from) || !is.null(to)) &&
+      (is.null(date_field) || !is.character(date_field) || length(date_field) != 1 || !nzchar(date_field))) {
+    .nyc_abort(
+      "If `date`, `from`, or `to` are supplied, you must also provide a single non-empty `date_field`."
+    )
   }
 
-  # date where: only if catalog provides default_date_field
-  date_field <- NULL
-  if ("default_date_field" %in% names(row)) {
-    df <- row$default_date_field[[1]]
-    if (!is.na(df) && nzchar(df)) date_field <- df
-  }
-
-  date_where <- .nyc_build_date_where(date_field, date = date, from = from, to = to)
+  date_where <- .nyc_build_date_where(
+    date_field = date_field,
+    date = date,
+    from = from,
+    to = to
+  )
 
   where_final <- where
   if (!is.null(date_where)) {
@@ -94,23 +124,13 @@ nyc_pull_dataset <- function(key,
     } else {
       where_final <- paste0("(", where_final, ") AND (", date_where, ")")
     }
-  } else {
-    # If user asked for dates but catalog doesn't define a date field, error early
-    if (!is.null(date) || !is.null(from) || !is.null(to)) {
-      .nyc_abort(
-        paste0(
-          "This dataset does not define `default_date_field` in the catalog, ",
-          "so `date`, `from`, and `to` are not supported for key: '", key, "'."
-        )
-      )
-    }
   }
 
   .nyc_dataset_request(
-    dataset_id = dataset_id,
+    dataset_id = uid,
     limit = limit,
     filters = filters,
-    order = order_final,
+    order = order,
     where = where_final,
     timeout_sec = timeout_sec,
     clean_names = clean_names,
