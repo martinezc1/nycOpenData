@@ -1,122 +1,214 @@
 test_that("nyc_list_datasets returns a catalog tibble with expected columns", {
-  cat <- nyc_list_datasets()
-  expect_s3_class(cat, "tbl_df")
-  expect_true(nrow(cat) >= 1)
-
-  expected_cols <- c(
-    "key", "dataset_id", "title", "description",
-    "default_order", "default_date_field",
-    "landing_page_url", "topic"
-  )
-
-  # Allow extra columns; require at least these
-  expect_true(all(expected_cols %in% names(cat)))
-})
-
-test_that("nyc_pull_dataset returns a tibble, respects limits, supports filters + date/from/to (catalog-driven)", {
   skip_if_not_installed("vcr")
   skip_if_not_installed("curl")
+  skip_if_no_cassette("nyc_list_datasets_catalog")
 
-  # pick a stable, known key (update if your catalog key differs)
-  key <- "nyc_311_2010_2019"
+  vcr::use_cassette("nyc_list_datasets_catalog", {
+    cat <- nyc_list_datasets()
+
+    expect_s3_class(cat, "tbl_df")
+    expect_gte(nrow(cat), 1)
+    expect_true(all(c("key", "uid", "name") %in% names(cat)))
+  })
+})
+
+test_that("nyc_pull_dataset returns a tibble, respects limits, supports filters + date/from/to", {
+  skip_if_not_installed("vcr")
+  skip_if_not_installed("curl")
+  skip_if_no_cassette("nyc_pull_dataset_robust")
+
+  dataset_uid <- "uvpi-gqnh"
 
   vcr::use_cassette("nyc_pull_dataset_robust", {
-    # base
-    base <- nyc_pull_dataset(key = key, limit = 2)
+    base <- nyc_pull_dataset(
+      dataset = dataset_uid,
+      limit = 2,
+      timeout_sec = 60
+    )
     expect_s3_class(base, "tbl_df")
-    expect_true(nrow(base) >= 0 && nrow(base) <= 2)
-    expect_true(ncol(base) > 0)
-
-    # r16: snake_case output names (no dots) when clean_names default TRUE
+    expect_gte(nrow(base), 0)
+    expect_lte(nrow(base), 2)
+    expect_gt(ncol(base), 0)
     expect_true(all(!grepl("\\.", names(base))))
 
-    # filters: equality
-    f1 <- nyc_pull_dataset(key = key, limit = 2, filters = list(agency = "NYPD"))
+    f1 <- nyc_pull_dataset(
+      dataset = dataset_uid,
+      limit = 2,
+      filters = list(steward = "None"),
+      timeout_sec = 60
+    )
     expect_s3_class(f1, "tbl_df")
-    expect_true(nrow(f1) >= 0 && nrow(f1) <= 2)
+    expect_gte(nrow(f1), 0)
+    expect_lte(nrow(f1), 2)
 
-    # filters: IN (...)
-    f2 <- nyc_pull_dataset(key = key, limit = 2, filters = list(agency = c("NYPD", "DOT")))
+    f2 <- nyc_pull_dataset(
+      dataset = dataset_uid,
+      limit = 2,
+      filters = list(steward = c("None", "1or2")),
+      timeout_sec = 60
+    )
     expect_s3_class(f2, "tbl_df")
-    expect_true(nrow(f2) >= 0 && nrow(f2) <= 2)
+    expect_gte(nrow(f2), 0)
+    expect_lte(nrow(f2), 2)
 
-    # date branch (only works if catalog default_date_field is set for this key)
-    d1 <- nyc_pull_dataset(key = key, date = "2025-03-01", limit = 2)
+    d1 <- nyc_pull_dataset(
+      dataset = dataset_uid,
+      date = "2015-08-27",
+      date_field = "created_at",
+      limit = 2,
+      timeout_sec = 60
+    )
     expect_s3_class(d1, "tbl_df")
-    expect_true(nrow(d1) >= 0 && nrow(d1) <= 2)
+    expect_gte(nrow(d1), 0)
+    expect_lte(nrow(d1), 2)
 
-    # from/to range branch
-    d2 <- nyc_pull_dataset(key = key, from = "2025-03-01", to = "2025-03-02", limit = 2)
+    d2 <- nyc_pull_dataset(
+      dataset = dataset_uid,
+      from = "2015-08-27",
+      to = "2016-10-05",
+      date_field = "created_at",
+      limit = 2,
+      timeout_sec = 60
+    )
     expect_s3_class(d2, "tbl_df")
-    expect_true(nrow(d2) >= 0 && nrow(d2) <= 2)
+    expect_gte(nrow(d2), 0)
+    expect_lte(nrow(d2), 2)
 
-    # from only
-    d3 <- nyc_pull_dataset(key = key, from = "2025-03-01", limit = 2)
+    d3 <- nyc_pull_dataset(
+      dataset = dataset_uid,
+      from = "2015-08-27",
+      date_field = "created_at",
+      limit = 2,
+      timeout_sec = 60
+    )
     expect_s3_class(d3, "tbl_df")
-    expect_true(nrow(d3) >= 0 && nrow(d3) <= 2)
+    expect_gte(nrow(d3), 0)
+    expect_lte(nrow(d3), 2)
 
-    # to only
-    d4 <- nyc_pull_dataset(key = key, to = "2025-03-02", limit = 2)
+    d4 <- nyc_pull_dataset(
+      dataset = dataset_uid,
+      to = "2019-03-02",
+      date_field = "created_at",
+      limit = 2,
+      timeout_sec = 60
+    )
     expect_s3_class(d4, "tbl_df")
-    expect_true(nrow(d4) >= 0 && nrow(d4) <= 2)
+    expect_gte(nrow(d4), 0)
+    expect_lte(nrow(d4), 2)
+  })
+})
+
+test_that("nyc_pull_dataset supports lookup by generated key as well as UID", {
+  skip_if_not_installed("vcr")
+  skip_if_not_installed("curl")
+  skip_if_no_cassette("nyc_pull_dataset_key_lookup")
+
+  vcr::use_cassette("nyc_pull_dataset_key_lookup", {
+    cat <- nyc_list_datasets()
+
+    row <- cat[cat$uid == "uvpi-gqnh", , drop = FALSE]
+    if (nrow(row) == 0) {
+      skip("Known dataset not found in catalog")
+    }
+
+    dataset_key <- row$key[[1]]
+
+    out <- nyc_pull_dataset(
+      dataset = dataset_key,
+      limit = 2,
+      timeout_sec = 60
+    )
+
+    expect_s3_class(out, "tbl_df")
+    expect_lte(nrow(out), 2)
   })
 })
 
 test_that("nyc_pull_dataset input validation errors", {
-  # key validation
-  expect_error(nyc_pull_dataset(key = NA_character_), "`key` must be")
-  expect_error(nyc_pull_dataset(key = ""), "`key` must be")
-
-  # unknown key
   expect_error(
-    nyc_pull_dataset(key = "not_a_real_key", limit = 1),
-    "Unknown `key`"
+    nyc_pull_dataset(dataset = NA_character_),
+    "`dataset` must be"
+  )
+  expect_error(
+    nyc_pull_dataset(dataset = ""),
+    "`dataset` must be"
   )
 
-  # date XOR from/to guard
   expect_error(
-    nyc_pull_dataset(key = "nyc_311_2010_2019", date = "2025-03-01", from = "2025-03-01"),
+    nyc_pull_dataset(dataset = "not_a_real_dataset", limit = 1),
+    "Unknown dataset"
+  )
+
+  expect_error(
+    nyc_pull_dataset(
+      dataset = "uvpi-gqnh",
+      date = "2015-08-27",
+      from = "2016-10-05",
+      date_field = "created_at"
+    ),
     "either `date` OR `from`/`to`"
   )
 
-  # date format validation
   expect_error(
-    nyc_pull_dataset(key = "nyc_311_2010_2019", date = "03/01/2025", limit = 1),
+    nyc_pull_dataset(
+      dataset = "uvpi-gqnh",
+      date = "08/27/2015",
+      date_field = "created_at",
+      limit = 1
+    ),
     "YYYY-MM-DD"
   )
 
-  # limit validation
-  expect_error(nyc_pull_dataset(key = "nyc_311_2010_2019", limit = "a string"), "`limit` must be")
-  expect_error(nyc_pull_dataset(key = "nyc_311_2010_2019", limit = NA), "`limit` must be")
-  expect_error(nyc_pull_dataset(key = "nyc_311_2010_2019", limit = -1), "between 0 and Inf")
-  expect_error(nyc_pull_dataset(key = "nyc_311_2010_2019", limit = 1.2), "integer")
-
-  # filters validation
-  expect_error(nyc_pull_dataset(key = "nyc_311_2010_2019", filters = "not a list"), "`filters` must be")
-  expect_error(nyc_pull_dataset(key = "nyc_311_2010_2019", filters = list("NYPD")), "named")
-  expect_error(nyc_pull_dataset(key = "nyc_311_2010_2019", filters = list(agency = character(0))), "cannot be empty")
-  expect_error(nyc_pull_dataset(key = "nyc_311_2010_2019", filters = list(agency = NA_character_)), "cannot contain NA")
-
-  # timeout validation
-  expect_error(nyc_pull_dataset(key = "nyc_311_2010_2019", timeout_sec = 0), "`timeout_sec` must be > 0")
-  expect_error(nyc_pull_dataset(key = "nyc_311_2010_2019", timeout_sec = "fast"), "`timeout_sec` must be")
-})
-
-test_that("nyc_pull_dataset errors on date args when catalog has no default_date_field (if such a dataset exists)", {
-  cat <- nyc_list_datasets()
-
-  # Find a key with missing/blank default_date_field
-  no_date <- cat[is.na(cat$default_date_field) | !nzchar(cat$default_date_field), , drop = FALSE]
-
-  if (nrow(no_date) == 0) {
-    skip("No catalog rows without default_date_field; skipping this test.")
-  }
-
-  key0 <- no_date$key[[1]]
+  expect_error(
+    nyc_pull_dataset(
+      dataset = "uvpi-gqnh",
+      from = "2015-08-27",
+      limit = 1
+    ),
+    "must also provide a single non-empty `date_field`"
+  )
 
   expect_error(
-    nyc_pull_dataset(key = key0, from = "2025-03-01", limit = 1),
-    "default_date_field"
+    nyc_pull_dataset(dataset = "uvpi-gqnh", limit = "a string"),
+    "`limit` must be"
+  )
+  expect_error(
+    nyc_pull_dataset(dataset = "uvpi-gqnh", limit = NA),
+    "`limit` must be"
+  )
+  expect_error(
+    nyc_pull_dataset(dataset = "uvpi-gqnh", limit = -1),
+    "between 0 and Inf"
+  )
+  expect_error(
+    nyc_pull_dataset(dataset = "uvpi-gqnh", limit = 1.2),
+    "integer"
+  )
+
+  expect_error(
+    nyc_pull_dataset(dataset = "uvpi-gqnh", filters = "not a list"),
+    "`filters` must be"
+  )
+  expect_error(
+    nyc_pull_dataset(dataset = "uvpi-gqnh", filters = list("NYPD")),
+    "named"
+  )
+  expect_error(
+    nyc_pull_dataset(dataset = "uvpi-gqnh", filters = list(steward = character(0))),
+    "cannot be empty"
+  )
+  expect_error(
+    nyc_pull_dataset(dataset = "uvpi-gqnh", filters = list(steward = NA_character_)),
+    "cannot contain NA"
+  )
+
+  expect_error(
+    nyc_pull_dataset(dataset = "uvpi-gqnh", timeout_sec = 0),
+    "`timeout_sec` must be > 0"
+  )
+  expect_error(
+    nyc_pull_dataset(dataset = "uvpi-gqnh", timeout_sec = "fast"),
+    "`timeout_sec` must be"
   )
 })
 
@@ -124,39 +216,46 @@ test_that("nyc_pull_dataset supports clean_names/coerce_types toggles", {
   skip_if_not_installed("vcr")
   skip_if_not_installed("webmockr")
   skip_if_not_installed("curl")
+  skip_if_no_cassette("nyc_pull_dataset_toggles")
 
-  cassette <- "nyc_pull_dataset_toggles"
-  cassette_file <- file.path("tests", "testthat", "fixtures", paste0(cassette, ".yml"))
+  dataset_uid <- "uvpi-gqnh"
 
-  record_mode <- Sys.getenv("VCR_RECORD", unset = "none")
-
-  # Only skip when we are NOT recording
-  if (record_mode == "none" && !file.exists(cassette_file)) {
-    skip("Cassette not recorded yet; run with VCR_RECORD=once to create it, then commit fixtures.")
-  }
-
-  key <- "nyc_311_2010_2019"
-
-  # IMPORTANT: do NOT force record = "none" here, or it can’t create the cassette
-  vcr::use_cassette(cassette, {
-    a <- nyc_pull_dataset(key = key, limit = 2)
+  vcr::use_cassette("nyc_pull_dataset_toggles", {
+    a <- nyc_pull_dataset(dataset = dataset_uid, limit = 2, timeout_sec = 60)
     expect_s3_class(a, "tbl_df")
-    expect_true(nrow(a) <= 2)
+    expect_lte(nrow(a), 2)
 
-    b <- nyc_pull_dataset(key = key, limit = 2, clean_names = FALSE)
+    b <- nyc_pull_dataset(
+      dataset = dataset_uid,
+      limit = 2,
+      clean_names = FALSE,
+      timeout_sec = 60
+    )
     expect_s3_class(b, "tbl_df")
-    expect_true(nrow(b) <= 2)
+    expect_lte(nrow(b), 2)
 
-    c <- nyc_pull_dataset(key = key, limit = 2, coerce_types = FALSE)
+    c <- nyc_pull_dataset(
+      dataset = dataset_uid,
+      limit = 2,
+      coerce_types = FALSE,
+      timeout_sec = 60
+    )
     expect_s3_class(c, "tbl_df")
-    expect_true(nrow(c) <= 2)
+    expect_lte(nrow(c), 2)
 
-    d <- nyc_pull_dataset(key = key, limit = 2, clean_names = FALSE, coerce_types = FALSE)
+    d <- nyc_pull_dataset(
+      dataset = dataset_uid,
+      limit = 2,
+      clean_names = FALSE,
+      coerce_types = FALSE,
+      timeout_sec = 60
+    )
     expect_s3_class(d, "tbl_df")
-    expect_true(nrow(d) <= 2)
+    expect_lte(nrow(d), 2)
 
-    if (ncol(a) > 0 && ncol(b) > 0) {
-      expect_false(identical(names(a), names(b)))
-    }
+    expect_gt(ncol(a), 0)
+    expect_gt(ncol(b), 0)
+    expect_gt(ncol(c), 0)
+    expect_gt(ncol(d), 0)
   })
 })

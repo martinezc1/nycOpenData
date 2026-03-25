@@ -27,7 +27,7 @@ library(tidyr)
 
 New York City is made up of five boroughs: the Bronx, Brooklyn, Manhattan, Queens, and Staten Island. The population of each of these boroughs has varied throughout the past century. On the NYC Open Data portal, the [New York City Population by Borough, 1950 - 2040](https://data.cityofnewyork.us/City-Government/New-York-City-Population-by-Borough-1940-2040/xywu-7bv9) dataset hosts population estimates and projections.
 
-The `nyc_borough_population()` function provides access to historical census data and population projections from 1950 to 2040, allowing one to analyze demographic trends across Brooklyn, Bronx, Manhattan, Queens, and Staten Island.
+The `xywu-7bv9()` function provides access to historical census data and population projections from 1950 to 2040, allowing one to analyze demographic trends across Brooklyn, Bronx, Manhattan, Queens, and Staten Island.
 
 The `nycOpenData` package provides a streamlined interface for accessing New York City's vast open data resources. It connects directly to the NYC Open Data Portal. It is currently utilized as a primary tool for teaching data acquisition in [Reproducible Research Using R](https://martinezc1-reproducible-research-using-r.share.connect.posit.cloud/), helping students bridge the gap between raw city APIs and tidy data analysis.
 
@@ -36,7 +36,7 @@ The `nycOpenData` package provides a streamlined interface for accessing New Yor
 Let's start by pulling a small sample to see the structure:
 
 ```{r small-sample}
-small_sample <- nyc_pull_dataset("nyc_borough_population", limit = 5)
+small_sample <- nyc_pull_dataset("xywu-7bv9", limit = 5)
 small_sample
 
 # Seeing what columns are in the dataset
@@ -48,7 +48,7 @@ names(small_sample)
 Now let's pull the complete dataset to work with:
 
 ```{r full-data}
-population_data <- nyc_pull_dataset("nyc_borough_population")
+population_data <- nyc_pull_dataset("xywu-7bv9")
 
 population_data |>
   slice_head(n = 6)
@@ -59,7 +59,7 @@ population_data |>
 We can filter for a specific borough. Let's look at Brooklyn's population over time:
 
 ```{r filter-brooklyn}
-brooklyn_pop <- nyc_pull_dataset("nyc_borough_population", filters = list(borough = "Brooklyn"))
+brooklyn_pop <- nyc_pull_dataset("xywu-7bv9", filters = list(borough = "Brooklyn"))
 
 brooklyn_pop
 ```
@@ -71,7 +71,7 @@ Let's visualize population trends across boroughs. First, we need to reshape the
 ```{r population-trends, fig.alt="Line chart showing population trends for NYC's five boroughs from 1950 to 2040.", fig.cap="Population trends for NYC's five boroughs from 1950 to 2040, including historical data and projections.", fig.height=6, fig.width=8}
 
 # Get full dataset and filter for Total Population rows only
-population_data <- nyc_pull_dataset("nyc_borough_population")
+population_data <- nyc_pull_dataset("xywu-7bv9")
 
 # Clean borough names and filter to get individual boroughs (exclude NYC Total)
 borough_data <- population_data |>
@@ -113,7 +113,7 @@ pop_long |>
 
 ## Summary
 
-The `nyc_borough_population()` function provides easy access to demographic data for New York City spanning from 1950-2040. This enables analysis of long-term population trends, comparisons across boroughs, and exploration of projected future changes.
+The `xywu-7bv9()` function provides easy access to demographic data for New York City spanning from 1950-2040. This enables analysis of long-term population trends, comparisons across boroughs, and exploration of projected future changes.
 
 The `nycOpenData` package serves as a robust interface for the NYC Open Data portal, streamlining the path from raw city APIs to actionable insights. By abstracting the complexities of data acquisition—such as pagination, type-casting, and complex filtering—it allows users to focus on analysis rather than data engineering.
 

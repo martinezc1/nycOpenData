@@ -1,3 +1,6 @@
+#' @importFrom rlang .data
+NULL
+
 #' List datasets available in nycOpenData
 #'
 #' Retrieves the current NYC Open Data catalog and returns datasets available
@@ -26,11 +29,11 @@ nyc_list_datasets <- function() {
   )
 
   raw |>
-    dplyr::filter(type == "dataset") |>
+    dplyr::filter(.data$type == "dataset") |>
     dplyr::mutate(
-      key = janitor::make_clean_names(name)
+      key = janitor::make_clean_names(.data$name)
     ) |>
-    dplyr::filter(!is.na(uid), nzchar(uid)) |>
-    dplyr::distinct(uid, .keep_all = TRUE) |>
-    dplyr::relocate(key, uid, name)
+    dplyr::filter(!is.na(.data$uid), nzchar(.data$uid)) |>
+    dplyr::distinct(.data$uid, .keep_all = TRUE) |>
+    dplyr::relocate("key", "uid", "name")
 }

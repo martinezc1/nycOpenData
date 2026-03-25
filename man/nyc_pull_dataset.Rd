@@ -2,7 +2,7 @@
 % Please edit documentation in R/nyc_pull_dataset.R
 \name{nyc_pull_dataset}
 \alias{nyc_pull_dataset}
-\title{Pull a NYC Open Data dataset from the nycOpenData catalog}
+\title{Pull a NYC Open Data dataset from the NYC Open Data catalog}
 \usage{
 nyc_pull_dataset(
   dataset,
@@ -32,9 +32,11 @@ nyc_pull_dataset(
 
 \item{to}{Optional end date (exclusive) using `date_field`.}
 
-\item{date_field}{Optional date/datetime column to use with `date`, `from`, or `to`.}
+\item{date_field}{Optional date/datetime column to use with `date`, `from`, or `to`.
+Must be supplied when `date`, `from`, or `to` are used.}
 
-\item{where}{Optional raw SoQL WHERE clause. If date/from/to are provided, they are AND-ed with this.}
+\item{where}{Optional raw SoQL WHERE clause. If `date`, `from`, or `to` are
+provided, their conditions are AND-ed with this.}
 
 \item{order}{Optional SoQL ORDER BY clause.}
 
@@ -48,8 +50,13 @@ nyc_pull_dataset(
 A tibble.
 }
 \description{
-Uses a dataset `key` or `uid` (from `nyc_list_datasets()`) to pull data
+Uses a dataset `key` or `uid` from `nyc_list_datasets()` to pull data
 from NYC Open Data.
+}
+\details{
+Dataset keys are generated from dataset names using
+`janitor::make_clean_names()`. Because keys are derived from live catalog
+metadata, dataset UIDs are the more stable option.
 }
 \examples{
 if (interactive() && curl::has_internet()) {
