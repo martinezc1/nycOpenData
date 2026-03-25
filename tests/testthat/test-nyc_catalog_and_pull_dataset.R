@@ -259,3 +259,38 @@ test_that("nyc_pull_dataset supports clean_names/coerce_types toggles", {
     expect_gt(ncol(d), 0)
   })
 })
+
+test_that("nyc_pull_dataset throws internal error if catalog is corrupted", {
+  corrupted_catalog <- tibble::tibble(
+    key = "some_dataset",
+    name = "Some Dataset"
+  )
+
+  testthat::with_mocked_bindings(
+    .nyc_catalog_tbl = function() corrupted_catalog,
+    {
+      expect_error(
+        nyc_pull_dataset("some_dataset"),
+        "Internal error: catalog missing required column"
+      )
+    }
+  )
+})
+
+test_that("nyc_pull_dataset errors if multiple matches found", {
+  duplicate_catalog <- tibble::tibble(
+    key = c("duplicate", "duplicate"),
+    uid = c("uid-1", "uid-2"),
+    name = c("Dataset 1", "Dataset 2")
+  )
+
+  testthat::with_mocked_bindings(
+    .nyc_catalog_tbl = function() duplicate_catalog,
+    {
+      expect_error(
+        nyc_pull_dataset("duplicate"),
+        "Multiple catalog matches found"
+      )
+    }
+  )
+})

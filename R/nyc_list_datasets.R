@@ -1,6 +1,3 @@
-#' @importFrom rlang .data
-NULL
-
 #' List datasets available in nycOpenData
 #'
 #' Retrieves the current NYC Open Data catalog and returns datasets available
@@ -14,6 +11,7 @@ NULL
 #' if (interactive() && curl::has_internet()) {
 #'   nyc_list_datasets()
 #' }
+#' @importFrom rlang .data
 #' @export
 nyc_list_datasets <- function() {
   .nyc_catalog_tbl()
