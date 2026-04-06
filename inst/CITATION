@@ -6,7 +6,7 @@ bibentry(
   author  = person("Christian", "Martinez",
                    email = "c.martinez0@outlook.com",
                    comment = c(ORCID = "0009-0005-6026-6454")),
-  year    = format(Sys.Date(), "%Y"),
-  note    = paste0("R package version ", utils::packageVersion("nycOpenData")),
+  year    = "2026",
+  note    = "R package version 0.2.1",
   url     = "https://github.com/martinezc1/nycOpenData"
 )
