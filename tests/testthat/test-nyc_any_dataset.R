@@ -2,7 +2,7 @@ test_that("nyc_any_dataset returns a tibble, respects limits, and supports postp
   skip_if_not_installed("vcr")
   skip_if_not_installed("curl")
 
-  endpoint <- "https://data.cityofnewyork.us/resource/erm2-nwe9.json"
+  endpoint <- "https://data.cityofnewyork.us/resource/xywu-7bv9.json"
 
   vcr::use_cassette("nyc_any_dataset_robust", {
     base <- nyc_any_dataset(endpoint, limit = 2)
@@ -28,8 +28,8 @@ test_that("nyc_any_dataset returns a tibble, respects limits, and supports postp
 test_that("nyc_any_dataset input validation errors", {
   expect_error(nyc_any_dataset(NA_character_), "`json_link` must be")
   expect_error(nyc_any_dataset("not a url"), "ending in .json")
-  expect_error(nyc_any_dataset("https://data.cityofnewyork.us/resource/erm2-nwe9"), "ending in .json")
+  expect_error(nyc_any_dataset("https://data.cityofnewyork.us/resource/xywu-7bv9"), "ending in .json")
 
-  expect_error(nyc_any_dataset("https://data.cityofnewyork.us/resource/erm2-nwe9.json", limit = "bad"), "`limit` must be")
-  expect_error(nyc_any_dataset("https://data.cityofnewyork.us/resource/erm2-nwe9.json", timeout_sec = 0), "`timeout_sec` must be > 0")
+  expect_error(nyc_any_dataset("https://data.cityofnewyork.us/resource/xywu-7bv9.json", limit = "bad"), "`limit` must be")
+  expect_error(nyc_any_dataset("https://data.cityofnewyork.us/resource/xywu-7bv9.json", timeout_sec = 0), "`timeout_sec` must be > 0")
 })

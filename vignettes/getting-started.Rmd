@@ -30,12 +30,16 @@ The `nycOpenData` package provides a streamlined interface for accessing New Yor
 
 ### The `nyc_pull_dataset()` function
 
-The primary way to pull data in this package is the `nyc_pull_dataset()` function, which works in tandem with `nyc_list_datasets()`. You do not need to know anything about API keys or authentication.
+The primary way to pull data in this package is the `nyc_pull_dataset()` function, which works in tandem with `nyc_list_datasets()`. Most workflows do not require users to manually construct API requests or manage authentication details.
 
-The first step would be to call the `nyc_list_datasets()` to see what datasets are in the list and available to use in the `nyc_pull_dataset()` function. The provides information for thousands of datasets found on the portal.
+The first step would be to call the `nyc_list_datasets()` to see what datasets are in the list and available to use in the `nyc_pull_dataset()` function. This provides information about datasets available through the live NYC Open Data catalog used by the package.
 
 ```{r nyc-list-datasets}
-nyc_list_datasets() |> head()
+catalog <- nyc_list_datasets()
+
+catalog |>
+  filter(grepl("collision", name, ignore.case = TRUE)) |>
+  select(key, uid, name)
 ```
 
 The output includes columns such as the dataset title, description, and link to the source. The most important pieces are the key **and** uid. You need **either** in order to use the `nyc_pull_dataset()` function. You can put **either** the key value or uid value into the `dataset =` filter inside of `nyc_pull_dataset()`.
@@ -54,9 +58,20 @@ No matter if we put the `uid` or the `key` as the value for `dataset =`, we succ
 
 ### The `nyc_any_dataset()` function
 
-The easiest workflow is to use `nyc_list_datasets()` together with `nyc_pull_dataset()`. However, there are ample datasets on the portal, with new ones being added all the time, and so the list does not have all of the datasets.
+The easiest workflow is to use `nyc_list_datasets()` together with `nyc_pull_dataset()`. Because the catalog is retrieved dynamically from NYC Open Data, many newly published datasets are automatically available through the package.
 
-In the event that you have a particular dataset you want to use in R that is not in the list, you can use the `nyc_any_dataset()`. The only requirement is the dataset’s API endpoint (a URL provided by the NYC Open Data portal). Here are the steps to get it:
+In the event that you have a particular dataset you want to use in R that is not in the list, you can use the `nyc_any_dataset()`. The only requirement is the dataset’s API endpoint (a URL provided by the NYC Open Data Portal).
+
+NYC Open Data JSON endpoints typically follow this structure:
+
+`https://data.cityofnewyork.us/resource/<dataset_uid>.json`
+
+For example, the Motor Vehicle Collisions dataset has the UID `"h9gi-nx95"`,
+so its JSON endpoint becomes:
+
+`https://data.cityofnewyork.us/resource/h9gi-nx95.json`
+
+Here are the steps to get it:
 
 1. On the NYC Open Data Portal, go to the dataset you want to work with.
 2. Click on "Export" (next to the actions button on the right hand side).
@@ -85,9 +100,9 @@ Together, these functions allow users to either quickly access the datasets or f
 
 NYC has a population of almost 8.5 million people, and while there are a lot of people taking public transportation, there are still many drivers. Unfortunately, there are sometimes crashes that take place, and all collision data are contained in the dataset, [found here](https://data.cityofnewyork.us/Public-Safety/Motor-Vehicle-Collisions-Crashes/h9gi-nx95/about_data). In R, the `nycOpenData` package can be used to pull this data directly.
 
-By using the `nyc_pull_dataset()` function, we can gather the most recent 311 calls in New York City, and filter based upon any of the columns inside the dataset.
+By using the `nyc_pull_dataset()` function, we can gather recent motor vehicle collision records from New York City and filter based on any columns available in the dataset.
 
-Let's take an example of the last 3 requests from the borough Brooklyn. The `nyc_311()` function can filter based off any of the columns in the dataset. To filter, we add `filters = list()` and put whatever filters we would like inside. From our `colnames` call before, we know that there is a column called "borough" which we can use to accomplish this.
+Let's take an example of the last 2 requests from the borough Brooklyn. The `nyc_pull_dataset()` function can filter based off any of the columns in the dataset. To filter, we add `filters = list()` and put whatever filters we would like inside. From our `colnames` call before, we know that there is a column called "borough" which we can use to accomplish this.
 
 ```{r filter-brooklyn}
 
@@ -122,15 +137,17 @@ brooklyn_sedan |>
   distinct(borough)
 ```
 
-We successfully created our dataset that contains the 50 requests regarding a Sedan in the borough Brooklyn.
+We successfully created a dataset containing the 50 most recent Brooklyn collisions involving a Sedan.
+
+Advanced users may also provide raw SoQL queries through the `where` argument in `nyc_pull_dataset()`.
 
 ### Mini analysis
 
 Now that we have successfully pulled the data and have it in R, let's do a mini analysis on using the `contributing_factor_vehicle_1` column, to figure out what are the main reasons for the collisions.
 
-To do this, we will create a bar graph of the complaint types.
+To do this, we will create a bar graph of the contributing factors associated with the collisions.
 
-```{r compaint-type-graph, fig.alt="Bar chart showing the frequency of collision contributing factors in Brooklyn involving a Sedan.", fig.cap="ar chart showing the frequency of collision contributing factors in Brooklyn involving a Sedan.", fig.height=5, fig.width=7}
+```{r compaint-type-graph, fig.alt="Bar chart showing the frequency of collision contributing factors in Brooklyn involving a Sedan.", fig.cap="Bar chart showing the frequency of collision contributing factors in Brooklyn involving a Sedan.", fig.height=5, fig.width=7}
 # Visualizing the distribution, ordered by frequency
 brooklyn_sedan |>
   count(contributing_factor_vehicle_1) |>
@@ -147,11 +164,13 @@ brooklyn_sedan |>
   )
 ```
 
-This graph shows us not only *which* complaints were made, but *how many* of each complaint were made.
+This graph shows us not only which contributing factors appeared most frequently,
+but also how often each factor occurred in the dataset.
 
 ## Summary
 
-The `nycOpenData` package serves as a robust interface for the NYC Open Data portal, streamlining the path from raw city APIs to actionable insights. By abstracting the complexities of data acquisition—such as pagination, type-casting, and complex filtering—it allows users to focus on analysis rather than data engineering.
+The `nycOpenData` package serves as a robust interface for the NYC Open Data portal, streamlining the path from raw city APIs to actionable insights. By simplifying common data acquisition tasks—such as filtering, downloading,
+and optional type coercion—it allows users to focus on analysis rather than data engineering.
 
 As demonstrated in this vignette, the package provides a seamless workflow for targeted data retrieval, automated filtering, and rapid visualization.
 
@@ -159,4 +178,4 @@ As demonstrated in this vignette, the package provides a seamless workflow for t
 
 If you use this package for research or educational purposes, please cite it as follows:
 
-Martinez C (2026). nycOpenData: Convenient Access to NYC Open Data API Endpoints. R package version 0.2.0, <https://martinezc1.github.io/nycOpenData/>.
+Martinez C (2026). nycOpenData: Convenient Access to NYC Open Data API Endpoints. R package version 0.2.2, <https://martinezc1.github.io/nycOpenData/>.

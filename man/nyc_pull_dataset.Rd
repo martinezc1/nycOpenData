@@ -2,7 +2,7 @@
 % Please edit documentation in R/nyc_pull_dataset.R
 \name{nyc_pull_dataset}
 \alias{nyc_pull_dataset}
-\title{Pull a NYC Open Data dataset from the NYC Open Data catalog}
+\title{Pull a NYC Open Data dataset}
 \usage{
 nyc_pull_dataset(
   dataset,
@@ -20,54 +20,111 @@ nyc_pull_dataset(
 )
 }
 \arguments{
-\item{dataset}{A dataset key or UID from `nyc_list_datasets()`.}
+\item{dataset}{A single dataset `key` or Socrata dataset `uid` from
+[nyc_list_datasets()]. For example, a key may look like
+`"x311_service_requests_from_2020_to_present"`, while a UID may look like
+`"erm2-nwe9"`.}
 
-\item{limit}{Number of rows to retrieve (default = 10,000).}
+\item{limit}{Number of rows to retrieve. Defaults to 10,000.}
 
-\item{filters}{Optional named list of filters. Supports vectors (translated to IN()).}
+\item{filters}{Optional named list of exact-match filters. Each list name
+should be a field name in the dataset, and each value should be the value
+or values to match. Vector values are translated into SQL-style `IN`
+conditions in the generated SoQL query. For example,
+`filters = list(borough = c("BROOKLYN", "QUEENS"))` returns rows where
+`borough` is either `"BROOKLYN"` or `"QUEENS"`.}
 
-\item{date}{Optional single date (matches all times that day) using `date_field`.}
+\item{date}{Optional single date used to match all records from that day.
+Requires `date_field`.}
 
-\item{from}{Optional start date (inclusive) using `date_field`.}
+\item{from}{Optional start date, inclusive. Requires `date_field`.}
 
-\item{to}{Optional end date (exclusive) using `date_field`.}
+\item{to}{Optional end date, exclusive. Requires `date_field`.}
 
-\item{date_field}{Optional date/datetime column to use with `date`, `from`, or `to`.
-Must be supplied when `date`, `from`, or `to` are used.}
+\item{date_field}{Optional date or datetime column to use with `date`,
+`from`, or `to`. This must be supplied when any date filter is used. Users
+can identify available date columns by inspecting the dataset on the NYC
+Open Data Portal or by pulling a small sample with `limit`.}
 
-\item{where}{Optional raw SoQL WHERE clause. If `date`, `from`, or `to` are
-provided, their conditions are AND-ed with this.}
+\item{where}{Optional raw SoQL `WHERE` clause for advanced filtering. SoQL is
+the Socrata Query Language used by NYC Open Data. If `date`, `from`, or
+`to` are also supplied, their generated conditions are combined with
+`where` using `AND`.}
 
-\item{order}{Optional SoQL ORDER BY clause.}
+\item{order}{Optional raw SoQL `ORDER BY` clause, such as
+`"created_date DESC"`.}
 
-\item{timeout_sec}{Request timeout in seconds (default = 30).}
+\item{timeout_sec}{Request timeout in seconds. Defaults to 30.}
 
-\item{clean_names}{Logical; if TRUE, convert column names to snake_case (default = TRUE).}
+\item{clean_names}{Logical. If `TRUE`, column names are converted to
+snake_case using [janitor::clean_names()]. Defaults to `TRUE`.}
 
-\item{coerce_types}{Logical; if TRUE, attempt light type coercion (default = TRUE).}
+\item{coerce_types}{Logical. If `TRUE`, the package attempts lightweight,
+heuristic-based type coercion after downloading the data. Columns are
+converted only when at least 95 percent of non-missing values can be parsed
+as the target type. This helps avoid unsafe conversions when source data are
+inconsistent.}
 }
 \value{
-A tibble.
+A tibble containing rows from the requested NYC Open Data dataset.
 }
 \description{
-Uses a dataset `key` or `uid` from `nyc_list_datasets()` to pull data
-from NYC Open Data.
+Downloads a dataset from the NYC Open Data Socrata API using either a
+human-readable catalog `key` or the official Socrata dataset `uid` returned by
+[nyc_list_datasets()].
 }
 \details{
+When a catalog `key` is supplied, `nyc_pull_dataset()` first retrieves the
+live NYC Open Data catalog to look up the corresponding Socrata `uid`, then
+sends a second request to download the dataset itself. Supplying a `uid`
+directly is more stable and avoids ambiguity, while keys are provided for
+readability and classroom-friendly workflows.
+
 Dataset keys are generated from dataset names using
-`janitor::make_clean_names()`. Because keys are derived from live catalog
-metadata, dataset UIDs are the more stable option.
+[janitor::make_clean_names()]. Because keys are derived from live catalog
+metadata, Socrata UIDs are the most stable identifiers.
+
+
+`nyc_pull_dataset()` is designed for common catalog-based workflows. For
+arbitrary Socrata JSON endpoints that are not included in the package catalog,
+use [nyc_any_dataset()].
+
+The `filters` argument is intended for simple exact-match filtering. For more
+complex conditions, use the `where` argument with raw SoQL syntax.
+
+Internally, filter field names are wrapped in `TRIM()` when constructing SoQL
+queries to reduce mismatches caused by leading or trailing whitespace in source
+data.
+
+Type coercion is intentionally conservative. When `coerce_types = TRUE`, the
+package attempts to infer common R column types from the API response, but
+columns with inconsistent values may remain character columns.
+
+Datetime coercion is also conservative. Timezone offsets and sub-second
+precision may not always be preserved during automatic parsing, and columns
+with inconsistent datetime formats may remain character columns.
 }
 \examples{
 if (interactive() && curl::has_internet()) {
-  # Pull by key
-  nyc_pull_dataset("311_service_requests", limit = 3)
+  # Pull by human-readable key
+  nyc_pull_dataset("x311_service_requests_from_2020_to_present", limit = 3)
 
-  # Pull by UID
+  # Pull by Socrata UID
   nyc_pull_dataset("erm2-nwe9", limit = 3)
 
-  # Filters
-  nyc_pull_dataset("erm2-nwe9", limit = 3, filters = list(borough = "QUEENS"))
+  # Filter to one borough
+  nyc_pull_dataset(
+    "erm2-nwe9",
+    limit = 3,
+    filters = list(borough = "QUEENS")
+  )
+
+  # Filter to multiple boroughs
+  nyc_pull_dataset(
+    "erm2-nwe9",
+    limit = 10,
+    filters = list(borough = c("BROOKLYN", "QUEENS"))
+  )
 
   # Date filtering
   nyc_pull_dataset(
@@ -77,5 +134,14 @@ if (interactive() && curl::has_internet()) {
     date_field = "created_date",
     limit = 100
   )
+
+  # Advanced filtering with raw SoQL
+  nyc_pull_dataset(
+    "erm2-nwe9",
+    where = "borough = 'BROOKLYN' AND agency = 'NYPD'",
+    order = "created_date DESC",
+    limit = 100
+  )
 }
+
 }

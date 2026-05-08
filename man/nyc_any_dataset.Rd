@@ -2,7 +2,7 @@
 % Please edit documentation in R/nyc_any_dataset.R
 \name{nyc_any_dataset}
 \alias{nyc_any_dataset}
-\title{Load Any NYC Open Data Dataset}
+\title{Pull any NYC Open Data dataset from a Socrata JSON endpoint}
 \usage{
 nyc_any_dataset(
   json_link,
@@ -13,30 +13,64 @@ nyc_any_dataset(
 )
 }
 \arguments{
-\item{json_link}{A Socrata dataset JSON endpoint URL (e.g., "https://data.cityofnewyork.us/resource/abcd-1234.json").}
+\item{json_link}{A single Socrata dataset JSON endpoint URL, such as
+`"https://data.cityofnewyork.us/resource/erm2-nwe9.json"`.}
 
-\item{limit}{Number of rows to retrieve (default = 10,000).}
+\item{limit}{Number of rows to retrieve. Defaults to 10,000.}
 
-\item{timeout_sec}{Request timeout in seconds (default = 30).}
+\item{timeout_sec}{Request timeout in seconds. Defaults to 30.}
 
-\item{clean_names}{Logical; if TRUE, convert column names to snake_case (default = TRUE).}
+\item{clean_names}{Logical. If `TRUE`, column names are converted to
+snake_case using [janitor::clean_names()]. Defaults to `TRUE`.}
 
-\item{coerce_types}{Logical; if TRUE, attempt light type coercion (default = TRUE).}
+\item{coerce_types}{Logical. If `TRUE`, the package attempts lightweight,
+heuristic-based type coercion after downloading the data. Columns are
+converted only when at least 95 percent of non-missing values can be parsed
+as the target type. This helps avoid unsafe conversions when source data are
+inconsistent.}
 }
 \value{
-A tibble containing the requested dataset.
+A tibble containing rows from the requested NYC Open Data endpoint.
 }
 \description{
-Downloads any NYC Open Data dataset given its Socrata JSON endpoint.
+Downloads data from any NYC Open Data Socrata JSON endpoint and returns the
+result as a tibble. This function is useful for datasets that are not included
+in the curated catalog returned by [nyc_list_datasets()].
+}
+\details{
+NYC Open Data datasets have Socrata JSON endpoints that usually follow this
+pattern:
+
+`https://data.cityofnewyork.us/resource/<dataset_uid>.json`
+
+For example, the 311 Service Requests dataset has the Socrata UID
+`"erm2-nwe9"`, so its JSON endpoint is:
+
+`https://data.cityofnewyork.us/resource/erm2-nwe9.json`
+
+Users can find a dataset's UID from the NYC Open Data Portal URL, the API
+documentation page for the dataset, or the output of [nyc_list_datasets()].
+
+
+`nyc_any_dataset()` bypasses the package catalog and sends a request directly
+to the supplied JSON endpoint. Unlike [nyc_pull_dataset()], it does not look up
+defaults such as catalog keys, date fields, or default ordering.
+
+This function is intended for direct endpoint access. For catalog-based
+workflows using readable keys or Socrata UIDs, use [nyc_pull_dataset()].
 }
 \examples{
 # Examples that hit the live NYC Open Data API are guarded so CRAN checks
 # do not fail when the network is unavailable or slow.
 if (interactive() && curl::has_internet()) {
-  endpoint <- "https://data.cityofnewyork.us/resource/erm2-nwe9.json"
+  # Build a JSON endpoint from a Socrata UID
+  uid <- "erm2-nwe9"
+  endpoint <- paste0("https://data.cityofnewyork.us/resource/", uid, ".json")
+
   out <- try(nyc_any_dataset(endpoint, limit = 3), silent = TRUE)
   if (!inherits(out, "try-error")) {
     head(out)
   }
 }
+
 }
