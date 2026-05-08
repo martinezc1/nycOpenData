@@ -21,8 +21,6 @@
 ^paper\\.md$
 ^paper\\.bib$
 ^\\.DS_Store$
-^tests/testthat/fixtures$
-^tests/testthat/fixtures/.*$
 ^\.Rproj\.user$
 ^\.github$
 ^paper\.bib$
